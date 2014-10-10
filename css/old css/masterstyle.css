@@ -1,0 +1,1018 @@
+@charset "utf-8";
+/* CSS Document */
+
+	/* IMPORTANT NOTES 
+
+	COLORS:
+	MAROON: #990000
+	GOLD: #B29D6C	
+	BC GRAY: #444444
+	
+	WEBFONTS:
+	asapregular
+	asapitalic
+	asapbold
+	
+	*/
+	
+body {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/background_general.png") no-repeat #fff 50% 50%;
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: asapregular !important;
+	color: #666;
+	font-size: 13px;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+	font-family: asapregular !important;
+}
+
+a, a:visited {
+	color: #990000;
+	font-weight: normal;	
+}
+
+a:hover, a:active {
+	color: #990000;
+	text-decoration: underline;	
+}
+
+b, strong {
+   	font-family: asapbold;
+    font-weight: normal;
+}
+
+i, italics {
+	font-family: asapitalic;
+}
+
+h1 {
+	color: #990000;
+    font-size: 25px;
+    font-weight: normal;
+    margin: 0 0 10px;
+    padding: 0;
+	text-transform: uppercase;
+}
+
+h2 {
+	color: #666;
+    font-size: 20px;
+    font-weight: normal;
+    margin: 5px 0 10px 0;
+    padding: 0;
+	text-transform: uppercase;
+}
+
+h3 {
+	color: #990000;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 5px 0 10px 0;
+    padding: 0;
+	text-transform: uppercase;
+}
+
+h4, h5, h6 {
+	color: #990000;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 5px 0 10px;
+    padding: 0;
+	text-transform: none;
+}
+
+ul, ol {
+	margin: 0 0 10px 0;
+	padding: 0 0 0 30px;
+}
+
+.fullwrapper
+/* CONTAINS HEADER BACKGROUND IMAGE. WRAPS ALL CONTENT ON PAGE */
+ {
+	width: 1221px;	
+	margin: 0px auto;
+	padding: 45px 22px 0;
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/containmentunit.png") no-repeat 0 0; 
+}
+
+#white 
+/* SINCE FULLWRAPPER HAS A BG IMAGE, THIS FILLS IN BG COLOR */
+{
+	width: 1202px;
+	background: #fff;
+	padding: 0 25px;
+	margin: 0 0 0 -12px;	
+}
+
+#header {
+	width: 1200px;
+	height: 55px;
+	margin: 5px auto 0px;
+	padding: 0;
+}
+
+#headertitle a {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/title.png") no-repeat;
+	height: 40px;
+	width: 600px;
+	display:inline-block;
+}
+
+#headertitle h1 {
+	text-indent: -9999px;	
+	margin: 0px;
+	padding: 0px;
+	color: #333;
+}
+
+			/* UNDER HEADER */
+
+.breadcrumb /* OVERWRITING SPRINGSHARE'S BOOTSTRAP */ {
+    background-color: transparent;
+    list-style: none outside none;
+    margin: 11px 0 0 0;
+    padding: 5px;
+}
+
+.breadcrumb > .active {
+    color: #990000;
+	font-weight: bold;
+}
+
+#titledesc {
+	padding: 0 0 0 0px;
+	margin: 0px 0 15px 0;
+}
+
+#titledesc p {
+	display: none;	
+}
+
+#titledesc h1 {
+	font-size: 30px;
+	text-transform: uppercase;
+	padding: 0px;
+	margin: 5px 0px;
+}
+
+#titledesc p {
+	font-size: 12px;
+	font-style: italic;
+	padding: 0;
+	margin: 0;
+}
+
+#s-lg-guide-tabs-title-bar {
+	padding: 0px;
+	margin: 0 0 15px 0;
+}
+
+#s-lg-guide-description {
+	display: none;	
+}
+
+.view-mode #s-lg-guide-tabs-title-bar {
+	padding: 0px;
+	margin: 0 0 0px 0;
+    border-top: 0px;
+}
+
+.pad-top-med {
+    padding-top: 0px;
+}
+			
+			/* SEARCH BAR
+			I'M HIDING THE SEARCH BAR FOR NOW, SWAPPING WITH A IMAGE. JUST A TEMP. */
+
+#tempsearch {
+	float: right;
+}
+
+#search {
+	float: right;
+	margin: 0 50px 0 0;
+	padding: 0px 0px 0px 0px;	
+/*	display: inline-block;*/
+	display: none;
+	height: 25px;
+	border: 1px solid #000;
+}
+
+#searchbar {
+	width: 300px;
+	height: 25px;
+}
+		
+#searchsubmit {
+	position: absolute;
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/searchsubmit.png") no-repeat 0 0;
+	height: 25px;
+	width: 40px;
+	padding: 0;
+	margin: 0 0 0 10px;
+	outline: none;
+}
+
+#searchsubmit:hover {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/searchsubmit.png") no-repeat 0 -25px;
+}
+
+#searchsubmit:active {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/searchsubmit.png") no-repeat 0 -50px;	
+}
+
+	/* CONTENT  */
+#content_container {
+	margin: 0px;
+	padding: 0 0 20px 0;
+	width: 1170px;
+	display: inline-block;	
+    line-height: 1.75;
+}
+
+#content {
+	margin: 0;
+	padding: 0;	
+	width: 980px;
+	float: right;
+	display:inline-block;
+}
+	
+#content_container ul li {
+	line-height: 1.5;	
+}	
+
+		/* FOOTER */
+
+#footer {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/footer.png") no-repeat 0 0;
+	width: 1221px;
+	min-height: 270px;
+	padding: 0 20px;
+	margin: 0 -26px;
+	color: #666;	
+}
+
+#containmentfooter {
+	border-top: 1px solid #DADADA;
+	padding: 10px 0 0 0;
+}
+
+#footer h1 { 
+	color: #444;
+    font-size: 15px;
+    font-weight: normal;
+    margin: 0 0 10px;
+    padding: 0;
+	text-transform: uppercase;
+}
+
+#f_column1 {
+	width: 310px;
+	text-align: justify;
+	margin: 0px 10px 0px 0px;
+}
+
+#f_column2 {
+	float: right;
+	width: 270px;
+	margin: 0 3px 0 0px;
+	padding: 0px 0 0 25px;
+	border-left: 1px solid #DADADA;
+}
+
+#f_column2 ul {
+	margin: 0px;
+	padding: 0px;	
+}
+
+#f_column2 li {
+	list-style: none;	
+	margin: 0 -10px;
+	padding: 0px 0 0 10px;
+}
+
+#f_column3 {
+	float: right;
+	width: 240px;
+	margin: 0 3px 0 0px;
+	padding: 0px 0 0 25px;
+	border-left: 1px solid #DADADA;
+}
+
+#f_column3 ul {
+	margin: 0px;
+	padding: 0px;	
+}
+
+#f_column3 li {
+	list-style: none;	
+	margin: 0 -10px;
+	padding: 0px 0 0 10px;
+}
+
+#f_column4 {
+	float: right;
+	width: 310px;
+	text-align: justify;
+	color: #666666;
+	padding: 0px 0px 0 25px;
+	border-left: 1px solid #DADADA;
+}
+
+#f_column4 ul {
+	margin: 0px;
+	padding: 0px;	
+}
+
+#f_column4 li {
+	list-style: none;	
+	margin: 0 -10px;
+	padding: 5px 0 0 10px;
+}
+
+#footerseal {
+	float: left;
+	padding: 10px 30px 10px 10px;	
+}
+
+#copyright {
+	padding: 15px 0 0 15px;
+	font-style: italic;
+}
+
+		/* SOCIAL MEDIA ICONS */
+
+#f_media {
+	margin: 0;
+	padding: 10px 0 0 15px;	
+}
+
+#f_media ul {
+	margin: 0 0px 0 0;	
+	padding: 0 0 0 0;
+	display: inline;
+}
+
+#f_media ul li {
+	display: inline-block;
+	list-style: none;
+	margin: 0 10px 0 0;
+	padding: 0;
+}
+
+#icon_blogs {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/icon_blogs.png") no-repeat -10px 0px;
+	text-indent: -9999px;
+	height: 40px;
+	width: 40px;
+	display: block;
+}
+
+#icon_blogs:hover {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/icon_blogs.png") no-repeat -10px -40px;
+}
+
+#icon_facebook {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/icon_facebook.png") no-repeat -10px 0px;
+	text-indent: -9999px;
+	height: 40px;
+	width: 40px;
+	display: block;
+}
+
+#icon_facebook:hover {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/icon_facebook.png") no-repeat -10px -40px;
+}
+
+#icon_flickr {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/icon_flickr.png") no-repeat -10px 0px;
+	text-indent: -9999px;
+	height: 40px;
+	width: 40px;
+	display: block;
+}
+
+#icon_flickr:hover {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/icon_flickr.png") no-repeat -10px -40px;
+}
+
+#icon_twitter {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/icon_twitter.png") no-repeat -10px 0px;
+	text-indent: -9999px;
+	height: 40px;
+	width: 40px;
+	display: block;
+}
+
+#icon_twitter:hover {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/icon_twitter.png") no-repeat -10px -40px;
+}
+
+#icon_youtube {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/icon_youtube.png") no-repeat -10px 0px;
+	text-indent: -9999px;
+	height: 40px;
+	width: 40px;
+	display: block;
+}
+
+#icon_youtube:hover {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/icon_youtube.png") no-repeat -10px -40px;
+}
+
+		/*OVERWRITING LIBGUIDES 2.0 */
+
+#s-lg-guide-header-search /* THIS DISPLAYS THE VIEW/EDIT/PUBLISH BUTTONS WHEN EDITING. */ {
+	float: right;
+	margin: 20px;	
+}
+
+#s-lg-admin-tab-add /* THIS IS THE + SIGN TO ADD A NEW PAGE */ {
+	padding: 4px;
+	margin: 0px;
+	border: 2px solid #B29D6C;	
+}
+
+#s-lg-admin-tab-add a {
+	border: none;
+	color: #444;
+}
+
+#s-lg-admin-tab-add a:hover {
+	border: none;
+	color: #fff;
+}
+
+#s-lg-add-page-icon /*I GUESS THIS IS TOO, NOT SURE*/ {
+	margin: 0px;
+	display: inline;
+	font-size: 12px;
+}
+
+.pager .previous > a, .pager .previous > span /* OVERWRITES PREVIOUS BUTTON */ {
+    float: left;
+}
+
+.pager .next > a, .pager .next > span /* OVERWRITES NEXT BUTTON */{
+    float: right;
+}
+
+.pager li > a, .pager li > span /* OVERWRITES PREVIOUS/NEXT BUTTON STYLES*/{
+    background-color: transparent;
+    border: 0px;
+    border-radius: 0;
+    display: inline-block;
+    padding: 0;
+	font-size: 17px;
+}
+
+.pager li > a:hover, .pager li > a:focus {
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+
+		/*EDITS TO BOXES, COLUMNS, ROWS, ETC. OVERWRITING SPRINGSHARE. */
+		
+.row /*THIS SHOULD CONTROL THE ENTIRE ROW OF COLUMNS, MARGIN-TOP IS NEW. LEFT, RIGHT WERE TO KEEP IN LINE W/ SPRINGSHARE */	{
+	margin: 0;	
+}
+
+#s-lg-box-top /* TOP BOX, IF IN USE */ {
+	margin: 0px;	
+	padding: 0 10px;
+}
+	
+.s-lg-col-boxes /* THIS IS THE BOX CONTAINER */ {
+
+}
+
+.s-lib-box /*THE INNER BOX ITSELF, WITH BORDERS, MARGIN, PADDING, SHADOW, * MORE */ {
+	box-shadow: none;
+	border: 0px;
+	margin: 0px;
+	color: #151515;
+}
+
+.edit-mode .s-lib-box-title 
+/* EFFECTS BOX TITLES. USES BOOTSTRAP STYLE WHEN IN EDIT MODE */ 
+{
+	border-bottom: 1px solid #CCC;
+	padding: 3px 8px;
+	font-size: 13px;
+	color: #333;
+	background: #fff;
+}
+
+.view-mode .s-lib-box .s-lib-box-title 
+/* EFFECTS BOX TITLES. USES HEADER STYLE WHEN IN VIEW-MODE. GUIDE GROUP ONLY. */ 
+{
+	border-bottom: 0 none;
+    border-radius: 0 0 0 0;
+    color: #990000;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1;
+    margin: 0 0 10px;
+    padding: 0 8px;
+    text-transform: uppercase;
+	background: none;
+}
+
+.view-mode .libhomepage .s-lib-box-title
+/* HIDES BOX TITLES FOR LIBRARY HOMEPAGES. */ 
+{
+	display: none !important;	
+}
+
+.s-lg-row {
+	margin: 0;
+	padding: 0;	
+}
+
+.s-lib-box-content {
+	padding: 0 10px 15px 10px;
+}
+
+	/* HACKED SIDE NAVIGATION */
+ 
+#s-lg-guide-tabs .nav-tabs {
+    border-bottom: 0px;
+}
+
+#s-lg-guide-tabs .nav {
+    list-style: none outside none;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+#s-lg-guide-tabs /*THIS OVERWRITES SPRINGSHARE'S DEFAULT TABS */ {
+	font-size: 14px;
+	margin: 1px 0 1px 0;
+	padding: 0px 0 10px 0;
+	width: 185px;
+	display: inline-block;
+}
+
+#s-lg-guide-tabs ul {
+	margin: 0;
+	padding: 0;
+}
+
+#s-lg-guide-tabs .nav-tabs li {
+	display: list-item;	
+	list-style: none;
+	margin: 0px 0px;
+	text-align: center;
+	float: none;
+	line-height: 1.75;
+}
+
+#s-lg-guide-tabs .nav-tabs li a {
+	border-bottom: 1px solid #fff;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+    color: #990000;
+    display: inline-block;
+    padding: 5px 9px;
+    text-decoration: none;
+    width: 100%;
+	background: #E9E9E9;
+	 border-radius: 0;
+    margin-right: 0px;
+}
+
+#s-lg-guide-tabs .nav-tabs li a:hover {
+	background: #B29D6C;
+}
+
+#s-lg-guide-tabs .nav-tabs .active a {
+	background: #990000;
+	color: #fff;
+	text-decoration: none;
+}
+
+#s-lg-guide-tabs .nav .dropdown-menu /*THIS IS PART OF THE DROP DOWN FOR SIDE NAV */{
+    background-clip: padding-box;
+    background-color: transparent;
+    border: 0px;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+    display: none;
+    float: left;
+    font-size: 14px;
+    left: 0;
+    list-style: none outside none;
+    min-width: 160px;
+    position: relative;
+    top: 100%;
+    z-index: 1000; 
+	padding: 0 0 0 25px;
+}
+
+#s-lg-guide-tabs .nav-tabs .dropdown-menu > li > a,
+#s-lg-guide-tabs .nav-tabs .active a .dropdown-menu > li > a
+ /*THIS IS THE DROP DOWN TAB ITSELF*/ {
+    clear: both;
+    color: #990000;
+    display: block;
+	width: 160px;
+    padding: 5px 20px;
+    white-space: nowrap;
+	border-top: 0px;
+	border-right: 0px;
+	border-left: 0px;
+	background: #E9E9E9;
+	height: 30px;
+	margin: 0px;
+	box-shadow: 4px 5px 3px rgba(0, 0, 0, 0.15);
+}
+
+#s-lg-guide-tabs .nav-tabs .dropdown-menu > li > a:hover,
+#s-lg-guide-tabs .nav-tabs .active a .dropdown-menu > li > a:hover {
+	background: #B29D6C;
+}
+
+/* THIS CONTROLS THE SUBNAVS WHEN ACTIVE */
+#s-lg-guide-tabs .nav-tabs .dropdown-menu > li > a.active {
+    background: #990000;
+    color: #fff;
+ 	text-decoration: none;
+      }
+
+#s-lg-guide-tabs .nav-tabs .dropdown-menu > li > a.active:hover {
+	background: #B29D6C;
+}
+	
+		
+		/* ALL THE MEGA MENU STUFF */
+		
+/* menu styes */
+.list-unstyled,
+.list-unstyled ul { min-width: 120px }
+
+@media ( min-width: 767px ) {
+  .panel-group { width: 400px; }
+  .thumbnail { margin: 0; }
+}
+
+/* Grid demo styles */
+.grid-demo {
+  padding: 10px 30px;
+}
+
+  .grid-demo [class*="col-"] {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2;
+    background-color: #e5e1ea;
+    border: 1px solid #d1d1d1;
+  }
+
+	
+	/* YAMM STUFF */
+
+.yamm .nav,
+.yamm .collapse,
+.yamm .dropup,
+.yamm .dropdown {
+  position: static;
+}
+.yamm .menu_container {
+  position: relative;
+}
+.yamm .dropdown-menu {
+  left: auto;
+}
+.yamm .nav.navbar-right .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+.yamm .yamm-content {
+  padding: 20px 0px;
+}
+.yamm .dropdown.yamm-fw .dropdown-menu {
+  left: 0px;
+  right: 0px;
+}
+
+
+	/* HACKS AND EDITS TO BOOTSTRAP  */
+
+#megamenu .container {
+	width: 1192px;
+    margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+
+#megamenu #wrapper {
+	border: 1px solid red;
+	width: 1200px;	
+	height: 500px;
+	margin: 10px auto;
+}
+
+@media ( max-width: 767px ) {
+  #wrapper {
+	border: 1px solid blue;
+	width: 100%;	
+	height: 1000px;
+	margin: 10px auto;
+} }
+
+#megamenu .navbar-fixed-top, .navbar-fixed-bottom {
+    left: 0;
+    position: relative;
+    right: 0;
+    z-index: 1030;
+}
+
+.hamburger {
+	background: #666;
+}
+
+#megamenu .navbar {
+    border: 1px solid rgba(0, 0, 0, 0);
+    margin-bottom: 20px;
+    min-height: 35px;
+    position: relative;
+	border-radius:0;
+	background: transparent;
+}
+
+#megamenu .navbar-collapse {
+    border-top: 0px solid rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.1) inset;
+    max-height: 340px;
+    overflow-x: visible;
+	padding: 0 0 0 0;
+}
+
+#megamenu .navbar-nav > li + li {
+	border-left: white 1px solid;	
+}
+
+#megamenu .navbar-nav > li > a {
+    color: #fff;
+	font-weight: normal;
+	text-decoration: none;	
+	text-transform: capitalize;
+	font-size: 14px;
+	padding: 10px 0 0 0;
+}
+
+#megamenu .navbar-nav > li > .dropdown-menu {
+	border: 0px;
+	border-top: 3px solid #430000;
+	border-radius: 0;
+    margin-top: 0;
+	
+}
+
+.dropdown-menu {
+    background-clip: padding-box;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    display: none;
+    float: left;
+    font-size: 14px;
+    left: 0;
+    list-style: none outside none;
+    margin: 2px 0 0;
+    min-width: 160px;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 1000;
+}
+
+/* CUSTOM MENU STYLING */
+
+.buttonone {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/megabutton_subject.png") no-repeat 160px 6px #990000 !important;
+	height: 40px;
+	padding: 6px 0 0 0;
+	margin: 0 0 0 0;
+	text-align: center;
+	outline: 0;
+	width: 195px;
+	transition: background-color 1s ease-out 0s;
+	}
+
+.buttonone:hover {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/megabutton_subject.png") no-repeat 160px -39px #430000 !important;
+	color: #fff;
+	outline: 0;
+}
+		
+.open .buttonone {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/megabutton_subject.png") no-repeat 160px -39px #430000 !important;
+}
+	
+.menu_list, .ask_list {
+    list-style: none outside none;
+	padding: 0px;
+	margin: 0 0px;
+	border-right: 1px solid #DADADA;
+    padding: 0 25px;
+}
+
+.ask_list {
+	width: 20%;
+	float: left;	
+}
+
+.end {
+	border: 0px;
+}
+
+.yamm .dropdown-menu li > a {
+  display: block;
+  padding: 3px 5px;
+  margin: 0 0 0 -5px;
+  clear: both;
+  font-weight: normal;
+  line-height: 20px;
+  text-transform: capitalize !important;
+  word-break: normal;
+  outline: none;
+  color: #666;
+}
+
+.yamm .dropdown-menu li > a:hover,
+.yamm .dropdown-menu li > a:focus {
+  color: #990000;
+  text-decoration: none;
+  background: #E0E0E0;
+}
+
+	/* LIBRARY INFO DROP DOWN */
+
+.libraryinfo-content {
+	padding: 0 0px 0px 20px;	
+}
+
+.library-list {
+    list-style: none outside none;
+    padding: 20px 0;
+}
+
+#bapst_pane, #burns_pane, #erc_pane, #law_pane, #oconnor_pane, #oneill_pane, #swl_pane, #tml_pane {
+	width: 75%;
+	height: 100%;
+	color: #666;
+	background: #E0E0E0;
+	float: right;
+	padding: 20px;
+	display: none;
+}	
+
+.pane_left {
+	float: left;
+	width: 30%;
+}
+
+.pane_left img {
+	border: 2px solid #990000;	
+}
+
+.pane_right {
+	float: left;
+	width: 70%;
+}
+
+.pane_right a, .pane_right a:visited {
+    color: #990000 !important;
+    font-weight: normal;
+	font-size: 12px !important;
+}
+
+.pane_right a:hover, .pane_right a:active {
+    color: #990000 !important;
+    text-decoration: underline !important;
+	background: none !important;
+}
+
+.pane_right ul {
+	padding: 0px 0 5px 0;
+	margin: 0px;
+}
+
+.pane_right li {
+	list-style: none;
+}
+
+.pane_header {
+	width: 100%;
+	text-align: left;
+	clear: both;
+	margin: 0 0 15px 0;
+}
+
+.pane_header p {
+    font-size: 12px;
+    line-height: inherit;
+    text-align: left;	
+}
+
+.pane_header h3 {
+	padding: 0 0 10px 0;
+	margin: 0 auto;
+	display: inline-block;	
+}
+
+.pr_left, .pr_middle, .pr_right  {
+	float: left;
+	width: 30%;	
+	display: inline-block;
+	margin: 0 9px;
+}
+
+.libraryinfo-content #hours-col-l, .libraryinfo-content .hours-col-loc, .libraryinfo-content #hours-col-t {
+	display: none !important;	
+}
+
+.hours-today {
+	width: 100%;	
+}
+
+.libraryinfo-content .s-lc-time {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/megabutton_time.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    font-size: 15px;
+    height: 30px;
+    margin: 0 auto;
+    padding: 7px 0 7px 32px;
+    text-align: left;
+    width: 100%;
+}
+
+.megamenucalendar {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/megabutton_monthly.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    font-size: 15px;
+    height: 30px;
+    margin: 0 auto;
+    padding: 7px 0 0 32px;
+    text-align: left;
+    width: 100%;
+}
+
+.megamenucalendar:hover {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/megabutton_monthly.png") no-repeat scroll 0 -39px rgba(0, 0, 0, 0) !important;
+}	
+
+.megamenuphone {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/megabutton_phone.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    font-size: 15px;
+    height: 30px;
+    margin: 0 auto;
+    padding: 7px 0 0 32px;
+    text-align: left;
+    width: 100%;
+}
+
+.megamenuphone:hover {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/megabutton_phone.png") no-repeat scroll 0 -39px rgba(0, 0, 0, 0) !important;
+}	
+
+.megamenuemail {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/megabutton_email.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    font-size: 15px;
+    height: 30px;
+    margin: 0 auto;
+    padding: 7px 0 0 32px;
+    text-align: left;
+    width: 100%;
+}
+
+.megamenuemail:hover {
+	background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/megabutton_email.png") no-repeat scroll 0 -39px rgba(0, 0, 0, 0) !important;
+}	
+
+/* ABOUT DROP DOWN EDITS */
+
+.about_pane {
+	width: 25%;
+	padding: 0 10px;
+	float: left;
+	text-align: center;
+	border-right: 1px solid #DADADA;
+}
+
+.about_pane img {
+	border: 2px solid #990000;
+}
+
+/* HOURS MENU EDITS */
+
+.libhours {
+	border: 1px solid black;
+	width: 	150px;
+}

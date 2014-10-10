@@ -1,0 +1,770 @@
+ <!-- THIS IS THE SCRIPT THAT WILL ADD A CLASS TO THE BODY, TO ASSIST IN REMOVING
+     DIVS BASED ON WHETHER WE ARE IN AUTHOR OR PUBLIC VIEW -->  
+<script>
+$(document).ready(function(){((window.location.pathname).indexOf('admin_c.php')>-1)?$('body').addClass('edit-mode'):$('body').addClass('view-mode');});
+</script>
+            
+	<body class="s-lg-guide-body"> 
+ 
+<!-- THIS INCLUDED EVERYTHING IN HEADER CODE, SUCH AS #HEADER AND SEARCH BAR-->
+{{public_header}} 
+
+<div id="fullpagewrapper">
+
+		<!-- MENU BEGINS HERE -->
+    
+    <div id="megamenu">
+    <div class="navbar yamm">
+      <div class="container">
+      
+        <div class="hamburger">
+          <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle">
+          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        </div>
+        
+        <div id="navbar-collapse-1" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+          
+             <!-- Find button list -->
+            <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Find</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <!-- Content container to add padding -->
+                  <div class="yamm-content">
+                    <div class="row">
+                    
+                    <ul class="col-sm-3 menu_list">
+                    <li><h4>Books, Media, and more</h4></li>
+                    <li><a href="#">Holmes Simple Search</a></li>
+                    <li><a href="#">Holmes Advanced Search</a></li>
+                    <li><a href="#">Browse Popular Reading</a></li>
+                    <li><a href="#">Special Collections &amp; Rare Manuscripts</a></li>
+                    <li><a href="#">Course Reserves</a></li>
+                    <li><a href="#">Theses &amp; Dissertations</a></li>
+                    <li><a href="#">Multimedia</a></li>
+                    <li><a href="#">Data/GIS/Statistics</a></li>
+                    </ul>
+                    <ul class="col-sm-3 menu_list">
+                    <li><h4>Articles</h4></li>
+                    <li><a href="#">Search Databases</a></li>
+                    <li><a href="#">Browse A-Z Database list</a></li>
+                    <li><a href="#">Search E-Journals</a></li>
+                    <li><a href="#">Holmes article search</a></li>
+                    </ul>
+                    <ul class="col-sm-3 menu_list">
+                    <li><h4>Outside BC</h4></li>
+                    <li><a href="#">WorldCat</a></li>
+                    <li><a href="#">Hathi Trust</a></li>
+                    <li><a href="#">Center for Research Libraries</a></li>
+                    <li><a href="#">BLC Libraries</a></li>
+                    <li><a href="#">Log in to Interlibrary Loan</a></li>
+                    </ul>
+                    <ul class="col-sm-3 menu_list">
+                    <li><h4>Technology</h4></li>
+                    <li><a href="#">Software in the library</a></li>
+                    <li><a href="#">Laptops, iPads, and more</a></li>
+                    </ul>
+      
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            
+             <!-- Research Support button list -->
+            <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Research Support</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <!-- Content container to add padding -->
+                  <div class="yamm-content">
+                    <div class="row">
+                    <ul class="col-sm-4 menu_list">
+                    <li><h4>Help Yourself</h4></li>
+                    <li><a href="#">Guides by Subject</a></li>
+                    <li><a href="#">Guides by Course</a></li>
+                    <li><a href="#">How to... (use Holmes, cite sources, etc.)</a></li>
+                    <li><a href="#">Finding... (newspapers, images, etc.)</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Video Tutorials</a></li>
+                    </ul>
+                    
+                    <ul class="col-sm-4 menu_list">
+                    <li><h4>Personalized Help for...</h4></li>
+                    <li><a href="#">Undergraduates</a></li>
+                    <li><a href="#">Graduate Students</a></li>
+                    <li><a href="#">Faculty</a></li>
+                    <li><a href="#">Staff</a></li>
+                    <li><a href="#">Alumni</a></li>
+                    <li><a href="#">Guests</a></li>
+                    </ul>
+                    
+                    <ul class="col-sm-4 menu_list">
+                    <li><h4>Additional Resources</h4></li>
+                    <li><a href="#">Library Instruction</a></li>
+                    <li><a href="#">Digital Scholarship</a></li>
+                    <li><a href="#">RefWorks</a></li>
+                    </ul>
+                      
+                    </div>
+                    
+                      <div class="row bottom_row">
+                      <ul class="col-sm-3 menu_list">
+                        <li> <h4>Area &amp; Cultural Studies</h4> </li>
+                        <li><a href="#">African & African Diaspora Studies</a></li>
+            <li><a href="#">Asian Studies</a></li>
+            <li><a href="#">Irish Studies</a></li>
+                        <li><a href="#">Islamic Civilization & Societies</a></li>
+                        <li><a href="#">Jewish Studies</a></li>
+                        <li><a href="#">Latin American Studies</a></li>
+                        <li><a href="#">Slavic & Eastern Languages & Literature</a></li>
+                      </ul>
+                      <ul class="col-sm-3 menu_list">
+                        <li><h4>Humanities</h4></li>
+                             <li><a href="#">Art & Architecture</a></li>
+                                   <li><a href="#">Classical Studies</a></li>
+                                    <li><a href="#">English Language & Literature</a></li>
+                                    <li><a href="#">Film</a></li>
+                                    <li><a href="#">FWS (First-year Writing Seminars)</a></li>
+                                    <li><a href="#">German Studies</a></li>
+                                    <li><a href="#">History</a></li>
+                                    <li><a href="#">Linguistics</a></li>
+                                    <li><a href="#">Music</a></li>
+                                    <li><a href="#">Philosophy</a></li>
+                                    <li><a href="#">Romance Languages & Literatures</a></li>
+                                    <li><a href="#">Theater & Dance</a></li>
+                                    <li><a href="#">Theology/Theology & Ministry</a></li>
+                      </ul>
+                      <ul class="col-sm-3 menu_list">
+                        <li><h4>Sciences</h4> </li>
+                             <li><a href="#">Biology</a></li>
+                                    <li><a href="#">Chemistry</a></li>
+                                    <li><a href="#">Computer Science/IT</a></li>
+                                    <li><a href="#">Earth & Environmental Sciences</a></li>
+                                    <li><a href="#">Environmental Studies</a></li>
+                                    <li><a href="#">Mathematics</a></li>
+                                    <li><a href="#">Nursing & Health Sciences</a></li>
+                                    <li><a href="#">Physics</a></li>
+                      </ul>
+                      <ul class="col-sm-3 menu_list end">
+                              <li><h4>Social Sciences</h4></li>
+                             <li><a href="#">Business & Management</a></li>
+                              <li><a href="#">Communication</a></li>
+                             <li><a href="#">Data/Statistics/GIS</a></li>
+                                    <li><a href="#">Economics</a></li>
+                                    <li><a href="#">Education</a></li>
+                                    <li><a href="#">Environmental Studies</a></li>
+                                    <li><a href="#">Gender Studies</a></li>
+                                    <li><a href="#">Government Documents</a></li>
+                                    <li><a href="#">Law</a></li>
+                                    <li><a href="#">Political Science</a></li>
+                                    <li><a href="#">Psychology</a></li>
+                                    <li><a href="#">Social Work</a></li>
+                                    <li><a href="#">Sociology & Anthropology</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            
+             <!-- Libraries and Collections list -->
+            <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Libraries</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <!-- Content container to add padding -->
+                  <div class="libraryinfo-content">
+                  
+                    <div class="row">
+              <ul class="col-sm-3 library-list">
+                    <li class="bapst_pane"><a href="#">Bapst Art Library</a></li>
+              <li class="burns_pane"><a href="#">Burns Library</a></li>
+              <li class="erc_pane"><a href="#">Educational Resource Center</a></li>
+                    <li class="law_pane"><a href="#">Law Library</a></li>
+                    <li class="oconnor_pane"><a href="#">O'Connor Library</a></li>
+                    <li class="oneill_pane"><a href="#">O'Neill Library</a></li>
+                    <li class="swl_pane"><a href="#">Social Work Library</a></li>
+                    <li class="tml_pane"><a href="#">Theology &amp; Ministry Library</a></li> 
+                         </ul>
+                        
+  <!-- BAPST PANE BEGINS HERE -->
+                            <div id="bapst_pane" class="library_pane">
+                          <div class="pane_info">
+                         <h3><a href="#">Bapst Art Library</a></h3>
+ <p>The Bapst Art Library, named for the first president of Boston College, served as the original Library from 1925 until the opening of the Thomas P. O'Neill Library in 1984. </p>  
+    
+                            <ul class="col-sm-4">
+                            <li><h4>Contact Info</h4></li>
+                            <li class="megamenuphone"><p>(617) 552-3200</p></li>
+                          <li class="megamenuemail"><p><a href="mailto:bapst@bc.edu">bapst@bc.edu</a></p></li>
+                            </ul>
+                            
+                            
+                            <ul class="col-sm-4">
+                            <li><h4>Today's Hours</h4></li>
+                            <li><div id="api_hours_today_iid609_lid519"></div>
+<script src="https://api.libcal.com/api_hours_today.php?iid=609&lid=519&format=js&context=object"> </script> </li>
+              <li class="megamenucalendar"><p><a href="#" >All Library Hours </a></p></li>
+                            </ul>
+                            
+                            <ul class="col-sm-4">
+                            <li><h4>Resources</h4></li>
+                            <li><p><a href="#">Resource 01</a></p></li>
+                            <li><p><a href="#">Resource 02</a></p></li>
+                            <li><p><a href="#">Resource 03</a></p></li>
+                            </ul>
+                            
+              </div>
+                            
+                <div class="pane_pic">   
+                            <img alt="Bapst Library photo" src="https://dl.dropboxusercontent.com/u/4841356/LG_final/images/libarypane/librarythumbnails_bapst.png">           
+                            </div>
+                              </div>
+  <!-- END BAPST PANE. RIGHT UP THERE-->
+                         
+  <!-- BURNS PANE BEGINS HERE -->
+                <div id="burns_pane" class="library_pane">
+                          <div class="pane_info">
+                            <h3><a href="#">Burns Library</a></h3>
+ <p>The University’s special collections, including the University’s Archives, are housed in the Honorable John J. Burns Library, located in the Bapst Library Building, north entrance.</p>  
+    
+                            <ul class="col-sm-4">
+                            <li><h4>Contact Info</h4></li>
+                            <li class="megamenuphone"><p>(617) 552-4861</p></li>
+                          <li class="megamenuemail"><p><a href="mailto:burns@bc.edu">burns@bc.edu</a></p></li>
+                            </ul>
+                            
+                            
+                            <ul class="col-sm-4">
+                            <li><h4>Today's Hours</h4></li>
+                            <li><div id="api_hours_today_iid609_lid298"></div>
+<script src="https://api.libcal.com/api_hours_today.php?iid=609&lid=298&format=js&context=object"> </script> </li>
+              <li class="megamenucalendar"><p><a href="#">All Library Hours</a></p></li>
+                            </ul>
+                            
+                            <ul class="col-sm-4">
+                            <li><h4>Resources</h4></li>
+                            <li><p><a href="#">Resource 01</a></p></li>
+                            <li><p><a href="#">Resource 02</a></p></li>
+                            <li><p><a href="#">Resource 03</a></p></li>
+                            </ul>
+                            
+              </div>
+                            
+                <div class="pane_pic">   
+                            <img alt="Burns Library photo" src="https://dl.dropboxusercontent.com/u/4841356/LG_final/images/libarypane/librarythumbnails_burns.png">           
+                            </div>
+                              </div>   
+  <!-- END BURNS PANE. RIGHT UP THERE-->
+                         
+  <!-- ERC PANE BEGINS HERE -->
+                    <div id="erc_pane" class="library_pane">
+                          <div class="pane_info">
+                            <h3><a href="#">Educational Resource Center</a></h3>
+ <p>The Educational Resource Center, located in Campion Hall, serves the specialized resource needs of the Lynch School of Education faculty and students. In doing so, the ERC aims to further the broader missions of the LSOE faculty, and the University generally, in the area of teaching, research, and service.</p>  
+    
+                            <ul class="col-sm-4">
+                            <li><h4>Contact Info</h4></li>
+                            <li class="megamenuphone"><p>(617) 552-4920</p></li>
+                          <li class="megamenuemail"><p><a href="mailto:erc@bc.edu">erc@bc.edu</a></p></li>
+                            </ul>
+                            
+                            
+                            <ul class="col-sm-4">
+                            <li><h4>Today's Hours</h4></li>
+                            <li><div id="api_hours_today_iid609_lid520"></div>
+<script src="https://api.libcal.com/api_hours_today.php?iid=609&lid=520&format=js&context=object"> </script> </li>
+              <li class="megamenucalendar"><p><a href="#" >All Library Hours</a></p></li>
+                            </ul>
+                            
+                            <ul class="col-sm-4">
+                            <li><h4>Resources</h4></li>
+                            <li><p><a href="#">Resource 01</a></p></li>
+                            <li><p><a href="#">Resource 02</a></p></li>
+                            <li><p><a href="#">Resource 03</a></p></li>
+                            </ul>
+                            
+              </div>
+                            
+                <div class="pane_pic">   
+                            <img alt="Educational Resource Center photo" src="https://dl.dropboxusercontent.com/u/4841356/LG_final/images/libarypane/librarythumbnails_ed.png">           
+                            </div>
+                              </div>       
+  <!-- END ERC PANE. RIGHT UP THERE-->
+                         
+  <!-- LAW PANE BEGINS HERE -->
+                    <div id="law_pane" class="library_pane">
+                          <div class="pane_info">
+                            <h3><a href="#">Law Library</a></h3>
+ <p>The mission of the Boston College Law Library is to provide research, educational and technological support to the Boston College Law School community. </p>  
+    
+                            <ul class="col-sm-4">
+                            <li><h4>Contact Info</h4></li>
+                            <li class="megamenuphone"><p>(617) 552-0000</p></li>
+                          <li class="megamenuemail"><p><a href="mailto:bapst@bc.edu">whoknows@bc.edu</a></p></li>
+                            </ul>
+                            
+                            
+                            <ul class="col-sm-4">
+                            <li><h4>Today's Hours</h4></li>
+                            <li><div id="api_hours_today_iid609_lid521"></div>
+<script src="https://api.libcal.com/api_hours_today.php?iid=609&lid=521&format=js&context=object"> </script> </li>
+              <li class="megamenucalendar"><p><a href="#" >All Library Hours</a></p></li>
+                            </ul>
+                            
+                            <ul class="col-sm-4">
+                            <li><h4>Resources</h4></li>
+                            <li><p><a href="#">Resource 01</a></p></li>
+                            <li><p><a href="#">Resource 02</a></p></li>
+                            <li><p><a href="#">Resource 03</a></p></li>
+                            </ul>
+                            
+              </div>
+                            
+                <div class="pane_pic">   
+                            <img alt="Law Library photo" src="https://dl.dropboxusercontent.com/u/4841356/LG_final/images/libarypane/librarythumbnails_law.png">           
+                            </div>
+                              </div>         
+  <!-- END LAW PANE. RIGHT UP THERE-->
+                         
+  <!-- O'CONNOR PANE BEGINS HERE -->
+                    <div id="oconnor_pane" class="library_pane">
+                          <div class="pane_info">
+                            <h3><a href="#">Catherine O'Connor Library</a></h3>
+ <p>Located at Weston Observatory, this library contains a specialized collection of earth sciences monographs, periodicals, and maps, particularly in the areas of seismology, geology, and geophysics.</p>  
+    
+                            <ul class="col-sm-4">
+                            <li><h4>Contact Info</h4></li>
+                            <li class="megamenuphone"><p>(617) 552-4477</p></li>
+                          <li class="megamenuemail"><p><a href="mailto:bapst@bc.edu">whoknows@bc.edu</a></p></li>
+                            </ul>
+                            
+                            
+                            <ul class="col-sm-4">
+                            <li><h4>Today's Hours</h4></li>
+                            <li><p class="s-lc-time">By appointment</p> </li>
+              <li class="megamenucalendar"><p><a href="#" >All Library Hours</a></p></li>
+                            </ul>
+                            
+                            <ul class="col-sm-4">
+                            <li><h4>Resources</h4></li>
+                            <li><p><a href="#">Resource 01</a></p></li>
+                            <li><p><a href="#">Resource 02</a></p></li>
+                            <li><p><a href="#">Resource 03</a></p></li>
+                            </ul>
+                            
+              </div>
+                            
+                <div class="pane_pic">   
+                            <img alt="AH Library photo" src="https://dl.dropboxusercontent.com/u/4841356/LG_final/images/libarypane/librarythumbnails_oconnor.png">           
+                            </div>
+                              </div>      
+    <!-- END O'CONNOR PANE. RIGHT UP THERE-->
+                         
+   <!-- O'NEILL PANE BEGINS HERE -->
+                        <div id="oneill_pane" class="library_pane">
+                          <div class="pane_info">
+                            <h3><a href="#">O'Neill Library</a></h3>
+ <p>The main research library, the Thomas P. O'Neill, Jr. Library, is located in the center of the main campus, adjoining the O'Neill Plaza.</p>  
+    
+                            <ul class="col-sm-4">
+                            <li><h4>Contact Info</h4></li>
+                            <li class="megamenuphone"><p>Circ: (617) 552-8038</p></li>
+                          <li class="megamenuphone"><p>Ref: (617) 552-4472</p></li>
+                            </ul>
+                            
+                            
+                            <ul class="col-sm-4">
+                            <li><h4>Today's Hours</h4></li>
+                            <li><div id="api_hours_today_iid609_lid297"></div>
+<script src="https://api.libcal.com/api_hours_today.php?iid=609&lid=297&format=js&context=object"> </script> </li>
+              <li class="megamenucalendar"><p><a href="#" >All Library Hours</a></p></li>
+                            </ul>
+                            
+                            <ul class="col-sm-4">
+                            <li><h4>Resources</h4></li>
+                            <li><p><a href="#">Resource 01</a></p></li>
+                            <li><p><a href="#">Resource 02</a></p></li>
+                            <li><p><a href="#">Resource 03</a></p></li>
+                            </ul>
+                            
+              </div>
+                            
+                <div class="pane_pic">   
+                            <img alt="O'Neill Library photo" src="https://dl.dropboxusercontent.com/u/4841356/LG_final/images/libarypane/librarythumbnails_oneill.png">           
+                            </div>
+                              </div>   
+  <!-- END O'NEILL PANE. RIGHT UP THERE-->
+                         
+   <!-- SWL PANE BEGINS HERE -->
+                  <div id="swl_pane" class="library_pane">
+                          <div class="pane_info">
+                            <h3><a href="#">Social Work Library</a></h3>
+ <p>Located in McGuinn Hall, the Social Work Library supports the teaching and research needs of the Graduate School of Social Work.</p>  
+    
+                            <ul class="col-sm-4">
+                            <li><h4>Contact Info</h4></li>
+                            <li class="megamenuphone"><p>(617) 552-0109</p></li>
+                          <li class="megamenuemail"><p><a href="mailto:swlib@bc.edu">swlib@bc.edu</a></p></li>
+                            </ul>
+                            
+                            
+                            <ul class="col-sm-4">
+                            <li><h4>Today's Hours</h4></li>
+                            <li><div id="api_hours_today_iid609_lid522"></div>
+<script src="https://api.libcal.com/api_hours_today.php?iid=609&lid=522&format=js&context=object"> </script> </li>
+              <li class="megamenucalendar"><p><a href="#" >All Library Hours</a></p></li>
+                            </ul>
+                            
+                            <ul class="col-sm-4">
+                            <li><h4>Resources</h4></li>
+                            <li><p><a href="#">Resource 01</a></p></li>
+                            <li><p><a href="#">Resource 02</a></p></li>
+                            <li><p><a href="#">Resource 03</a></p></li>
+                            </ul>
+                            
+              </div>
+                            
+                <div class="pane_pic">   
+                            <img alt="Social Work Library Library photo" src="https://dl.dropboxusercontent.com/u/4841356/LG_final/images/libarypane/librarythumbnails_swl.png">           
+                            </div>
+                              </div>         
+  <!-- END SWL PANE. RIGHT UP THERE-->
+                         
+  <!-- TML PANE BEGINS HERE -->
+                      <div id="tml_pane" class="library_pane">
+                          <div class="pane_info">
+                            <h3><a href="#">Theology & Ministry Library</a></h3>
+ <p>The Theology & Ministry Library (TML) supports research, teaching, and learning at the School of Theology & Ministry and Saint John's Seminary. </p>  
+    
+                            <ul class="col-sm-4">
+                            <li><h4>Contact Info</h4></li>
+                            <li class="megamenuphone"><p>Circ: (617) 552-0549</p></li>
+                          <li class="megamenuphone"><p>Ref: (617) 552-6553</p></li>
+                            </ul>
+                            
+                            
+                            <ul class="col-sm-4">
+                            <li><h4>Today's Hours</h4></li>
+                            <li><div id="api_hours_today_iid609_lid523"></div>
+<script src="https://api.libcal.com/api_hours_today.php?iid=609&lid=523&format=js&context=object"> </script> </li>
+              <li class="megamenucalendar"><p><a href="#" >All Library Hours</a></p></li>
+                            </ul>
+                            
+                            <ul class="col-sm-4">
+                            <li><h4>Resources</h4></li>
+                            <li><p><a href="#">Resource 01</a></p></li>
+                            <li><p><a href="#">Resource 02</a></p></li>
+                            <li><p><a href="#">Resource 03</a></p></li>
+                            </ul>
+                            
+              </div>
+                            
+                <div class="pane_pic">   
+                            <img alt="Theology & Ministry Library photo" src="https://dl.dropboxusercontent.com/u/4841356/LG_final/images/libarypane/librarythumbnails_tml.png">           
+                            </div>
+                              </div>     
+  <!-- END TML PANE. RIGHT UP THERE-->
+                         
+                  </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            
+               <!-- Services list -->
+            <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Services</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <!-- Content container to add padding -->
+                  <div class="yamm-content">
+                    <div class="row">
+                    <ul class="col-sm-3 menu_list">
+                    <li><h4><a href="http://libguides.bc.edu/services/borrowing" title="Borrowing">Borrowing</h4></li>
+                    <li><a href="http://libguides.bc.edu/services/borrowing/loanpolicies" title="Loan Policies">Loan Policies</a></li>
+                    <li><a href="http://libguides.bc.edu/services/borrowing/howdoi" title="How do I...">How do I...</a></li>
+                    <li><a href="http://libguides.bc.edu/services/borrowing/patronbillofrights" title="Patron Bill of Rights">Patron Bill of Rights</a></li>
+                    </ul>
+                      
+                    <ul class="col-sm-3 menu_list">
+                    <li><h4><a href="http://libguides.bc.edu/services/accounts" title="My Accounts">My Accounts</h4></li>
+                    <li><a href="http://libguides.bc.edu/services/accounts/holmes" title="Holmes">Holmes</a></li>
+                    <li><a href="http://libguides.bc.edu/services/accounts/interlibraryloan" title="Interlibrary Loan/Document Delivery">Interlibrary Loan/Document Delivery</a></li>
+                    <li><a href="http://libguides.bc.edu/services/accounts/interlibraryloan" title="Course Reserves">Course Reserves</a></li>
+                    <li><a href="http://libguides.bc.edu/services/accounts/refworks" title="RefWorks">RefWorks</a></li>
+                    <li><a href="http://libguides.bc.edu/services/accounts/worldcatlocal" title="WorldCat Local">WorldCat Local</a></li>
+                    </ul>
+                    
+                    <ul class="col-sm-3 menu_list">
+                    <li><h4><a href="http://libguides.bc.edu/services/servicing" title="Services for...">Services for...</a></h4></li>
+                    <li><a href="#" title="">Undergraduates</a></li>
+                    <li><a href="#" title="">Graduate Students</a></li>
+                    <li><a href="#" title="">Faculty</a></li>
+                    <li><a href="#" title="">Staff</a></li>
+                    <li><a href="#" title="">Alumni</a></li>
+                    <li><a href="#" title="">Guests</a></li>
+                    </ul>
+                    
+                    <ul class="col-sm-3 menu_list">
+                    <li><h4><a href="http://libguides.bc.edu/services/technologyandspaces" title="">Technology &amp; Spaces</a></h4></li>
+                    <li><a href="http://libguides.bc.edu/services/technologyandspaces/reserve" title=">Reserve a Group Project Room">Reserve a Group Project Room</a></li>
+                    <li><a href="http://libguides.bc.edu/services/technologyandspaces/checkout" title="Check out Laptops, iPads, &amp; More">Check out Laptops, iPads, &amp; More</a></li>
+                    <li><a href="http://libguides.bc.edu/services/technologyandspaces/computers" title="Computers, Printing, &amp; More">Computers, Printing, &amp; More</a></li>
+                    <li><a href="http://libguides.bc.edu/services/technologyandspaces/digitalstudio" title="205 – Digital Studio">205 – Digital Studio</a></li>
+                    <li><a href="http://libguides.bc.edu/services/technologyandspaces/studyspaces" title="Study Spaces">Study Spaces</a></li>
+                    <li><a href="http://libguides.bc.edu/services/technologyandspaces/policies" title="Library Polices">Library Polices</a></li>
+                    <li><a href="http://libguides.bc.edu/services/technologyandspaces/advertise" title="Advertise Your Event on Monitors">Advertise Your Event on Monitors</a></li>
+                    </ul>
+                      
+                    </div>
+                    
+                     <div class="row bottom_row">
+                      <h3 style="padding:0 0 0 23px;">Ask a Librarian</h3>
+                      <ul class="ask_list">
+                      <li><h4>Text a Librarian</h4></li>
+                        <li><p>Text 617-229-5222 for quick questions during weekday <a href="http://www.bc.edu/content/bc/libraries/about/hours.html">reference service hours</a>.</p></li>
+                      </ul>
+                      <ul class="ask_list">
+                        <li><h4>Chat with a Librarian</h4></li>
+                        <li><p>24/7 research help from Librarians at BC and at participating Jesuit institutions across the country.         <a onClick="window.open('https://libraryh3lp.com/chat/ajcu-consortium@chat.libraryh3lp.com?skin=19965&title=Boston College/AJCU+Librarians&profile=cs-bostoncoll',     'chat', 'resizable=1,width=320,height=300'); return false;">Click here to chat with a Librarian.</a> </p></li>
+                      </ul>
+                      <ul class="ask_list">
+                        <li><h4>In Person</h4></li>
+                        <li><p>Stop by any library reference desk, or arrange a consultation with a librarian in your area of study.</p></li>
+                      </ul>
+                      <ul class="ask_list">
+                        <li><h4>Call a Librarian</h4></li>
+                          <li><p>(617) 552-4472 <br>
+                        Call a Reference Librarian during regular reference service hours.</p></li>
+                      </ul>
+                       <ul class="ask_list">
+                        <li><h4>Send an Email</h4></li>
+                        <li><p>Get an <a href="http://answers.bc.edu/q.php">answer by email</a> within one day, Monday-Friday.</p></li>
+                      </ul>
+                      
+                    </div>
+                     <div class="row bottom_row">
+                      <div class="more"><a href="#">Find a Subject Librarian</a></div>
+                      </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            
+              <!-- About Us list -->
+            <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">About Us</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <!-- Content container to add padding -->
+                  <div class="yamm-content">
+                    <div class="row">
+                    <ul class="col-sm-3 menu_list">
+                    <li><a href="http://libguides.bc.edu/aboutus/libraryschedule" title="Library Schedule">Hours</a></li>
+                    <li><a href="http://libguides.bc.edu/aboutus/contact" title="Contact Us">Contact Us</a></li>
+                    <li><a href="http://libguides.bc.edu/aboutus/contact/gettinghere" title="Getting Here">Getting Here</a></li>
+                    <li><a href="http://libguides.bc.edu/aboutus/libraryschedule" title="Library Schedule">Library Calendar</a></li>
+                    <li><a href="http://libguides.bc.edu/aboutus/mission" title="Mission">Mission</a></li>
+                    <li><a href="http://libguides.bc.edu/aboutus/employment" title="Employment">Employment</a></li>
+                    <li><a href="http://libguides.bc.edu/services/technologyandspaces/policies/gifts" title="Donations">Donations</a></li>
+                    <li><a href="http://www.bc.edu/content/dam/files/libraries/2014/PDFs/staffdirectory.pdf" title="Staff Directory PDF">Staff Directory</a></li>
+                    <li><a href="#">Site Index</a></li>
+                    <li><a href="https://bcwiki.bc.edu/display/UL/University+Libraries+Home" title="Staff wiki">Staff Wiki</a></li>
+                    </ul>
+                    
+                      <ul class="col-sm-3 menu_list">
+                     <li><h4>Related Departments</h4></li>
+                    <li><a href="#">Connors Family Learning Center</a></li>
+                    <li><a href="#">Center for Teaching Excellence</a></li>
+                    <li><a href="#">Media Technology Services</a></li>
+                    </ul>
+                    
+                     <div class="about_pane">
+                         <h4>Latest News</h4>
+                         <img src="https://dl.dropboxusercontent.com/u/4841356/bostoncollege/images/fakethumb.jpg">
+                         <p><strong>Fake News Story Title</strong><br />
+                         <a href="#">Read more?</a> </p>
+                         </div>
+                         
+                          <div class="about_pane">
+                         <h4>Featured Exhibit</h4>
+                          <img src="https://dl.dropboxusercontent.com/u/4841356/bostoncollege/images/fakethumb.jpg">
+                          <p><strong>Fake Exhibit Title</strong><br />
+                         <a href="#">Read more?</a> </p>
+                       </div>
+
+                    </div>
+                       <div class="row bottom_row">
+                    <div class="more"><a href="http://libguides.bc.edu/aboutus" title="About Us">More About Us ...</a></div>
+                       </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            
+            
+            <!-- FEEDBACK FORM EMAIL MAYBE -->
+               <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle buttonone">Feedback</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <div class="yamm-content">
+                    <div class="row row_feedback">
+                    <h4>Feedback</h4>
+
+
+                     <!-- The action and class are required. -->
+                        <form method="post" class="website-feedback remail-form" action="website-feedback">
+
+                         <ul class="col-sm-4">
+                         <div class="form_section">
+                        <label for="feedback-name">Name:</label>
+                        <input class="menu_input" type="text" value="" id="feedback-name" name="name">
+                        </div>
+                        <div class="form_section">
+                        <label for="feedback-email">Email:</label>
+                        <input class="menu_input" type="text" value="" id="feedback-email" name="email"><br>
+                        </div>
+                        </ul>
+
+                        <ul class="col-sm-4">
+                        <div class="form_section">
+                         <label for="feedback-name">Page URL:</label>
+                        <input class="menu_input" type="text" value="" id="feedback-name" name="page_url"><br>
+                        </div>
+
+                        <div class="form_section">
+                        <label for="feedback-name">I am a:</label>
+                        <select name="Info">
+                        <option value="student">Student</option>
+                        <option value="faculty">Faculty</option>
+                        <option value="staff">Staff</option>
+                        <option value="guest">Guest</option>
+                        </select>
+                        </div>
+                        </ul>
+
+                        <ul class="col-sm-4">
+                        <div class="form_section">
+                        <label for="feedback-text">Your question or comment</label>
+                        <br>
+                        <textarea name="feedback" id="feedback-text"></textarea>
+                        </div>
+                        <input class="feedback_button" type="submit">
+                        </ul>
+                        <!-- END form fields -->
+
+                        <!-- REQUIRED -->
+                        <input type="hidden" value="website-feedback" name="form-to[]">
+
+                        <!-- Script to block spam-bots. Requires JQuery. -->
+                        <script src="http://libstaff.bc.edu/remail/nospam.js"></script>
+
+                        <!-- END REQUIRED --> 
+
+                    </div>     
+                    
+                  </div>
+                </li>
+              </ul>
+            </li> 
+                   
+ <!-- Hours full screen button. HIDING FOR NOW SO WE CAN TEST A FEEDBACK BUTTON.
+            <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle buttonone">Hours &amp; Events</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <div class="yamm-content">
+                    <div class="row">
+                      
+                         <img src="https://dl.dropboxusercontent.com/u/4841356/LG_final/images/fakehours.png" title="fake hours">
+                    </div>     
+                    
+                          <div class="row bottom_row">
+                       <div class="more"><a href="#">Full semester's hours</a></div>    
+                         </div>
+                    
+                  </div>
+                </li>
+              </ul>
+            </li> -->
+                   
+                      
+          </ul>
+        </div>
+      </div>
+    </div>
+
+     <div class="pageurl">
+    <!--   <p>URL:  {{guide_url}} </p>-->
+     <p><a href="{{login_url}}">Login to LibApps</a>.</p>
+    </div> 
+           
+    {{breadcrumbs}} 
+
+</div>
+      <!-- END MENU -->      
+
+<div id="midlevelcontainer">
+
+<!-- THIS IS REALLY IMPORTANT. IT'S THE BAR WITH EVERY TOOL ON IT. DO NOT EXCLUDE -->
+	{{ADMIN_CMD_BAR}} 
+
+<!-- THIS DIV DISPLAYS THE VIEW/EDIT/PUBLISH BUTTONS WHEN EDITING. -->
+    <div id="s-lg-guide-header-search"> 
+     </div>
+
+	<div id="guidetitle">
+   <h1>{{guide_title}}</h1><div class="colon">:</div> <h2>{{page_title}}</h2>
+    </div>
+    
+    <div id="s-lg-guide-desc-container" class="pad-top-med">
+                    <!--<span id="s-lg-guide-description">{{guide_description}}</span>-->
+                </div>
+
+	<!--THIS DIV CLASS DISPLAYS THE PAGE URL, PAGE, AND COLUMN LAYOUT OPTIONS.
+	SHOULD HAVE NO EFFECT ON PUBLIC SIDE.
+	-->
+	<div id="s-lg-guide-tabs-title-bar" class="container s-lib-side-borders"></div>
+
+    <!-- THIS IS THE CONTENT AND COLUMNS. -->
+
+<div id="content_container">
+	
+    <!-- THIS DISPLAYS THE TABS, IF THERE ARE TABS
+	CURRENTLY A HACKED SIDE NAV. -->
+    
+    
+    <div id="s-lg-guide-tabs"><nav>
+	 <ul class="nav nav-tabs">
+	{{guide_nav}}
+     </ul>
+       </nav>
+    </div>
+    
+  
+    
+    
+    <!-- I WONDER WHAT THIS IS? IF ONLY THERE WAS SOME CLUE. -->   
+	<div id="content">
+    {{content}}
+    {{page_prev_next_links}}
+	</div>
+</div>  
+
+<!-- THIS MAKES A 'BACK TO TOP' ARROW APPEAR -->
+			<div id="s-lib-scroll-top" title="Back to Top">
+				<span class="fa-stack fa-lg">
+				  <i class="fa fa-square-o fa-stack-2x"></i>
+				  <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+				</span>
+			</div>   
+
+<!-- THIS LINE OF CODE IS RESPONSIBLE FOR THE POP UP BOXES DURING EDITING.
+REMOVING THIS MEANS DOOM FOR ALL -->
+						<div id="s-lib-alert" title="">
+                            <div id="s-lib-alert-content"></div>
+                       </div>  
+
+</div>
+<!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
+{{public_footer}}
+
+</div>
+	</body>
