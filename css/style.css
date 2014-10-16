@@ -53,6 +53,16 @@ a:hover, a:active {
     text-decoration: underline;
 }
 
+/*THIS IS A TEMPORARY STYLE, USED TO INDICATE THAT A LINK IS NOT CLICKABLE */
+.grayed {
+color: #ababab !important;
+ cursor: default;
+}
+
+.yamm .dropdown-menu li > a.grayed:hover {
+background: #ffffff;
+}
+
 b, strong {
     font-family: asapbold;
     font-weight: normal;
