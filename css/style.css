@@ -16,7 +16,7 @@ asapbold
 */
 
 body {
-    background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/background_general.png") no-repeat #fff 50% 50%;
+    background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/backgrounds/bg_generic.png") no-repeat #fff 50% 50%;
     background-size: cover;
     background-attachment: fixed;
     font-family: asapregular !important;
@@ -27,7 +27,7 @@ body {
 
 @media ( max-width: 1199px ) {
     body {
-        background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/background_general.png") no-repeat #fff 0% 0%;
+        background: url("https://dl.dropboxusercontent.com/u/4841356/LG_final/images/backgrounds/bg_generic.png") no-repeat #fff 0% 0%;
         background-size: cover;
         background-attachment: fixed;
     }
@@ -481,6 +481,7 @@ img.center {
     background: #939393;
     border: 0;
     padding: 2px;
+    width: 100%;
 }
 
 #top_search .input-group .form-control:first-child {
@@ -496,7 +497,7 @@ img.center {
     border-radius: 0 0 0 0;
     border-style: none solid;
     border-width: 0 2px;
-    height: 25px;
+    height: 30px;
     margin-left: 0;
     width: 60px;
 }
@@ -516,11 +517,11 @@ img.center {
     color: #555555;
     display: block;
     font-size: 14px;
-    height: 25px;
+    height: 30px;
     line-height: 1.42857;
     padding: 6px 12px;
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-    width: 100%;
+    width: 85%;
 }
 
 #top_search .glyphicon {
