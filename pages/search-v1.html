@@ -1,0 +1,202 @@
+<body class="s-lg-guide-body">
+    <style>/* =========================================== */
+        /* bootstrap overrides */
+        /* =========================================== */
+        #s-lg-tabs-container .nav-tabs > li > a,
+        #s-lg-tabs-container .nav-pills > li > a {
+            border: 1px solid transparent;
+            -webkit-border-radius: 4px 4px 0 0;
+            -moz-border-radius: 4px 4px 0 0;
+            border-radius: 4px 4px 0 0;
+            background-color: #577CBE;
+            color: #fff;
+            font-weight: bold;
+            padding: 4px 15px;
+        }
+        #s-lg-tabs-container .nav-tabs {
+            border-bottom: 0;
+        }
+        #s-lg-tabs-container .nav-tabs > li#s-lg-admin-tab-add > a {
+            -webkit-border-radius: 4px 4px 0 0;
+            -moz-border-radius: 4px 4px 0 0;
+            border-radius: 4px 4px 0 0;
+        }
+
+        #s-lg-tabs-container .nav-tabs > li > a:hover,
+        #s-lg-tabs-container .nav-pills > li > a:hover {
+            border: 1px solid transparent;
+            -webkit-border-radius: 4px 4px 0 0;
+            -moz-border-radius: 4px 4px 0 0;
+            border-radius: 4px 4px 0 0;
+            background-color: #70A1EB;
+            color: #fff;
+        }
+
+        #s-lg-tabs-container .nav-tabs > .active > a,
+        #s-lg-tabs-container .nav-pills > .active > a {
+            color: #fff;
+            cursor: default;
+            background-color: #70A1EB;
+            border: 1px solid transparent;
+            -webkit-border-radius: 4px 4px 0 0;
+            -moz-border-radius: 4px 4px 0 0;
+            border-radius: 4px 4px 0 0;
+            border-bottom-color: transparent;
+            font-weight: bold;
+        }
+        
+        #s-lg-tabs-container .nav-tabs > .active > a:hover, 
+        #s-lg-tabs-container .nav-pills > .active > a:hover {
+            color: #fff;
+            cursor: default;
+            background-color: #70A1EB;
+            border: 1px solid transparent;
+            -webkit-border-radius: 4px 4px 0 0;
+            -moz-border-radius: 4px 4px 0 0;
+            border-radius: 4px 4px 0 0;
+            border-bottom-color: transparent;
+            font-weight: bold;
+        }
+        #s-lg-tabs-container .nav .dropdown-toggle .caret {
+            border-top-color: #e1e1e1;
+        }#s-lg-guide-tabs-title-bar { border-top: 1px solid #70A1EB; }
+        .s-lib-box {
+            border-color: #cccccc;
+            border-width: 1px;
+            box-shadow: 0 8px 6px -6px #AAAAAA;border-radius: 4px 4px 4px 4px;
+            background-color: #fff;
+        }
+        .s-lib-box-std .s-lib-box-title {
+            background-color: #f1f1f1;background-image: none;
+            color: #888;
+            border-bottom: 1px solid #cccccc;
+        }
+        .s-lib-box .s-lib-box-title {
+            background-color: #f1f1f1;background-image: none;
+            color: #888;
+            border-bottom: 1px solid #cccccc;;
+            border-radius: 3px 3px 0px 0px;
+        }
+        .s-lib-box .s-lg-box-footer {
+        border-radius: 0px 0px 3px 3px;
+        }
+    </style>
+    <!-- BEGIN: CUSTOM HEAD SYSTEM JS/CSS -->
+    <!-- THIS IS THE SCRIPT THAT WILL ADD A CLASS TO THE BODY, TO ASSIST IN REMOVING
+        DIVS BASED ON WHETHER WE ARE IN AUTHOR OR PUBLIC VIEW -->  
+    <script>
+    $(document).ready(function(){((window.location.pathname).indexOf('admin_c.php')>-1)?$('body').addClass('edit-mode'):$('body').addClass('view-mode');});
+    </script>
+    <link rel="stylesheet" type="text/css" media="screen, projection, print" href="https://mlib.bc.edu/libguides2/group_libguidesv1/style.css" />
+
+    <!-- BEGIN: Page Header -->
+    {{public_header}}
+    <div id="lb_header">
+        <a href="http://www.bc.edu/libraries"><h1>Boston College University Libraries</h1></a>
+        <div class="header_right">
+            <ul>
+                <li><a href="http://www.bc.edu/libraries/help/subject.html">Subject Help</a></li>
+                <li><a href="http://www.bc.edu/holmes">Holmes Search</a></li>
+                <li><a href="http://www.bc.edu/databases">Databases</a></li>
+                <li><a href="http://bc.edu/libraries/help/subject/feedback.html">Feedback</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- END: Page Header -->
+
+    <!-- BEGIN: Guide Info Header -->
+    <div id="s-lg-guide-header" class="container s-lib-header s-lib-side-borders">
+        <div id="s-lib-bc">
+            {{breadcrumbs}}
+        </div>
+        <!--div class="pull-right">
+            <div id="s-lg-guide-header-search">
+                {{guide_search}}
+            </div>
+        </div-->
+        <div id="s-lg-guide-header-info">
+            <h1 id="s-lg-guide-name">{{page_title}}</h1>
+            <div id="s-lg-guide-desc-container" class="pad-top-med">
+                <span id="s-lg-guide-description">{{page_description}}</span>
+            </div>
+        </div>
+    </div>
+    <!-- END: Guide Info Header -->
+
+    <!--div id="s-lg-tabs-container" class="container s-lib-side-borders pad-top-med">
+        <div id="s-lg-guide-tabs" class="tabs">
+            <ul class="nav nav-tabs">
+                {{guide_nav}}
+            </ul>
+        </div>
+    </div-->
+    <div id="s-lg-guide-tabs-title-bar" class="container s-lib-side-borders"></div>
+
+    <!-- BEGIN: content -->
+    <div id="s-lib-public-main" class="s-lib-main container s-lib-side-borders">
+        <section>
+            <div  id="s-lg-srch-nav-col"  class="row">
+                <div  id="col0"  class="col-md-12 center">
+                    {{more_options}}
+                    {{content_box_search}}
+                </div>
+            </div>
+        </section>
+        <section>
+            <div  id="s-lg-srch-cols"  class="row">
+                <div  id="col1"  class="col-md-4 center">
+                    {{search_filters}}
+                </div>
+                <div  id="col2"  class="col-md-8 center">
+                    {{search_results}}
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- END: content -->
+
+    <!-- BEGIN: Page Footer -->
+    <div id="s-lib-footer-public" class="s-lib-footer footer container  s-lib-side-borders">
+        <div id="s-lg-guide-header-meta" class="pad-top-sm pad-left-med clearfix">
+            <ul id="s-lg-guide-header-attributes" class="">
+                <!--li id="s-lg-guide-header-updated" class="s-lg-h-separator">
+                    <span class="s-lg-guide-label">Last Updated:</span> <span class="s-lg-text-greyout">{{page_updated}}</span>
+                </li-->
+                <!--li id="s-lg-guide-header-url" class="s-lg-h-separator">
+                    <span class="s-lg-guide-label">URL:</span> <span class="s-lg-text-greyout">{{page_url}}</span>
+                </li-->
+                <li id="s-lg-guide-print-url">
+                    <a href="{{guide_print_url}}"><i class="fa fa-print" title="Print Page"></i> Print Page</a>
+                </li>
+            </ul>
+            <div id="s-lib-footer-login-link" class="pull-right pad-right-med">
+                <a href="{{login_url}}">Login to LibApps</a>.
+            </div>
+        </div>
+        <div class="pad-bottom-sm clearfix">
+            <div id="s-lib-footer-support-link" class="pull-right pad-right-med">
+            </div>
+            <!--div id="s-lg-guide-header-subjects" class="pad-top-sm pad-left-med pad-right-med pull-left">
+                {{guide_subjects}}
+            </div-->
+            <!--div id="s-lg-guide-header-tags" class="pad-top-sm pad-left-med">
+                {{guide_tags}}
+            </div-->
+        </div>
+    </div>
+    <!-- END: Page Footer -->
+    
+    <div id="s-lib-scroll-top" title="Back to Top">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-square-o fa-stack-2x"></i>
+          <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+        </span>
+    </div>
+    <div id="s-lib-alert" title="">
+        <div id="s-lib-alert-content"></div>
+   </div>
+
+    <!-- BEGIN: Custom Footer -->
+    {{public_footer}}
+    <!-- END: Custom Footer -->
+</body>
