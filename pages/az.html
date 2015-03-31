@@ -810,10 +810,10 @@
 
             <!-- Hours -->
             <div class="f_column column_hours no_bottom_border no_right_border">
-                <h1><a href="#">Today's Library Hours</a></h1>
+                <h1><a href="http://libguides.bc.edu/hours">Hours</a></h1>
                 <!-- LIBCAL HOURS API-->
                 <div id="all_hours_container"></div>
-                <div id="oconnor_hours_row"><ul class="lib_hours"><li class="name">O'Connor Library</li><li class="hours"><a href="mailto:karre@bc.edu">by appointment</a> only</li></ul></div>
+                <div id="oconnor_hours_row"><ul class="lib_hours"><li class="name"><a href="http://libguides.bc.edu/oconnor">O'Connor Library</a></li><li class="hours"><a href="mailto:karre@bc.edu">by appointment</a> only</li></ul></div>
             </div>
         </div>
         <!-- END FOOTER -->
@@ -854,9 +854,16 @@
         <!-- Script to block spam-bots. Requires JQuery. -->
         <script src="//library.bc.edu/theme/js/nospam.js"></script>
         <script src="//library.bc.edu/theme/js/libhours.js"></script>
-        <script src="//library.bc.edu/theme/bcbento/js/typeahead.bundle.min.js"></script>
-        <script src="//library.bc.edu/theme/bcbento/js/bclib-typeahead.js"></script>
+        <!--script src="//library.bc.edu/theme/bcbento/js/typeahead.bundle.min.js"></script-->
+        <!--script src="//library.bc.edu/theme/bcbento/js/bclib-typeahead.js"></script-->
         <!-- END: Custom Footer -->
+
+        <!-- JS for expanding search bar -->
+        <script src="//library.bc.edu/theme/js/classie.js"></script>
+        <script src="//library.bc.edu/theme/js/uisearch.js"></script>
+        <script>
+            new UISearch( document.getElementById( 'sb-search' ) );
+        </script>
 
         <script>
         $(document).ready(function() {
