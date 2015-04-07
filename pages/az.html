@@ -115,7 +115,7 @@
         </div>
 
         <div id="sb-search" class="sb-search">
-            <form method="get" action="http://libdev.bc.edu/search">
+            <form method="get" action="http://library.bc.edu/search">
                 <input class="sb-search-input" placeholder="Search the BC Libraries" type="text" value="" name="any" id="search">
                 <input class="sb-search-submit" type="submit" value="">
                 <span class="sb-icon-search"></span>
@@ -201,7 +201,7 @@
                                                     <li><a href="http://libguides.bc.edu/course-reserves" title="Course Reserves">Course Reserves</a></li>
                                                     <li><a href="http://libguides.bc.edu/library-instruction" title="Library Instruction">Library Instruction</a></li>
                                                     <li><a href="http://libguides.bc.edu/media-services" title="Media Services">Media Services</a></li>
-                                                    <li><a href="http://libguides.bc.edu/digital-scholarship" title="Digital Scholarship">Digital Scholarship</a></li>
+                                                    <li><a href="/digschol" title="Digital Scholarship">Digital Scholarship</a></li>
                                                     <li><a href="http://libguides.bc.edu/accessibility" title="Accessibility">Accessibility</a></li>
                                                 </ul>
 
@@ -648,7 +648,7 @@
                             </li>
 
                             <!-- MY ACCOUNTS BUTTON -->
-                            <li style="float: right;"><a href="http://libguides.bc.edu/my-accounts"><i class="fa fa-user"></i> My Accounts</a>
+                            <li id="accounts"><a href="http://libguides.bc.edu/my-accounts"><i class="fa fa-user"></i> My Accounts</a>
                             </li>
                         </ul>
                     </div>
@@ -722,25 +722,6 @@
         </div>
         <!-- END: content -->
         <!-- BEGIN: Page Footer -->
-        <!--div id="s-lib-footer-public" class="s-lib-footer footer container  s-lib-side-borders">
-            <div>
-                <div id="s-lib-footer-brand">
-                    Powered by <a href="http://www.springshare.com">Springshare</a>.
-                </div>
-                <div id="s-lib-footer-rights">
-                    All rights reserved.
-                </div>
-                <div id="s-lib-footer-login-link">
-                    <a href="{{login_url}}">Login to LibApps</a>.
-                </div>
-            </div>
-            <div>
-                <div id="s-lib-footer-print-link">
-                    View this page in a format suitable for <a href="#">printers and screen-readers</a>.
-                </div>
-                <div id="s-lib-footer-support-link"></div>
-            </div>
-        </div-->
         <!-- END: Page Footer -->
         <div id="s-lib-alert" title="">
             <div id="s-lib-alert-content"></div>
@@ -829,7 +810,7 @@
                     e.stopPropagation()
                 });
 
-                $('.dropdown-toggle').dropdownHover({delay: "1000",hoverDelay: "100"});
+                $('.dropdown-toggle').dropdownHover({delay: "300",hoverDelay: "50"});
 
                 // Slide effect lifted from http://stackoverflow.com/a/19339162/122629.
                 $('.dropdown').on('show.bs.dropdown', function (e) {
@@ -854,8 +835,6 @@
         <!-- Script to block spam-bots. Requires JQuery. -->
         <script src="//library.bc.edu/theme/js/nospam.js"></script>
         <script src="//library.bc.edu/theme/js/libhours.js"></script>
-        <!--script src="//library.bc.edu/theme/bcbento/js/typeahead.bundle.min.js"></script-->
-        <!--script src="//library.bc.edu/theme/bcbento/js/bclib-typeahead.js"></script-->
         <!-- END: Custom Footer -->
 
         <!-- JS for expanding search bar -->
