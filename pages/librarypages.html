@@ -63,7 +63,7 @@
                                                     <li><h4><a href="http://libguides.bc.edu/books-media-more">Books, Media, and more</a></h4></li>
                                                     <li><a href="http://www.bc.edu/holmes">Holmes Simple Search</a></li>
                                                     <li><a href="http://bc-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?vid=bclib&mode=Advanced">Holmes Advanced Search</a></li>
-                                                    <li><a href="http://bclib.bc.edu/libsearch/bc/collection/o+neill+popular">Popular Reading</a></li>
+                                                    <li><a href="http://bclib.bc.edu/libsearch/bc/collection/o+neill+popular">Popular Books &amp; DVDs</a></li>
                                                     <li><a href="http://arc.bc.edu/reserves">Course Reserves</a></li>
                                                     <li><a href="http://libguides.bc.edu/dataportal">Data/GIS/Statistics</a></li>
                                                 </ul>
@@ -71,9 +71,8 @@
                                                 <!-- Articles -->
                                                 <ul class="col-sm-3 menu_list">
                                                     <li><h4><a href="http://libguides.bc.edu/articles">Articles</a></h4></li>
-                                                    <li><a href="http://bc.edu/databases">Search Databases</a></li>
-                                                    <li><a href="http://libguides.bc.edu/az.php">Browse A-Z Database list</a></li>
-                                                    <li><a href="http://bclib.bc.edu/a-to-z">Search Journals</a></li>
+                                                    <li><a href="http://libguides.bc.edu/az.php?a=a">Databases</a></li>
+                                                    <li><a href="http://bclib.bc.edu/a-to-z">Journals</a></li>
                                                     <li><a href="http://bc-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?vid=bclib&tab=pci_only">Holmes article search</a></li>
                                                 </ul>
 
@@ -81,6 +80,7 @@
                                                 <ul class="col-sm-3 menu_list">
                                                     <li><h4><a href="http://libguides.bc.edu/outside-bc">Outside BC</a></h4></li>
                                                     <li><a href="http://bc.worldcat.org">WorldCat<p class="tuck">Search Boston College and beyond</p></a></li>
+                                                    <li><a href="https://scholar.google.com">Google Scholar</a></li>
                                                 </ul>
 
                                                 <!-- Other -->
@@ -606,7 +606,7 @@
         <div id="s-lg-guide-tabs-title-bar" class="container s-lib-side-borders"></div>
 
         <!-- THIS IS THE CONTENT AND COLUMNS. -->
-
+        <a name="s-lg-guide-main" tabindex="-1"></a>
         <div id="content_container">
             <!-- THIS DISPLAYS THE TABS, IF THERE ARE TABS
             CURRENTLY A HACKED SIDE NAV. -->
@@ -619,11 +619,12 @@
             </div>
 
             <!-- I WONDER WHAT THIS IS? IF ONLY THERE WAS SOME CLUE. -->
-            <a name="s-lg-guide-main"/>
-            <div id="content">
-                {{content}}
-                {{page_prev_next_links}}
-            </div>
+            
+               <div id="content">
+                   {{content}}
+                   {{page_prev_next_links}}
+               </div>
+            
         </div>  
 
         <!-- THIS MAKES A 'BACK TO TOP' ARROW APPEAR -->
