@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="//library.bc.edu/theme/bcbento/css/app.css" />
 <link rel="stylesheet" href="//library.bc.edu/theme/css/fonts.css" />
 <link rel="stylesheet" href="//library.bc.edu/theme/css/style.css" />
+<link rel="stylesheet" href="//library.bc.edu/theme/css/icomoon.css"/>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 <script type="text/javascript" src="//library.bc.edu/theme/js/bootstrap-hover-dropdown.min.js"></script>
 <script type="text/javascript" src="//library.bc.edu/theme/js/jquery.hoverIntent.minified.js"></script>
@@ -274,7 +276,7 @@
 
                                                     <h4 id="h4mobile">Help from anywhere</h4>
                                                     <!-- FAQ PANE BEGINS HERE -->
-                                                    <div id="faq_pane" class="item_pane col-sm-4">
+                                                    <div id="faq_pane" class="item_pane col-sm-5">
                                                         <div class="pane_info">
                                                             <h2>Frequently Asked Questions</h2>
                                                             <a href="http://answers.bc.edu/index.php"><img src="//library.bc.edu/theme/img/askicon_ask.png" alt="Library FAQ icon"></a>
@@ -284,7 +286,7 @@
                                                     <!-- END FAQ PANE. RIGHT UP THERE-->
 
                                                     <!-- TEXT PANE BEGINS HERE -->
-                                                    <div id="text_pane" class="item_pane col-sm-4">
+                                                    <div id="text_pane" class="item_pane col-sm-5">
                                                         <div class="pane_info">
                                                             <h2>Text us</h2>
                                                             <img src="//library.bc.edu/theme/img/askicon_text.png" alt="Text Us icon">
@@ -294,7 +296,7 @@
                                                     <!-- END TEXT PANE. RIGHT UP THERE-->
 
                                                     <!-- CHAT PANE BEGINS HERE -->
-                                                    <div id="chat_pane" class="item_pane col-sm-4">
+                                                    <div id="chat_pane" class="item_pane col-sm-5">
                                                         <div class="pane_info">
                                                             <h2>Chat with us</h2>
                                                             <a href="#" onClick="window.open('https://libraryh3lp.com/chat/ajcu-consortium@chat.libraryh3lp.com?skin=19965&title=Boston College/AJCU+Librarians&profile=cs-bostoncoll','chat','resizable=1,width=320,height=300'); return false;" style="cursor: pointer;"><img src="//library.bc.edu/theme/img/askicon_lib.png" alt="Chat With Us icon"></a>
@@ -304,7 +306,7 @@
                                                     <!-- END CHAT PANE. RIGHT UP THERE-->
 
                                                     <!-- EMAIL PANE BEGINS HERE -->
-                                                    <div id="email_pane" class="item_pane col-sm-4">
+                                                    <div id="email_pane" class="item_pane col-sm-5">
                                                         <div class="pane_info">
                                                             <h2>Send us an Email</h2>
                                                             <a href="http://answers.bc.edu/q.php"><img src="//library.bc.edu/theme/img/askicon_email.png" alt="Send Us An Email icon"></a>
@@ -750,7 +752,18 @@
         <!-- BEGIN: Custom Footer -->
         <!-- BEGIN FOOTER -->
         <div id="footer">
-            <hr>
+            <hr/>
+            <div id="s-lg-guide-header-meta" class="pad-left-med clearfix">
+                <ul id="s-lg-guide-header-attributes" class="">
+                    <li id="s-lg-guide-header-updated" class="" style="margin-right:10px;">
+                        <span class="s-lg-guide-label">Last Updated:</span> <span class="s-lg-text-greyout">June 4, 2015 10:00 AM</span>
+                    </li>
+                </ul>
+                <div id="s-lib-footer-login-link" class="pull-right pad-right-med">
+                    <a href="{{login_url}}">Staff Login</a>
+                </div>
+            </div>
+            <hr/>
             <div class="f_column">
             <!-- Address -->
                 <div id="f_address">
@@ -762,7 +775,7 @@
                     <strong>Circulation:</strong> 617-552-8038</p>
                 </div>
 
-                <!-- Media -->
+                <!-- Media
                 <div id="f_media">
                     <ul>
                         <li><a href="#" title="Blogs"><span id="icon_blogs">Blogs</span></a></li>
@@ -770,6 +783,17 @@
                         <li><a href="https://www.flickr.com/photos/bc-burnslibrary/" title="Flickr"><span id="icon_flickr">Flickr</span></a></li>
                         <li><a href="https://twitter.com/bclibraries" title="Twitter"><span id="icon_twitter">Twitter</span></a></li>
                         <li><a href="https://www.youtube.com/user/BostonCollegeLib" title="YouTube"><span id="icon_youtube">YouTube</span></a></li>
+                    </ul>
+                </div> -->
+
+                <!-- SOCIAL MEDIA ICONS -->
+                <div id="socialmedia">
+                    <ul>
+                        <li><a href="http://library.bc.edu/feeds/bc-libraries.rss.xml" title="News RSS feed" class="mediablock" id="media_news"></a></li>
+                        <li><a href="https://www.facebook.com/bostoncollegelibraries" title="Boston College Library Facebook Link" class="mediablock" id="media_facebook"></a></li>
+                        <li><a href="https://www.flickr.com/photos/bc-burnslibrary/" title="Burns Library Flickr Page" class="mediablock" id="media_flickr"></a></li>
+                        <li><a href="https://twitter.com/bclibraries" title="Boston College Librarie's on Twitter" class="mediablock" id="media_twitter"></a></li>
+                        <li><a href="https://www.youtube.com/user/BostonCollegeLib" title="Boston College on YouTube" class="mediablock" id="media_youtube"></a></li>
                     </ul>
                 </div>
 
