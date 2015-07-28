@@ -71,7 +71,7 @@
                                                 <!-- Articles -->
                                                 <ul class="col-sm-3 menu_list">
                                                     <li><h4><a href="http://libguides.bc.edu/articles">Articles</a></h4></li>
-                                                    <li><a href="http://libguides.bc.edu/az.php?a=a">Databases</a></li>
+                                                    <li><a href="http://libguides.bc.edu/az.php">Databases</a></li>
                                                     <li><a href="http://bclib.bc.edu/a-to-z">Journals</a></li>
                                                     <li><a href="http://bc-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?vid=bclib&tab=pci_only">Holmes article search</a></li>
                                                 </ul>
@@ -111,7 +111,7 @@
                                                 <!-- Services -->
                                                 <ul class="col-sm-3 menu_list">
                                                     <li><h4><a href="http://libguides.bc.edu/services" title="Services">Services</a></h4></li>
-                                                    <li><a href="http://libguides.bc.edu/borrowing-renewing" title="Borrowing">Borrowing</a></li>
+                                                    <li><a href="http://libguides.bc.edu/borrowing" title="Borrowing">Borrowing</a></li>
                                                     <li><a href="http://libguides.bc.edu/request-materials" title="Requesting">Requesting</a></li>
                                                     <li><a href="http://libguides.bc.edu/course-reserves" title="Course Reserves">Course Reserves</a></li>
                                                     <li><a href="http://libguides.bc.edu/library-instruction" title="Library Instruction">Library Instruction</a></li>
@@ -141,7 +141,7 @@
                                                 <!-- Spaces -->
                                                 <ul class="col-sm-3 menu_list end">
                                                     <li><h4><a href="http://libguides.bc.edu/spaces" title="Spaces">Spaces</a></h4></li>
-                                                    <li><a href="http://libguides.bc.edu/reserve-study-room" title="Reserve a Study Room">Reserve a Study Room</a></li>
+                                                    <li><a href="https://arc.bc.edu:8443/BookIt30/ShowTable30.do" title="Reserve a Study Room">Reserve a Study Room</a></li>
                                                     <li><a href="http://libguides.bc.edu/study-spaces" title="Study Spaces">Study Spaces</a></li>
                                                     <li><a href="http://libguides.bc.edu/digital-studio" title="Digital Studio">Digital Studio</a></li>
                                                 </ul>
@@ -172,7 +172,8 @@
 
                                                 <div class="iteminfo-content get-help-menu">
                                                     <ul class="col-sm-3 item-list">
-                                                        <li><h4><a href="http://libguides.bc.edu/ask-a-librarian">Ask A Librarian</a></h4></li>
+                                                        <li><h4><a href="http://libguides.bc.edu/reference-desk">Ask A Librarian</a></h4></li>
+                                                        <li class="ref_pane"><a href="http://libguides.bc.edu/reference-desk">Visit a Reference Desk</a></li>
                                                         <li class="faq_pane"><a href="http://answers.bc.edu/index.php">Frequently Asked Questions</a></li>
                                                         <li class="text_pane"><a href="#">Text us</a></li>
                                                         <li class="chat_pane"><a href="#" onClick="window.open('https://libraryh3lp.com/chat/ajcu-consortium@chat.libraryh3lp.com?skin=19965&title=Boston College/AJCU+Librarians&profile=cs-bostoncoll',     'chat', 'resizable=1,width=320,height=300'); return false;" style="cursor: pointer;">Chat with us</a></li>
@@ -181,51 +182,66 @@
                                                     </ul>
 
                                                     <h4 id="h4mobile">Help from anywhere</h4>
-                                                    <!-- FAQ PANE BEGINS HERE -->
-                                                    <div id="faq_pane" class="item_pane col-sm-4">
+
+                                                    <!-- REFERENCE PANE BEGINS HERE -->
+                                                    <div id="ref_pane" class="item_pane col-sm-5">
                                                         <div class="pane_info">
-                                                            <h2>Frequently Asked Questions</h2>
-                                                            <a href="http://answers.bc.edu/index.php"><img src="//library.bc.edu/theme/img/askicon_ask.png" alt="Library FAQ icon"></a>
+                                                            <a href="http://libguides.bc.edu/reference-desk">
+                                                            <div class="askicon ask_ref"></div>
+                                                            <h2>Visit a Reference Desk</h2></a>
+                                                            <p>Ask us anything! We can help you find answers to your questions, resources for your projects, or refer you to other experts.</p>
+                                                        </div>
+                                                    </div>
+                                                    <!-- END REF PANE. RIGHT UP THERE-->
+
+                                                    <!-- FAQ PANE BEGINS HERE -->
+                                                    <div id="faq_pane" class="item_pane col-sm-5">
+                                                        <div class="pane_info">
+                                                            <a href="http://answers.bc.edu/index.php">
+                                                            <div class="askicon ask_faq"></div>
+                                                            <h2>Frequently Asked Questions</h2></a>
                                                             <p>Get answers to frequently asked questions on the <a href="http://answers.bc.edu/index.php">Library's FAQ</a>.</p>
                                                         </div>
                                                     </div>
                                                     <!-- END FAQ PANE. RIGHT UP THERE-->
 
                                                     <!-- TEXT PANE BEGINS HERE -->
-                                                    <div id="text_pane" class="item_pane col-sm-4">
+                                                    <div id="text_pane" class="item_pane col-sm-5">
                                                         <div class="pane_info">
+                                                            <div class="askicon ask_txt"></div>
                                                             <h2>Text us</h2>
-                                                            <img src="//library.bc.edu/theme/img/askicon_text.png" alt="Text Us icon">
                                                             <p>Text 617-229-5222 for quick questions during weekday reference service hours.</p>
                                                         </div>
                                                     </div>
                                                     <!-- END TEXT PANE. RIGHT UP THERE-->
 
                                                     <!-- CHAT PANE BEGINS HERE -->
-                                                    <div id="chat_pane" class="item_pane col-sm-4">
+                                                    <div id="chat_pane" class="item_pane col-sm-5">
                                                         <div class="pane_info">
-                                                            <h2>Chat with us</h2>
-                                                            <a href="#" onClick="window.open('https://libraryh3lp.com/chat/ajcu-consortium@chat.libraryh3lp.com?skin=19965&title=Boston College/AJCU+Librarians&profile=cs-bostoncoll','chat','resizable=1,width=320,height=300'); return false;" style="cursor: pointer;"><img src="//library.bc.edu/theme/img/askicon_lib.png" alt="Chat With Us icon"></a>
+                                                            <a href="#" onClick="window.open('https://libraryh3lp.com/chat/ajcu-consortium@chat.libraryh3lp.com?skin=19965&title=Boston College/AJCU+Librarians&profile=cs-bostoncoll','chat','resizable=1,width=320,height=300'); return false;" style="cursor: pointer;">
+                                                            <div class="askicon ask_chat"></div>
+                                                            <h2>Chat with us</h2></a>
                                                             <p>24/7 research help from Librarians at BC and at participating Jesuit institutions across the country. <a onClick="window.open('https://libraryh3lp.com/chat/ajcu-consortium@chat.libraryh3lp.com?skin=19965&title=Boston College/AJCU+Librarians&profile=cs-bostoncoll',     'chat', 'resizable=1,width=320,height=300'); return false;" style="cursor: pointer;">Click here to chat with a Librarian.</a> </p>
                                                         </div>
                                                     </div>
                                                     <!-- END CHAT PANE. RIGHT UP THERE-->
 
                                                     <!-- EMAIL PANE BEGINS HERE -->
-                                                    <div id="email_pane" class="item_pane col-sm-4">
+                                                    <div id="email_pane" class="item_pane col-sm-5">
                                                         <div class="pane_info">
-                                                            <h2>Send us an Email</h2>
-                                                            <a href="http://answers.bc.edu/q.php"><img src="//library.bc.edu/theme/img/askicon_email.png" alt="Send Us An Email icon"></a>
+                                                            <a href="http://answers.bc.edu/q.php">
+                                                            <div class="askicon ask_email"></div>
+                                                            <h2>Send us an Email</h2></a>
                                                             <p>Get an <a href="http://answers.bc.edu/q.php">answer by email</a> within one day, Monday-Friday.</p>
                                                         </div>
                                                     </div>
                                                     <!-- END EMAIL PANE. RIGHT UP THERE-->
 
                                                     <!-- CALL PANE BEGINS HERE -->
-                                                    <div id="call_pane" class="item_pane col-sm-4">
+                                                    <div id="call_pane" class="item_pane col-sm-5">
                                                         <div class="pane_info">
+                                                            <div class="askicon ask_call"></div>
                                                             <h2>Call us</h2>
-                                                            <img src="//library.bc.edu/theme/img/askicon_phone.png" alt="Call Us icon">
                                                             <p>(617) 552-4472</p>
                                                             <p>Call a Reference Librarian during regular reference service hours.</p>
                                                         </div>
@@ -256,7 +272,7 @@
                                                     <li><a href="http://libguides.bc.edu/contact" title="Contact Us">Contact Us</a></li>
                                                     <li><a href="http://www.bc.edu/content/dam/files/libraries/2014/PDFs/staffdirectory.pdf" title="Staff Directory PDF">Staff</a></li>
                                                     <li><a href="http://libguides.bc.edu/getting-here" title="Getting Here">Getting Here</a></li>
-                                                    <li><a href="http://libguides.bc.edu/policies" title="Polices">Polices</a></li>
+                                                    <li><a href="http://libguides.bc.edu/policies" title="Policies">Policies</a></li>
                                                     <li><a href="http://libguides.bc.edu/gifts" title="Gifts">Gifts</a></li>
                                                     <li><a href="http://libguides.bc.edu/mission" title="Mission">Mission</a></li>
                                                     <li><a href="http://libguides.bc.edu/employment" title="Employment">Employment</a></li>
@@ -372,7 +388,7 @@
 
                                                             <ul class="col-sm-6">
                                                                 <li><h4>Contact Info</h4></li>
-                                                                <li class="megamenuphone"><p>(617) 552-0000</p></li>
+                                                                <li class="megamenuphone"><p>(617) 552-4434</p></li>
                                                                 <li class="megamenuemail"><p><a href="mailto:lawcirc@bc.edu">lawcirc@bc.edu</a></p></li>
                                                             </ul>
 
@@ -563,7 +579,8 @@
                             </li>
 
                             <!-- MY ACCOUNTS BUTTON -->
-                            <li id="accounts"><a href="http://libguides.bc.edu/my-accounts"><i class="fa fa-user"></i> My Accounts</a>
+                            <li class="dropdown yamm-fw" id="accounts"><a href="http://libguides.bc.edu/my-accounts">
+                            <i class="fa fa-user"></i> My Accounts</a>
                             </li>
                         </ul>
                     </div>
@@ -580,9 +597,9 @@
 
     <!-- BEGIN MIDLEVELCONTAINER -->
     <div id="midlevelcontainer">
-        <div class="pageurl">
+        <!--div class="pageurl">
             <p><a href="{{login_url}}">Staff Login</a></p>
-        </div>
+        </div-->
         {{breadcrumbs}}
 
         <!-- THIS IS REALLY IMPORTANT. IT'S THE BAR WITH EVERY TOOL ON IT. DO NOT EXCLUDE -->
@@ -611,7 +628,7 @@
             <!-- THIS DISPLAYS THE TABS, IF THERE ARE TABS
             CURRENTLY A HACKED SIDE NAV. -->
             <div id="s-lg-guide-tabs">
-                <nav>
+                <nav id="side-nav">
                     <ul class="nav nav-tabs">
                         {{guide_nav}}
                     </ul>
@@ -644,6 +661,24 @@
     </div>
     <!-- END MIDLEVELCONTAINER -->
 
+    <!-- GUIDE METADATA AND STAFF LOGIN BLOCK -->
+    <div id="s-lg-guide-header-meta">
+        <hr/>
+        <ul id="s-lg-guide-header-attributes">
+            <li id="s-lg-guide-header-updated">
+                <span class="s-lg-guide-label">Last Updated:</span> <span class="s-lg-text-greyout">{{guide_updated}}</span>
+            </li>
+            <li id="s-lg-guide-header-subjects">
+                <span class="s-lg-text-greyout">{{guide_subjects}}</span>
+            </li>
+            <li id="s-lg-guide-header-tags">
+                <span class="s-lg-text-greyout">{{guide_tags}}</span>
+            </li>
+        </ul>
+        <div id="s-lib-footer-login-link">
+            <a href="{{login_url}}">Staff Login</a>
+        </div>
+    </div>
     <!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
     {{public_footer}}
 </div>
