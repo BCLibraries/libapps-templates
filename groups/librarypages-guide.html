@@ -1,0 +1,87 @@
+<body class="s-lg-guide-body libhomepage">
+{{skip_link}}
+
+<!-- TEMPORARY CODE TO MIMIC PROPOSED BC HEADER-->
+<div id="bcheader"></div>
+
+<!-- FULL PAGE WRAPPER -->
+<div id="fullpagewrapper">
+
+    <!-- HEADER AND MEGA MENU -->
+    {{public_header}} 
+
+    <!-- BEGIN MIDLEVELCONTAINER -->
+    <div id="midlevelcontainer">
+        {{breadcrumbs}}
+
+        <!-- THIS IS REALLY IMPORTANT. IT'S THE BAR WITH EVERY TOOL ON IT. DO NOT EXCLUDE -->
+        {{ADMIN_CMD_BAR}} 
+
+        <!-- THIS DIV DISPLAYS THE VIEW/EDIT/PUBLISH BUTTONS WHEN EDITING. -->
+        <div class="pull-right">
+        {{ADMIN_MINI_CMD_BAR}}
+        </div>
+        <div id="guidetitle">
+            <h1>{{guide_title}}</h1><div class="colon">:</div> <h2>{{page_title}}</h2>
+        </div>
+        
+        <div id="s-lg-guide-desc-container" class="pad-top-med">
+            <!--<span id="s-lg-guide-description">{{guide_description}}</span>-->
+        </div>
+
+        <!--THIS DIV CLASS DISPLAYS THE PAGE URL, PAGE, AND COLUMN LAYOUT OPTIONS.
+        SHOULD HAVE NO EFFECT ON PUBLIC SIDE.
+        -->
+        <div id="s-lg-guide-tabs-title-bar" class="container s-lib-side-borders"></div>
+
+        <!-- THIS IS THE CONTENT AND COLUMNS. -->
+        <a name="s-lg-guide-main" tabindex="-1"></a>
+        <div id="content_container">
+            <!-- THIS DISPLAYS THE TABS, IF THERE ARE TABS
+            CURRENTLY A HACKED SIDE NAV. -->
+            <div id="s-lg-guide-tabs">
+                <nav id="side-nav" class="drop-down">
+                    <ul class="nav nav-tabs">
+                        {{guide_nav}}
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- I WONDER WHAT THIS IS? IF ONLY THERE WAS SOME CLUE. -->
+            <div id="content">
+                {{content}}
+                {{page_prev_next_links}}
+            </div>
+        </div> 
+
+        <!-- THIS LINE OF CODE IS RESPONSIBLE FOR THE POP UP BOXES DURING EDITING.
+        REMOVING THIS MEANS DOOM FOR ALL -->
+        <div id="s-lib-alert" title="">
+            <div id="s-lib-alert-content"></div>
+        </div>
+    </div>
+    <!-- END MIDLEVELCONTAINER -->
+
+    <!-- GUIDE METADATA AND STAFF LOGIN BLOCK -->
+    <div id="s-lg-guide-header-meta">
+        <ul id="s-lg-guide-header-attributes">
+            <li id="s-lg-guide-header-updated">
+                <span class="s-lg-guide-label">Last Updated:</span> <span class="s-lg-text-greyout">{{guide_updated}}</span>
+            </li>
+            <li id="s-lg-guide-header-subjects">
+                <span class="s-lg-text-greyout">{{guide_subjects}}</span>
+            </li>
+            <li id="s-lg-guide-header-tags">
+                <span class="s-lg-text-greyout">{{guide_tags}}</span>
+            </li>
+        </ul>
+        <div id="s-lib-footer-login-link">
+            <a href="{{login_url}}">Staff Login</a>
+        </div>
+    </div>
+
+    <!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
+    {{public_footer}}
+</div>
+<!-- END FULL PAGE WRAPPER -->
+</body>

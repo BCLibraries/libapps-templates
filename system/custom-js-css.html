@@ -1,0 +1,119 @@
+<!-- CUSTOM HEADER INFO. TO BE CUT AND PASTED INTO Custom <HEAD> TAB ON LIBGUIDES CMS -->
+<link rel="stylesheet" href="//library.bc.edu/theme/bcbento/css/app.css" />
+<!--link rel="stylesheet" href="//library.bc.edu/theme/css/fonts.css" /-->
+<link rel="stylesheet" href="//library.bc.edu/theme/css/style.css" />
+<link rel="stylesheet" href="//library.bc.edu/theme/css/icomoon.css"/>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script type="text/javascript" src="//library.bc.edu/theme/js/bootstrap-hover-dropdown.min.js"></script>
+<script type="text/javascript" src="//library.bc.edu/theme/js/jquery.hoverIntent.minified.js"></script>
+<script type="text/javascript" src="//library.bc.edu/theme/js/chosen.jquery.min.js?version=1.1.0"></script>
+<script type="text/javascript" src="//library.bc.edu/theme/js/modernizr.custom.js"></script>
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+
+<!-- THIS IS THE SCRIPT THAT WILL ADD A CLASS TO THE BODY, TO ASSIST IN REMOVING
+     DIVS BASED ON WHETHER WE ARE IN AUTHOR OR PUBLIC VIEW -->  
+<script>
+    $(document).ready(function(){((window.location.pathname).indexOf('admin_c.php')>-1)?$('body').addClass('edit-mode'):$('body').addClass('view-mode');});
+</script>
+
+<!-- THIS SCRIPT HIDES HEADER AND FOOTER ELEMENTS FROM WITHIN CANVAS IFRAME WIDGET -->
+<script>
+    $(document).ready(function(){if ((window.location.pathname).indexOf('widget_c.php')>-1){$('#sb-search,#megamenu,#s-lg-guide-header-meta,#footer').hide();}});
+</script>
+
+<!-- PREVENT FLASH OF UNSTYLED CONTENT -->
+<style>html.js { display:none}</style>
+<script>$(function() { $("html.js").show(); });</script>
+
+<!-- HIDE DESCRIPTION DISPLAY OPTIONS THAT USE HOVER OVER SINCE IT ISNT ACCESSIBLE  -->
+<style>
+    .edit-mode form #form-group-desc_pos .radio:nth-child(2),
+    .edit-mode form #form-group-desc_pos .radio:nth-child(3) {display: none;}
+</style>
+
+<!-- INFO BUTTON STYLE -->
+<style>
+    a.more-info {display:inline-block; padding:0 8px 0 0; cursor:pointer; color:#000; text-shadow: 0 1px 0 #FFFFFF; opacity:.6; font-size:14px;}
+    a.more-info:hover {opacity:1; color:#000;}
+    .box-value {padding-left:5px;}
+    .box-label {width:100px; display:inline-block; text-align:right;}
+    .box-value textarea {width:425px; height:78px; margin-left:110px;}
+</style>
+<!-- INFO BUTTON SCRIPT -->
+<script type="text/javascript" src="//arc.bc.edu/libhours/lg/guides/infobutton.js"></script>
+
+<!-- Add padding to header area when in edit-mode -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        if ($("body.edit-mode").length > 0){$("#edit-mode-buffer").css("height", "55px");}
+    });
+</script>
+
+<!-- FIXING ACTIVE SUBNAV MENUS AND BREADCRUMBS -->
+<style>
+    #s-lib-bc-site,
+    #s-lib-bc-group {display: none;}
+</style>
+
+<!-- SCRIPT TO TURN SIDE NAVIGATION INTO DROPDOWNS ON MOBILE -->
+<script>
+    /* DOM ready*/
+    $(function() {
+        var myNavID = "nav";
+        /* For each nav menu, create a corresponding drop down menu */
+        $("nav.drop-down").each(function(){
+            if ($(this).attr("id")) {
+                myNavID = "nav#" + $(this).attr("id");
+            }
+            
+            //console.log(myNavID);
+        
+            /* Create the dropdown base */
+            $("<select />").appendTo(myNavID);
+
+            /* Create default option "Go to..." */
+            $("<option />", {
+                "selected": "selected",
+                "value"   : "",
+                "text"    : "Go to..."
+            }).appendTo(myNavID + " select");
+
+            /* Populate dropdown with menu items */
+            $(myNavID + " a").each(function() {
+                var el = $(this);
+                var myText = el.text();
+                if ($(el).parents(".s-lg-subtab-ul").length > 0) {
+                    myText = "> " + el.text();
+                }
+                $("<option />", {
+                    "value"   : el.attr("href"),
+                    "text"      : myText
+                }).appendTo(myNavID + " select");
+            });
+
+            /* To make dropdown actually work
+            // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/ */
+            $(myNavID + " select").change(function() {
+                window.location = $(this).find("option:selected").val();
+            });
+        });
+
+    });
+</script>
+
+<!-- REMOVE LAST CRUMB ON SINGLE PAGE GUIDES -->
+<script>
+$(function() {
+    if ($('#s-lg-guide-tabs li').length == 0) {
+        $('.breadcrumb li:last').remove();
+        $('.breadcrumb li:last').addClass('active');
+        $('.breadcrumb li:last a').contents().unwrap();
+    }
+});
+</script>
