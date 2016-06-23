@@ -1,0 +1,146 @@
+<!-- BEGIN FOOTER -->
+<div id="footer">
+    <hr/>
+    <div class="f_column">
+        <!-- Address -->
+        <div id="f_address">
+            <h2>John J. Burns Library</h2>
+            <p>140 Commonwealth Avenue <br/>
+            Chestnut Hill, MA 02467 <br/>
+            <strong>Administration:</strong> 617-552-3282<br/>
+            <strong>Reference:</strong> 617-552-4861</p>
+        </div>
+
+        <!-- SOCIAL MEDIA ICONS -->
+        <div id="socialmedia">
+            <ul>
+                <li><a href="https://johnjburnslibrary.wordpress.com/feed/" title="Burns Library News RSS feed" class="mediablock" id="media_news"></a></li>
+                <li><a href="https://www.facebook.com/johnjburnslibrary" title="Burns Library Facebook Link" class="mediablock" id="media_facebook"></a></li>
+                <li><a href="https://www.flickr.com/photos/bc-burnslibrary/" title="Burns Library Flickr Page" class="mediablock" id="media_flickr"></a></li>
+                <li><a href="https://twitter.com/burnslibrary" title="Burns Library on Twitter" class="mediablock" id="media_twitter"></a></li>
+                <li><a href="https://www.youtube.com/user/BostonCollegeLib" title="Boston College on YouTube" class="mediablock" id="media_youtube"></a></li>
+            </ul>
+        </div>
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <p>© 2015 The Trustees of Boston College. <a href="http://www.bc.edu/gn-legal" title="legal">Legal</a></p>
+            <p><a href="http://bc.edu" target="_self" title="Boston College homepage">Boston College</a></p>
+        </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="f_column no_right_border">
+        <h2>Quick Links</h2>
+        <nav id="quick_links" class="drop-down">
+            <ul class="nav">
+                <li><a href="#" title="Ask a Question" target="_self">Ask a Question</a></li>
+                <li><a href="#" title="Staff Directory" target="_self">Staff Directory</a></li>
+                <li><a href="#" title="Mailing Address" target="_self">Mailing Address</a></li>
+                <li><a href="#" title="Directions and Parking" target="_self">Directions & Parking</a></li>
+                <li><a href="#" title="Gifts Policy" target="_self">Gifts Policy</a></li>
+                <li><a href="#" title="Photography Policy" target="_self">Photography Policy</a></li>
+                <li><a href="#" title="Reproduction Requests" target="_self">Reproduction Requests</a></li>
+                <li><a href="#" title="Student Employment" target="_self">Student Employment</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <!-- Hours -->
+    <div class="f_column column_hours no_bottom_border no_right_border">
+        <h2><a href="#">This Week's Hours</a> <span id="hours_seperator">|</span> <a href="https://libguides.bc.edu/hours">All Hours</a></h2>
+        <!-- LIBCAL HOURS API-->
+        <div id="weekly_hours_container"></div>
+    </div>
+</div>
+<!-- END FOOTER -->
+
+<!-- /#contentinfo -->
+<!-- MEGA MENU SCRIPT -->
+<script type="text/javascript" src="http://library.bc.edu/theme/js/megamenu.js"></script>
+
+<!-- Script to block spam-bots. Requires JQuery. -->
+<script src="http://library.bc.edu/theme/js/nospam.js"></script>
+
+<!-- Script for updating Burns Lib hours-->
+<script>
+$(document).ready(function(){
+    var libID = 507;
+    var libName = "BurnsLibrary";
+    // grab each library's data from the output and place it where it needs to go
+    function setHours(data){
+        var libList = $(data["out"]).find("ul#" + libID);
+        var todaysHours = $(data["out"]).find("ul.today li.hours").html();
+
+        if (libList && libList.length > 0){
+            $("div#" + libName).append(todaysHours);
+            $("div#weekly_hours_container").append(libList.clone());
+        }
+
+        if ($("#libstatus") && $("#libstatus").length){
+            var isopen = $("#nowopen");
+            var libstatus = "closed"
+            if (isopen && isopen.length){
+                libstatus = "Open";
+            }
+            $("#libstatus").html("<strong>" + libstatus + "</strong>");
+        }
+    };
+
+    // call to the hours api
+    $.ajax({
+        type: "GET",
+        url: "//arc.bc.edu/libhours/libweeklyhours.php",
+        jsonp: "callback",
+        dataType: "jsonp",
+        cache: true,
+        contentType: "application/javascript",
+        data: {l: libID},
+        headers: {'Cache-Control': 'max-age=60'},
+        success: setHours,
+        error: function(){
+            $("div#weekly_hours_container").html("Error retrieving hours");
+        },
+    });
+});
+</script>
+
+<!-- JS for expanding search bar -->
+<script src="http://library.bc.edu/theme/js/classie.js"></script>
+<script src="http://library.bc.edu/theme/js/uisearch.js"></script>
+<script>
+    new UISearch( document.getElementById( 'sb-search' ) );
+</script>
+
+
+<!-- FEEDBACK FORM -->
+<div id="bcl-feedback" class="bcl-modal">
+    <div class="visible-form">
+        <header class="bcl-modal-header">
+            <h3>Feedback</h3>
+            <a href="#" class="close-modal">X</a>
+        </header>
+
+        <div class="bcl-modal-body">
+            <p>Use this forms questions or comments about the BC Libraries or the
+                website. If you have a research question you can also
+                <a href="http://answers.bc.edu/q.php">email</a> or <a onclick="window.open('https://libraryh3lp.com/chat/ajcu-chatstaff@chat.libraryh3lp.com?skin=19965&title=ChatStaff+Librarians&profile=cs-bostoncoll',
+   'chat', 'resizable=1,width=320,height=300'); return false;">chat</a> with a librarian.</p>
+
+            <p><em>Please fill out all required fields.</em></p>
+
+            <img src="http://library.bc.edu/theme/bcbento/img/loading-bar.gif" class="loading" style="display: none;">
+
+            <form method="post" class="website-feedback remail-form" action="http://arc.bc.edu/jforms/webfeedback/webform.php">
+                <p><label for="feedback-name">Name</label>
+                    <input class="menu_input" type="text" value="" id="feedback-name" name="name">
+                </p>
+
+                <p>
+                    <label for="feedback-email">Email</label>
+                    <input class="menu_input" type="text" value="" id="feedback-email" name="email">
+                </p>
+
+                <p>
+                    <label for="feedback-text">Question or comment <em>(required)</em></label>
+                    <textarea name="feedback" id="feedback-text">

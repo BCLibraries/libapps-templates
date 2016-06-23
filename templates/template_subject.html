@@ -1,0 +1,156 @@
+<body class="s-lib-public-body subjects">
+<meta name="group" content="Profiles">
+{{skip_link}}
+
+<style>
+    .s-lib-public-side-header {
+        padding-top: 5px;
+    }
+    #s-lib-public-header-desc,
+    ul.nav-tabs li a {
+        font-size: 14px
+    }
+    .tab-content>.tab-pane {
+        padding-left:10px;
+    }
+    .s-lib-box-content,
+    .s-lib-box-content .s-lg-small {
+        padding:6px 10px;
+        font-size: 14px!important;
+    }
+    .s-lib-box-content .s-lg-small {
+        padding:0;
+    }
+    .s-lib-box-content:hover {
+        background-color: #eaeaea;
+    }
+    .s-lib-box-content a:hover {
+        text-decoration: none;
+        color: #990000;
+    }
+    .input-append form input.form-control {
+        width:80%;
+        display: inline-block;
+    }
+    .input-append form button.btn-info {
+        display: inline-block;
+        vertical-align: baseline;
+    }
+    .s-lg-az-result-badge-featured {
+        display:none;
+    }
+    #s-lg-sb-content-databases .s-lg-db-panel-title {
+        display:none;
+    }
+    i.s-lib-popover {
+        display:none;
+    }
+</style>
+
+<!-- TEMPORARY CODE TO MIMIC PROPOSED BC HEADER-->
+<div id="bcheader"></div>
+
+<script type="text/javascript">
+    // rewrite breadcrumbs so that the "Subjects" link goes to the custom subjects page
+    // rather than the default one
+    $(document).ready(function(){
+        $("li#s-lib-bc-index a").attr("href", "/subjects");
+
+        $("#sel_guide_drop_chosen").width("300px");
+    });
+</script>
+
+<!-- FULL PAGE WRAPPER -->
+<div id="fullpagewrapper">
+
+    <!-- HEADER AND MEGA MENU -->
+    {{public_header}} 
+
+    <div id="midlevelcontainer">
+        <!-- BEGIN: Content Header -->
+        <div id="s-lib-public-header" class="s-lib-header container s-lib-side-borders">
+            <h1 id="s-lib-public-header-title">{{page_title}}</h1>
+            <div id="s-lib-public-header-desc">{{page_description}}</div>
+        </div>
+        <!-- END: Content Header -->
+        <!-- BEGIN: Nav Bar -->
+        <div id="s-lib-public-nav" class="container s-lib-side-borders">
+            {{page_nav}}
+        </div>
+        <!-- END: Nav Bar -->
+        <!-- BEGIN: content -->
+        <div id="s-lib-public-main" class="s-lib-main container s-lib-side-borders">
+            <section>
+                <div  id="s-lg-sb-search-bar"  class="row">
+                    <div  id="sb-search-col-1"  class="col-md-12 center">
+                        {{navbar}}
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div  id="s-lg-sb-cols" class="row">
+                    <div  id="col1" class="col-md-8 center">
+                        <ul class="nav nav-tabs margin-bottom-med">
+                            <!-- Guide tab -->
+                            <li class="active">
+                                <a href="#s-lg-sb-guides" data-toggle="tab">Guides</a>
+                            </li>
+                            <!-- Databases tab -->
+                            <li class="">
+                                <a href="#s-lg-sb-databases" data-toggle="tab">Databases</a>
+                            </li>
+                        </ul>
+                        
+                        <!-- Tab panes -->
+                        <div class="tab-content margin-bottom-med">
+                            <div class="tab-pane active" id="s-lg-sb-guides">
+                                <!-- Guides content -->
+                                <div id="s-lg-sb-content-guides" class="pad-right-sm"></div>
+                            </div>
+                            <div class="tab-pane " id="s-lg-sb-databases">
+                                <!-- Databases content -->
+                                <div id="s-lg-sb-content-databases" class="pad-right-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div  id="col2"  class="col-md-4 center">
+                        <div style="padding-top: 9px;"></div>
+                        {{content_box_search}}
+                        {{content_box_experts}}
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- END: content -->
+
+        <!-- Script to force the Databases tab to be active when ?t=db parameter is present in the URL -->
+        <script type="text/javascript">
+            $(document).ready(function(){
+                function getUrlParameter(sParam)
+                {
+                    var sPageURL = window.location.search.substring(1);
+                    var sURLVariables = sPageURL.split('&');
+                    for (var i = 0; i < sURLVariables.length; i++)
+                    {
+                        var sParameterName = sURLVariables[i].split('=');
+                        if (sParameterName[0] == sParam)
+                        {
+                            return sParameterName[1];
+                        }
+                    }
+                }
+
+                /* if the URL has the parameter &t=db then manually
+                // set the click event for the 'Databases' tab. */
+                if (getUrlParameter('t') == 'db') {
+                    $('a[href="#s-lg-sb-databases"]').click();
+                }  
+            });
+        </script>
+    </div>
+
+    <!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
+    {{public_footer}}
+</div>
+<!-- END FULL PAGE WRAPPER -->
+</body>

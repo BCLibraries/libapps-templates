@@ -1,0 +1,97 @@
+<body class="s-lg-guide-body search">
+<meta name="group" content="search">
+{{skip_link}}
+
+<style>
+form#s-lg-srch-form .form-group {
+    margin-top:15px;
+}
+@media ( min-width: 1199px ) {
+    .input-group .form-control {
+        width:450px;
+    }
+}
+#s-srch-facet-328-guide_type {
+   displ ay:none;
+}
+
+.s-srch-pagination .pagination a {
+   padding:6px 12px;
+}
+
+div#s-srch-paginate-328-top {
+   margin:12px 0;
+}
+
+#s-lg-srch-cols #s-lg-srch-content .col-md-3 {
+    padding: 5px 10px 20px 20px;
+    border: 1px solid #e7e7e7;
+    bac kground-color: aliceblue;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    margin-bottom: 10px;
+}
+</style>
+
+<script>
+$(document).ready(function() {
+    $('#s-srch-facet-328-group').before('<h3>Search Filters</h3>');
+});
+</script>
+<!-- TEMPORARY CODE TO MIMIC PROPOSED BC HEADER-->
+<div id="bcheader"></div>
+
+<!-- FULL PAGE WRAPPER -->
+<div id="fullpagewrapper">
+
+    <!-- HEADER AND MEGA MENU -->
+    {{public_header}} 
+
+    <div id="midlevelcontainer">
+        <!-- BEGIN: Content Header -->
+        <div id="s-lib-public-header" class="s-lib-header container s-lib-side-borders">
+            <h1 id="s-lib-public-header-title">{{page_title}}</h1>
+            <div id="s-lib-public-header-desc">{{page_description}}</div>
+            <!--div id="s-lib-public-header-desc">Search across all the Library Course and Research Guides</div-->
+        </div>
+        <!-- END: Content Header -->
+        <!-- BEGIN: Nav Bar -->
+        <div id="s-lib-public-nav" class="container s-lib-side-borders">
+            {{page_nav}}
+        </div>
+        <!-- END: Nav Bar -->
+        <!-- BEGIN: content -->
+        <a name="s-lg-guide-main"></a>
+        <div id="s-lib-public-main" class="s-lib-main container s-lib-side-borders">
+            <section>
+                <div  id="s-lg-srch-nav-col"  class="row">
+                    <div  id="col0"  class="col-md-12 center">
+                        {{content_box_search}}
+                    </div>
+                    <div id="s-lg-srch-results-msg" class="col-md-12 margin-bottom-sm"></div>
+                </div>
+            </section>
+            <section>
+                <div  id="s-lg-srch-cols"  class="row">
+                    {{content}}
+                </div>
+            </section>
+        </div>
+        <!-- END: content -->
+    </div>
+
+    <!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
+    {{public_footer}}
+</div>
+<!-- END FULL PAGE WRAPPER -->
+<div id="s-lib-alert" title="">
+    <div id="s-lib-alert-content"></div>
+</div>
+<div id="s-lib-popover-title" class="hide">
+    <span class="text-info"><strong>title</strong></span> 
+    <button type="button" id="popclose" class="close" onclick="jQuery('.s-lib-popover').popover('hide')">&times;</button> 
+</div>
+<div id="s-lib-popover-content" class="hide"><i class="fa fa-refresh fa-spin"></i> Loading...
+    <button class="btn btn-default btn-sm popclose" type="button">Close</button>
+</div>
+</body>
