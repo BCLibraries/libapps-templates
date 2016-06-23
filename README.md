@@ -9,10 +9,10 @@ The template files with the ***system_*** prefix are system-wide.
 There are a few common templates such as [header](/templates/system_header.html) and [footer](/templates/system_footer.html) code that are referenced throughout many of the templates.
 
 Other system-level templates are included:
-* [A-Z](/templates/system_az.html)
-* [Profile](/templates/system_profile.html)
-* [Search](/templates/system_search.html)
-* [Subject](/templates/system_subject.html)
+* [A-Z](/templates/template_az.html)
+* [Profile](/templates/template_profile.html)
+* [Search](/templates/template_search.html)
+* [Subject](/templates/template_subject.html)
 
 ### Group templates
 
