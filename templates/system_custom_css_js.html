@@ -22,29 +22,31 @@
 
 <!-- THIS SCRIPT HIDES HEADER AND FOOTER ELEMENTS FROM WITHIN CANVAS IFRAME WIDGET -->
 <style>
-#iframe-message {background-color:#fffdf6; border:1px solid #ffeaae; -moz-border-radius: 10px; border-radius: 10px; padding:20px; margin:-20px 0 20px 0;}
+#iframe-message {background-color:#fffdf6; border:1px solid #ffeaae; -moz-border-radius: 10px; border-radius: 10px; padding:20px; margin:-15px 0 20px 0;}
 </style>
 <script>
     $(document).ready(function(){
         console.log(window.location.pathname);
-    	if ((window.location.pathname).indexOf('widget_')>-1){
-                console.log("inside canvas");
-    		var fullurl = "http://libguides.bc.edu/";
-    		$("#midlevelcontainer").prepend('<div id="iframe-message"><div>You are viewing this page within an iframe.</div></div>');
-    		$.urlParam = function(name){
-			    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-			    if (results==null){return null;} else {return decodeURI(results[1]) || 0;}
-			}
-    		$('#sb-search,#megamenu,#s-lg-guide-header-meta,#footer,#bcheader_info').hide();
-    		if ($.urlParam('s')) {
-    			fullurl += "az.php?s=" + $.urlParam('s');
-    		} else if ($.urlParam('g') && $.urlParam('p') ){
-    			fullurl += "c.php?g=" + $.urlParam('g') + "&p=" + $.urlParam('p');
-    		} else if ($.urlParam('guide_id')){
-    			fullurl += "c.php?g=" + $.urlParam('guide_id');
-    		} else {return;}
-    		$("#iframe-message").append('<div>The full URL of this page is <a href="' + fullurl + '" target="_blank">' + fullurl + '</a></div>')
-    	}
+        if ((window.location.pathname).indexOf('widget_')>-1){
+            console.log("inside canvas");
+            var fullurl = "http://libguides.bc.edu/";
+            $("#midlevelcontainer").prepend('<div id="iframe-message"><div>You are viewing this page within an iframe.</div></div>');
+            $.urlParam = function(name){
+                var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+                if (results==null){return null;} else {return decodeURI(results[1]) || 0;}
+            }
+            $('#sb-search,#megamenu,#s-lg-guide-header-meta,#footer,#bcheader_info').hide();
+            $('#header').css({'border-bottom':'0', 'margin':'0 auto 0'});
+            $('body').css({'margin-top':'0'});
+            if ($.urlParam('s')) {
+                fullurl += "az.php?s=" + $.urlParam('s');
+            } else if ($.urlParam('g') && $.urlParam('p') ){
+                fullurl += "c.php?g=" + $.urlParam('g') + "&p=" + $.urlParam('p');
+            } else if ($.urlParam('guide_id')){
+                fullurl += "c.php?g=" + $.urlParam('guide_id');
+            } else {return;}
+            $("#iframe-message").append('<div>The full URL of this page is <a href="' + fullurl + '" target="_blank">' + fullurl + '</a></div>')
+        }
     });
 </script>
 
