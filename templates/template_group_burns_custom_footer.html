@@ -1,6 +1,6 @@
 <!-- BEGIN FOOTER -->
 <div id="footer">
-    <hr/>
+    <hr>
     <div class="f_column">
         <!-- Address -->
         <div id="f_address">
@@ -24,7 +24,7 @@
 
         <!-- Copyright -->
         <div id="copyright">
-            <p>© 2015 The Trustees of Boston College. <a href="http://www.bc.edu/gn-legal" title="legal">Legal</a></p>
+            <p>© 2016 The Trustees of Boston College. <a href="http://www.bc.edu/gn-legal" title="legal">Legal</a></p>
             <p><a href="http://bc.edu" target="_self" title="Boston College homepage">Boston College</a></p>
         </div>
     </div>
@@ -54,6 +54,8 @@
     </div>
 </div>
 <!-- END FOOTER -->
+
+<!--script type="text/javascript" src="//library.bc.edu/theme/js/libraryinfo.js"></script-->
 
 <!-- /#contentinfo -->
 <!-- MEGA MENU SCRIPT -->
@@ -106,11 +108,11 @@ $(document).ready(function(){
 </script>
 
 <!-- JS for expanding search bar -->
-<script src="http://library.bc.edu/theme/js/classie.js"></script>
+<!--script src="http://library.bc.edu/theme/js/classie.js"></script>
 <script src="http://library.bc.edu/theme/js/uisearch.js"></script>
 <script>
     new UISearch( document.getElementById( 'sb-search' ) );
-</script>
+</script-->
 
 
 <!-- FEEDBACK FORM -->
@@ -122,14 +124,13 @@ $(document).ready(function(){
         </header>
 
         <div class="bcl-modal-body">
-            <p>Use this forms questions or comments about the BC Libraries or the
+            <p>Use this form for questions or comments about the BC Libraries or the
                 website. If you have a research question you can also
-                <a href="http://answers.bc.edu/q.php">email</a> or <a onclick="window.open('https://libraryh3lp.com/chat/ajcu-chatstaff@chat.libraryh3lp.com?skin=19965&title=ChatStaff+Librarians&profile=cs-bostoncoll',
-   'chat', 'resizable=1,width=320,height=300'); return false;">chat</a> with a librarian.</p>
+                <a href="http://answers.bc.edu/q.php">email</a> or <a onclick="window.open('https://libraryh3lp.com/chat/ajcu-chatstaff@chat.libraryh3lp.com?skin=19965&title=ChatStaff+Librarians&profile=cs-bostoncoll','chat', 'resizable=1,width=320,height=300'); return false;">chat</a> with a librarian.</p>
 
             <p><em>Please fill out all required fields.</em></p>
 
-            <img src="http://library.bc.edu/theme/bcbento/img/loading-bar.gif" class="loading" style="display: none;">
+            <img src="//library.bc.edu/theme/bcbento/img/loading-bar.gif" alt="" class="loading" style="display: none;">
 
             <form method="post" class="website-feedback remail-form" action="http://arc.bc.edu/jforms/webfeedback/webform.php">
                 <p><label for="feedback-name">Name</label>
@@ -143,4 +144,23 @@ $(document).ready(function(){
 
                 <p>
                     <label for="feedback-text">Question or comment <em>(required)</em></label>
-                    <textarea name="feedback" id="feedback-text">
+                    <textarea name="feedback" id="feedback-text"></textarea>
+                </p>
+
+                <p>
+                    <input class="menu_input" type="hidden" value="" id="feedback-name" name="page_url">
+                    <input class="feedback_button" type="submit" value="Submit" name="submit">
+                </p>
+
+                <div style="clear:both"></div>
+                <!-- END form fields -->
+
+                <!-- REQUIRED -->
+                <input type="hidden" value="website-feedback" name="form-to[]">
+
+                <!-- END REQUIRED -->
+            </form>
+        </div>
+    </div>
+</div>
+<!-- END FEEDBACK FORM -->
