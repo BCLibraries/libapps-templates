@@ -23,9 +23,17 @@ $(function () {
     $("input#searchsubmit").click(function(){
         ga('send', 'event', 'bc-searchbutton', 'click');
     });
-    $(".breadcrumb").click(function(){
+    $(".breadcrumb #s-lib-bc-customer").click(function(){
         var page_title = $("#guidetitle h1").text();
-        ga('send', 'event', 'breadcrumb', 'click', page_title);
+        ga('send', 'event', 'breadcrumb-home', 'click', page_title);
+    });
+    $(".breadcrumb #s-lib-bc-site").click(function(){
+        var page_title = $("#guidetitle h1").text();
+        ga('send', 'event', 'breadcrumb-site', 'click', page_title);
+    });
+    $(".breadcrumb #s-lib-bc-guide").click(function(){
+        var page_title = $("#guidetitle h1").text();
+        ga('send', 'event', 'breadcrumb-guide', 'click', page_title);
     });
     /* get page views originating from Canvas */
     if ((window.location.pathname).indexOf('widget_')>-1){
