@@ -43,9 +43,9 @@
         </div>
 
         <div id="sb-search" class="sb-search sb-search-open">
-            <form method="get" action="http://library.bc.edu/search">
-                <label for="search" class="accessibility-text">Search the BC Libraries</label>
-                <input class="sb-search-input" placeholder="Search the BC Libraries" type="text" value="" name="any" id="search">
+            <form method="get" action="http://bclib.bc.edu/libsearch/burns/keyword">
+                <label for="search" class="accessibility-text">Search Burns Library Collection</label>
+                <input class="sb-search-input" placeholder="Search Burns Library Collection" type="text" value="" name="term" id="search">
                 <input class="sb-search-submit" type="submit" value="Submit" name="submit">
                 <span class="sb-icon-search"></span>
             </form>
@@ -65,100 +65,139 @@
                     <div id="navbar-collapse-1" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
 
-                            <!-- Find Materials list -->
-                            <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Find Materials</a>
+                            <!-- Collections list -->
+                            <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Collections</a>
                                 <ul class="dropdown-menu">
                                     <li>
                                         <!-- Content container to add padding -->
                                         <div class="yamm-content">
                                             <div class="row">
-                                                <!-- By Format -->
-                                                <ul class="col-sm-3 menu_list">
-                                                    <li><h4><a href="#">By Format</a></h4></li>
-                                                    <li><a href="#">Books and published materials</a></li>
-                                                    <li><a href="#">Manuscripts and archives</a></li>
-                                                    <li><a href="#">Maps and atlases</a></li>
-                                                    <li><a href="#">Music and audio/visual recordings</a></li>
-                                                    <li><a href="#">Photographs, prints, and other images</a></li>
+                                                <!-- Overview -->
+                                                <ul class="col-sm-2 menu_list">
+                                                    <!--li><h4><a href="#">By Format</a></h4></li-->
+                                                    <li><a href="#">General Overview</a></li>
+                                                    <li><a href="#">American</a></li>
+                                                    <li><a href="#">British &amp; British Catholic</a></li>
+                                                    <li><a href="#">Caribbean</a></li>
+                                                    <li><a href="#">Irish &amp; Irish American</a></li>
                                                 </ul>
 
-                                                <!-- Major Collecting Areas -->
-                                                <ul class="col-sm-3 menu_list">
-                                                    <li><h4><a href="#">Major Collecting Areas</a></h4></li>
-                                                    <li><a href="#">Boston</a></li>
-                                                    <li><a href="#">British Catholic authors</a></li>
-                                                    <li><a href="#">Ireland, Irish Americans</a></li>
-                                                    <li><a href="#">University Archives</a></li>
-                                                </ul>
-
-                                                <!-- Other Subjects -->
-                                                <ul class="col-sm-3 menu_list">
-                                                    <li><h4><a href="#">Other Subjects</a></h4></li>
-                                                    <li><a href="#">American History and Literature</a></li>
-                                                    <li><a href="#">Art, Architecture, Performing Arts</a></li>
-                                                    <li><a href="#">Caribbean and West Africa</a></li>
+                                                <!-- Collecting areas -->
+                                                <ul class="col-sm-2 menu_list">
+                                                    <!--li><h4><a href="#">Major Collecting Areas</a></h4></li-->
+                                                    <li><a href="#">Art &amp; Architecture</a></li>
+                                                    <li><a href="#">Jesuit &amp; Catholic</a></li>
                                                     <li><a href="#">Nursing</a></li>
-                                                    <li><a href="#">And many more...</a></li>
+                                                    <li><a href="#">University Archives</a></li>
+                                                    <li><a href="#">More collecting areas</a></li>
                                                 </ul>
 
-                                                <!-- Resources -->
-                                                <ul class="col-sm-3 menu_list end">
-                                                    <li><h4><a href="#">Resources</a></h4></li>
-                                                    <li><a href="#">Search our catalog</a></li>
-                                                    <li><a href="#">Browse our archival collections</a></li>
-                                                    <li><a href="#">Explore our digitial collections</a></li>
-                                                    <li><a href="#">Ask a subject specialist</a></li>
-                                                    <li><a href="#">Contact Burns Library reference</a></li>
+                                                <!-- Donations -->
+                                                <ul class="col-sm-8 menu_list">
+                                                    <div class="pane_info">
+                                                        <h3><a href="#">Donations</a></h3>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                    </div>
+
+                                                    <div class="pane_pic">
+                                                        <a href="http://libguides.bc.edu/burns"><img alt="Burns Library home page" src="//s3.amazonaws.com/libapps/accounts/3908/images/burnsbackgroundsample.jpg"></a>
+                                                    </div>
                                                 </ul>
                                             </div>
 
                                             <div class="row bottom_row">
-                                                <div class="more"><a href="#" title="Find More">Find More</a></div>
+                                                <!--div class="more"><a href="#" title="Find More">Find More</a></div-->
                                             </div>
                                         </div>
                                     </li>
                                 </ul>
                             </li>
 
-                            <!-- Using the Burns Library list -->
-                            <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Using Burns Library</a>
+                            <!-- Find list -->
+                            <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Find</a>
                                 <ul class="dropdown-menu">
                                     <li>
                                         <!-- Content container to add padding -->
                                         <div class="yamm-content">
                                             <div class="row">
-                                                <!-- Resources For -->
-                                                <ul class="col-sm-4 menu_list">
-                                                    <li><h4><a href="#">Resources For</a></h4></li>
-                                                    <li><a href="#">BC students and faculty</a></li>
-                                                    <li><a href="#">BC alumni</a></li>
-                                                    <li><a href="#">General public</a></li>
-                                                    <li><a href="#">Researchers</a></li>
-                                                </ul>
-
-                                                <!-- Reference and Instruction -->
-                                                <ul class="col-sm-4 menu_list">
-                                                    <li><h4><a href="#">Reference and Teaching</a></h4></li>
+                                                <!-- How To -->
+                                                <ul class="col-sm-2 menu_list">
+                                                    <li><h4><a href="#">How to...</a></h4></li>
+                                                    <li><a href="#">Search our catalog</a></li>
+                                                    <li><a href="#">Explore our digital collections</a></li>
                                                     <li><a href="#">Ask a question</a></li>
-                                                    <li><a href="#">Find materials</a></li>
-                                                    <li><a href="#">Request reproductions</a></li>
-                                                    <li><a href="#">Schedule a class visit</a></li>
-                                                    <li><a href="#">See examples of student research</a></li>
                                                 </ul>
 
-                                                <!-- Planning Your Visit -->
-                                                <ul class="col-sm-4 menu_list end">
-                                                    <li><h4><a href="#">Planning Your Visit</a></h4></li>
-                                                    <li><a href="#">Hours and reading room policies</a></li>
-                                                    <li><a href="#">Directions and parking</a></li>
-                                                    <li><a href="#">Group tours</a></li>
-                                                    <li><a href="#">Building photography policy</a></li>
-                                                    <li><a href="#">Boston College events calendar</a></li>
+                                                <!-- Social Media -->
+                                                <ul class="col-sm-2 menu_list">
+                                                    <li><h4><a href="#">Social Media</a></h4></li>
+                                                    <li><a href="#">Blog</a></li>
+                                                    <li><a href="#">Facebook</a></li>
+                                                    <li><a href="#">Flickr</a></li>
+                                                    <li><a href="#">Twitter</a></li>
+                                                    <li><a href="#">YouTube</a></li>
+                                                </ul>
+
+                                                <!-- TK -->
+                                                <ul class="col-sm-8 menu_list">
+                                                    <div class="pane_info">
+                                                        <h3><a href="#">TK</a></h3>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                    </div>
+
+                                                    <div class="pane_pic">
+                                                        <a href="http://libguides.bc.edu/burns"><img alt="Burns Library home page" src="//s3.amazonaws.com/libapps/accounts/3908/images/burnsbackgroundsample.jpg"></a>
+                                                    </div>
                                                 </ul>
                                             </div>
 
                                             <div class="row bottom_row">
-                                                <div class="more"><a href="#">More Using Burns Library</a></div>
+                                                <!--div class="more"><a href="#">More Using Burns Library</a></div-->
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <!-- Visit -->
+                            <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Visit</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <!-- Content container to add padding -->
+                                        <div class="yamm-content">
+                                            <div class="row">
+                                                <!-- Planning Your Visit -->
+                                                <ul class="col-sm-4 menu_list">
+                                                    <li><h4><a href="#">Planning Your Visit</a></h4></li>
+                                                    <li><a href="#">Hours</a></li>
+                                                    <li><a href="#">Reading room policies</a></li>
+                                                    <li><a href="#">Directions and parking</a></li>
+                                                    <li><a href="#">Exhibits</a></li>
+                                                    <li><a href="#">Events</a></li>
+                                                </ul>
+
+                                                <!-- Services -->
+                                                <ul class="col-sm-4 menu_list">
+                                                    <li><h4><a href="#">Services</a></h4></li>
+                                                    <li><a href="#">Reference</a></li>
+                                                    <li><a href="#">Request reproductions</a></li>
+                                                    <li><a href="#">Request permissions</a></li>
+                                                    <li><a href="#">Schedule a class visit</a></li>
+                                                    <li><a href="#">Building photography policy</a></li>
+                                                </ul>
+
+                                                <!-- Resources For -->
+                                                <ul class="col-sm-4 menu_list end">
+                                                    <li><h4><a href="#">Resources For</a></h4></li>
+                                                    <li><a href="#">BC Students</a></li>
+                                                    <li><a href="#">BC Faculty</a></li>
+                                                    <li><a href="#">Visiting Researchers</a></li>
+                                                    <li><a href="#">Alumni &amp; Guests</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="row bottom_row">
+                                                <!--div class="more"><a href="#">More about Your Visit</a></div-->
                                             </div>
                                         </div>
                                     </li>
@@ -172,13 +211,12 @@
                                         <!-- Content container to add padding -->
                                         <div class="yamm-content">
                                             <div class="row">
-                                                <!-- Mission, History, Staff -->
+                                                <!-- About Us -->
                                                 <ul class="col-sm-3 menu_list"  style="padding-top: 10px;">
-                                                    <li><h4>Mission, History, Staff</h4></li>
-                                                    <li><a href="#">Our mission</a></li>
-                                                    <li><a href="#">Our history</a></li>
+                                                    <li><h4>About Us</h4></li>
                                                     <li><a href="#">Our building</a></li>
                                                     <li><a href="#">Our staff</a></li>
+                                                    <li><a href="#">Join our mailing list</a></li>
                                                 </ul>
 
                                                 <!-- BURNS LIBRARY INFO CAN GO HERE -->
@@ -219,7 +257,7 @@
                             </li>
 
                             <!-- Donating Materials list -->
-                            <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Donations</a>
+                            <li class="dropdown yamm-fw" style="display:none;"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Donations</a>
                                 <ul class="dropdown-menu">
                                     <li>
                                         <!-- Content container to add padding -->
@@ -258,113 +296,9 @@
                                 </ul>
                             </li>
 
-                            <!-- Get Help list -->
-                            <li class="dropdown yamm-fw" style="display:none;"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Get Help</a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <!-- Content container to add padding -->
-                                        <div class="yamm-content">
-                                            <div class="row">
-                                                <ul class="col-sm-4 menu_list">
-                                                    <li><h4><a href="http://libguides.bc.edu/research-help">Research Help</a></h4></li>
-                                                    <li><a href="http://libguides.bc.edu/subjects">Guides by Subject</a></li>
-                                                    <li><a href="http://libguides.bc.edu/subjects/course-guides">Guides by Course</a></li>
-                                                    <li><a href="http://libguides.bc.edu/ask-a-librarian/contact">Subject Specialists</a></li>
-                                                    <li><a href="http://libguides.bc.edu/subjects/general">How to... (use Holmes, cite sources, etc.)</a></li>
-                                                </ul>
-
-                                                <div class="iteminfo-content get-help-menu">
-                                                    <ul class="col-sm-3 item-list">
-                                                        <li><h4><a href="http://libguides.bc.edu/reference-desk">Ask A Librarian</a></h4></li>
-                                                        <li class="ref_pane"><a href="http://libguides.bc.edu/reference-desk">Visit a Reference Desk</a></li>
-                                                        <li class="faq_pane"><a href="http://answers.bc.edu/index.php">Frequently Asked Questions</a></li>
-                                                        <li class="text_pane"><a href="#">Text us</a></li>
-                                                        <li class="chat_pane"><a href="#" onClick="window.open('https://libraryh3lp.com/chat/ajcu-consortium@chat.libraryh3lp.com?skin=19965&title=Boston College/AJCU+Librarians&profile=cs-bostoncoll',     'chat', 'resizable=1,width=320,height=300'); return false;" style="cursor: pointer;">Chat with us</a></li>
-                                                        <li class="email_pane"><a href="http://answers.bc.edu/q.php">Send us an Email</a></li>
-                                                        <li class="call_pane"><a href="#">Call us</a></li>
-                                                    </ul>
-
-                                                    <h4 id="h4mobile">Help from anywhere</h4>
-
-                                                    <!-- REFERENCE PANE BEGINS HERE -->
-                                                    <div id="ref_pane" class="item_pane col-sm-5">
-                                                        <div class="pane_info">
-                                                            <a href="http://libguides.bc.edu/reference-desk"><img src="//library.bc.edu/theme/img/askicon_lib.png" alt="Reference Desk icon">
-                                                            <h2>Visit a Reference Desk</h2></a>
-                                                            <p>Ask us anything! We can help you find answers to your questions, resources for your projects, or refer you to other experts.</p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- END REF PANE. RIGHT UP THERE-->
-
-                                                    <!-- FAQ PANE BEGINS HERE -->
-                                                    <div id="faq_pane" class="item_pane col-sm-5">
-                                                        <div class="pane_info">
-                                                            <a href="http://answers.bc.edu/index.php"><img src="//library.bc.edu/theme/img/askicon_ask.png" alt="Library FAQ icon">
-                                                            <h2>Frequently Asked Questions</h2></a>
-                                                            <p>Get answers to frequently asked questions on the <a href="http://answers.bc.edu/index.php">Library's FAQ</a>.</p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- END FAQ PANE. RIGHT UP THERE-->
-
-                                                    <!-- TEXT PANE BEGINS HERE -->
-                                                    <div id="text_pane" class="item_pane col-sm-5">
-                                                        <div class="pane_info">
-                                                            <img src="//library.bc.edu/theme/img/askicon_text.png" alt="Text Us icon">
-                                                            <h2>Text us</h2>
-                                                            <p>Text 617-229-5222 for quick questions during weekday reference service hours.</p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- END TEXT PANE. RIGHT UP THERE-->
-
-                                                    <!-- CHAT PANE BEGINS HERE -->
-                                                    <div id="chat_pane" class="item_pane col-sm-5">
-                                                        <div class="pane_info">
-                                                            <a href="#" onClick="window.open('https://libraryh3lp.com/chat/ajcu-consortium@chat.libraryh3lp.com?skin=19965&title=Boston College/AJCU+Librarians&profile=cs-bostoncoll','chat','resizable=1,width=320,height=300'); return false;" style="cursor: pointer;"><img src="//library.bc.edu/theme/img/askicon_lib.png" alt="Chat With Us icon">
-                                                            <h2>Chat with us</h2></a>
-                                                            <p>24/7 research help from Librarians at BC and at participating Jesuit institutions across the country. <a onClick="window.open('https://libraryh3lp.com/chat/ajcu-consortium@chat.libraryh3lp.com?skin=19965&title=Boston College/AJCU+Librarians&profile=cs-bostoncoll',     'chat', 'resizable=1,width=320,height=300'); return false;" style="cursor: pointer;">Click here to chat with a Librarian.</a> </p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- END CHAT PANE. RIGHT UP THERE-->
-
-                                                    <!-- EMAIL PANE BEGINS HERE -->
-                                                    <div id="email_pane" class="item_pane col-sm-5">
-                                                        <div class="pane_info">
-                                                            <a href="http://answers.bc.edu/q.php"><img src="//library.bc.edu/theme/img/askicon_email.png" alt="Send Us An Email icon">
-                                                            <h2>Send us an Email</h2></a>
-                                                            <p>Get an <a href="http://answers.bc.edu/q.php">answer by email</a> within one day, Monday-Friday.</p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- END EMAIL PANE. RIGHT UP THERE-->
-
-                                                    <!-- CALL PANE BEGINS HERE -->
-                                                    <div id="call_pane" class="item_pane col-sm-5">
-                                                        <div class="pane_info">
-                                                            <img src="//library.bc.edu/theme/img/askicon_phone.png" alt="Call Us icon">
-                                                            <h2>Call us</h2>
-                                                            <p>(617) 552-4472</p>
-                                                            <p>Call a Reference Librarian during regular reference service hours.</p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- END CALL PANE. RIGHT UP THERE-->
-                                                </div>
-
-                                            </div>
-                                            <div class="row bottom_row">
-                                                <div class="more"><a href="http://libguides.bc.edu/get-help">All Help</a></div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-
                             <!-- FEEDBACK FORM EMAIL -->
-                           <li class="dropdown yamm-fw"><a href="#bcl-feedback" class="menu-option">
-                           <span class="feedback"></span>Feedback</a>
-                           </li>
-
-                            <!-- MY ACCOUNTS BUTTON -->
-                            <li class="dropdown yamm-fw" id="accounts" style="display:none;"><a href="http://libguides.bc.edu/my-accounts">
-                            <i class="fa fa-user"></i> My Accounts</a>
+                            <li class="dropdown yamm-fw"><a href="#bcl-feedback" class="menu-option">
+                                <span class="feedback"></span>Feedback</a>
                             </li>
                         </ul>
                     </div>
