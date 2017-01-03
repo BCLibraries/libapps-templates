@@ -18,7 +18,7 @@
                     <input type="hidden" name="cx" value="017979566303760088717:i5wjadpvu2w" />
                     <input type="hidden" name="cof" value="FORID:11" />
                     <input type="hidden" name="ie" value="UTF-8" />
-                    <label for="q"><span class="screenreader offscreen">Search BC</span></label>
+                    <label for="searchbox"><span class="screenreader offscreen">Search BC</span></label>
                     <input type="text" value="Search BC" onblur="if(this.value=='') this.value='Search BC';" onclick="if(this.value=='Search BC') this.value='';" name="q" id="searchbox" size="27" autocomplete="off"   />
                     <input type="image" src="http://library.bc.edu/theme/img/go_button.png" id="searchsubmit" name="sa" value="Search" style="float:right" alt="search">
                 </div>
@@ -347,7 +347,8 @@
                     <ul class="nav nav-tabs split-button-nav">
                         {{guide_nav}}
                     </ul>
-  
+                    <label for="guide-nav-mobile" class="accessibility-text">Guide navigation for mobile devices</label>
+                    <select class="nav-mobile" id="guide-nav-mobile"></select>
                 </nav>
             </div>
 
