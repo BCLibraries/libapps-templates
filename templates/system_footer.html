@@ -81,50 +81,9 @@
 
 <!-- FEEDBACK FORM -->
 <div id="bcl-feedback" class="bcl-modal">
-    <div class="visible-form">
-        <header class="bcl-modal-header">
-            <h3>Feedback</h3>
-            <a href="#" class="close-modal">X</a>
-        </header>
-
-        <div class="bcl-modal-body">
-            <p>Use this form for questions or comments about the BC Libraries or the
-                website. If you have a research question you can also
-                <a href="http://answers.bc.edu/q.php">email</a> or <a onclick="window.open('https://libraryh3lp.com/chat/ajcu-chatstaff@chat.libraryh3lp.com?skin=19965&title=ChatStaff+Librarians&profile=cs-bostoncoll','chat', 'resizable=1,width=320,height=300'); return false;" style="cursor: pointer">chat</a> with a librarian.</p>
-
-            <p><em>Please fill out all required fields.</em></p>
-
-            <img src="//library.bc.edu/theme/bcbento/img/loading-bar.gif" alt="" class="loading" style="display: none;">
-
-            <form method="post" class="website-feedback remail-form" action="http://arc.bc.edu/jforms/webfeedback/webform.php">
-                <p><label for="feedback-name">Name</label>
-                    <input class="menu_input" type="text" value="" id="feedback-name" name="name">
-                </p>
-
-                <p>
-                    <label for="feedback-email">Email</label>
-                    <input class="menu_input" type="text" value="" id="feedback-email" name="email">
-                </p>
-
-                <p>
-                    <label for="feedback-text">Question or comment <em>(required)</em></label>
-                    <textarea name="feedback" id="feedback-text"></textarea>
-                </p>
-
-                <p>
-                    <input class="menu_input" type="hidden" value="" id="feedback-name" name="page_url">
-                    <input class="feedback_button" type="submit" value="Submit" name="submit">
-                </p>
-
-                <div style="clear:both"></div>
-                <!-- END form fields -->
-
-                <!-- REQUIRED -->
-                <input type="hidden" value="website-feedback" name="form-to[]">
-
-                <!-- END REQUIRED -->
-            </form>
-        </div>
+    <div id="feedback_wrapper">
+        <div id="feedback_close"></div>
+        <div id="s-la-widget-5468"></div>
     </div>
 </div>
 <!-- END FEEDBACK FORM -->
