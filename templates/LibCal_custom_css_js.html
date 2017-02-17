@@ -1,0 +1,218 @@
+<link rel="stylesheet" href="//library.bc.edu/theme/css/style.css"/>
+<link rel="stylesheet" href="//library.bc.edu/theme/css/icomoon.css"/>
+<script type="text/javascript" src="//library.bc.edu/theme/js/jquery.hoverIntent.minified.js"></script>
+<script type="text/javascript" src="//library.bc.edu/theme/js/bootstrap-hover-dropdown.min.js"></script>
+<script type="text/javascript" src="//library.bc.edu/theme/js/libhours.js"></script>
+<script type="text/javascript" src="//library.bc.edu/theme/js/libraryinfo.js"></script>
+<script type="text/javascript" src="//library.bc.edu/theme/js/megamenu.js"></script>
+<script type="text/javascript" src="//api2.libanswers.com/1.0/widgets/5468" async></script> 
+
+<!-- Control search tab switch. -->
+<script>
+    $(function () {
+        $('#block_search *[role=presentation]').click(
+            function() {
+                var current_text = $('#block_search .tab-pane.active input[type=text]').val();
+                $('#block_search .tab-pane input[type=text]').val(current_text);
+            }
+        );
+    });
+</script>
+
+<style>
+body {
+    background: #fff 0% 0%;
+    font-family: Arial, sans-serif;
+    color: #666;
+    font-size: 14px;
+    padding: 0;
+    line-height: 1.75;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+a, a:visited, .ui-widget-content a, .ui-widget-content a:visited {
+    color: #990000;
+    font-weight: normal;
+}
+
+a:hover, a:active, a:focus, .ui-widget-content a, .ui-widget-content a:active {
+    color: #990000;
+    text-decoration: underline;
+}
+
+/* override bc style table default */
+td, th {padding:0;}
+table, th, td {border:none;}
+td {vertical-align: middle;}
+
+@media (min-width: 1200px) {
+    #s-lc-rm-cal .ui-datepicker {
+        width: 18em;
+    }
+}
+#s-lc-rm-groupdd {
+    display:none;
+}
+table#s-lc-rm-tg-rnames td.s-lc-rm-rntd {
+    height:48px;
+}
+table#s-lc-rm-tg-rnames tr:first td {
+    line-height:0;
+    font-size:0;
+    height:14px;
+}
+.lc_rm_b,
+.lc_rm_u,
+.lc_rm_a,
+.lc_rm_t {
+    height:47px;
+}
+.lc_rm_b,
+.lc_rm_u {
+    cursor:not-allowed;
+}
+.lc_rm_t {
+    background-color:gold;
+}
+.lc_rm_t::after {
+    content: "\f041";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    color:#000;
+    font-size:1.2em;
+}
+#s-lc-rm-tg-rnames tbody tr:first-child {
+    font-size: 11px;
+}
+.s-lc-rm-rn {
+    overflow: visible;
+    line-height: 1.2em;
+}
+#s-lc-rm-tg-roomleg .label-rm-avail,
+#s-lc-rm-daily-limit {
+    font-size:100%;
+}
+#s-lc-rm-desc,
+#s-lc-rm-tc-box {
+    font-size:14px;
+}
+#s-lc-rm-datetime {
+    font-size:16px;
+}
+#s-lc-public-bc .breadcrumb {
+    background-color: transparent;
+    list-style: none outside none;
+    margin: 12px 0 12px 0;
+    padding: 0;
+    font-size: .9em;
+}
+#s-lc-public-bc .breadcrumb > .active {
+    color: #aaaaaa;
+    font-weight: normal;
+}
+.col-md-3.s-lc-c-l {
+    min-height: 600px;
+}
+#cal-form h2 {
+    margin: 15px 0 5px 0;
+}
+/* hide public banner */
+#s-lc-public-banner {display: none;}
+
+/* footer */
+#s-lc-public-footer {
+    border: none;
+    background-color: inherit;
+}
+#s-lc-public-footer-brand,
+#s-lc-public-footer-rights,
+#s-lc-footer-support-link {display:none;}
+#s-lc-public-footer-admin-links {
+    text-align: right;
+    width: 100%;
+    padding-top: 5em;
+}
+
+/* override */
+.col-md-12:first-of-type, 
+.col-md-3:first-of-type, 
+.col-md-4:first-of-type, 
+.col-md-6:first-of-type {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}    
+</style>
+
+<script>
+    $(document).ready(function(){
+        // tidy up breadcrumbs
+        if(window.location.pathname.indexOf('/booking/') == 0){
+            $("ol.breadcrumb li:nth-child(2)").hide();
+        }
+
+        // rename login link
+        var logintext = $("#s-lc-sign-in").text();
+        if (logintext && logintext.length && logintext === "Login to LibApps") {
+            $("#s-lc-sign-in").text("Staff login");
+        }
+    });
+</script>
+
+<!-- SCRIPT TO TURN SIDE NAVIGATION INTO DROPDOWNS ON MOBILE.  DO NOT REMOVE.  -->
+<script>
+    /* DOM ready*/
+    $(function() {
+        var myNavID = "nav";
+        /* For each nav menu, create a corresponding drop down menu */
+        $("nav.drop-down").each(function(){
+            if ($(this).attr("id")) {
+                myNavID = "nav#" + $(this).attr("id");
+            }
+            
+            //console.log("navID " + myNavID);
+
+            sel = $(this).find(".nav-mobile");
+        
+            if (sel.length == 0){
+                /* Create the dropdown base */
+                $("<select class='nav-mobile' />").appendTo(myNavID);
+                sel = $(this).find(".nav-mobile");
+            }
+            
+            /* Create default option "Go to..." */
+            $("<option />", {
+                "selected": "selected",
+                "value"   : "",
+                "text"    : "Go to..."
+            }).appendTo(sel);
+
+            /* Populate dropdown with menu items */
+            $(myNavID + " a").each(function() {
+                var el = $(this);
+                var myText = el.text();
+                if ($(el).parents(".s-lg-subtab-ul").length > 0) {
+                    myText = "> " + el.text();
+                }
+                $("<option />", {
+                    "value"   : el.attr("href"),
+                    "text"      : myText
+                }).appendTo(sel);
+            });
+
+            /* To make dropdown actually work
+            // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/ */
+            $(sel).change(function() {
+                window.location = $(this).find("option:selected").val();
+            });
+        });
+
+    });
+</script>
