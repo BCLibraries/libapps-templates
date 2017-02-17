@@ -86,7 +86,7 @@
 </style>
 
 <!-- SCRIPT TO TURN SIDE NAVIGATION INTO DROPDOWNS ON MOBILE.  DO NOT REMOVE.  -->
-    <script>
+<script>
     /* DOM ready*/
     $(function() {
         var myNavID = "nav";
@@ -97,16 +97,21 @@
             }
             
             //console.log("navID " + myNavID);
-        
-            /* Create the dropdown base */
-            $("<select />").appendTo(myNavID);
 
+            sel = $(this).find(".nav-mobile");
+        
+            if (sel.length == 0){
+                /* Create the dropdown base */
+                $("<select class='nav-mobile' />").appendTo(myNavID);
+                sel = $(this).find(".nav-mobile");
+            }
+            
             /* Create default option "Go to..." */
             $("<option />", {
                 "selected": "selected",
                 "value"   : "",
                 "text"    : "Go to..."
-            }).appendTo(myNavID + " select");
+            }).appendTo(sel);
 
             /* Populate dropdown with menu items */
             $(myNavID + " a").each(function() {
@@ -118,12 +123,12 @@
                 $("<option />", {
                     "value"   : el.attr("href"),
                     "text"      : myText
-                }).appendTo(myNavID + " select");
+                }).appendTo(sel);
             });
 
             /* To make dropdown actually work
             // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/ */
-            $(myNavID + " select").change(function() {
+            $(sel).change(function() {
                 window.location = $(this).find("option:selected").val();
             });
         });
