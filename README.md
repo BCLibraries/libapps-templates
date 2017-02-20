@@ -1,22 +1,26 @@
-## Boston College Libraries LibGuides templates
+## Boston College Libraries LibApps templates
 
-This repository contains the literal template code used to customize our LibGuides instance. 
-These templates are meant to be copied/pasted directly into the LibGuides Look & Feel input boxes or the group page layout input boxes.
+This repository contains the template code used to customize our LibApps instances. 
+These templates are meant to be copied/pasted directly into each respective application's Look & Feel screen. There are also additional group-level LibGuides templates.
 
-### System templates
+### LibCal templates
 
-The template files with the ***system_*** prefix are system-wide. 
-There are a few common templates such as [header](/templates/system_header.html) and [footer](/templates/system_footer.html) code that are referenced throughout many of the templates.
+Custom templates for LibCal include a common header and footer. These match the same header and footer used in LibGuides. 
+
+### LibGuides System templates
+
+The template files with the ***LibGuides_system_*** prefix are system-wide. 
+There are a few common templates such as [header](/LibGuides/LibGuides_system_header.html) and [footer](/LibGuides/LibGuides_system_footer.html) code that are referenced throughout many of the templates.
 
 Other system-level templates are included:
-* [A-Z](/templates/template_az.html)
-* [Profile](/templates/template_profile.html)
-* [Search](/templates/template_search.html)
-* [Subject](/templates/template_subject.html)
+* [A-Z](/LibGuides/LibGuides_template_az.html)
+* [Profile](/LibGuides/LibGuides_template_profile.html)
+* [Search](/LibGuides/LibGuides_template_search.html)
+* [Subject](/LibGuides/LibGuides_template_subject.html)
 
-### Group templates
+### LibGuides Group templates
 
-Template code for several group templates are also included and are designated with a ***template_group_*** prefix. 
+Template code for several group templates are also included and are designated with a ***LibGuides_template_*** prefix. 
 Often times these groups will reuse the common header and footer templates. Custom header and footer code for group templates are named appropriately for easy identification.
 
 ### Static files
