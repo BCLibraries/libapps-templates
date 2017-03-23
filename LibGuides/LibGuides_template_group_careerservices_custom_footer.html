@@ -1,0 +1,159 @@
+<style>
+@media (min-width: 1050px) {
+    .column_contact {
+        width:30%;
+    }
+    .column_quick_links {
+        width:20%;
+    }
+}
+#careerservices_hours_container ul.lib_hours:nth-child(odd) {
+    background-color: #EAEAEA;
+}
+#careerservices_hours_container #hours_disclaimer {
+    padding:8px 0 0 4px;
+    margin:0;
+    font-style: italic;
+}
+#careerservices_hours_container ul.lib_hours,
+#careerservices_hours_container ul.lib_hours-dropin {
+    padding: 2px 0;
+}
+#careerservices_hours_container ul.lib_hours li.day,
+#careerservices_hours_container ul.lib_hours li.name,
+#careerservices_hours_container ul.lib_hours li.hours {
+    display: inline-block;
+    margin: 0;
+    padding: 1px 0 1px 4px;
+    width: 39%;
+    vertical-align: middle;
+}
+#careerservices_hours_container ul.lib_hours li.status,
+#careerservices_hours_container ul.lib_hours li.date {
+    display:none;
+}
+#careerservices_hours_container ul.lib_hours li.hours {
+    width:20%;
+}
+#careerservices_hours_container #hours_subtitle {
+    font-size: smaller;
+    font-style: italic;
+    text-transform: capitalize;
+}
+</style>
+
+<!-- BEGIN BC FOOTER -->
+<div id="footer">
+    <hr>
+    <div class="f_column column_contact">
+        <!-- Address -->
+        <div id="f_address">
+            <h2>Boston College Career Center</h2>
+            <p>38 Commonwealth Avenue <br/>
+            Chestnut Hill, MA 02467 <br/>
+            <strong>Front Desk:</strong> 617-552-3430 <br/>
+            <strong>Recruiting:</strong> 617-552-4769 <br/>
+            <strong>Email:</strong> <a href="mailto:career.center@bc.edu">career.center@bc.edu</a> <br/>
+            <strong>Website:</strong> <a href="http://www.bc.edu/careers">bc.edu/careers</a> </p>
+        </div>
+
+        <!-- SOCIAL MEDIA ICONS -->
+        <div id="socialmedia">
+            <ul>
+                <li><a href="https://bit.ly/bccareerlinkedin " title="Boston College Career Center LinkedIn" class="mediablock" id="media_linkedin"><span class="accessibility-text">Boston College Career Center LinkedIn</span></a></li>
+                <li><a href="https://twitter.com/BC_Career" title="Follow the Boston College Career Center on Twitter" class="mediablock" id="media_twitter"><span class="accessibility-text">Follow the Boston College Career Center on Twitter</span></a></li>
+                <li><a href="https://www.facebook.com/BostonCollegeCareerCenter" title="Boston College Career Center Facebook Link" class="mediablock" id="media_facebook"><span class="accessibility-text">Boston College Career Center Facebook Link</span></a></li>
+                <li><a href="https://www.instagram.com/bc_career" title="Boston College Career Center Instagram" class="mediablock" id="media_instagram"><span class="accessibility-text">Boston College Career Center Instagram</span></a></li> 
+                <li><a href="https://www.youtube.com/user/BCCareerLibrary" title="Boston College Career Center on YouTube" class="mediablock" id="media_youtube"><span class="accessibility-text">Boston College Career Center on YouTube</span></a></li>
+            </ul>
+        </div>
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <p><a href="http://libguides.bc.edu/accessibility">Accessibility</a></p>
+            © 2017 The Trustees of Boston College. <a href="http://www.bc.edu/gn-legal" title="legal" id="footer-legal">Legal</a></p>
+        </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="f_column no_right_border column_quick_links">
+        <h2>Quick Links</h2>
+        <nav id="quick_links" class="drop-down">
+            <ul class="nav" id="footer-links">
+                <li><a href="http://www.bc.edu/offices/careers/about/contactus.html" title="Contact Us" target="_self" id="footer-contact-us">Contact us</a></li>
+                <li><a href="http://www.bc.edu/offices/careers/about/hours.html" title="Career Center Hours" target="_self" id="footer-reserve-a-study-room">Career Center Hours</a></li>
+                <li><a href="http://www.bc.edu/eaglelink" title="EagleLink" target="_self" id="footer-ask-a-librarian">EagleLink</a></li>
+                <li><a href="http://libguides.bc.edu/research_guides" title="Research Guides" target="_self" id="footer-research-guides">Research Guides</a></li>
+            </ul>
+            <label for="quick-links-mobile" class="accessibility-text">Quick links for mobile devices</label>
+            <select class="nav-mobile" id="quick-links-mobile"></select>
+        </nav>
+    </div>
+    
+    <!-- Hours -->
+    <div class="f_column column_hours no_bottom_border no_right_border">
+        <h2>Hours</h2>
+        <!-- LIBCAL HOURS API-->
+        <div id="careerservices_hours_container">
+            <ul class="lib_hours" id="">
+                <li class="name"><a href="http://www.bc.edu/careers">Career Center</a></li>
+                <li class="day">Monday - Friday</li>
+                <li class="hours"><span class="hours-start">9am</span> - <span class="hours-end">5pm</span></li>
+            </ul>
+            <br/>
+            <h2>Drop-Ins <span id="hours_subtitle">(Academic Year: Sept. - May)</span></h2>
+            <div id="dropin-hours">
+                <ul class="lib_hours" id="">
+                    <li class="name">Career Center</li>
+                    <li class="day">Monday - Friday</li>
+                    <li class="hours"><span class="hours-start">11am</span> - <span class="hours-end">4pm</span></li>
+                </ul>
+                <ul class="lib_hours" id="">
+                    <li class="name">Maloney 4th floor reception area</li>
+                    <li class="day">Monday</li>
+                    <li class="hours"><span class="hours-start">2pm</span> - <span class="hours-end">4pm</span></li>
+                </ul>
+                <ul class="lib_hours" id="">
+                    <li class="name">Maloney 450</li>
+                    <li class="day">Tuesday</li>
+                    <li class="hours"><span class="hours-start">2pm</span> - <span class="hours-end">4pm</span></li>
+                </ul>
+                <ul class="lib_hours" id="">
+                    <li class="name">O'Neill Library, 3rd floor</li>
+                    <li class="day">Wednesday</li>
+                    <li class="hours"><span class="hours-start">2pm</span> - <span class="hours-end">4pm</span></li>
+                </ul>
+                <ul class="lib_hours" id="">
+                    <li class="name">O'Neill Library, 3rd floor</li>
+                    <li class="day">Thursday</li>
+                    <li class="hours"><span class="hours-start">2pm</span> - <span class="hours-end">4pm</span></li>
+                </ul>
+            </div>
+            <p id="hours_disclaimer">*Changes to listed hours are posted at <a href="http://bc.edu/dropins">bc.edu/dropins</a></p>
+        </div>
+    </div>
+</div>
+<!-- END BC FOOTER -->
+
+<!-- REWRITE CAREER SERVICES HEADER IMAGE HREF -->
+<script>$(function(){$("#header-lib-link").attr({"href": "http://www.bc.edu/careers", "title": "To the Career Center"});});</script>
+
+<script type="text/javascript" src="//library.bc.edu/theme/js/libraryinfo.js"></script>
+
+<!-- /#contentinfo -->
+<!-- MEGA MENU SCRIPT -->
+<script type="text/javascript" src="//library.bc.edu/theme/js/megamenu.js"></script>
+
+<!-- Script to block spam-bots. Requires JQuery. -->
+<script src="//library.bc.edu/theme/js/nospam.js"></script>
+<script src="//library.bc.edu/theme/js/libhours.js"></script>
+
+<!-- FEEDBACK FORM -->
+<script src="//library.bc.edu/theme/js/nospam.js"></script>
+<div id="bcl-feedback" class="bcl-modal">
+    <div id="feedback_wrapper">
+        <div id="feedback_close"></div>
+        <div id="s-la-widget-5468"></div>
+    </div>
+</div>
+<!-- END FEEDBACK FORM -->
