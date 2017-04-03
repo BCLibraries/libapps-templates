@@ -1,0 +1,112 @@
+<link rel="stylesheet" href="//library.bc.edu/theme/css/style.css"/>
+<link rel="stylesheet" href="//library.bc.edu/theme/css/icomoon.css"/>
+<script type="text/javascript" src="//library.bc.edu/theme/js/jquery.hoverIntent.minified.js"></script>
+<script type="text/javascript" src="//library.bc.edu/theme/js/bootstrap-hover-dropdown.min.js"></script>
+<script type="text/javascript" src="//library.bc.edu/theme/js/libhours.js"></script>
+<script type="text/javascript" src="//library.bc.edu/theme/js/libraryinfo.js"></script>
+<script type="text/javascript" src="//library.bc.edu/theme/js/megamenu.js"></script>
+<script type="text/javascript" src="//api2.libanswers.com/1.0/widgets/5468" async></script>
+
+<style>
+/* override bc style table default */
+td, th {padding:0;}
+table, th, td {border:none;}
+td {vertical-align: middle;}
+
+.highlight-box-blue {
+    padding: 10px 0 20px 20px;
+    border: 1px solid #e7e7e7;
+    background-color: aliceblue;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    margin-bottom: 10px;
+}
+.breadcrumb {
+    background-image: none;
+}
+#s-la-public-footer {
+    padding: 0;
+    border: 0;
+    background-color: #fff;
+    background-image: none;
+}
+#s-la-footer-brand {display:none;}
+#s-la-footer-admin-links {
+    text-align: right;
+    width: 100%;
+    padding-top: 5em;
+}
+/* hide public banner */
+#s-la-public-banner {display: none;}
+/* override */
+.col-md-12:last-of-type, .col-md-3:last-of-type, .col-md-4:last-of-type, .col-md-6:last-of-type {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+</style>
+
+<script>
+    $(document).ready(function(){
+        // rename login link
+        var logintext = $("#s-la-footer-login-link a").text();
+        if (logintext && logintext.length && logintext === "Login to LibApps") {
+            $("#s-la-footer-login-link a").text("Staff login");
+        }
+    });
+</script>
+
+
+<!-- SCRIPT TO TURN SIDE NAVIGATION INTO DROPDOWNS ON MOBILE.  DO NOT REMOVE.  -->
+<script>
+    /* DOM ready*/
+    $(function() {
+        var myNavID = "nav";
+        /* For each nav menu, create a corresponding drop down menu */
+        $("nav.drop-down").each(function(){
+            if ($(this).attr("id")) {
+                myNavID = "nav#" + $(this).attr("id");
+            }
+            
+            //console.log("navID " + myNavID);
+
+            sel = $(this).find(".nav-mobile");
+        
+            if (sel.length == 0){
+                /* Create the dropdown base */
+                $("<select class='nav-mobile' />").appendTo(myNavID);
+                sel = $(this).find(".nav-mobile");
+            }
+            
+            /* Create default option "Go to..." */
+            $("<option />", {
+                "selected": "selected",
+                "value"   : "",
+                "text"    : "Go to..."
+            }).appendTo(sel);
+
+            /* Populate dropdown with menu items */
+            $(myNavID + " a").each(function() {
+                var el = $(this);
+                var myText = el.text();
+                if ($(el).parents(".s-lg-subtab-ul").length > 0) {
+                    myText = "> " + el.text();
+                }
+                $("<option />", {
+                    "value"   : el.attr("href"),
+                    "text"      : myText
+                }).appendTo(sel);
+            });
+
+            /* To make dropdown actually work
+            // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/ */
+            $(sel).change(function() {
+                window.location = $(this).find("option:selected").val();
+            });
+        });
+
+    });
+</script>
