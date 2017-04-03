@@ -3,9 +3,9 @@
 This repository contains the template code used to customize our LibApps instances. 
 These templates are meant to be copied/pasted directly into each respective application's Look & Feel screen. There are also additional group-level LibGuides templates.
 
-### LibCal templates
+### LibCal and LibAnswers templates
 
-Custom templates for LibCal include a common header and footer. These match the same header and footer used in LibGuides. 
+Custom templates for [LibCal](/LibCal) and [LibAnswers](/LibAnswers) include a common header and footer. These are nearly identical to the header and footer used in LibGuides. 
 
 ### LibGuides System templates
 
