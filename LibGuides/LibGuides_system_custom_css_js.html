@@ -1,8 +1,9 @@
 <!-- CUSTOM HEADER INFO. TO BE CUT AND PASTED INTO Custom <HEAD> TAB ON LIBGUIDES CMS -->
 <!--link rel="stylesheet" href="//library.bc.edu/theme/css/fonts.css" /-->
-<link rel="stylesheet" href="//library.bc.edu/theme/css/style.css" />
+<link rel="stylesheet" href="//library.bc.edu/theme/css/style.css"/>
 <link rel="stylesheet" href="//library.bc.edu/theme/css/icomoon.css"/>
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"/>
 
 <script type="text/javascript" src="//library.bc.edu/theme/js/bootstrap-hover-dropdown.min.js"></script>
 <script type="text/javascript" src="//library.bc.edu/theme/js/jquery.hoverIntent.minified.js"></script>
@@ -26,30 +27,21 @@
 #iframe-message {background-color:#fffdf6; border:1px solid #ffeaae; -moz-border-radius: 10px; border-radius: 10px; padding:20px; margin:-15px 0 20px 0;}
 </style>
 <script>
-    $(document).ready(function(){
-        //console.log(window.location.pathname);
-        if ((window.location.pathname).indexOf('widget_')>-1){
-            //console.log("inside canvas");
-            var fullurl = "http://libguides.bc.edu/";
-            $("#midlevelcontainer").prepend('<div id="iframe-message"><div>You are viewing this page within an iframe.</div></div>');
-            $.urlParam = function(name){
-                var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-                if (results==null){return null;} else {return decodeURI(results[1]) || 0;}
-            }
-            $('#sb-search,#megamenu,#s-lg-guide-header-meta,#footer,#bcheader_info').hide();
-            $('#header').css({'border-bottom':'0', 'margin': '0 auto 0'});
-            $('body').css({'margin-top':'20px'});
-            $('#bcheader').css({'display':'none'});
-            if ($.urlParam('s')) {
-                fullurl += "az.php?s=" + $.urlParam('s');
-            } else if ($.urlParam('g') && $.urlParam('p') ){
-                fullurl += "c.php?g=" + $.urlParam('g') + "&p=" + $.urlParam('p');
-            } else if ($.urlParam('guide_id')){
-                fullurl += "c.php?g=" + $.urlParam('guide_id');
-            } else {return;}
-            $("#iframe-message").append('<div>The full URL of this page is <a href="' + fullurl + '" target="_blank">' + fullurl + '</a></div>')
-        }
-    });
+$(document).ready(function(){
+    if ((window.location.pathname).indexOf('widget_')>-1){
+        // prep by hiding top nav and other header elements
+        $('#header,#sb-search,#megamenu,#s-lg-guide-header-meta,#footer,#bcheader,#bcheader_info,#s-lib-bc-s-lg-bc-system-name').hide();
+        // hide header+footer when guide loaded in Canvas script
+        $.getScript( "//arc.bc.edu/libhours/lg/guides/canvasiframe.js" )
+        .done(function( script, textStatus ) {
+            console.log( textStatus );
+        })
+        .fail(function( jqxhr, settings, exception ) {
+            $('#header,#sb-search,#megamenu,#s-lg-guide-header-meta,#footer,#bcheader,#bcheader_info,#s-lib-bc-s-lg-bc-system-name').show();
+            console.log( "Triggered ajaxError handler." );
+        });
+    }
+});
 </script>
 
 <!-- PREVENT FLASH OF UNSTYLED CONTENT -->
@@ -263,7 +255,6 @@ $(document).ready(function() {
     #accordion-bc .ui-accordion-header.pass {background: #dff0d8; color:#3c763d; border-color:#d0e9c6;}
     .whatisthis {text-align:right;}
 </style>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 <script>
 $(document).ready(function(){
     if ($(location).attr('pathname') === "/libguides/admin_c.php") {
