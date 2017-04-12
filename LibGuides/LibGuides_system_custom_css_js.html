@@ -69,8 +69,6 @@
     .box-label {width:100px; display:inline-block; text-align:right;}
     .box-value textarea {width:425px; height:78px; margin-left:110px;}
 </style>
-<!-- INFO BUTTON SCRIPT -->
-<script type="text/javascript" src="//arc.bc.edu/libhours/lg/guides/infobutton.js"></script>
 
 <!-- Add padding to header area when in edit-mode -->
 <script type="text/javascript">
@@ -266,8 +264,17 @@ $(document).ready(function() {
 <script>
 $(document).ready(function(){
     if ($(location).attr('pathname') === "/libguides/admin_c.php") {
-        console.log("triggered location match");
+        // accessibility script
         $.getScript( "//arc.bc.edu/libhours/lg/widget/lgaccessibility.js" )
+        .done(function( script, textStatus ) {
+            console.log( textStatus );
+        })
+        .fail(function( jqxhr, settings, exception ) {
+            console.log( "Triggered ajaxError handler." );
+        });
+
+        // info button script
+        $.getScript( "//arc.bc.edu/libhours/lg/guides/infobutton.js" )
         .done(function( script, textStatus ) {
             console.log( textStatus );
         })
