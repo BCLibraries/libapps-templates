@@ -154,3 +154,79 @@ $(function() {
 a.post-reply {display: none!important;}
 div#comments {display: none!important;}
 </style>
+
+<!-- GRACEFULLY HANDLE SUBPAGE NAVIGATION -->
+<style>
+/*
+#E9E9E9 gray
+#990000 red
+#B29D6C green
+*/
+.dropdown-wrapper {position:relative;}
+#s-lg-guide-tabs ul.nav-tabs > li a {display:block; height:100%;}
+#s-lg-guide-tabs ul.nav-tabs > li > .dropdown-wrapper a.dropdown-toggle {vertical-align:middle;}
+#s-lg-guide-tabs ul.nav-tabs > li > .dropdown-wrapper a {height:100%; width: 100%; float:none!important; display:table-cell; color:#000;}
+#s-lg-guide-tabs ul.nav-tabs > li > ul.wrapper-subitems li a::before {content:"↳"; position:absolute; left:3px;}
+#s-lg-guide-tabs ul.nav-tabs > li > ul.wrapper-subitems li a .subitem {width:100%; height:100%; white-space:pre-line;}
+#s-lg-guide-tabs ul.nav-tabs > li > ul.wrapper-subitems li a {padding-left:20px!important;}
+
+/* grey - inactive */
+#s-lg-guide-tabs ul.nav-tabs > li.active .dropdown-wrapper,
+#s-lg-guide-tabs ul.nav-tabs > li > ul.wrapper-subitems li a {background-color: #E9E9E9; color:#000;}
+
+/* maroon - active */
+#s-lg-guide-tabs ul.nav-tabs > li.active.no-active-child > .dropdown-wrapper,
+#s-lg-guide-tabs ul.nav-tabs > li.active > ul.wrapper-subitems li.active a {background:#990000; cursor:pointer; color:#fff; width:100%}
+
+/* gold - hoverover */
+#s-lg-guide-tabs ul.nav-tabs > li > ul.wrapper-subitems li a:hover,
+#s-lg-guide-tabs ul.nav-tabs > li.active > ul.wrapper-subitems li a:hover,
+#s-lg-guide-tabs ul.nav-tabs > li.active .dropdown-wrapper:hover {background: #B29D6C; color:#000;}
+
+/* force active to always have white font */
+#s-lg-guide-tabs ul.nav-tabs > li.active.no-active-child .dropdown-wrapper a,
+#s-lg-guide-tabs ul.nav-tabs > li.active > ul.wrapper-subitems li.active a:hover,
+#s-lg-guide-tabs ul.nav-tabs > li.active.no-active-child .dropdown-wrapper a:hover {color:#fff;}
+
+/* hide/show blocks */
+#s-lg-guide-tabs ul.nav-tabs > li > ul.wrapper-subitems {display:none;}
+#s-lg-guide-tabs ul.nav-tabs > li.active.has-active-child > ul.wrapper-subitems {display:block;}
+
+.caret-up,
+#s-lg-guide-tabs ul.nav-tabs > li.active.has-active-child .dropdown-wrapper a.dropdown-toggle .caret {border-top:none; border-bottom:4px dashed;}
+</style>
+
+<script>
+$(document).ready(function() {
+    var delay=200, setTimeoutConst;
+
+    $("nav#side-nav ul.nav li.dropdown").each(function(){
+        $(this).children("a").wrapAll("<div class='dropdown-wrapper' />");
+        $(this).find(".dropdown-menu")
+               .removeClass("dropdown-menu")
+               .addClass("wrapper-subitems");
+    });
+
+    $("nav#side-nav ul.nav > li.dropdown.active").each(function(){
+        var activechildren = $(this).find("ul.wrapper-subitems > li.active");
+        if (activechildren && activechildren.length > 0){
+            $(this).addClass("has-active-child");
+        } else {
+            $(this).addClass("no-active-child");
+        }
+    });
+
+    $("nav#side-nav ul.nav > li.dropdown:not(.has-active-child)").hover(function(){
+        $this = $(this);
+        /* only trigger once delay has been reached. */
+        setTimeoutConst = setTimeout(function(){
+            $this.children("ul.wrapper-subitems").slideDown(250);
+            $this.find(".dropdown-wrapper .caret").addClass("caret-up");
+        }, delay);
+    }, function(){
+        clearTimeout(setTimeoutConst);
+        $(this).children("ul.wrapper-subitems").slideUp(250);
+        $(this).find(".dropdown-wrapper .caret").removeClass("caret-up");
+    });
+});
+</script>
