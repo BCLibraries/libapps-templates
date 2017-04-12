@@ -230,3 +230,50 @@ $(document).ready(function() {
     });
 });
 </script>
+
+<!-- ACCESSIBILITY WIDGET CODE -->
+<style>
+    #bc-custom-bar #bc-custom-bar-inner {margin: 0 0 20px 0;}
+    #bc-custom-bar #bc-custom-bar-inner > .ui-accordion-header {background:#d9edf7; padding-left:30px;}
+    #bc-custom-bar #bc-custom-bar-inner > .ui-accordion-header .ui-accordion-header-icon {}
+    #bc-custom-bar #bc-custom-bar-inner .ui-accordion-content {background: #f8f8f8;}
+    #accordion-bc .ui-accordion-content {background-color: #f8f8f8;}
+    .alert-border {outline:2px dashed red;}
+    .alert-border:hover {outline: 3px dashed red;}
+    .iter_list {padding-bottom:40px; border-bottom:1px solid #aaa;}
+    .iter_list li {padding:4px;}
+    div.alert-border {background-color:#C0C0C0;}
+    #accordion-bc .status {display:inline-block; padding:0 2px; margin-left:5px; width: 35px;}
+    #accordion-bc h3.ui-accordion-header { cursor:no-drop; color:gray;}
+    #accordion-bc h3.ui-accordion-header .ui-accordion-header-icon {display:none;}
+    #accordion-bc h3 .status:before {content: "";}
+    #accordion-bc h3.pass, 
+    #accordion-bc h3.fail {cursor:pointer;}
+    #accordion-bc h3.pass .ui-accordion-header-icon, 
+    #accordion-bc h3.fail .ui-accordion-header-icon {display:inline;}
+    #accordion-bc h3.pass .status, 
+    #accordion-bc h3.fail .status {padding: 0 5px 0 10px; font-family: FontAwesome;}
+    #accordion-bc h3.pass .status:before {content: "\f00c";}
+    #accordion-bc h3.fail .status:before {content: "\f071";}
+    #accordion-bc p.test-help {margin-top:2px;}
+    #accordion-bc {margin-bottom:20px;}
+    #accordion-bc .ui-accordion-header {color:#000;}
+    #accordion-bc .ui-accordion-header.fail {background: #f2dede; color:#a94442; border-color:#ebcccc;}
+    #accordion-bc .ui-accordion-header.pass {background: #dff0d8; color:#3c763d; border-color:#d0e9c6;}
+    .whatisthis {text-align:right;}
+</style>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script>
+$(document).ready(function(){
+    if ($(location).attr('pathname') === "/libguides/admin_c.php") {
+        console.log("triggered location match");
+        $.getScript( "//arc.bc.edu/libhours/lg/widget/lgaccessibility.js" )
+        .done(function( script, textStatus ) {
+            console.log( textStatus );
+        })
+        .fail(function( jqxhr, settings, exception ) {
+            console.log( "Triggered ajaxError handler." );
+        });
+    }
+});
+</script>
