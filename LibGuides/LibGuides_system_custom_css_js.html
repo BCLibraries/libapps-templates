@@ -136,14 +136,17 @@
     });
 </script>
 
-<!-- REMOVE LAST CRUMB ON SINGLE PAGE GUIDES -->
+<!-- UPDATE GUIDE BREAD CRUMBS -->
 <script>
 $(function() {
+    // remove last breadcrumb on single page guides
     if ($('#s-lg-guide-tabs li').length == 0) {
         $('.breadcrumb li:last').remove();
         $('.breadcrumb li:last').addClass('active');
         $('.breadcrumb li:last a').contents().unwrap();
     }
+    // replace site name
+    $("#s-lib-bc-site a").text("Research Guides");
 });
 </script>
 
