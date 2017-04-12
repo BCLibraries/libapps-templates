@@ -7,7 +7,7 @@
 <script type="text/javascript" src="//library.bc.edu/theme/js/bootstrap-hover-dropdown.min.js"></script>
 <script type="text/javascript" src="//library.bc.edu/theme/js/jquery.hoverIntent.minified.js"></script>
 <script type="text/javascript" src="//library.bc.edu/theme/js/modernizr.custom.js"></script>
-<script type="text/javascript" src="//api2.libanswers.com/1.0/widgets/5468" async></script> 
+<script type="text/javascript" src="//api2.libanswers.com/1.0/widgets/5468" async></script>
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -27,9 +27,9 @@
 </style>
 <script>
     $(document).ready(function(){
-        console.log(window.location.pathname);
+        //console.log(window.location.pathname);
         if ((window.location.pathname).indexOf('widget_')>-1){
-            console.log("inside canvas");
+            //console.log("inside canvas");
             var fullurl = "http://libguides.bc.edu/";
             $("#midlevelcontainer").prepend('<div id="iframe-message"><div>You are viewing this page within an iframe.</div></div>');
             $.urlParam = function(name){
@@ -37,8 +37,9 @@
                 if (results==null){return null;} else {return decodeURI(results[1]) || 0;}
             }
             $('#sb-search,#megamenu,#s-lg-guide-header-meta,#footer,#bcheader_info').hide();
-            $('#header').css({'border-bottom':'0', 'margin':'0 auto 0'});
-            $('body').css({'margin-top':'0'});
+            $('#header').css({'border-bottom':'0', 'margin': '0 auto 0'});
+            $('body').css({'margin-top':'20px'});
+            $('#bcheader').css({'display':'none'});
             if ($.urlParam('s')) {
                 fullurl += "az.php?s=" + $.urlParam('s');
             } else if ($.urlParam('g') && $.urlParam('p') ){
@@ -93,17 +94,17 @@
             if ($(this).attr("id")) {
                 myNavID = "nav#" + $(this).attr("id");
             }
-            
+
             //console.log("navID " + myNavID);
 
             sel = $(this).find(".nav-mobile");
-        
+
             if (sel.length == 0){
                 /* Create the dropdown base */
                 $("<select class='nav-mobile' />").appendTo(myNavID);
                 sel = $(this).find(".nav-mobile");
             }
-            
+
             /* Create default option "Go to..." */
             $("<option />", {
                 "selected": "selected",
@@ -112,7 +113,7 @@
             }).appendTo(sel);
 
             /* Populate dropdown with menu items */
-            $(myNavID + " a").each(function() {
+            $(myNavID + " a:not(.dropdown-toggle)").each(function() {
                 var el = $(this);
                 var myText = el.text();
                 if ($(el).parents(".s-lg-subtab-ul").length > 0) {
@@ -130,7 +131,6 @@
                 window.location = $(this).find("option:selected").val();
             });
         });
-
     });
 </script>
 
@@ -148,9 +148,12 @@ $(function() {
 });
 </script>
 
+<!-- MAKE SURE GUIDE DESCRIPTION IS PROPERLY LABELED -->
 <style>
-a.post-reply {display: none!important;}
-div#comments {display: none!important;}
+.edit-mode #s-lg-guide-description {display:block;}
+.edit-mode #s-lg-guide-desc-container {width:70%; padding-bottom:20px; margin-top:-10px;}
+.edit-mode #s-lg-guide-desc-container::before {content: "Guide Description: ";}
+span.pad-left-med.hitst {display: none;}
 </style>
 
 <!-- GRACEFULLY HANDLE SUBPAGE NAVIGATION -->
