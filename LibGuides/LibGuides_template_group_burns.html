@@ -1,4 +1,4 @@
-<body class="s-lg-guide-body burns-template">
+<body class="s-lg-guide-body burns">
 {{skip_link}}
 <!-- TEMPORARY CODE TO MIMIC PROPOSED BC HEADER-->
 <div id="bcheader"></div>
@@ -8,8 +8,8 @@
 
     <div id="bcheader_info">
         <ul>
-            <li><a href="http://www.bc.edu/gn-bcinfo"  title="BCInfo">BCInfo</a></li>
-            <li><a href="http://www.bc.edu/gn-directories" title="Directories">Directories</a></li>
+            <li><a href="http://www.bc.edu/gn-bcinfo">BCInfo</a></li>
+            <li><a href="http://www.bc.edu/gn-directories">Directories</a></li>
         </ul>
 
         <div id="bcheader_search">
@@ -34,9 +34,9 @@
     <!-- BEGIN HEADER -->
     <div id="header">
         <div id="librarytitle">
-           <img src="http://library.bc.edu/theme/img/bcheader_title.png" id="fakebctitle" alt="Boston College">
-           <a href="http://library.bc.edu/"><h1>University Libraries</h1></a>
-        </div>
+        <a href="http://bc.edu" title="Go to Boston College" id="header-bc-link"><img src="http://library.bc.edu/theme/img/bcheader_title.png" id="fakebctitle" alt="Boston College Logo"></a>
+        <a href="http://library.bc.edu/" title="To the Libraries" id="header-lib-link"><h1>Boston College Libraries</h1></a>
+    </div>
 
         <div id="motto">
             <p>Value Beyond Discovery</p>
@@ -58,9 +58,9 @@
                 <!-- BEGIN CONTAINER -->
                 <div class="container">
                     <div class="hamburger">
-                        <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle">
-                        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                    </div>
+                    <button aria-label="Open navigation" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle">
+                    <span class="accessibility-text">Navigation for mobile devices</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
                     <!-- BEGIN NAVBAR-COLLAPSE -->
                     <div id="navbar-collapse-1" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
@@ -74,7 +74,6 @@
                                             <div class="row">
                                                 <!-- Overview -->
                                                 <ul class="col-sm-2 menu_list">
-                                                    <!--li><h4><a href="#">By Format</a></h4></li-->
                                                     <li><a href="#">General Overview</a></li>
                                                     <li><a href="#">American</a></li>
                                                     <li><a href="#">British &amp; British Catholic</a></li>
@@ -84,7 +83,6 @@
 
                                                 <!-- Collecting areas -->
                                                 <ul class="col-sm-2 menu_list">
-                                                    <!--li><h4><a href="#">Major Collecting Areas</a></h4></li-->
                                                     <li><a href="#">Art &amp; Architecture</a></li>
                                                     <li><a href="#">Jesuit &amp; Catholic</a></li>
                                                     <li><a href="#">Nursing</a></li>
@@ -95,12 +93,12 @@
                                                 <!-- Donations -->
                                                 <ul class="col-sm-8 menu_list">
                                                     <div class="pane_info">
-                                                        <h3><a href="#">Donations</a></h3>
+                                                        <div class="h3style"><a href="#">Donations</a></div>
                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                                                     </div>
 
                                                     <div class="pane_pic">
-                                                        <a href="http://libguides.bc.edu/burns"><img alt="Burns Library home page" src="//s3.amazonaws.com/libapps/accounts/3908/images/burnsbackgroundsample.jpg"></a>
+                                                        <a href="http://libguides.bc.edu/burns"><img alt="Burns Library home page Donations" src="//s3.amazonaws.com/libapps/accounts/3908/images/burnsbackgroundsample.jpg"></a>
                                                     </div>
                                                 </ul>
                                             </div>
@@ -122,7 +120,7 @@
                                             <div class="row">
                                                 <!-- How To -->
                                                 <ul class="col-sm-2 menu_list">
-                                                    <li><h4><a href="#">How to...</a></h4></li>
+                                                    <li><div class="h4style"><a href="#">How to...</a></div></li>
                                                     <li><a href="#">Search our catalog</a></li>
                                                     <li><a href="#">Explore our digital collections</a></li>
                                                     <li><a href="#">Ask a question</a></li>
@@ -130,7 +128,7 @@
 
                                                 <!-- Social Media -->
                                                 <ul class="col-sm-2 menu_list">
-                                                    <li><h4><a href="#">Social Media</a></h4></li>
+                                                    <li><div class="h4style"><a href="#">Social Media</a></div></li>
                                                     <li><a href="#">Blog</a></li>
                                                     <li><a href="#">Facebook</a></li>
                                                     <li><a href="#">Flickr</a></li>
@@ -141,12 +139,12 @@
                                                 <!-- TK -->
                                                 <ul class="col-sm-8 menu_list">
                                                     <div class="pane_info">
-                                                        <h3><a href="#">TK</a></h3>
+                                                        <div class="h3style"><a href="#">TK</a></div>
                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                                                     </div>
 
                                                     <div class="pane_pic">
-                                                        <a href="http://libguides.bc.edu/burns"><img alt="Burns Library home page" src="//s3.amazonaws.com/libapps/accounts/3908/images/burnsbackgroundsample.jpg"></a>
+                                                        <a href="http://libguides.bc.edu/burns"><img alt="Burns Library home page TK" src="//s3.amazonaws.com/libapps/accounts/3908/images/burnsbackgroundsample.jpg"></a>
                                                     </div>
                                                 </ul>
                                             </div>
@@ -168,7 +166,7 @@
                                             <div class="row">
                                                 <!-- Planning Your Visit -->
                                                 <ul class="col-sm-4 menu_list">
-                                                    <li><h4><a href="#">Planning Your Visit</a></h4></li>
+                                                    <li><div class="h4style"><a href="#">Planning Your Visit</a></div></li>
                                                     <li><a href="#">Hours</a></li>
                                                     <li><a href="#">Reading room policies</a></li>
                                                     <li><a href="#">Directions and parking</a></li>
@@ -178,7 +176,7 @@
 
                                                 <!-- Services -->
                                                 <ul class="col-sm-4 menu_list">
-                                                    <li><h4><a href="#">Services</a></h4></li>
+                                                    <li><div class="h4style"><a href="#">Services</a></div></li>
                                                     <li><a href="#">Reference</a></li>
                                                     <li><a href="#">Request reproductions</a></li>
                                                     <li><a href="#">Request permissions</a></li>
@@ -188,7 +186,7 @@
 
                                                 <!-- Resources For -->
                                                 <ul class="col-sm-4 menu_list end">
-                                                    <li><h4><a href="#">Resources For</a></h4></li>
+                                                    <li><div class="h4style"><a href="#">Resources For</a></div></li>
                                                     <li><a href="#">BC Students</a></li>
                                                     <li><a href="#">BC Faculty</a></li>
                                                     <li><a href="#">Visiting Researchers</a></li>
@@ -213,7 +211,7 @@
                                             <div class="row">
                                                 <!-- About Us -->
                                                 <ul class="col-sm-3 menu_list"  style="padding-top: 10px;">
-                                                    <li><h4>About Us</h4></li>
+                                                    <li><div class="h4style">About Us</div></li>
                                                     <li><a href="#">Our building</a></li>
                                                     <li><a href="#">Our staff</a></li>
                                                     <li><a href="#">Join our mailing list</a></li>
@@ -224,18 +222,18 @@
                                                     <!-- BURNS PANE BEGINS HERE -->
                                                     <div  class="item_pane">
                                                         <div class="pane_info">
-                                                            <h3><a href="http://libguides.bc.edu/burns">Burns Library</a></h3>
+                                                            <div class="h3style"><a href="http://libguides.bc.edu/burns">Burns Library</a></div>
                                                              <p class="address">140 Commonwealth Avenue<br>Chestnut Hill, MA 02467-3810</p>
                                                              <p>Located in the original Bapst Library building on Boston College's Chestnut Hill campus, the John J. Burns Library offers students, scholars, and the general public opportunities to engage with rare books, special collections, and archives.</p>
 
                                                             <ul class="col-sm-6">
-                                                                <li><h4>Contact Info</h4></li>
+                                                                <li><div class="h4style">Contact Info</div></li>
                                                                 <li class="megamenuphone"><p>(617) 552-4861</p></li>
                                                                 <li class="megamenuemail"><p><a href="mailto:burnsref@bc.edu">burns@bc.edu</a></p></li>
                                                             </ul>
 
                                                             <ul class="col-sm-6">
-                                                                <li><h4>Today's Hours</h4></li>
+                                                                <li><div class="h4style">Today's Hours</div></li>
                                                                 <li><div class="mini_hours_container" id="BurnsLibrary"></div></li>
                                                                 <li class="megamenucalendar"><p><a href="http://libguides.bc.edu/hours">Burns Library Weekly Hours</a></p></li>
                                                             </ul>
@@ -265,7 +263,7 @@
                                             <div class="row">
                                                 <!-- Donating Materials -->
                                                 <ul class="col-sm-4 menu_list">
-                                                    <li><h4><a href="#">Donating Materials</a></h4></li>
+                                                    <li><div class="h4style"><a href="#">Donating Materials</a></div></li>
                                                     <li><a href="#">Gift acceptance policies</a></li>
                                                     <li><a href="#">Donation procedures</a></li>
                                                     <li><a href="#">Appraisal services</a></li>
@@ -274,7 +272,7 @@
 
                                                 <!-- Financial Support -->
                                                 <ul class="col-sm-4 menu_list">
-                                                    <li><h4><a href="#">Financial Support</a></h4></li>
+                                                    <li><div class="h4style"><a href="#">Financial Support</a></div></li>
                                                     <li><a href="#">For acquisitions</a></li>
                                                     <li><a href="#">For collections care</a></li>
                                                     <li><a href="#">For research &amp; scholarship</a></li>
@@ -283,7 +281,7 @@
 
                                                 <!-- Recent Acquisitions -->
                                                 <div class="col-sm-4 menu_list end">
-                                                    <h4><a href="#">Recent Acquisitions</a></h4>
+                                                    <div class="h4style"><a href="#">Recent Acquisitions</a></div>
                                                     <p>...</p>
                                                 </div>
                                             </div>

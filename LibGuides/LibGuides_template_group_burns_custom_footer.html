@@ -14,11 +14,11 @@
         <!-- SOCIAL MEDIA ICONS -->
         <div id="socialmedia">
             <ul>
-                <li><a href="https://johnjburnslibrary.wordpress.com/feed/" title="Burns Library News RSS feed" class="mediablock" id="media_news"><span class="accessibility-text">Burns Library News RSS feed</span></a></li>
-                <li><a href="https://www.facebook.com/johnjburnslibrary" title="Burns Library Facebook Link" class="mediablock" id="media_facebook"><span class="accessibility-text">Burns Library Facebook Link</span></a></li>
-                <li><a href="https://www.flickr.com/photos/bc-burnslibrary/" title="Burns Library Flickr Page" class="mediablock" id="media_flickr"><span class="accessibility-text">Burns Library Flickr Page</span></a></li>
-                <li><a href="https://twitter.com/burnslibrary" title="Burns Library on Twitter" class="mediablock" id="media_twitter"><span class="accessibility-text">Burns Library on Twitter</span></a></li>
-                <li><a href="https://www.youtube.com/user/BostonCollegeLib" title="Boston College on YouTube" class="mediablock" id="media_youtube"><span class="accessibility-text">Boston College on YouTube</span></a></li>
+                <li><a href="https://johnjburnslibrary.wordpress.com/feed/" title="Burns Library News RSS" class="mediablock" id="media_news"><span class="accessibility-text">Burns Library News RSS feed</span></a></li>
+                <li><a href="https://www.facebook.com/johnjburnslibrary" title="Burns Library Facebook" class="mediablock" id="media_facebook"><span class="accessibility-text">Burns Library Facebook Link</span></a></li>
+                <li><a href="https://www.flickr.com/photos/bc-burnslibrary/" title="Burns Library Flickr" class="mediablock" id="media_flickr"><span class="accessibility-text">Burns Library Flickr Page</span></a></li>
+                <li><a href="https://twitter.com/burnslibrary" title="Burns Library Twitter" class="mediablock" id="media_twitter"><span class="accessibility-text">Burns Library on Twitter</span></a></li>
+                <li><a href="https://www.youtube.com/user/BostonCollegeLib" title="Boston College YouTube" class="mediablock" id="media_youtube"><span class="accessibility-text">Boston College on YouTube</span></a></li>
             </ul>
         </div>
 
@@ -35,14 +35,14 @@
         <h2>Quick Links</h2>
         <nav id="quick_links" class="drop-down">
             <ul class="nav">
-                <li><a href="#" title="Ask a Question" target="_self">Ask a Question</a></li>
-                <li><a href="#" title="Staff Directory" target="_self">Staff Directory</a></li>
-                <li><a href="#" title="Mailing Address" target="_self">Mailing Address</a></li>
-                <li><a href="#" title="Directions and Parking" target="_self">Directions & Parking</a></li>
-                <li><a href="#" title="Gifts Policy" target="_self">Gifts Policy</a></li>
-                <li><a href="#" title="Photography Policy" target="_self">Photography Policy</a></li>
-                <li><a href="#" title="Reproduction Requests" target="_self">Reproduction Requests</a></li>
-                <li><a href="#" title="Student Employment" target="_self">Student Employment</a></li>
+                <li><a href="#" target="_self">Ask a Question</a></li>
+                <li><a href="#" target="_self">Staff Directory</a></li>
+                <li><a href="#" target="_self">Mailing Address</a></li>
+                <li><a href="#" target="_self">Directions &amp; Parking</a></li>
+                <li><a href="#" target="_self">Gifts Policy</a></li>
+                <li><a href="#" target="_self">Photography Policy</a></li>
+                <li><a href="#" target="_self">Reproduction Requests</a></li>
+                <li><a href="#" target="_self">Student Employment</a></li>
             </ul>
             <label for="quick-links-mobile" class="accessibility-text">Quick links for mobile devices</label>
             <select class="nav-mobile" id="quick-links-mobile"></select>
@@ -110,60 +110,11 @@ $(document).ready(function(){
 });
 </script>
 
-<!-- JS for expanding search bar -->
-<!--script src="http://library.bc.edu/theme/js/classie.js"></script>
-<script src="http://library.bc.edu/theme/js/uisearch.js"></script>
-<script>
-    new UISearch( document.getElementById( 'sb-search' ) );
-</script-->
-
-
 <!-- FEEDBACK FORM -->
 <div id="bcl-feedback" class="bcl-modal">
-    <div class="visible-form">
-        <header class="bcl-modal-header">
-            <h3>Feedback</h3>
-            <a href="#" class="close-modal">X</a>
-        </header>
-
-        <div class="bcl-modal-body">
-            <p>Use this form for questions or comments about the BC Libraries or the
-                website. If you have a research question you can also
-                <a href="http://answers.bc.edu/q.php">email</a> or <a onclick="window.open('https://libraryh3lp.com/chat/ajcu-chatstaff@chat.libraryh3lp.com?skin=19965&title=ChatStaff+Librarians&profile=cs-bostoncoll','chat', 'resizable=1,width=320,height=300'); return false;">chat</a> with a librarian.</p>
-
-            <p><em>Please fill out all required fields.</em></p>
-
-            <img src="//library.bc.edu/theme/bcbento/img/loading-bar.gif" alt="" class="loading" style="display: none;">
-
-            <form method="post" class="website-feedback remail-form" action="http://arc.bc.edu/jforms/webfeedback/webform.php">
-                <p><label for="feedback-name">Name</label>
-                    <input class="menu_input" type="text" value="" id="feedback-name" name="name">
-                </p>
-
-                <p>
-                    <label for="feedback-email">Email</label>
-                    <input class="menu_input" type="text" value="" id="feedback-email" name="email">
-                </p>
-
-                <p>
-                    <label for="feedback-text">Question or comment <em>(required)</em></label>
-                    <textarea name="feedback" id="feedback-text"></textarea>
-                </p>
-
-                <p>
-                    <input class="menu_input" type="hidden" value="" id="feedback-name" name="page_url">
-                    <input class="feedback_button" type="submit" value="Submit" name="submit">
-                </p>
-
-                <div style="clear:both"></div>
-                <!-- END form fields -->
-
-                <!-- REQUIRED -->
-                <input type="hidden" value="website-feedback" name="form-to[]">
-
-                <!-- END REQUIRED -->
-            </form>
-        </div>
+    <div id="feedback_wrapper">
+        <div id="feedback_close"></div>
+        <div id="s-la-widget-5468"></div>
     </div>
 </div>
 <!-- END FEEDBACK FORM -->
