@@ -1,12 +1,16 @@
-<body class="s-lg-guide-body career">
+<body class="s-lg-guide-body career homepagerefresh">
 {{skip_link}}
+
 <!-- TEMPORARY CODE TO MIMIC PROPOSED BC HEADER-->
-<div id="bcheader"></div>
+<!--div id="bcheader"></div-->
+
+<!-- HEADER AND MEGA MENU -->
+{{public_header}} 
 
 <!-- FULL PAGE WRAPPER -->
-<div id="fullpagewrapper">
+<div class="container" id="fullpagewrapper-refresh">
 
-    <div id="bcheader_info">
+    <!--div id="bcheader_info">
         <ul>
             <li><a href="http://www.bc.edu/gn-bcinfo">BCInfo</a></li>
             <li><a href="http://www.bc.edu/gn-directories">Directories</a></li>
@@ -25,14 +29,10 @@
             </form>
             <script type="text/javascript" src="//www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
         </div>
-        <!-- /Search -->
-    </div>
-
-    <!-- HEADER AND MEGA MENU -->
-    {{public_header}} 
+    </div-->
 
     <!-- BEGIN MIDLEVELCONTAINER -->
-    <div id="midlevelcontainer">
+    <div class="row" id="midlevelcontainer">
         <!--div class="pageurl">
             <p><a href="{{login_url}}">Staff Login</a></p>
         </div-->
@@ -45,7 +45,7 @@
         <div class="pull-right">
         {{ADMIN_MINI_CMD_BAR}}
         </div>
-        <div id="guidetitle">
+        <div class="" id="guidetitle">
             <h1>{{guide_title}}</h1><div class="colon">:</div> <h2>{{page_title}}</h2>
         </div>
         
@@ -63,10 +63,10 @@
 
         <!-- THIS IS THE CONTENT AND COLUMNS. -->
         <a name="s-lg-guide-main" tabindex="-1"></a>
-        <div id="content_container">
+        <div class="col-md-12" id="content_container">
             <!-- THIS DISPLAYS THE TABS, IF THERE ARE TABS
             CURRENTLY A HACKED SIDE NAV. -->
-            <div id="s-lg-guide-tabs">
+            <div class="col-md-2 col-sm-3" id="s-lg-guide-tabs">
                 <nav id="side-nav" class="drop-down">
                     <ul class="nav nav-tabs">
                         {{guide_nav}}
@@ -76,11 +76,12 @@
                 </nav>
             </div>
 
-            <!-- I WONDER WHAT THIS IS? IF ONLY THERE WAS SOME CLUE. -->
-           <div id="content">
-               {{content}}
-               {{page_prev_next_links}}
-           </div>
+            <!-- CONTENT -->
+            <div class="col-md-10 col-sm-9" id="content-refresh">
+                {{content}}
+                {{page_prev_next_links}}
+            </div>
+            <!-- END CONTENT -->
         </div>  
 
         <!-- THIS MAKES A 'BACK TO TOP' ARROW APPEAR -->
@@ -116,8 +117,8 @@
             <a href="{{login_url}}">Staff Login</a>
         </div>
     </div>
-    <!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
-    {{public_footer}}
 </div>
 <!-- END FULL PAGE WRAPPER -->
+<!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
+{{public_footer}}
 </body>
