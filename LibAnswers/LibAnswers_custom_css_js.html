@@ -1,5 +1,11 @@
 <link rel="stylesheet" href="//library.bc.edu/theme/css/style.css"/>
 <link rel="stylesheet" href="//library.bc.edu/theme/css/icomoon.css"/>
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+<link rel="stylesheet" href="//library.bc.edu/theme/css/refresh.css?version=20170728"/>
+<link rel="stylesheet" href="//library.bc.edu/theme/css/megamenu.css?version=20170804"/>
+<link rel="stylesheet" href="//library.bc.edu/theme/css/footer.css?version=20170810"/>
+
 <script type="text/javascript" src="//library.bc.edu/theme/js/jquery.hoverIntent.minified.js"></script>
 <script type="text/javascript" src="//library.bc.edu/theme/js/bootstrap-hover-dropdown.min.js"></script>
 <script type="text/javascript" src="//library.bc.edu/theme/js/libhours.js"></script>
@@ -8,6 +14,58 @@
 <script type="text/javascript" src="//api2.libanswers.com/1.0/widgets/5468" async></script>
 
 <style>
+body {
+    background: #fff 0% 0%;
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: #000;
+    font-size: 15px;
+    padding: 0;
+    line-height: 1.75;
+}
+a, a:visited, .ui-widget-content a, .ui-widget-content a:visited {
+    /*color: #990000;*/
+    color:#337ab7;
+    font-weight: normal;
+}
+.homepagerefresh #lib-footer a {font-weight:300;}
+p {font-weight:inherit;}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    text-transform:none;
+    color:#000;
+}
+h4, h5, h6 {font-weight: 600;}
+.homepagerefresh #lib-footer h4 a {font-weight:700;}
+
+.homepagerefresh #lib-footer h4.orgname {margin:0 0 10px 0!important;}
+.homepagerefresh #lib-footer h4 {margin:0 0 5px!important;}
+
+.homepagerefresh .col-md-12:first-of-type, 
+.homepagerefresh .col-md-3:first-of-type,
+.homepagerefresh .col-md-4:first-of-type,
+.homepagerefresh .col-md-6:first-of-type {padding-left: 15px;}
+
+.homepagerefresh .col-md-12:last-of-type,
+.homepagerefresh .col-md-3:last-of-type,
+.homepagerefresh .col-md-4:last-of-type,
+.homepagerefresh .col-md-6:last-of-type {padding-right:15px;}
+
+#block_search .input-group-addon, .input-group-btn {width:1%;}
+#s-la-browsebar-collapse .navbar-nav {margin:8px 10px;}
+.navbar-default .navbar-nav > li > a {color:#337ab7;}
+
+#socialmedia {margin:inherit;}
+.quick-links a {font-weight:inherit;}
+
+.homepagerefresh .bottom_row {background-color:#fff;}
+.more a {
+    background: inherit;
+    display: inline;
+    padding: 0;
+    width: auto;
+    border-bottom: none;
+}
+
 /* override bc style table default */
 td, th {padding:0;}
 table, th, td {border:none;}
@@ -24,6 +82,8 @@ td {vertical-align: middle;}
 .breadcrumb {
     background-image: none;
 }
+#s-la-bc {margin-top:60px;}
+
 #s-la-public-footer {
     padding: 0;
     border: 0;
@@ -51,6 +111,11 @@ td {vertical-align: middle;}
 
 <script>
     $(document).ready(function(){
+        // tidy up breadcrumbs
+        //if(window.location.pathname.indexOf('/booking/') == 0){
+        //    $("ol.breadcrumb li:nth-child(2)").hide();
+        //}
+
         // rename login link
         var logintext = $("#s-la-footer-login-link a").text();
         if (logintext && logintext.length && logintext === "Login to LibApps") {
