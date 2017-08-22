@@ -1,4 +1,4 @@
-<body class="s-lib-public-body">
+<body class="s-lib-public-body homepagerefresh">
 <meta name="group" content="AtoZ">
 {{skip_link}}
 
@@ -78,38 +78,14 @@ $(document).ready(function(){
 });
 </script>
 
-<!-- TEMPORARY CODE TO MIMIC PROPOSED BC HEADER-->
-<div id="bcheader"></div>
+<!-- HEADER AND MEGA MENU -->
+{{public_header}} 
 
 <!-- FULL PAGE WRAPPER -->
-<div id="fullpagewrapper">
+<div class="container" id="fullpagewrapper-refresh">
 
-    <div id="bcheader_info">
-        <ul>
-            <li><a href="http://www.bc.edu/gn-bcinfo"  title="BCInfo">BCInfo</a></li>
-            <li><a href="http://www.bc.edu/gn-directories" title="Directories">Directories</a></li>
-        </ul>
-
-
-                <div id="bcheader_search">
-                    <form action="//bc.edu/googlesearch/results.html" id="cse-search-box" _lpchecked="1">
-                        <div>
-                            <input type="hidden" name="cx" value="017979566303760088717:i5wjadpvu2w" />
-                            <input type="hidden" name="cof" value="FORID:11" />
-                            <input type="hidden" name="ie" value="UTF-8" />
-                            <label for="q"><span class="screenreader offscreen">Search BC</span></label>
-                            <input type="text" value="Search BC" onblur="if(this.value=='') this.value='Search BC';" onclick="if(this.value=='Search BC') this.value='';" name="q" id="searchbox" size="27" autocomplete="off"   />
-                            <input type="image" src="http://library.bc.edu/theme/img/go_button.png" id="searchsubmit" name="sa" value="Search" style="float:right" alt="search">
-                        </div>
-                    </form>
-                    <script type="text/javascript" src="//www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
-                </div>
-    </div>
-
-    <!-- HEADER AND MEGA MENU -->
-    {{public_header}} 
-
-    <div id="midlevelcontainer">
+    <!-- BEGIN MIDLEVELCONTAINER -->
+    <div class="row" id="midlevelcontainer-refresh">
         <!-- BEGIN: Content Header -->
         <div id="s-lib-public-header" class="s-lib-header container s-lib-side-borders">
             <h1 id="s-lib-public-header-title">{{page_title}}</h1>
@@ -165,7 +141,16 @@ $(document).ready(function(){
             </section>
         </div>
         <!-- END: content -->
+
+        <!-- THIS MAKES A 'BACK TO TOP' ARROW APPEAR -->
+        <div id="s-lib-scroll-top" title="Back to Top">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-square-o fa-stack-2x"></i>
+              <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+            </span>
+        </div>
     </div>
+    <!-- END MIDLEVELCONTAINER -->
 
     <div id="s-lib-alert" title="">
         <div id="s-lib-alert-content"></div>
@@ -177,8 +162,8 @@ $(document).ready(function(){
     <div id="s-lib-popover-content" class="hide"><i class="fa fa-refresh fa-spin"></i> Loading...
         <button class="btn btn-default btn-sm popclose" type="button">Close</button>
     </div>
-    <!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
-    {{public_footer}}
 </div>
 <!-- END FULL PAGE WRAPPER -->
+<!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
+    {{public_footer}}
 </body>

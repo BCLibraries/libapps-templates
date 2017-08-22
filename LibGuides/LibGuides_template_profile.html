@@ -1,8 +1,11 @@
-<body class="s-lib-public-body profiles no-nav-dropdown">
+<body class="s-lib-public-body profiles no-nav-dropdown homepagerefresh">
 <meta name="group" content="Profiles">
 {{skip_link}}
 
 <style>
+     .s-lib-box-content {
+          margin-bottom:.5em;
+     }
     .s-lib-box-content,
     .s-lib-box-content .s-lg-small {
         padding:6px 10px;
@@ -27,10 +30,15 @@
         text-decoration: none;
         color: #990000;
     }
+    #col0 > div {
+        padding:30px!important;
+        /*border:1px solid #ffeaae !important;*/
+        border-radius: 10px;
+    }
+    #user-department {
+        display:none;
+    }
 </style>
-
-<!-- TEMPORARY CODE TO MIMIC PROPOSED BC HEADER-->
-<div id="bcheader"></div>
 
 <script type="text/javascript">
     // rewrite breadcrumbs so that the "Profiles" link goes to the ask a librarian page
@@ -40,14 +48,14 @@
     });
 </script>
 
+<!-- HEADER AND MEGA MENU -->
+{{public_header}} 
 
 <!-- FULL PAGE WRAPPER -->
-<div id="fullpagewrapper">
+<div class="container" id="fullpagewrapper-refresh">
 
-    <!-- HEADER AND MEGA MENU -->
-    {{public_header}} 
-
-    <div id="midlevelcontainer">
+    <!-- BEGIN MIDLEVELCONTAINER -->
+    <div class="row" id="midlevelcontainer-refresh">
         <!-- BEGIN: Content Header -->
         <div id="s-lib-public-header" class="s-lib-header container s-lib-side-borders">
             <!--div id="s-lib-bc">
@@ -55,6 +63,7 @@
             </div-->
             <h1 id="s-lib-public-header-title">{{page_title}}</h1>
             <div id="s-lib-public-header-desc">{{page_description}}</div>
+            <div id="user-department"><span>Department: </span><span>Systems</span></div>
         </div>
         <!-- END: Content Header -->
         <!-- BEGIN: Nav Bar -->
@@ -66,11 +75,13 @@
         <div id="s-lib-public-main" class="s-lib-main container s-lib-side-borders">
             <section>
                 <div  id="s-lg-profile-cols"  class="row">
-                    <div  id="col1"  class="col-md-3 center">
+                    <div id="col1" class="col-md-3 center">
                         {{profile_box}}
                     </div>
-                    <div  id="col2"  class="col-md-6 center">
+                    <div id="col0" class="col-md-9 center">
                         {{personal_statement}}
+                    </div>
+                    <div  id="col2"  class="col-md-6 center">
                         {{guide_list}}
                     </div>
                     <div  id="col3"  class="col-md-3 center">
@@ -81,9 +92,9 @@
         </div>
         <!-- END: content -->
     </div>
-
-    <!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
-    {{public_footer}}
+    <!-- END MIDLEVELCONTAINER -->
 </div>
 <!-- END FULL PAGE WRAPPER -->
+<!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
+{{public_footer}}
 </body>

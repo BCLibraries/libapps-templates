@@ -1,36 +1,36 @@
-<body class="s-lg-guide-body search">
+<body class="s-lg-guide-body search homepagerefresh">
 <meta name="group" content="search">
 {{skip_link}}
 
 <style>
-form#s-lg-srch-form .form-group {
-    margin-top:15px;
-}
-@media ( min-width: 1199px ) {
-    .input-group .form-control {
-        width:450px;
+    form#s-lg-srch-form .form-group {
+        margin-top:15px;
     }
-}
-#s-srch-facet-328-guide_type {
-   displ ay:none;
-}
+    @media ( min-width: 1199px ) {
+       #s-lg-srch-form .input-group .form-control {
+            width:450px;
+        }
+    }
+    #s-srch-facet-328-guide_type {
+       displ ay:none;
+    }
 
-.s-srch-pagination .pagination a {
-   padding:6px 12px;
-}
+    .s-srch-pagination .pagination a {
+       padding:6px 12px;
+    }
 
-div#s-srch-paginate-328-top {
-   margin:12px 0;
-}
+    div#s-srch-paginate-328-top {
+       margin:12px 0;
+    }
 
-#s-lg-srch-cols #s-lg-srch-content .col-md-3 {
-    padding: 5px 10px 20px 20px;
-    border: 1px solid #e7e7e7;
-    bac kground-color: aliceblue;
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-    margin-bottom: 10px;
-}
+    #s-lg-srch-cols #s-lg-srch-content .col-md-3 {
+        padding: 5px 10px 20px 20px;
+        border: 1px solid #e7e7e7;
+        bac kground-color: aliceblue;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        margin-bottom: 10px;
+    }
 </style>
 
 <script>
@@ -38,16 +38,14 @@ $(document).ready(function() {
     $('#s-srch-facet-328-group').before('<h3>Search Filters</h3>');
 });
 </script>
-<!-- TEMPORARY CODE TO MIMIC PROPOSED BC HEADER-->
-<div id="bcheader"></div>
+
+<!-- HEADER AND MEGA MENU -->
+{{public_header}} 
 
 <!-- FULL PAGE WRAPPER -->
-<div id="fullpagewrapper">
-
-    <!-- HEADER AND MEGA MENU -->
-    {{public_header}} 
-
-    <div id="midlevelcontainer">
+<div class="container" id="fullpagewrapper-refresh">
+    <!-- BEGIN MIDLEVELCONTAINER -->
+    <div class="row" id="midlevelcontainer-refresh">
         <!-- BEGIN: Content Header -->
         <div id="s-lib-public-header" class="s-lib-header container s-lib-side-borders">
             <h1 id="s-lib-public-header-title">{{page_title}}</h1>
@@ -79,11 +77,12 @@ $(document).ready(function() {
         </div>
         <!-- END: content -->
     </div>
-
-    <!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
-    {{public_footer}}
+    <!-- END MIDLEVELCONTAINER -->
 </div>
 <!-- END FULL PAGE WRAPPER -->
+<!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
+{{public_footer}}
+
 <div id="s-lib-alert" title="">
     <div id="s-lib-alert-content"></div>
 </div>

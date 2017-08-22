@@ -1,4 +1,4 @@
-<body class="s-lib-public-body subjects">
+<body class="s-lib-public-body subjects homepagerefresh">
 <meta name="group" content="Profiles">
 {{skip_link}}
 
@@ -12,6 +12,9 @@
     }
     .tab-content>.tab-pane {
         padding-left:10px;
+    }
+    .s-lib-box-content {
+        margin-bottom:.5em;
     }
     .s-lib-box-content,
     .s-lib-box-content .s-lg-small {
@@ -29,7 +32,7 @@
         color: #990000;
     }
     .input-append form input.form-control {
-        width:80%;
+        width:auto;
         display: inline-block;
     }
     .input-append form button.btn-info {
@@ -47,9 +50,6 @@
     }
 </style>
 
-<!-- TEMPORARY CODE TO MIMIC PROPOSED BC HEADER-->
-<div id="bcheader"></div>
-
 <script type="text/javascript">
     // rewrite breadcrumbs so that the "Subjects" link goes to the custom subjects page
     // rather than the default one
@@ -60,13 +60,14 @@
     });
 </script>
 
+<!-- HEADER AND MEGA MENU -->
+{{public_header}} 
+
 <!-- FULL PAGE WRAPPER -->
-<div id="fullpagewrapper">
+<div class="container" id="fullpagewrapper-refresh">
 
-    <!-- HEADER AND MEGA MENU -->
-    {{public_header}} 
-
-    <div id="midlevelcontainer">
+    <!-- BEGIN MIDLEVELCONTAINER -->
+    <div class="row" id="midlevelcontainer-refresh">
         <!-- BEGIN: Content Header -->
         <div id="s-lib-public-header" class="s-lib-header container s-lib-side-borders">
             <h1 id="s-lib-public-header-title">{{page_title}}</h1>
@@ -148,9 +149,9 @@
             });
         </script>
     </div>
-
-    <!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
-    {{public_footer}}
+    <!-- END MIDLEVELCONTAINER -->
 </div>
 <!-- END FULL PAGE WRAPPER -->
+<!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
+{{public_footer}}
 </body>
