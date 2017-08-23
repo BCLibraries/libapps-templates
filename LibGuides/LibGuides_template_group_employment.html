@@ -1,18 +1,14 @@
-<body class="s-lg-guide-body employment libhomepage">
+<body class="s-lg-guide-body employment libhomepage homepagerefresh">
 {{skip_link}}
-<!-- <body class="s-lg-guide-body fullcontentwidth"> -->
 
-<!-- TEMPORARY CODE TO MIMIC PROPOSED BC HEADER-->
-<div id="bcheader"></div>
+<!-- HEADER AND MEGA MENU -->
+{{public_header}} 
 
 <!-- FULL PAGE WRAPPER -->
-<div id="fullpagewrapper">
-
-    <!-- HEADER AND MEGA MENU -->
-    {{public_header}} 
+<div class="container" id="fullpagewrapper-refresh"> 
 
     <!-- BEGIN MIDLEVELCONTAINER -->
-    <div id="midlevelcontainer">
+    <div class="row" id="midlevelcontainer">
         <ol id="s-lib-bc-list" class="breadcrumb">
             <li id="s-lib-bc-customer">
                 <a title="Libraries" href="http://library.bc.edu">Libraries</a>
@@ -29,7 +25,7 @@
         <div class="pull-right">
         {{ADMIN_MINI_CMD_BAR}}
         </div>
-        <div id="guidetitle">
+        <div class="" id="guidetitle">
             <h1>{{guide_title}}</h1><div class="colon">:</div> <h2>{{page_title}}</h2>
         </div>
         
@@ -42,48 +38,49 @@
         -->
         <div id="s-lg-guide-tabs-title-bar" class="container s-lib-side-borders"></div>
 
+        <!-- EDIT-ONLY VIEW CONTAINER FOR BC WIDGETS -->
+        <div id="bc-custom-bar"></div>
+
         <!-- THIS IS THE CONTENT AND COLUMNS. -->
         <a name="s-lg-guide-main" tabindex="-1"></a>
-        <div id="content_container">
+        <div class="col-md-12" id="content_container">
             <!-- THIS DISPLAYS THE TABS, IF THERE ARE TABS
             CURRENTLY A HACKED SIDE NAV. -->
             <!-- This side-nav is hidden in public view -->
             
-
-            <!-- I WONDER WHAT THIS IS? IF ONLY THERE WAS SOME CLUE. -->
-            
-               <div id="content">
-                   <div class="col-md-10 col-sm-12" id="content-employment">
-                   {{content}}
-                   </div>
-                   <div class="col-md-2 col-sm-12" id="employment-static">
-                        <div class="col-md-6 col-sm-6 s-lib-box">
-                            <h3>Find out More</h3>
-                            <div id="s-lg-guide-tabs" class="employment">
-                                <nav class="drop-down" id="employment-links">
-                                    <ul class="nav nav-tabs split-button-nav">
-                                        <li><a href="/employment/#joinus">Join Us</a></li>
-                                        <li><a href="/employment/#topreasons">Reasons to Work Here</a></li>
-                                        <li><a href="/employment/#jobs">Jobs</a></li>
-                                        <li><a href="/employment/#applicationprocess">Application Process</a></li>
-                                        <li><a href="/employment/#livinginboston">Living In Boston</a></li>
-                                        <li><a href="/employment/#whyboston">Why Boston?</a></li>
-                                        <!--li><a href="/employment/#organization">Organization</a></li-->
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 s-lib-box">
-                            <h3>How to Apply</h3>
-                            <ul>
-                                <li>Apply through the <a href="https://www7.bc.edu/erecruit/index.html">Boston College Jobs portal website</a>.</li>
-                                <li>Applications will be accepted until the position is filled.</li>
-                            </ul>
-                        </div>
-                   </div>
-                   {{page_prev_next_links}}
+            <!-- CONTENT -->
+            <div id="content-refresh">
+               <div class="col-md-10 col-sm-12" id="content-employment">
+               {{content}}
                </div>
-            
+               <div class="col-md-2 col-sm-12" id="employment-static">
+                    <div class="col-md-6 col-sm-6 s-lib-box">
+                        <h3>Find out More</h3>
+                        <div id="s-lg-guide-tabs" class="employment">
+                            <nav class="drop-down" id="employment-links">
+                                <ul class="nav nav-tabs split-button-nav">
+                                    <li><a href="/employment/#joinus">Join Us</a></li>
+                                    <li><a href="/employment/#topreasons">Reasons to Work Here</a></li>
+                                    <li><a href="/employment/#jobs">Jobs</a></li>
+                                    <li><a href="/employment/#applicationprocess">Application Process</a></li>
+                                    <li><a href="/employment/#livinginboston">Living In Boston</a></li>
+                                    <li><a href="/employment/#whyboston">Why Boston?</a></li>
+                                    <!--li><a href="/employment/#organization">Organization</a></li-->
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 s-lib-box">
+                        <h3>How to Apply</h3>
+                        <ul>
+                            <li>Apply through the <a href="https://www7.bc.edu/erecruit/index.html">Boston College Jobs portal website</a>.</li>
+                            <li>Applications will be accepted until the position is filled.</li>
+                        </ul>
+                    </div>
+               </div>
+               {{page_prev_next_links}}
+           </div>
+            <!-- END CONTENT -->
         </div>  
 
         <!-- THIS MAKES A 'BACK TO TOP' ARROW APPEAR -->
@@ -119,9 +116,8 @@
             <a href="{{login_url}}">Staff Login</a>
         </div>
     </div>
-
-    <!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
-    {{public_footer}}
 </div>
 <!-- END FULL PAGE WRAPPER -->
+<!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
+{{public_footer}}
 </body>
