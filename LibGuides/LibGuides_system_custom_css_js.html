@@ -36,7 +36,9 @@
 $(document).ready(function(){
     if ((window.location.pathname).indexOf('widget_')>-1){
         // prep by hiding top nav and other header elements
-        $('#header,#sb-search,#megamenu,#s-lg-guide-header-meta,#footer,#bcheader,#bcheader_info,#s-lib-bc-s-lg-bc-system-name').hide();
+        $('#bclib-header, .megamenu-container, #lib-footer, #bc-footer').hide();
+        $('#midlevelcontainer-refresh').css('margin-top', '0px');
+        //$('#header,#sb-search,#megamenu,#s-lg-guide-header-meta,#footer,#bcheader,#bcheader_info,#s-lib-bc-s-lg-bc-system-name').hide();
         // hide header+footer when guide loaded in Canvas script
         $.getScript( "//arc.bc.edu/libhours/lg/guides/canvasiframe.js" )
         .done(function( script, textStatus ) {
@@ -205,11 +207,16 @@ a, a:visited, .ui-widget-content a, .ui-widget-content a:visited {color:#337ab7;
 }
 h1, h2, h3,
 .s-lib-public-side-header h2 {color: #000; text-transform: none;}
-
+h4, h6 {font-weight: 400;}
+h3 {font-size:17px;}
+h4 {font-size:16px;}
+h5, h6 {font-size:15px;}
+h5 {font-weight:600;}
 
 .edit-mode .breadcrumb {display:none;}
 .edit-mode .s-lib-cmd-bar .navbar-collapse .navbar-nav {float: left!important;}
 .edit-mode #s-lg-guide-header-meta {display:none;}
+.edit-mode .s-lib-box-title {padding:3px 2px 3px 0; font-weight: normal;}
 
 #midlevelcontainer {margin: 80px auto 0 auto;}
 #midlevelcontainer-refresh {margin-top:60px;}
@@ -254,8 +261,6 @@ h3, h4, h5, h6,
 .view-mode .s-lib-box .s-lib-box-title,
 #guidetitle h1, #guidetitle h2,
 .colon {color:#151515;}
-
-h4, h5, h6 {font-weight: 600;}
 
 .s-lib-box-content .ui-widget {font-family:inherit;}
 
