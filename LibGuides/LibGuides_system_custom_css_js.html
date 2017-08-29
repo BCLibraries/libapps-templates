@@ -172,6 +172,12 @@ span.pad-left-med.hitst {display: none;}
 #s-lg-guide-tabs ul.nav-tabs > li > ul.wrapper-subitems li a::before {content:"↳"; position:absolute; left:3px;}
 #s-lg-guide-tabs ul.nav-tabs > li > ul.wrapper-subitems li a .subitem {width:100%; height:100%; white-space:pre-line;}
 #s-lg-guide-tabs ul.nav-tabs > li > ul.wrapper-subitems li a {padding-left:20px!important;}
+#s-lg-guide-tabs ul.nav-tabs > li > ul.wrapper-subitems li a:focus,
+#s-lg-guide-tabs ul.nav-tabs > li > ul.wrapper-subitems li a:hover,
+#s-lg-guide-tabs ul.nav-tabs > li.active > ul.wrapper-subitems li.active a:hover,
+#s-lg-guide-tabs ul.nav-tabs > li.active > ul.wrapper-subitems li.active a:focus {
+    background: #B29D6C;
+}
 
 /* grey - inactive */
 #s-lg-guide-tabs ul.nav-tabs > li.active .dropdown-wrapper,
@@ -200,7 +206,7 @@ span.pad-left-med.hitst {display: none;}
 </style>
 
 
-<!-- updated style -- 20170816 -->
+<!-- updated style - 20170816 -->
 <style>
 body {font-size:14px;}
 a, a:visited, .ui-widget-content a, .ui-widget-content a:visited {color:#337ab7;}
@@ -357,8 +363,17 @@ $(document).ready(function() {
         }, delay);
     }, function(){
         clearTimeout(setTimeoutConst);
-        $(this).children("ul.wrapper-subitems").slideUp(250);
-        $(this).find(".dropdown-wrapper .caret").removeClass("caret-up");
+        $this = $(this);
+        $this.children("ul.wrapper-subitems").slideUp(250);
+        $this.find(".dropdown-wrapper .caret").removeClass("caret-up");
+    });
+
+    $("nav#side-nav ul.nav > li.dropdown:not(.has-active-child) a.s-lg-tab-drop").focus(function(){
+        $this = $(this).closest("li.dropdown");
+        // leave dropdown visible once focus event has been triggered
+        // a hover over event will clear this
+        $this.children("ul.wrapper-subitems").show();
+        $this.find(".dropdown-wrapper .caret").addClass("caret-up");
     });
 });
 </script>
