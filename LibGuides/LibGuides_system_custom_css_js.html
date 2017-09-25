@@ -53,7 +53,8 @@ $(document).ready(function(){
 
 <!-- PREVENT FLASH OF UNSTYLED CONTENT -->
 <style>html.js { display:none}</style>
-<script>$(function() { $("html.js").show(); });</script>
+<!--script>$(function() { $("html.js").show(); });</script-->
+<script>$(function() { document.getElementsByTagName('html')[0].style.display = "block"; });</script>
 
 <!-- HIDE DESCRIPTION DISPLAY OPTIONS THAT USE HOVER OVER SINCE IT ISNT ACCESSIBLE  -->
 <style>
