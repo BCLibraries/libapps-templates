@@ -6,8 +6,8 @@
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"/>
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-<link rel="stylesheet" href="//library.bc.edu/theme/css/refresh.css?version=20170728"/>
-<link rel="stylesheet" href="//library.bc.edu/theme/css/megamenu.css?version=20170804"/>
+<link rel="stylesheet" href="//library.bc.edu/theme/css/refresh.css?version=20180625"/>
+<link rel="stylesheet" href="//library.bc.edu/theme/css/megamenu.css?version=20180625"/>
 <link rel="stylesheet" href="//library.bc.edu/theme/css/footer.css?version=20170810"/>
 
 <script type="text/javascript" src="//library.bc.edu/theme/js/bootstrap-hover-dropdown.min.js"></script>
@@ -55,6 +55,7 @@ $(document).ready(function(){
 <style>html.js { display:none}</style>
 <!--script>$(function() { $("html.js").show(); });</script-->
 <script>$(function() { document.getElementsByTagName('html')[0].style.display = "block"; });</script>
+
 
 <!-- HIDE DESCRIPTION DISPLAY OPTIONS THAT USE HOVER OVER SINCE IT ISNT ACCESSIBLE  -->
 <style>
@@ -333,6 +334,18 @@ footer h4 {margin:0 0 5px!important;}
        margin: 0!important;
     }
 }
+
+/* additional styling 2017-09-05 */
+.s-lib-profile-image img {
+    max-height:400px!important;
+}
+
+/* 2018-03-26 */
+.edit-mode ul.s-lg-link-list-10 li div.dropdown:before {
+        font-family: FontAwesome;
+        content: "\f1c0 ";
+        padding-right: 6px;
+    }
 </style>
 
 <script>
@@ -356,6 +369,7 @@ $(document).ready(function() {
     });
 
     $("nav#side-nav ul.nav > li.dropdown:not(.has-active-child)").hover(function(){
+        console.log("dropdown menu hover")
         $this = $(this);
         /* only trigger once delay has been reached. */
         setTimeoutConst = setTimeout(function(){
@@ -395,12 +409,16 @@ $(document).ready(function() {
     #accordion-bc h3.ui-accordion-header { cursor:no-drop; color:gray;}
     #accordion-bc h3.ui-accordion-header .ui-accordion-header-icon {display:none;}
     #accordion-bc h3 .status:before {content: "";}
+    #accordion-bc h3.waiting, 
     #accordion-bc h3.pass, 
     #accordion-bc h3.fail {cursor:pointer;}
+    #accordion-bc h3.waiting .ui-accordion-header-icon, 
     #accordion-bc h3.pass .ui-accordion-header-icon, 
     #accordion-bc h3.fail .ui-accordion-header-icon {display:inline;}
+    #accordion-bc h3.waiting .status, 
     #accordion-bc h3.pass .status, 
     #accordion-bc h3.fail .status {padding: 0 5px 0 10px; font-family: FontAwesome;}
+    #accordion-bc h3.waiting .status:before {content: "\f1ce";}
     #accordion-bc h3.pass .status:before {content: "\f00c";}
     #accordion-bc h3.fail .status:before {content: "\f071";}
     #accordion-bc p.test-help {margin-top:2px;}
@@ -409,6 +427,7 @@ $(document).ready(function() {
     #accordion-bc .ui-accordion-header.fail {background: #f2dede; color:#a94442; border-color:#ebcccc;}
     #accordion-bc .ui-accordion-header.pass {background: #dff0d8; color:#3c763d; border-color:#d0e9c6;}
     .whatisthis {text-align:right;}
+    .pass-test {font-weight:600;}
 </style>
 <script>
 $(document).ready(function(){
@@ -430,6 +449,122 @@ $(document).ready(function(){
         .fail(function( jqxhr, settings, exception ) {
             console.log( "Triggered ajaxError handler." );
         });
+    }
+});
+</script>
+
+<!-- link checker widget -->
+<style>
+    .edit-mode #bc-custom-bar {min-height:98px; margin-bottom:20px;}
+    #bc-custom-bar #bc-custom-bar-inner-db {margin: 0 0 20px 0;}
+    #bc-custom-bar #bc-custom-bar-inner-db > .ui-accordion-header {background:#d9edf7; padding-left:30px;}
+    #bc-custom-bar #bc-custom-bar-inner-db > .ui-accordion-header .ui-accordion-header-icon {}
+    #bc-custom-bar #bc-custom-bar-inner-db .ui-accordion-content {background: #f8f8f8;}
+    #accordion-bc .ui-accordion-content {background-color: #f8f8f8;}
+    .alert-border {outline:2px dashed red;}
+    .alert-border:hover {outline: 3px dashed red;}
+    .iter_list {padding-bottom:40px; border-bottom:1px solid #aaa;}
+    .iter_list li {padding:4px 4px 6px 4px;}
+    div.alert-border {background-color:#C0C0C0;}
+    #accordion-bc-db .status {display:inline-block; padding:0 2px; margin-left:5px; width: 35px;}
+    #accordion-bc-db h3.ui-accordion-header { cursor:no-drop; color:gray;}
+    #accordion-bc-db h3.ui-accordion-header .ui-accordion-header-icon {display:none;}
+    #accordion-bc-db h3 .status:before {content: "";}
+    #accordion-bc-db h3.waiting,
+    #accordion-bc-db h3.pass, 
+    #accordion-bc-db h3.fail {cursor:pointer;}
+    #accordion-bc-db h3.waiting .ui-accordion-header-icon, 
+    #accordion-bc-db h3.pass .ui-accordion-header-icon, 
+    #accordion-bc-db h3.fail .ui-accordion-header-icon {display:inline;}
+    #accordion-bc-db h3.waiting .status, 
+    #accordion-bc-db h3.pass .status, 
+    #accordion-bc-db h3.fail .status {padding: 0 5px 0 10px; font-family: FontAwesome;}
+    #accordion-bc-db h3.waiting .status:before {content: "\f1ce";}
+    #accordion-bc-db h3.pass .status:before {content: "\f00c";}
+    #accordion-bc-db h3.fail .status:before {content: "\f071";}
+    #accordion-bc-db p.test-help {margin-top:2px;}
+    #accordion-bc-db {margin-bottom:20px;}
+    #accordion-bc-db .ui-accordion-header {color:#000;}
+    #accordion-bc-db .ui-accordion-header.fail {background: #f2dede; color:#a94442; border-color:#ebcccc;}
+    #accordion-bc-db .ui-accordion-header.pass {background: #dff0d8; color:#3c763d; border-color:#d0e9c6;}
+    .whatisthis {text-align:right;}
+
+    #bc-custom-bar-inner-db .ui-state-disabled, 
+    #bc-custom-bar-inner-db .ui-widget-content .ui-state-disabled, 
+    #bc-custom-bar-inner-db .ui-widget-header .ui-state-disabled {opacity:.95; filter: Alpha(Opacity=95); color:#333;}
+
+    /* added for accessibility checker - needs to move to own style sheet */
+    #bc-custom-bar-inner .ui-state-disabled, 
+    #bc-custom-bar-inner .ui-widget-content .ui-state-disabled, 
+    #bc-custom-bar-inner .ui-widget-header .ui-state-disabled {opacity:.95; filter: Alpha(Opacity=95); color:#333;}
+
+    .edit-mode .db-asset {}
+    .edit-mode .db-asset:focus,
+    .edit-mode .db-asset:hover {}
+    .edit-mode a.db-asset-link {}
+    .edit-mode a.db-asset-link:after {}
+    .edit-mode .link-asset-warning {
+        background-color:#eee;
+        padding: .3rem .3rem .3rem .5rem;
+        border-radius: 4px;
+        border: 2px solid #555;
+    }
+
+    .edit-mode .link-asset-warning.match-high {
+        border-color: #d9534f
+    }
+    .edit-mode .link-asset-warning.match-medium {
+        border-color: #f0ad4e
+    }
+    /*.edit-mode a.link-asset-link-warning:after {
+        font-family: FontAwesome;
+        content: " \f06a";
+    }*/
+    .edit-mode .before-link {
+        background-color: #fff;
+        padding: 2px 2px 6px 2px;
+        border-radius: 4px;
+        text-align: center;
+        margin-bottom: 4px;
+    }
+</style>
+<script>
+$(document).ready(function(){
+    if ($(location).attr('pathname') === "/libguides/admin_c.php") {
+        // get user id from empty div
+        var my_user_div = $("#user-id-link");
+        var my_user_id = -1;
+        if (my_user_div.length) {
+            // get data-link attr
+            var my_user_id_attr = my_user_div.attr('data-link');
+
+            // extract out user id
+            if (my_user_id_attr) {
+                // https://libguides.bc.edu/prf.php?account_id=1234
+                var get_id_regex = /account_id=(\d+)$/;
+                var res = my_user_id_attr.match(get_id_regex);
+
+                if (res && res['index'] > 0) {
+                    my_user_id = res[1];
+                    my_user_div.attr('data-user-id', my_user_id);
+                }
+            }
+        }
+        console.log("Found user id: " + my_user_id);
+
+        limited_testers = [];
+
+        // load scripts only if we can verify user id
+        //if (my_user_id > 0 && $.inArray(my_user_id, limited_testers) ) {
+            // link asset checker script
+            $.getScript( "//arc.bc.edu/libscripts/lg/linkassetchecker/core.js" )
+            .done(function( script, textStatus ) {
+                console.log( textStatus );
+            })
+            .fail(function( jqxhr, settings, exception ) {
+                console.log( "Triggered ajaxError handler." );
+            });
+       //}
     }
 });
 </script>

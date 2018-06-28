@@ -1,33 +1,20 @@
 <div class="homepagerefresh">
+
 <div id="bclib-header">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-sm-12 col-xs-6 col-xxs">
-                <a href="https://library.bc.edu" title="Go to Boston College Libraries" class="bclib-header-logo"><img src="//library.bc.edu/theme/img/title_295x30_transparent_whitetext.png" id="fakebctitle-old" alt="Boston College Library Logo"><p>Boston College Libraries</p></a>
+            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs">
+                <a href="https://library.bc.edu" title="Go to Boston College Libraries" class="bclib-header-logo">
+                    <img src="https://library.bc.edu/theme/img/title_295x30_transparent_whitetext.png" id="fakebctitle-old" alt="Boston College Library Logo">
+                    <p>Boston College Libraries</p>
+                </a>
             </div>
-            <div class="col-md-8 col-sm-12 col-xs-6 col-xxs header-right">
-                <div class="col-md-8 col-sm-8 col-xs-8 col-xxs link-wrapper">
-                    <ul class="bclib-header-links">
-                        <li><a href="https://bc.edu">BC Home</a></li>
-                        <li><a href="https://www.bc.edu/bc-web/about/mission.html">Mission</a></li>
-                        <li><a href="https://library.bc.edu/feedback"><span class="fa fa-commenting-o" aria-hidden="true"></span>  Feedback</a></li>
-                        <li><a href="https://libguides.bc.edu/my-accounts"><span class="fa fa-user" aria-hidden="true"></span> Accounts</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-4 col-xxs input-wrapper">
-                    <div class="pull-right">
-                        <form action="//www.bc.edu/bc-web/search.html">
-                            <div class="input-group" id="bclib-header-form">
-                                <label for="bclib-header-search" class="accessibility-text">Search the Library</label>
-                                <input type="hidden" ie="UTF-8" />
-                                <input type="text" id="bclib-header-search" class="form-control" name="q" placeholder="Search bc.edu">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i><span class="accessibility-text">Submit Search</span></button>
-                                </span>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+
+            <div class="col-md-8 col-sm-6 col-xs-6 col-xxs">
+                <ul class="bclib-header-links">
+                    <li><a href="https://www.bc.edu/bc-web/about/mission.html">Mission</a></li>
+                    <li><a href="https://library.bc.edu/feedback"><span class="fa fa-commenting-o" aria-hidden="true"></span> Ask Us</a></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -40,16 +27,17 @@
         <nav class="navbar yamm navbar-default" role="navigation">
             <div id="navbar-collapse-1" class="container-fluid-skip">
                 <div class="navbar-header">
+                    <a href="https://libguides.bc.edu/my-accounts" class="accounts-link-mobile"><span class="fa fa-user" aria-hidden="true"></span> My Accounts</a>
+
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
+                        <span class="accessibility-text">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
+                        <span class="icon-close"><span class="fa fa-times" aria-hidden="true"></span><span class="accessibility-text">Close navigation</span></span>
                     </button>
 
-                    <div class="navbar-brand">
-                    Value Beyond Discovery
-                    </div>
+                    <div class="navbar-brand">Value Beyond Discovery</div>
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -84,6 +72,7 @@
                                             <ul class="col-sm-3 menu_list">
                                                 <li><div class="h4style"><a href="https://libguides.bc.edu/outside-bc" id="mm-find-outside">Outside BC</a></div></li>
                                                 <li><a href="https://bc.on.worldcat.org" id="mm-find-outside-worldcat">WorldCat<p class="tuck">Search libraries worldwide</p></a></li>
+                                                <li><a href="https://www.hathitrust.org/" id="mm-find-outside-hathitrust">HathiTrust<p class="tuck">Digitized items from libraries around the world</p></a></li>
                                                 <li><a href="https://scholar.google.com" id="mm-find-outside-google-scholar">Google Scholar</a></li>
                                             </ul>
 
@@ -529,7 +518,7 @@
                                     <!-- Content container to add padding -->
                                     <div class="yamm-content">
                                         <div class="row">
-                                            <!-- Books Media & More -->
+                                            <!-- All hours -->
                                             <ul class="col-sm-12 col-md-10 col-md-offset-1 hours_menu_list">
                                                 <li>
                                                     <div class="hours-todays-date-container">Library hours for <span class="hours-todays-date"></span></div>
@@ -585,6 +574,47 @@
                             </ul>
                         </li>
                         <!-- END Hours -->
+
+                        <!-- My Accounts list -->
+                        <li class="dropdown yamm-fw accounts-link"><a href="#" data-toggle="dropdown" class="dropdown-toggle menu-option" id="mm-myaccounts-header">My Accounts</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <!-- Content container to add padding -->
+                                    <div class="yamm-content">
+                                        <div class="row">
+                                            <!-- Catalog -->
+                                            <ul class="col-sm-4 menu_list">
+                                                <li>
+                                                    <div class="h3style"><a href="https://bc-primo.hosted.exlibrisgroup.com/primo-explore/account?vid=bclib_new">Library catalog account</a></div>
+                                                    <p>Renew books; check due dates; save records</p>
+                                                </li>
+                                            </ul>
+
+                                            <!-- ILL -->
+                                            <ul class="col-sm-4 menu_list">
+                                                <li>
+                                                    <div class="h3style"><a href="https://illiad.bc.edu/illiad/bxm/logon.html">Interlibrary Loan account</a></div>
+                                                    <p>Request books, articles, and more from other libraries; review due dates</p>
+                                                </li>
+                                            </ul>
+
+                                            <!-- RefWorks -->
+                                            <ul class="col-sm-4 menu_list end">
+                                                <li>
+                                                    <div class="h3style"><a href="https://libguides.bc.edu/refworks-login">RefWorks account</a></div>
+                                                    <p>Import citations; organize references; <br/>create bibliographies</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="row bottom_row">
+                                            <div class="more"><a href="https://libguides.bc.edu/my-accounts" id="mm-find-more">More about Accounts <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a></div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- END My Accounts list -->
                     </ul>
                     <!-- END ul.nav -->
                 </div>
@@ -594,4 +624,5 @@
     </div>
 </div>
 <!-- END MEGAMENU -->
+
 </div>
