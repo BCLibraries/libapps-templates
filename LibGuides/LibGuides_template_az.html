@@ -45,7 +45,7 @@
         dis play: none;
     }
     #s-lg-az-filters {
-      padding:10px 0 20px 20px;
+      padding:10px 0 10px 20px;
       border:1px solid #e7e7e7;
       background-color:aliceblue;
       border-radius: 4px;
@@ -66,6 +66,25 @@
    }
    #s-lg-db-label-text {
       text-transform: lowercase;
+   }
+   #s-lg-az-search-bar nav.navbar {
+      margin-bottom:0;
+   }
+   h2#s-lg-az-result-count {
+      display:none;
+   }
+   #s-lg-az-content .s-lg-az-result-title,
+   #s-lg-az-content .s-lg-az-result-title .fa-external-link {
+      font-size:18px !important;
+   }
+   #s-lg-az-content .s-lg-az-result .s-lg-az-result-keywords .bold {
+      font-weight:600;
+   }
+   #s-lg-az-content .s-lg-az-result {
+      padding-bottom:15px;
+   }
+   #az-search-col-1 {
+      margin-right:5px;
    }
 </style>
 
@@ -105,15 +124,32 @@ $(document).ready(function(){
         <div id="s-lib-public-main" class="s-lib-main container s-lib-side-borders">
             <section>
                 <div id="s-lg-az-search-bar" class="row">
-                    <div id="az-search-col-1" class="col-md-12 center">
+                    <div id="az-search-col-1" class="col center">
                         {{navbar}}
                     </div>
                 </div>
+                <div id="s-lg-az-filters" class="pad-right-sm pad-bottom-med">
+                        <section>
+                            <div id="s-lg-az-filter-cols" class="row">
+                                <div  id="col-subjects" class="col-md-6 center">
+                                    {{subject_list}}
+                                </div>
+                                <div id="col-types" class="col-md-6 center">
+                                    {{type_list}}
+                                </div>
+                            </div>
+                            <div class="row">
+                               <div id="col-types" class="col-md-12 center">
+                                    {{search_reset}}
+                                </div>
+                            </div>
+                        </section>
+                    </div>
             </section>
             <section>
                 <div id="s-lg-az-cols"  class="row">
                     <div  id="col1"  class="col-md-8 center">
-                        <div id="s-lg-az-filters" class="pad-right-sm pad-bottom-med">
+                        <!--div id="s-lg-az-filters" class="pad-right-sm pad-bottom-med">
                             <section>
                                 <div id="s-lg-az-filter-cols" class="row">
                                     <div  id="col-subjects" class="col-md-6 center">
@@ -123,14 +159,19 @@ $(document).ready(function(){
                                         {{type_list}}
                                     </div>
                                 </div>
+                                <div class="row">
+                                   <div id="col-types" class="col-md-12 center">
+                                        {{search_reset}}
+                                    </div>
+                                </div>
                             </section>
-                        </div>
+                        </div-->
                         <div id="s-lg-az-index" class="pad-right-sm">
                             {{alpha_list}}
                         </div>
-                        <div id="s-lg-az-search-reset" class="pad-top-med pad-bottom-med">
+                        <!--div id="s-lg-az-search-reset" class="pad-top-med pad-bottom-med">
                             {{search_reset}}
-                        </div>
+                        </div-->
                         <div id="s-lg-az-content" class="pad-right-sm pad-top-med">
                             <div class="bold s-lib-color-lt-grey pad-top-med text-center">Loading...</div>
                         </div>
