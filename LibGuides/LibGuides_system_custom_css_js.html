@@ -577,3 +577,53 @@ $(document).ready(function(){
     var y = document.getElementsByTagName("script")[0]; y.parentNode.insertBefore(x, y);
   })();
 </script>
+
+<!-- add fixed position chat box on all pages -->
+<style type="text/css">
+    #askuswidget {
+        position: fixed;
+        right: -169px;
+        z-index: 99999999999;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        font-size: 140%;
+        height: auto;
+        padding-bottom: .75rem;
+        -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+        -webkit-transform-origin: top left;
+        -ms-transform-origin: top left;
+        transform-origin: top left;
+        box-shadow: rgb(0,0,0) 0px 0px 5px;
+        background-image: none;
+        text-shadow: none;
+        background-color: #337ab7!important;
+    }
+    #askuswidget.btn {
+        border-color: #fff;
+        border-top: none;
+    }
+    #askuswidget.btn:focus,
+    #askuswidget.btn:hover  {
+        border-color: inherit;
+        border-top: none;
+        background-color: #286090!important;
+    }
+    @media (max-width: 900px) {
+        #askuswidget {
+            bottom: 200px;
+        }
+    }
+    @media (min-width: 901px) {
+        #askuswidget {
+            top:25%;
+        }
+        /* reposition scroll-to-top button */
+        #s-lib-scroll-top {
+            z-index: 10;
+            bottom: 25%;
+            right: 50px;
+        }
+    }
+</style>
