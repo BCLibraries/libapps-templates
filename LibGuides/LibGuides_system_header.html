@@ -80,7 +80,7 @@
                                                 <li><a href="https://search-proquest-com.proxy.bc.edu/pqdtglobal/advanced" id="mm-find-other-proquest-theses">ProQuest Theses &amp; Dissertations</a></li>
                                                 <li><a href="https://libguides.bc.edu/collections" id="mm-find-other-collections">Collections</a></li>
                                                 <li><a href="https://dlib.bc.edu" id="mm-find-other-escholarship">eScholarship@BC</a></li>
-                                                <li><a href="https://libguides.bc.edu/digital-collections" id="mm-find-other-digital-collections">Digitized Collections</a></li>
+                                                <li><a href="https://libguides.bc.edu/digital-collections" id="mm-find-other-digital-collections">Digitial Collections</a></li>
                                             </ul>
                                         </div>
 
@@ -103,7 +103,7 @@
                                             <ul class="col-sm-3 menu_list">
                                                 <li><div class="h4style"><a href="https://libguides.bc.edu/services" id="mm-using-services">Services</a></div></li>
                                                 <li><a href="https://libguides.bc.edu/borrowing" id="mm-using-services-borrowing">Borrowing</a></li>
-                                                <li><a href="https://libguides.bc.edu/interlibrary-loan" id="mm-using-services-requesting">Requesting &amp; Interlibrary Loan</a></li>
+                                                <li><a href="https://libguides.bc.edu/interlibrary-loan" id="mm-using-services-requesting">Interlibrary Loan</a></li>
                                                 <li><a href="https://library.bc.edu/courses" id="mm-using-services-course-reserves">Course Reserves</a></li>
                                                 <li><a href="https://libguides.bc.edu/library-instruction" id="mm-using-services-library-instruction">Library Instruction</a></li>
                                                 <li><a href="https://libguides.bc.edu/media-services" id="mm-using-services-media-services">Media Services</a></li>
@@ -148,6 +148,15 @@
                             </ul>
                         </li>
 
+                        <!-- This script handles the showing/hiding of all of the libraryH3lp divs. -->
+                        <script type="text/javascript"> 
+                          (function() {
+                            var x = document.createElement("script"); x.type = "text/javascript"; x.async = true;
+                            x.src = (document.location.protocol === "https:" ? "https://" : "http://") + "libraryh3lp.com/js/libraryh3lp.js?multi,poll";
+                            var y = document.getElementsByTagName("script")[0]; y.parentNode.insertBefore(x, y);
+                          })();
+                        </script>
+
                         <!-- Get Help list -->
                         <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle menu-option" id="mm-help-header">Get Help</a>
                             <ul class="dropdown-menu">
@@ -170,7 +179,7 @@
                                                     <li><div class="h4style"><a href="https://libguides.bc.edu/ask-a-librarian" id="mm-help-aal">Ask A Librarian</a></div></li>
                                                     <li class="ref_pane"><a href="https://libguides.bc.edu/ask-a-librarian" id="mm-help-ref">Visit a Reference Desk</a></li>
                                                     <li class="faq_pane"><a href="https://answers.bc.edu" id="mm-help-faq">Frequently Asked Questions</a></li>
-                                                    <li class="chat_pane"><a href="#" onClick="window.open('https://libraryh3lp.com/chat/ajcu-consortium@chat.libraryh3lp.com?skin=19965&title=Boston College/AJCU+Librarians&profile=cs-bostoncoll','chat', 'resizable=1,width=320,height=300'); return false;" style="cursor: pointer;" id="mm-help-chat">Chat with us</a></li>
+                                                    <li class="chat_pane"><a href="https://libguides.bc.edu/ask-a-librarian" id="mm-help-chat">Chat with us</a></li>
                                                     <li class="email_pane"><a href="https://answers.bc.edu/q.php" id="mm-help-email">Send us an Email</a></li>
                                                     <li class="call_pane"><a href="#" id="mm-help-call">Call us</a></li>
                                                 </ul>
@@ -214,11 +223,63 @@
                                                 <!-- CHAT PANE BEGINS HERE -->
                                                 <div id="chat_pane" class="item_pane col-sm-5">
                                                     <div class="pane_info">
-                                                        <a href="#" onClick="window.open('https://libraryh3lp.com/chat/ajcu-consortium@chat.libraryh3lp.com?skin=19965&title=Boston College/AJCU+Librarians&profile=cs-bostoncoll','chat','resizable=1,width=320,height=300'); return false;" style="cursor: pointer;" id="mm-help-pane-chat-header">
+                                                        <div class="libraryh3lp" jid="cs-bostoncoll@chat.libraryh3lp.com" style="cursor: pointer;">
+                                                            <a href="#" onclick="window.open('https://libraryh3lp.com/chat/cs-bostoncoll@chat.libraryh3lp.com?skin=29500&amp;title=Boston+College&amp;sounds=1', 'chat', 'resizable=1,width=320,height=300'); return false;">
+                                                                <div class="askicon ask_chat"></div>
+                                                                <div class="h2style">Chat with us</div>
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="libraryh3lp" jid="ajcu-consortium@chat.libraryh3lp.com" style="cursor: pointer; display: none;">
+                                                            <a href="#" onclick="window.open('https://libraryh3lp.com/chat/ajcu-consortium@chat.libraryh3lp.com?skin=29500&amp;title=Boston+College/AJCU+Librarians&amp;profile=cs-bostoncoll', 'chat', 'resizable=1,width=320,height=300'); return false;">
+                                                                <div class="askicon ask_chat"></div>
+                                                                <div class="h2style">Chat with us</div>
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="libraryh3lp" jid="ajcu-chatstaff@chat.libraryh3lp.com" style="cursor: pointer; display: none;">
+                                                            <a href="#" onclick="window.open('https://libraryh3lp.com/chat/ajcu-chatstaff@chat.libraryh3lp.com?skin=29500&amp;title=ChatStaff+Librarians&amp;profile=cs-bostoncoll', 'chat', 'resizable=1,width=320,height=300'); return false;">
+                                                                <div class="askicon ask_chat"></div>
+                                                                <div class="h2style">Chat with us</div>
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="libraryh3lp" style="display: none;">
+                                                            <a href="https://libguides.bc.edu/ask-a-librarian">
+                                                                <div class="askicon ask_chat"></div>
+                                                                <div class="h2style">Chat with us</div>
+                                                            </a>
+                                                        </div>
+
+                                                        <!--a href="#" onClick="window.open('https://libraryh3lp.com/chat/ajcu-consortium@chat.libraryh3lp.com?skin=29500&title=Boston College/AJCU+Librarians&profile=cs-bostoncoll','chat','resizable=1,width=320,height=300'); return false;" style="cursor: pointer;" id="mm-help-pane-chat-header">
                                                             <div class="askicon ask_chat"></div>
                                                             <div class="h2style">Chat with us</div>
-                                                        </a>
-                                                        <p>24/7 research help from Librarians at BC and at participating Jesuit institutions across the country. <a onClick="window.open('https://libraryh3lp.com/chat/ajcu-consortium@chat.libraryh3lp.com?skin=19965&title=Boston College/AJCU+Librarians&profile=cs-bostoncoll','chat', 'resizable=1,width=320,height=300'); return false;" style="cursor: pointer;" id="mm-help-pane-chat">Click here to chat with a Librarian.</a> </p>
+                                                        </a-->
+                                                        <p>24/7 research help from Librarians at BC and at participating Jesuit institutions across the country.</p>
+                                                        <!--p><a onClick="window.open('https://libraryh3lp.com/chat/ajcu-consortium@chat.libraryh3lp.com?skin=29500&title=Boston College/AJCU+Librarians&profile=cs-bostoncoll','chat', 'resizable=1,width=320,height=300'); return false;" style="cursor: pointer;" id="mm-help-pane-chat">Click here to chat with a Librarian.</a></p-->
+                                                        <div class="libraryh3lp" jid="cs-bostoncoll@chat.libraryh3lp.com" style="cursor: pointer;">
+                                                            <a href="#" class="chat-link" onclick="window.open('https://libraryh3lp.com/chat/cs-bostoncoll@chat.libraryh3lp.com?skin=29500&amp;title=Boston+College&amp;sounds=1', 'chat', 'resizable=1,width=320,height=300'); return false;">
+                                                                Click here to chat with a Librarian.
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="libraryh3lp" jid="ajcu-consortium@chat.libraryh3lp.com" style="cursor: pointer; display: none;">
+                                                            <a href="#" class="chat-link" onclick="window.open('https://libraryh3lp.com/chat/ajcu-consortium@chat.libraryh3lp.com?skin=29500&amp;title=Boston+College/AJCU+Librarians&amp;profile=cs-bostoncoll',
+                                                           'chat', 'resizable=1,width=320,height=300'); return false;">
+                                                                Click here to chat with a Librarian.
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="libraryh3lp" jid="ajcu-chatstaff@chat.libraryh3lp.com" style="cursor: pointer; display: none;">
+                                                            <a href="#" class="chat-link" onclick="window.open('https://libraryh3lp.com/chat/ajcu-chatstaff@chat.libraryh3lp.com?skin=29500&amp;title=ChatStaff+Librarians&amp;profile=cs-bostoncoll',
+                                                           'chat', 'resizable=1,width=320,height=300'); return false;">
+                                                                Click here to chat with a Librarian.
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="libraryh3lp" style="display: none;">Our chat service is offline.
+                                                            <div>You may get an <a href="http://answers.bc.edu/q.php">answer by email</a>.</div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <!-- END CHAT PANE. RIGHT UP THERE-->

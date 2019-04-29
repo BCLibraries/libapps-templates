@@ -35,7 +35,7 @@ $(function () {
         var page_title = $("#guidetitle h1").text();
         ga('send', 'event', 'breadcrumb-guide', 'click', page_title);
     });
-    $("a").not('.search-link').click(function(e) {
+    $("a").not('#askuswidget, .search-link').click(function(e) {
         if (!ga.q) {
             var url = $(this).attr("href");
 
@@ -56,5 +56,12 @@ $(function () {
         var current_title = $(document).attr('title');
         ga('send', 'event', 'canvas', 'view', current_title);
     }
+    //
+    // catch Ask Us fixed button clicks
+    //
+    $("a#askuswidget").click(function(e){
+        var src = window.location.href;
+        ga('send', 'event', 'chat-widget', 'click', src);
+    });
 });
 </script>
