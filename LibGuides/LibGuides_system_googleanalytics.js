@@ -35,21 +35,9 @@ $(function () {
         var page_title = $("#guidetitle h1").text();
         ga('send', 'event', 'breadcrumb-guide', 'click', page_title);
     });
-    $("a").not('#askuswidget, .search-link').click(function(e) {
-        if (!ga.q) {
-            var url = $(this).attr("href");
-
-            /* Bug fix to stop screen jump when clicking carousel controls */
-            if (url.indexOf('#') !== 0) {
-                ga("send", "event", "outbound-lg", "click", url, {
-                    "hitCallback":
-                    function () {
-                        document.location = url;
-                    }
-                });
-            }
-            e.preventDefault();
-        }
+    $("a").not('#askuswidget, .search-link, .accessibility-text, #s-lg-public-skiplink').click(function(e) {
+        var url = $(this).attr("href");
+        ga('send', 'event', 'outbound-lg', "click", url);
     });
     /* get page views originating from Canvas */
     if ((window.location.pathname).indexOf('widget_')>-1){
