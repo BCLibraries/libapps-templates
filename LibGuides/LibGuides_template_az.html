@@ -86,6 +86,9 @@
    #az-search-col-1 {
       margin-right:5px;
    }
+   #az-search-col-1 #s-lg-db-label {
+    display: block;
+   }
 </style>
 
 <!-- CHANGE THE TEXT FOR THE DATABASE TRIALS COLUMN -->
@@ -97,6 +100,8 @@ $(document).ready(function(){
     })[0].nodeValue = "The following resources are being evaluated for addition to our collection.  Please send your feedback.";
    $("#s-lg-az-filters").prepend("<p class='bold' id='db-filter-label'>Database Filters:</p>");
    $("#az-search-col-1 nav .navbar-header #s-lg-db-label").prepend("<span id='db-search-label'>Search</span>");
+   $("#az-search-col-1 nav #s-lg-az-nav-1").removeClass("collapse");
+   $("#az-search-col-1 nav .navbar-header button.navbar-toggle").hide();
 });
 </script>
 
