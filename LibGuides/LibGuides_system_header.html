@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav" id="megamenu" data-tag="ga-tag">
                         <!-- Find list -->
                         <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle menu-option" id="mm-find-header">Find</a>
                             <ul class="dropdown-menu">
@@ -80,7 +80,7 @@
                                                 <li><a href="https://search-proquest-com.proxy.bc.edu/pqdtglobal/advanced" id="mm-find-other-proquest-theses">ProQuest Theses &amp; Dissertations</a></li>
                                                 <li><a href="https://libguides.bc.edu/collections" id="mm-find-other-collections">Collections</a></li>
                                                 <li><a href="https://dlib.bc.edu" id="mm-find-other-escholarship">eScholarship@BC</a></li>
-                                                <li><a href="https://libguides.bc.edu/digital-collections" id="mm-find-other-digital-collections">Digitial Collections</a></li>
+                                                <li><a href="https://libguides.bc.edu/digital-collections" id="mm-find-other-digital-collections">Digital Collections</a></li>
                                             </ul>
                                         </div>
 
@@ -148,151 +148,117 @@
                             </ul>
                         </li>
 
+                        <!-- This script handles the showing/hiding of all of the libraryH3lp divs. -->
+                        <script type="text/javascript"> 
+                            $(document).ready(function() {
+                                (function() {
+                                    var x = document.createElement("script"); x.type = "text/javascript"; x.async = true;
+                                    x.src = (document.location.protocol === "https:" ? "https://" : "http://") + "libraryh3lp.com/js/libraryh3lp.js?multi,poll";
+                                    var y = document.getElementsByTagName("script")[0]; y.parentNode.insertBefore(x, y);
+                                })();
+
+                                $("#chat-icon-link").click(function(e){
+                                    e.preventDefault();
+                                    var active = $(".aal-box .libraryh3lp > a").filter(":visible");
+                                    if (active && active.length){
+                                        active.first().click();
+                                    } else {
+                                        console.log("can't locate active libraryh3lp element!");
+                                        alert("Sorry, library chat is inactive at the moment. Try again later, or use another method to contact a library staff member.");
+                                    }
+                                });
+                            });
+                        </script>
+
                         <!-- Get Help list -->
                         <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle menu-option" id="mm-help-header">Get Help</a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu" id="mm-help-container">
                                 <li>
                                     <!-- Content container to add padding -->
                                     <div class="yamm-content">
                                         <div class="row">
-                                            <ul class="col-sm-4 menu_list">
-                                                <li><div class="h4style"><a href="https://libguides.bc.edu/research-help" id="mm-help-research">Research Help</a></div></li>
-                                                <li><a href="https://libguides.bc.edu/subjects" id="mm-help-subjects">Guides by Subject</a></li>
-                                                <li><a href="https://libguides.bc.edu/subjects/course-guides" id="mm-help-course">Guides by Course</a></li>
-                                                <li><a href="https://libguides.bc.edu/ask-a-librarian/contact" id="mm-help-subject-librarians">Subject Librarians</a></li>
-                                                <li><a href="https://libguides.bc.edu/subjects/general" id="mm-help-howto">How to... (use the catalog, cite sources, etc.)</a></li>
-                                                <li><a href="https://libguides.bc.edu/core-skills-videos" id="mm-help-coreskills">Core Skills video tutorials</a></li>
-                                            </ul>
-                                            <div class="iteminfo-content get-help-menu">
-
-                                                <!-- MENU WITH LINKS, FOR DESKTOP VERSION. -->
-                                                <ul class="col-sm-3 item-list item-desktop">
-                                                    <li><div class="h4style"><a href="https://libguides.bc.edu/ask-a-librarian" id="mm-help-aal">Ask A Librarian</a></div></li>
-                                                    <li class="ref_pane"><a href="https://libguides.bc.edu/ask-a-librarian" id="mm-help-ref">Visit a Reference Desk</a></li>
-                                                    <li class="faq_pane"><a href="https://answers.bc.edu" id="mm-help-faq">Frequently Asked Questions</a></li>
-                                                    <li class="chat_pane"><a href="https://libguides.bc.edu/ask-a-librarian" id="mm-help-chat">Chat with us</a></li>
-                                                    <li class="email_pane"><a href="https://answers.bc.edu/q.php" id="mm-help-email">Send us an Email</a></li>
-                                                    <li class="call_pane"><a href="#" id="mm-help-call">Call us</a></li>
-                                                </ul>
-
-                                                <!-- MENU WITH NO LINKS, FOR TABLET VERSION. -->
-                                                <ul class="col-sm-3 item-list item-tablet">
-                                                    <li><div class="h4style"><a href="https://libguides.bc.edu/ask-a-librarian" id="mm-t-help-aal">Ask A Librarian</a></div></li>
-                                                    <li class="ref_pane"><a href="#" id="mm-t-help-ref">Visit a Reference Desk</a></li>
-                                                    <li class="faq_pane"><a href="#" id="mm-t-help-faq">Frequently Asked Questions</a></li>
-                                                    <li class="chat_pane"><a href="#" id="mm-t-help-email">Send us an Email</a></li>
-                                                    <li class="call_pane"><a href="#" id="mm-t-help-call">Call us</a></li>
-                                                </ul>
-
-
-                                                <div class="h4style accessibility-text">Help from anywhere</div>
-
-                                                <!-- REFERENCE PANE BEGINS HERE -->
-                                                <div id="ref_pane" class="item_pane col-sm-5">
-                                                    <div class="pane_info">
-                                                        <a href="https://libguides.bc.edu/ask-a-librarian" id="mm-help-pane-ref-header">
-                                                            <div class="askicon ask_ref"></div>
-                                                            <div class="h2style">Visit a Reference Desk</div>
-                                                        </a>
-                                                        <p>Ask us anything! We can help you find answers to your questions, resources for your projects, or refer you to other experts.</p>
+                                            <div class="col-sm-9" id="mm-help-aal">
+                                                <div class="h4style"><a href="https://libguides.bc.edu/ask-a-librarian" id="mm-find-outside">Ask A Librarian</a></div>
+                                                
+                                                <div class="row">
+                                                    <div class="col-sm-6 col-xs-12">
+                                                        <div class="panel panel-default aal-box">
+                                                            <div class="panel-body">
+                                                                <div class="media">
+                                                                    <div class="media-left">
+                                                                        <a href="#" id="chat-icon-link" class="aal-icon"><i class="fa fa-comment fa-fw"></i></a>
+                                                                    </div>
+                                                                    <div class="media-right">
+                                                                        <div class="libraryh3lp" jid="cs-bostoncoll@chat.libraryh3lp.com"   style="display: none;"><a href="#" onclick="window.open('https://libraryh3lp.com/chat/cs-bostoncoll@chat.libraryh3lp.com?skin=29500&amp;title=Boston+College&amp;sounds=1', 'chat', 'resizable=1,width=320,height=300'); return false;" style="cursor: pointer;"><div class="h4style">Chat with us</div></a></div>
+                                                                        <div class="libraryh3lp" jid="ajcu-consortium@chat.libraryh3lp.com" style="display: none;"><a href="#" onclick="window.open('https://libraryh3lp.com/chat/ajcu-consortium@chat.libraryh3lp.com?skin=29500&amp;title=Boston+College/AJCU+Librarians&amp;profile=cs-bostoncoll', 'chat', 'resizable=1,width=320,height=300'); return false;" style="cursor: pointer;"><div class="h4style">Chat with us</div></a></div>
+                                                                        <div class="libraryh3lp" jid="ajcu-chatstaff@chat.libraryh3lp.com"  style="display: none;"><a href="#" onclick="window.open('https://libraryh3lp.com/chat/ajcu-chatstaff@chat.libraryh3lp.com?skin=29500&amp;title=ChatStaff+Librarians&amp;profile=cs-bostoncoll', 'chat', 'resizable=1,width=320,height=300'); return false;" style="cursor: pointer;"><div class="h4style">Chat with us</div></a></div>
+                                                                        <p>Ask a question 24/7 and a librarian from BC or another institution will help you.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <!-- END REF PANE. RIGHT UP THERE-->
-
-                                                <!-- FAQ PANE BEGINS HERE -->
-                                                <div id="faq_pane" class="item_pane col-sm-5">
-                                                    <div class="pane_info">
-                                                        <a href="https://answers.bc.edu" id="mm-help-pane-faq-header">
-                                                            <div class="askicon ask_faq"></div>
-                                                            <div class="h2style">Frequently Asked Questions</div>
-                                                        </a>
-                                                        <p>Get answers to frequently asked questions on the <a href="https://answers.bc.edu" id="mm-help-pane-faq-link">Library's FAQ</a>.</p>
-                                                    </div>
-                                                </div>
-                                                <!-- END FAQ PANE. RIGHT UP THERE-->
-
-                                                <!-- CHAT PANE BEGINS HERE -->
-                                                <div id="chat_pane" class="item_pane col-sm-5">
-                                                    <div class="pane_info">
-                                                        <div class="libraryh3lp" jid="cs-bostoncoll@chat.libraryh3lp.com" style="cursor: pointer;">
-                                                            <a href="#" onclick="window.open('https://libraryh3lp.com/chat/cs-bostoncoll@chat.libraryh3lp.com?skin=29500&amp;title=Boston+College&amp;sounds=1', 'chat', 'resizable=1,width=320,height=300'); return false;">
-                                                                <div class="askicon ask_chat"></div>
-                                                                <div class="h2style">Chat with us</div>
-                                                            </a>
-                                                        </div>
-
-                                                        <div class="libraryh3lp" jid="ajcu-consortium@chat.libraryh3lp.com" style="cursor: pointer; display: none;">
-                                                            <a href="#" onclick="window.open('https://libraryh3lp.com/chat/ajcu-consortium@chat.libraryh3lp.com?skin=29500&amp;title=Boston+College/AJCU+Librarians&amp;profile=cs-bostoncoll', 'chat', 'resizable=1,width=320,height=300'); return false;">
-                                                                <div class="askicon ask_chat"></div>
-                                                                <div class="h2style">Chat with us</div>
-                                                            </a>
-                                                        </div>
-
-                                                        <div class="libraryh3lp" jid="ajcu-chatstaff@chat.libraryh3lp.com" style="cursor: pointer; display: none;">
-                                                            <a href="#" onclick="window.open('https://libraryh3lp.com/chat/ajcu-chatstaff@chat.libraryh3lp.com?skin=29500&amp;title=ChatStaff+Librarians&amp;profile=cs-bostoncoll', 'chat', 'resizable=1,width=320,height=300'); return false;">
-                                                                <div class="askicon ask_chat"></div>
-                                                                <div class="h2style">Chat with us</div>
-                                                            </a>
-                                                        </div>
-
-                                                        <div class="libraryh3lp" style="display: none;">
-                                                            <a href="https://libguides.bc.edu/ask-a-librarian">
-                                                                <div class="askicon ask_chat"></div>
-                                                                <div class="h2style">Chat with us</div>
-                                                            </a>
-                                                        </div>
-
-                                                        
-                                                        <p>24/7 research help from Librarians at BC and at participating Jesuit institutions across the country.</p>
-                                                        <div class="libraryh3lp" jid="cs-bostoncoll@chat.libraryh3lp.com" style="cursor: pointer;">
-                                                            <a href="#" class="chat-link" onclick="window.open('https://libraryh3lp.com/chat/cs-bostoncoll@chat.libraryh3lp.com?skin=29500&amp;title=Boston+College&amp;sounds=1', 'chat', 'resizable=1,width=320,height=300'); return false;">
-                                                                Click here to chat with a Librarian.
-                                                            </a>
-                                                        </div>
-
-                                                        <div class="libraryh3lp" jid="ajcu-consortium@chat.libraryh3lp.com" style="cursor: pointer; display: none;">
-                                                            <a href="#" class="chat-link" onclick="window.open('https://libraryh3lp.com/chat/ajcu-consortium@chat.libraryh3lp.com?skin=29500&amp;title=Boston+College/AJCU+Librarians&amp;profile=cs-bostoncoll', 'chat', 'resizable=1,width=320,height=300'); return false;">
-                                                                Click here to chat with a Librarian.
-                                                            </a>
-                                                        </div>
-
-                                                        <div class="libraryh3lp" jid="ajcu-chatstaff@chat.libraryh3lp.com" style="cursor: pointer; display: none;">
-                                                            <a href="#" class="chat-link" onclick="window.open('https://libraryh3lp.com/chat/ajcu-chatstaff@chat.libraryh3lp.com?skin=29500&amp;title=ChatStaff+Librarians&amp;profile=cs-bostoncoll', 'chat', 'resizable=1,width=320,height=300'); return false;">
-                                                                Click here to chat with a Librarian.
-                                                            </a>
-                                                        </div>
-
-                                                        <div class="libraryh3lp" style="display: none;">Our chat service is offline.
-                                                            <div>You may get an <a href="http://answers.bc.edu/q.php">answer by email</a>.</div>
+    
+                                                    <div class="col-sm-6 col-xs-12">
+                                                        <div class="panel panel-default aal-box">
+                                                            <div class="panel-body">
+                                                                <div class="media">
+                                                                    <div class="media-left">
+                                                                        <a href="https://libguides.bc.edu/ask-a-librarian/email-us" id="email-icon-link" class="aal-icon"><i class="fa fa-envelope fa-fw"></i></a>
+                                                                    </div>
+                                                                    <div class="media-right">
+                                                                        <div class="h4style"><a href="https://libguides.bc.edu/ask-a-librarian/email-us">Email us</a></div>
+                                                                        <p>Send us a question and we'll get back to you within a day.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- END CHAT PANE. RIGHT UP THERE-->
 
-                                                <!-- EMAIL PANE BEGINS HERE -->
-                                                <div id="email_pane" class="item_pane col-sm-5">
-                                                    <div class="pane_info">
-                                                        <a href="https://answers.bc.edu/q.php" id="mm-help-pane-email">
-                                                        <div class="askicon ask_email"></div>
-                                                        <div class="h2style">Send us an Email</div>
-                                                        </a>
-                                                        <p>Get an <a href="https://answers.bc.edu/q.php" id="mm-help-email-link">answer by email</a> within one day, Monday-Friday.</p>
+                                                <div class="row">
+                                                    <div class="col-sm-6 col-xs-12">
+                                                        <div class="panel panel-default aal-box">
+                                                            <div class="panel-body">
+                                                                <div class="media">
+                                                                    <div class="media-left">
+                                                                        <a href="https://libguides.bc.edu/ask-a-librarian/subject-librarians" id="meet-icon-link" class="aal-icon"><i class="fa fa-user fa-fw"></i></a>
+                                                                    </div>
+                                                                    <div class="media-right">
+                                                                        <div class="h4style"><a href="https://libguides.bc.edu/ask-a-librarian/subject-librarians">Meet with us</a></div>
+                                                                        <p>Request an appointment in person or online with a subject librarian.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-6 col-xs-12">
+                                                        <div class="panel panel-default aal-box">
+                                                            <div class="panel-body">
+                                                                <div class="media">
+                                                                    <div class="media-left">
+                                                                        <a href="https://libguides.bc.edu/ask-a-librarian/locations" id="visit-icon-link" class="aal-icon"><i class="fa fa-map-marker fa-fw"></i></a>
+                                                                    </div>
+                                                                    <div class="media-right">
+                                                                        <div class="h4style"><a href="https://libguides.bc.edu/ask-a-librarian/locations">Visit us</a></div>
+                                                                        <p>Visit our library locations.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <!-- END EMAIL PANE. RIGHT UP THERE-->
-
-                                                <!-- CALL PANE BEGINS HERE -->
-                                                <div id="call_pane" class="item_pane col-sm-5">
-                                                    <div class="pane_info">
-                                                     <div class="askicon ask_call"></div>
-                                                        <div class="h2style">Call us</div>
-                                                        <p>(617) 552-4472</p>
-                                                        <p>Call a Reference Librarian during regular reference service hours.</p>
-                                                    </div>
-                                                </div>
-                                                <!-- END CALL PANE. RIGHT UP THERE-->
                                             </div>
-
+                                            <ul class="col-sm-3 menu_list end">
+                                                <li><div class="h4style"><a href="https://libguides.bc.edu/research-help" id="mm-help-research">Research Help</a></div></li>
+                                                <li><a href="https://libguides.bc.edu/research_guides" id="mm-help-subjects">Subject Guides</a></li>
+                                                <li><a href="https://libguides.bc.edu/subjects/course-guides" id="mm-help-course">Course Guides</a></li>
+                                                <li><a href="https://libguides.bc.edu/subjects/general" id="mm-help-howto">How to... (General Guides)</a></li>
+                                                <li><a href="https://libguides.bc.edu/core-skills-videos" id="mm-help-coreskills">Core Skills video tutorials</a></li>
+                                                <li><a href="https://libguides.bc.edu/ask-a-librarian/contact" id="mm-help-subject-librarians">Subject Librarians</a></li>
+                                                <li><a href="https://answers.bc.edu" id="mm-help-coreskills">FAQ</a></li>
+                                            </ul>
                                         </div>
                                         <div class="row bottom_row">
                                             <div class="more"><a href="https://libguides.bc.edu/ask-a-librarian" id="mm-help-all">All Help <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a></div>
@@ -606,6 +572,7 @@
                                                                 </tr>
                                                             </tbody>
                                                         </table>
+                                                        <div class="onl-asterisk-notice">* First floor study area remains open until 2:00 am. Collections and services are not available after 10:00 pm.</div>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -660,7 +627,7 @@
                                         </div>
                                         
                                         <div class="row bottom_row">
-                                            <div class="more"><a href="https://libguides.bc.edu/my-accounts" id="mm-find-more">More about Accounts <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a></div>
+                                            <div class="more"><a href="https://libguides.bc.edu/my-accounts" id="mm-find-more-accounts">More about Accounts <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a></div>
                                         </div>
                                     </div>
                                 </li>
