@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav" id="megamenu" data-tag="ga-tag">
+                    <ul class="nav navbar-nav">
                         <!-- Find list -->
                         <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle menu-option" id="mm-find-header">Find</a>
                             <ul class="dropdown-menu">
@@ -157,9 +157,12 @@
                                     var y = document.getElementsByTagName("script")[0]; y.parentNode.insertBefore(x, y);
                                 })();
 
-                                $("#chat-icon-link").click(function(e){
+                                /* handle icon clicking to activate chat */
+                                $(".chat-box").on("click", "#chat-icon-link", function(e){
                                     e.preventDefault();
-                                    var active = $(".aal-box .libraryh3lp > a").filter(":visible");
+                                    var $this = $(this);
+                                    var parent = $this.parents(".chat-box");
+                                    var active = parent.find(".media .libraryh3lp > a").filter(":visible");
                                     if (active && active.length){
                                         active.first().click();
                                     } else {
@@ -182,7 +185,7 @@
                                                 
                                                 <div class="row">
                                                     <div class="col-sm-6 col-xs-12">
-                                                        <div class="panel panel-default aal-box">
+                                                        <div class="panel panel-default aal-box chat-box">
                                                             <div class="panel-body">
                                                                 <div class="media">
                                                                     <div class="media-left">
@@ -572,7 +575,6 @@
                                                                 </tr>
                                                             </tbody>
                                                         </table>
-                                                        <div class="onl-asterisk-notice">* First floor study area remains open until 2:00 am. Collections and services are not available after 10:00 pm.</div>
                                                     </div>
                                                 </li>
                                             </ul>

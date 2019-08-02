@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav" id="megamenu" data-tag="ga-tag">
+                    <ul class="nav navbar-nav">
                         <!-- Find list -->
                         <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle menu-option" id="mm-find-header">Find</a>
                             <ul class="dropdown-menu">
@@ -159,9 +159,12 @@
                                     var y = document.getElementsByTagName("script")[0]; y.parentNode.insertBefore(x, y);
                                 })();
 
-                                $("#chat-icon-link").click(function(e){
+                                /* handle icon clicking to activate chat */
+                                $(".chat-box").on("click", "#chat-icon-link", function(e){
                                     e.preventDefault();
-                                    var active = $(".aal-box .libraryh3lp > a").filter(":visible");
+                                    var $this = $(this);
+                                    var parent = $this.parents(".chat-box");
+                                    var active = parent.find(".media .libraryh3lp > a").filter(":visible");
                                     if (active && active.length){
                                         active.first().click();
                                     } else {
@@ -184,7 +187,7 @@
                                                 
                                                 <div class="row">
                                                     <div class="col-sm-6 col-xs-12">
-                                                        <div class="panel panel-default aal-box">
+                                                        <div class="panel panel-default aal-box chat-box">
                                                             <div class="panel-body">
                                                                 <div class="media">
                                                                     <div class="media-left">
@@ -311,7 +314,7 @@
                                                     <li><!--THIS IS A MESSY WAY TO MAKE SPACE-->&nbsp;</li>
                                                     <li><!--THIS IS A MESSY WAY TO MAKE SPACE-->&nbsp;</li>
                                                     <li><!--THIS IS A MESSY WAY TO MAKE SPACE-->&nbsp;</li>
-                                                 </ul>
+                                                    </ul>
 
                                                 <!-- MENU LIST WITH NO LINKS, FOR TABLET CLICKING. -->
                                                 <ul class="col-sm-3 item-list item-tablet">
@@ -327,7 +330,7 @@
                                                     <li><!--THIS IS A MESSY WAY TO MAKE SPACE-->&nbsp;</li>
                                                     <li><!--THIS IS A MESSY WAY TO MAKE SPACE-->&nbsp;</li>
                                                     <li><!--THIS IS A MESSY WAY TO MAKE SPACE-->&nbsp;</li>
-                                                 </ul>
+                                                    </ul>
 
                                                 <div class="h4style accessibility-text">Libraries</div>
 
@@ -357,7 +360,7 @@
                                                 <div id="burns_pane" class="item_pane">
                                                     <div class="pane_info">
                                                         <div class="h3style"><a href="https://libguides.bc.edu/burns">Burns Library <i class="fa fa-lg fa-arrow-circle-o-right" aria-hidden="true"></i></a></div>
-                                                         <p class="address">140 Commonwealth Avenue<br>Chestnut Hill, MA 02467-3810</p>
+                                                            <p class="address">140 Commonwealth Avenue<br>Chestnut Hill, MA 02467-3810</p>
                                                         <p>Located in the original Bapst Library building on Boston College’s Chestnut Hill campus, the John J. Burns Library offers students, scholars, and the general public opportunities to engage with rare books, special collections, and archives.</p>
 
                                                         <ul class="col-sm-12">
@@ -380,7 +383,7 @@
                                                 <div id="erc_pane" class="item_pane">
                                                     <div class="pane_info">
                                                         <div class="h3style"><a href="https://libguides.bc.edu/erc">Educational Resource Center <i class="fa fa-lg fa-arrow-circle-o-right" aria-hidden="true"></i></a></div>
-                                                         <p class="address">140 Commonwealth Avenue<br>Chestnut Hill, MA 02467-3810</p>
+                                                            <p class="address">140 Commonwealth Avenue<br>Chestnut Hill, MA 02467-3810</p>
                                                         <p>The Educational Resource Center, located in Campion Hall, serves the specialized resource needs of the Lynch School of Education faculty and students. </p>
 
                                                         <ul class="col-sm-12">
@@ -391,10 +394,10 @@
                                                     </div>
 
                                                     <div class="pane_pic" aria-hidden="true">
-                                                       <a href="https://libguides.bc.edu/erc" title="Educational Resource Center home page" id="mm-erc">
-                                                           <i class="libsprite libsprite-librarythumbnails_ed"></i>
-                                                           <span class="sr-only">Educational Resource Center</span>
-                                                       </a>
+                                                        <a href="https://libguides.bc.edu/erc" title="Educational Resource Center home page" id="mm-erc">
+                                                            <i class="libsprite libsprite-librarythumbnails_ed"></i>
+                                                            <span class="sr-only">Educational Resource Center</span>
+                                                        </a>
                                                     </div>
                                                 </div>
                                                 <!-- END ERC PANE. RIGHT UP THERE-->
@@ -403,7 +406,7 @@
                                                 <div id="law_pane" class="item_pane">
                                                     <div class="pane_info">
                                                         <div class="h3style"><a href="https://www.bc.edu/lawlibrary">Law Library <i class="fa fa-lg fa-arrow-circle-o-right" aria-hidden="true"></i></a></div>
-                                                         <p class="address">Boston College Law School<br>885 Centre St<br>Newton Center, MA 02459</p>
+                                                            <p class="address">Boston College Law School<br>885 Centre St<br>Newton Center, MA 02459</p>
                                                         <p>The mission of the Boston College Law Library is to provide research, educational and technological support to the Boston College Law School community. </p>
 
                                                         <ul class="col-sm-12">
@@ -426,7 +429,7 @@
                                                 <div id="oconnor_pane" class="item_pane">
                                                     <div class="pane_info">
                                                         <div class="h3style"><a href="https://libguides.bc.edu/oconnor">Catherine O'Connor Library <i class="fa fa-lg fa-arrow-circle-o-right" aria-hidden="true"></i></a></div>
-                                                         <p class="address">381 Concord Road <br /> Weston, MA 02493</p>
+                                                            <p class="address">381 Concord Road <br /> Weston, MA 02493</p>
                                                         <p>Located at Weston Observatory, this library contains a specialized collection of earth sciences monographs, periodicals, and maps, particularly in the areas of seismology, geology, and geophysics.</p>
 
                                                         <ul class="col-sm-12">
@@ -449,7 +452,7 @@
                                                 <div id="oneill_pane" class="item_pane">
                                                     <div class="pane_info">
                                                         <div class="h3style"><a href="https://libguides.bc.edu/oneill">O'Neill Library <i class="fa fa-lg fa-arrow-circle-o-right" aria-hidden="true"></i></a></div>
-                                                         <p class="address">140 Commonwealth Avenue<br>Chestnut Hill, MA 02467-3810</p>
+                                                            <p class="address">140 Commonwealth Avenue<br>Chestnut Hill, MA 02467-3810</p>
                                                         <p>The main research library, the Thomas P. O'Neill, Jr. Library, is located in the center of the main campus, adjoining the O'Neill Plaza.</p>
 
                                                         <ul class="col-sm-12">
@@ -459,7 +462,7 @@
                                                         </ul>
                                                     </div>
 
-                                                     <div class="pane_pic" aria-hidden="true">
+                                                        <div class="pane_pic" aria-hidden="true">
                                                         <a href="https://libguides.bc.edu/oneill" title="O'Neill Library home page" id="mm-oneill">
                                                             <i class="libsprite libsprite-librarythumbnails_oneill"></i>
                                                             <span class="sr-only">O'Neill Library</span>
@@ -472,7 +475,7 @@
                                                 <div id="swl_pane" class="item_pane">
                                                     <div class="pane_info">
                                                         <div class="h3style"><a href="https://libguides.bc.edu/socialwork">Social Work Library <i class="fa fa-lg fa-arrow-circle-o-right" aria-hidden="true"></i></a></div>
-                                                         <p class="address">140 Commonwealth Avenue<br>Chestnut Hill, MA 02467-3810</p>
+                                                            <p class="address">140 Commonwealth Avenue<br>Chestnut Hill, MA 02467-3810</p>
                                                         <p>Located in McGuinn Hall, the Social Work Library supports the teaching and research needs of the Boston College School of Social Work.</p>
 
                                                         <ul class="col-sm-12">
@@ -483,10 +486,10 @@
                                                     </div>
 
                                                     <div class="pane_pic" aria-hidden="true">
-                                                     <a href="https://libguides.bc.edu/socialwork" title="Social Work Library home page" id="mm-swl">
-                                                         <i class="libsprite libsprite-librarythumbnails_swl"></i>
-                                                         <span class="sr-only">Social Work Library</span>
-                                                     </a>
+                                                        <a href="https://libguides.bc.edu/socialwork" title="Social Work Library home page" id="mm-swl">
+                                                            <i class="libsprite libsprite-librarythumbnails_swl"></i>
+                                                            <span class="sr-only">Social Work Library</span>
+                                                        </a>
                                                     </div>
                                                 </div>
                                                 <!-- END SWL PANE. RIGHT UP THERE-->
@@ -574,7 +577,6 @@
                                                                 </tr>
                                                             </tbody>
                                                         </table>
-                                                        <div class="onl-asterisk-notice">* First floor study area remains open until 2:00 am. Collections and services are not available after 10:00 pm.</div>
                                                     </div>
                                                 </li>
                                             </ul>
