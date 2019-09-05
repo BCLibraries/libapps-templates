@@ -11,7 +11,6 @@
 <script type="text/javascript" src="//library.bc.edu/theme/js/bootstrap-hover-dropdown.min.js"></script>
 <script type="text/javascript" src="//library.bc.edu/theme/js/jquery.hoverIntent.minified.js"></script>
 <script type="text/javascript" src="//library.bc.edu/theme/js/modernizr.custom.js"></script>
-<!--script type="text/javascript" src="//api2.libanswers.com/1.0/widgets/5468" async></script-->
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -19,18 +18,103 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 <![endif]-->
 
-<!-- THIS IS THE SCRIPT THAT WILL ADD A CLASS TO THE BODY, TO ASSIST IN REMOVING
-     DIVS BASED ON WHETHER WE ARE IN AUTHOR OR PUBLIC VIEW -->  
-<script>
-    $(document).ready(function(){((window.location.pathname).indexOf('admin_c.php')>-1)?$('body').addClass('edit-mode'):$('body').addClass('view-mode');});
-</script>
-
-<!-- THIS SCRIPT HIDES HEADER AND FOOTER ELEMENTS FROM WITHIN CANVAS IFRAME WIDGET -->
 <style>
-#iframe-message {background-color:#fffdf6; border:1px solid #ffeaae; -moz-border-radius: 10px; border-radius: 10px; padding:20px; margin:-15px 0 20px 0;}
+#iframe-message {
+    background-color:#fffdf6; 
+    border:1px solid #ffeaae; 
+    -moz-border-radius: 10px; 
+    border-radius: 10px; 
+    padding:20px; 
+    margin:-15px 0 20px 0;
+}
+html.js { 
+    display:none;
+}
 </style>
+
+<!-- VARIOUS LIBGUIDES SCRIPTS -->
 <script>
 $(document).ready(function(){
+    /*                                   */
+    /* PREVENT FLASH OF UNSTYLED CONTENT */
+    /*                                   */
+    document.getElementsByTagName('html')[0].style.display = "block";
+
+    
+    /*                    */
+    /* UPDATE BREADCRUMBS */
+    /*                    */
+    // remove last breadcrumb on single page guides
+    if ($('#s-lg-guide-tabs li').length == 0) {
+        $('.breadcrumb li:last').remove();
+        $('.breadcrumb li:last').addClass('active');
+        $('.breadcrumb li:last a').contents().unwrap();
+    }
+    // replace site name
+    $("#s-lib-bc-site a").text("Research Guides");
+
+
+    /*                                          */
+    /* CONVERT SIDE NAV INTO DROPDOWN ON MOBILE */
+    /*                                          */
+    var myNavID = "nav";
+    /* For each nav menu, create a corresponding drop down menu */
+    $("nav.drop-down").each(function(){
+        if ($(this).attr("id")) {
+            myNavID = "nav#" + $(this).attr("id");
+        }
+
+        sel = $(this).find(".nav-mobile");
+
+        if (sel.length == 0){
+            /* Create the dropdown base */
+            $("<select class='nav-mobile' />").appendTo(myNavID);
+            sel = $(this).find(".nav-mobile");
+        }
+
+        /* Create default option "Go to..." */
+        $("<option />", {
+            "selected": "selected",
+            "value"   : "",
+            "text"    : "Go to..."
+        }).appendTo(sel);
+
+        /* Populate dropdown with menu items */
+        $(myNavID + " a:not(.dropdown-toggle)").each(function() {
+            var el = $(this);
+            var myText = el.text();
+            if ($(el).parents(".s-lg-subtab-ul").length > 0) {
+                myText = "> " + el.text();
+            }
+            $("<option />", {
+                "value"   : el.attr("href"),
+                "text"      : myText
+            }).appendTo(sel);
+        });
+
+        /* To make dropdown actually work
+        // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/ */
+        $(sel).change(function() {
+            window.location = $(this).find("option:selected").val();
+        });
+    });
+
+
+    /*                                     */
+    /* ADD CLASS TO BODY WHEN IN EDIT-MODE */
+    /*                                     */
+    ((window.location.pathname).indexOf('admin_c.php')>-1)?$('body').addClass('edit-mode'):$('body').addClass('view-mode');
+    
+
+    /*                                         */
+    /* ADD PADDING TO HEADER WHEN IN EDIT-MODE */
+    /*                                         */
+    if ($("body.edit-mode").length > 0){$("#edit-mode-buffer").css("height", "55px");}
+
+
+    /*                                                                   */
+    /* HIDES HEADER AND FOOTER ELEMENTS FROM WITHIN CANVAS IFRAME WIDGET */
+    /*                                                                   */
     if ((window.location.pathname).indexOf('widget_')>-1){
         // prep by hiding top nav and other header elements
         $('#bclib-header, .megamenu-container, #lib-footer, #bc-footer').hide();
@@ -45,88 +129,63 @@ $(document).ready(function(){
             console.log( "Triggered ajaxError handler." );
         });
     }
-});
-</script>
 
-<!-- PREVENT FLASH OF UNSTYLED CONTENT -->
-<style>html.js { display:none}</style>
-<!--script>$(function() { $("html.js").show(); });</script-->
-<script>$(function() { document.getElementsByTagName('html')[0].style.display = "block"; });</script>
 
-<!-- Add padding to header area when in edit-mode -->
-<script type="text/javascript">
-    $(document).ready(function(){
-        if ($("body.edit-mode").length > 0){$("#edit-mode-buffer").css("height", "55px");}
-    });
-</script>
-
-<!-- SCRIPT TO TURN SIDE NAVIGATION INTO DROPDOWNS ON MOBILE.  DO NOT REMOVE.  -->
-<script>
-    /* DOM ready*/
-    $(function() {
-        var myNavID = "nav";
-        /* For each nav menu, create a corresponding drop down menu */
-        $("nav.drop-down").each(function(){
-            if ($(this).attr("id")) {
-                myNavID = "nav#" + $(this).attr("id");
-            }
-
-            //console.log("navID " + myNavID);
-
-            sel = $(this).find(".nav-mobile");
-
-            if (sel.length == 0){
-                /* Create the dropdown base */
-                $("<select class='nav-mobile' />").appendTo(myNavID);
-                sel = $(this).find(".nav-mobile");
-            }
-
-            /* Create default option "Go to..." */
-            $("<option />", {
-                "selected": "selected",
-                "value"   : "",
-                "text"    : "Go to..."
-            }).appendTo(sel);
-
-            /* Populate dropdown with menu items */
-            $(myNavID + " a:not(.dropdown-toggle)").each(function() {
-                var el = $(this);
-                var myText = el.text();
-                if ($(el).parents(".s-lg-subtab-ul").length > 0) {
-                    myText = "> " + el.text();
-                }
-                $("<option />", {
-                    "value"   : el.attr("href"),
-                    "text"      : myText
-                }).appendTo(sel);
-            });
-
-            /* To make dropdown actually work
-            // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/ */
-            $(sel).change(function() {
-                window.location = $(this).find("option:selected").val();
-            });
+    /*                        */
+    /* LOAD EDIT-MODE WIDGETS */
+    /*                        */
+    if ($(location).attr('pathname') === "/libguides/admin_c.php") {
+        // load https://library.bc.edu/theme/css/libguides-widget.css
+        // see https://stackoverflow.com/a/14919928
+        $("head").append("<link>");
+        var css = $("head").children(":last");
+        css.attr({
+            rel:  "stylesheet",
+            type: "text/css",
+            href: "https://library.bc.edu/theme/css/libguides-widget.css"
         });
-    });
-</script>
 
-<!-- UPDATE GUIDE BREAD CRUMBS -->
-<script>
-$(function() {
-    // remove last breadcrumb on single page guides
-    if ($('#s-lg-guide-tabs li').length == 0) {
-        $('.breadcrumb li:last').remove();
-        $('.breadcrumb li:last').addClass('active');
-        $('.breadcrumb li:last a').contents().unwrap();
+        // content tips script
+        $.getScript( "//arc.bc.edu/libhours/lg/widget/libguidestips.js" )
+        .done(function( script, textStatus ) {
+            console.log( textStatus );
+        })
+        .fail(function( jqxhr, settings, exception ) {
+            console.log( "Triggered ajaxError handler." );
+        });
+
+        // accessibility script
+        $.getScript( "//arc.bc.edu/libhours/lg/widget/lgaccessibility.js" )
+        .done(function( script, textStatus ) {
+            console.log( textStatus );
+        })
+        .fail(function( jqxhr, settings, exception ) {
+            console.log( "Triggered ajaxError handler." );
+        });
+
+        // info button script
+        $.getScript( "//arc.bc.edu/libhours/lg/guides/infobutton.js" )
+        .done(function( script, textStatus ) {
+            console.log( textStatus );
+        })
+        .fail(function( jqxhr, settings, exception ) {
+            console.log( "Triggered ajaxError handler." );
+        });
+
+        // link checker script
+        $.getScript( "//arc.bc.edu/libscripts/lg/linkassetchecker/core.js" )
+        .done(function( script, textStatus ) {
+            console.log( textStatus );
+        })
+        .fail(function( jqxhr, settings, exception ) {
+            console.log( "Triggered ajaxError handler." );
+        });
     }
-    // replace site name
-    $("#s-lib-bc-site a").text("Research Guides");
-});
-</script>
 
-<!-- MANAGE DROPDOWN FEATURE OF MEGAMENU -->
-<script>
-$(document).ready(function() {
+
+    /*                                     */
+    /* MANAGE DROPDOWN FEATURE OF MEGAMENU */
+    /*                                     */
     var delay=200, setTimeoutConst;
 
     $("nav#side-nav ul.nav li.dropdown").each(function(){
@@ -167,122 +226,5 @@ $(document).ready(function() {
         $this.children("ul.wrapper-subitems").show();
         $this.find(".dropdown-wrapper .caret").addClass("caret-up");
     });
-});
-</script>
-
-<!-- LOAD EDIT-MODE WIDGETS -->
-<style>
-#bc-custom-bar .bc-custom-bar-item {margin: 0 0 20px 0;}
-#bc-custom-bar .ui-accordion-header {background:#d9edf7; padding: .5rem 0 .5rem 3rem; border-radius: .5rem; margin-bottom:0;}
-#bc-custom-bar .panel-content , #bc-custom-bar .panel-content .ui-accordion-content {margin-bottom: 1rem;}
-#bc-custom-bar .ui-accordion-header .ui-accordion-header-icon {}
-#bc-custom-bar .ui-accordion-content {background: #f8f8f8;}
-
-#bc-custom-bar .panel-content .ui-accordion-content 
-#bc-custom-bar .panel-content .ui-accordion-content {background-color: #f8f8f8;}
-.alert-border {outline:2px dashed red;}
-.alert-border:hover {outline: 3px dashed red;}
-.iter_list {padding-bottom:40px; border-bottom:1px solid #aaa;}
-.iter_list li {padding:4px;}
-div.alert-border {background-color:#C0C0C0;}
-#bc-custom-bar .panel-content .ui-accordion .status {display:inline-block; padding:0 2px; margin-left:5px; width: 35px;}
-#bc-custom-bar .panel-content .ui-accordion h3.ui-accordion-header { cursor:no-drop; color:gray;}
-#bc-custom-bar .panel-content .ui-accordion h3.ui-accordion-header .ui-accordion-header-icon {display:none;}
-#bc-custom-bar .panel-content .ui-accordion h3 .status:before {content: "";}
-#bc-custom-bar .panel-content .ui-accordion h3.waiting, 
-#bc-custom-bar .panel-content .ui-accordion h3.pass, 
-#bc-custom-bar .panel-content .ui-accordion h3.fail {cursor:pointer;}
-#bc-custom-bar .panel-content .ui-accordion h3.waiting .ui-accordion-header-icon, 
-#bc-custom-bar .panel-content .ui-accordion h3.pass .ui-accordion-header-icon, 
-#bc-custom-bar .panel-content .ui-accordion h3.fail .ui-accordion-header-icon {display:inline;}
-#bc-custom-bar .panel-content .ui-accordion h3.waiting .status, 
-#bc-custom-bar .panel-content .ui-accordion h3.pass .status, 
-#bc-custom-bar .panel-content .ui-accordion h3.fail .status {padding: 0 5px 0 10px; font-family: FontAwesome;}
-#bc-custom-bar .panel-content .ui-accordion h3.waiting .status:before {content: "\f1ce";}
-#bc-custom-bar .panel-content .ui-accordion h3.pass .status:before {content: "\f00c";}
-#bc-custom-bar .panel-content .ui-accordion h3.fail .status:before {content: "\f071";}
-#bc-custom-bar .panel-content .ui-accordion p.test-help {margin-top:2px;}
-#bc-custom-bar .panel-content .ui-accordion {margin-bottom:20px;}
-#bc-custom-bar .panel-content .ui-accordion .ui-accordion-header {color:#000;}
-#bc-custom-bar .panel-content .ui-accordion .ui-accordion-header.fail {background: #f2dede; color:#a94442; border-color:#ebcccc;}
-#bc-custom-bar .panel-content .ui-accordion .ui-accordion-header.pass {background: #dff0d8; color:#3c763d; border-color:#d0e9c6;}
-#bc-custom-bar .whatisthis {text-align:right;}
-#bc-custom-bar .pass-test {font-weight:600;}
-
-#bc-custom-bar .ui-state-disabled, 
-#bc-custom-bar .ui-widget-content .ui-state-disabled, 
-#bc-custom-bar .ui-widget-header .ui-state-disabled {opacity:.95; filter: Alpha(Opacity=95); color:#333;}
-
-/* added for accessibility checker - needs to move to own style sheet */
-#bc-custom-bar .ui-state-disabled, 
-#bc-custom-bar .ui-widget-content .ui-state-disabled, 
-#bc-custom-bar .ui-widget-header .ui-state-disabled {opacity:.95; filter: Alpha(Opacity=95); color:#333;}
-
-#bc-custom-bar .link-asset-warning {
-    background-color:#eee;
-    padding: .3rem .3rem .3rem .5rem;
-    border-radius: 4px;
-    border: 2px solid #555;
-}
-
-#bc-custom-bar .link-asset-warning.match-high {
-    border-color: #d9534f
-}
-#bc-custom-bar .link-asset-warning.match-medium {
-    border-color: #f0ad4e
-}
-/*#bc-custom-bar a.link-asset-link-warning:after {
-    font-family: FontAwesome;
-    content: " \f06a";
-}*/
-#bc-custom-bar .before-link {
-    background-color: #fff;
-    padding: 2px 2px 6px 2px;
-    border-radius: 4px;
-    text-align: center;
-    margin-bottom: 4px;
-}
-#bc-custom-bar-tips h3.ui-accordion-header {background-color: #dff0d8; border-color:#d6e9c6; color: #3c763d;}
-</style>
-<script>
-/*  load various helper scripts only when editing a guide */
-$(document).ready(function(){
-    if ($(location).attr('pathname') === "/libguides/admin_c.php") {
-        // content tips script
-        $.getScript( "//arc.bc.edu/libhours/lg/widget/libguidestips.js" )
-        .done(function( script, textStatus ) {
-            console.log( textStatus );
-        })
-        .fail(function( jqxhr, settings, exception ) {
-            console.log( "Triggered ajaxError handler." );
-        });
-
-        // accessibility script
-        $.getScript( "//arc.bc.edu/libhours/lg/widget/lgaccessibility.js" )
-        .done(function( script, textStatus ) {
-            console.log( textStatus );
-        })
-        .fail(function( jqxhr, settings, exception ) {
-            console.log( "Triggered ajaxError handler." );
-        });
-
-        // info button script
-        $.getScript( "//arc.bc.edu/libhours/lg/guides/infobutton.js" )
-        .done(function( script, textStatus ) {
-            console.log( textStatus );
-        })
-        .fail(function( jqxhr, settings, exception ) {
-            console.log( "Triggered ajaxError handler." );
-        });
-
-        // link checker script
-        $.getScript( "//arc.bc.edu/libscripts/lg/linkassetchecker/core.js" )
-        .done(function( script, textStatus ) {
-            console.log( textStatus );
-        })
-        .fail(function( jqxhr, settings, exception ) {
-            console.log( "Triggered ajaxError handler." );
-        });
-    }
 });
 </script>
