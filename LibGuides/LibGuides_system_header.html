@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav" id="megamenu" data-tag="ga-tag">
                         <!-- Find list -->
                         <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle menu-option" id="mm-find-header">Find</a>
                             <ul class="dropdown-menu">
@@ -157,12 +157,9 @@
                                     var y = document.getElementsByTagName("script")[0]; y.parentNode.insertBefore(x, y);
                                 })();
 
-                                /* handle icon clicking to activate chat */
-                                $(".chat-box").on("click", "#chat-icon-link", function(e){
+                                $("#chat-icon-link").click(function(e){
                                     e.preventDefault();
-                                    var $this = $(this);
-                                    var parent = $this.parents(".chat-box");
-                                    var active = parent.find(".media .libraryh3lp > a").filter(":visible");
+                                    var active = $(".aal-box .libraryh3lp > a").filter(":visible");
                                     if (active && active.length){
                                         active.first().click();
                                     } else {
@@ -181,7 +178,7 @@
                                     <div class="yamm-content">
                                         <div class="row">
                                             <div class="col-sm-9" id="mm-help-aal">
-                                                <div class="h4style"><a href="https://libguides.bc.edu/ask-a-librarian" id="mm-find-outside">Ask A Librarian</a></div>
+                                                <div class="h4style"><a href="https://libguides.bc.edu/ask-a-librarian" id="mm-ask-a-librarian">Ask A Librarian</a></div>
                                                 
                                                 <div class="row">
                                                     <div class="col-sm-6 col-xs-12">
@@ -189,7 +186,7 @@
                                                             <div class="panel-body">
                                                                 <div class="media">
                                                                     <div class="media-left">
-                                                                        <a href="#" id="chat-icon-link" class="aal-icon"><i class="fa fa-comment fa-fw"></i></a>
+                                                                        <a href="#" id="chat-icon-link" class="aal-icon"><i class="fa fa-comment fa-fw" aria-hidden="true"></i><div class="accessibility-text">Chat With Us</div></a>
                                                                     </div>
                                                                     <div class="media-right">
                                                                         <div class="libraryh3lp" jid="cs-bostoncoll@chat.libraryh3lp.com"   style="display: none;"><a href="#" onclick="window.open('https://libraryh3lp.com/chat/cs-bostoncoll@chat.libraryh3lp.com?skin=29500&amp;title=Boston+College&amp;sounds=1', 'chat', 'resizable=1,width=320,height=300'); return false;" style="cursor: pointer;"><div class="h4style">Chat with us</div></a></div>
@@ -207,7 +204,7 @@
                                                             <div class="panel-body">
                                                                 <div class="media">
                                                                     <div class="media-left">
-                                                                        <a href="https://libguides.bc.edu/ask-a-librarian/email-us" id="email-icon-link" class="aal-icon"><i class="fa fa-envelope fa-fw"></i></a>
+                                                                        <a href="https://libguides.bc.edu/ask-a-librarian/email-us" id="email-icon-link" class="aal-icon"><i class="fa fa-envelope fa-fw" aria-hidden="true"></i><div class="accessibility-text">Email Us</div></a>
                                                                     </div>
                                                                     <div class="media-right">
                                                                         <div class="h4style"><a href="https://libguides.bc.edu/ask-a-librarian/email-us">Email us</a></div>
@@ -225,7 +222,7 @@
                                                             <div class="panel-body">
                                                                 <div class="media">
                                                                     <div class="media-left">
-                                                                        <a href="https://libguides.bc.edu/ask-a-librarian/subject-librarians" id="meet-icon-link" class="aal-icon"><i class="fa fa-user fa-fw"></i></a>
+                                                                        <a href="https://libguides.bc.edu/ask-a-librarian/subject-librarians" id="meet-icon-link" class="aal-icon"><i class="fa fa-user fa-fw" aria-hidden="true"></i><div class="accessibility-text">Meet With Us</div></a>
                                                                     </div>
                                                                     <div class="media-right">
                                                                         <div class="h4style"><a href="https://libguides.bc.edu/ask-a-librarian/subject-librarians">Meet with us</a></div>
@@ -241,7 +238,7 @@
                                                             <div class="panel-body">
                                                                 <div class="media">
                                                                     <div class="media-left">
-                                                                        <a href="https://libguides.bc.edu/ask-a-librarian/locations" id="visit-icon-link" class="aal-icon"><i class="fa fa-map-marker fa-fw"></i></a>
+                                                                        <a href="https://libguides.bc.edu/ask-a-librarian/locations" id="visit-icon-link" class="aal-icon"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><div class="accessibility-text">Visit Us</div></a>
                                                                     </div>
                                                                     <div class="media-right">
                                                                         <div class="h4style"><a href="https://libguides.bc.edu/ask-a-librarian/locations">Visit us</a></div>
@@ -575,6 +572,7 @@
                                                                 </tr>
                                                             </tbody>
                                                         </table>
+                                                        <div class="onl-asterisk-notice">* First floor study area remains open until 2:00 am. Collections and services are not available after 10:00 pm.</div>
                                                     </div>
                                                 </li>
                                             </ul>
