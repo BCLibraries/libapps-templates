@@ -1,7 +1,5 @@
 <!-- CUSTOM HEADER INFO. TO BE CUT AND PASTED INTO Custom <HEAD> TAB ON LIBGUIDES CMS -->
-<!--link rel="stylesheet" href="//library.bc.edu/theme/css/fonts.css" /-->
 <link rel="stylesheet" href="//library.bc.edu/theme/css/style_clean.css"/>
-<!--link rel="stylesheet" href="//library.bc.edu/theme/css/icomoon.css"/-->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.4/themes/smoothness/jquery-ui.css"/>
 
@@ -14,7 +12,6 @@
 <script type="text/javascript" src="//library.bc.edu/theme/js/jquery.hoverIntent.minified.js"></script>
 <script type="text/javascript" src="//library.bc.edu/theme/js/modernizr.custom.js"></script>
 <!--script type="text/javascript" src="//api2.libanswers.com/1.0/widgets/5468" async></script-->
-
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -56,34 +53,12 @@ $(document).ready(function(){
 <!--script>$(function() { $("html.js").show(); });</script-->
 <script>$(function() { document.getElementsByTagName('html')[0].style.display = "block"; });</script>
 
-
-<!-- HIDE DESCRIPTION DISPLAY OPTIONS THAT USE HOVER OVER SINCE IT ISNT ACCESSIBLE  -->
-<style>
-    .edit-mode form #form-group-desc_pos .radio:nth-child(2),
-    .edit-mode form #form-group-desc_pos .radio:nth-child(3) {display: none;}
-</style>
-
-<!-- INFO BUTTON STYLE -->
-<style>
-    a.more-info {display:inline-block; padding:0 8px 0 0; cursor:pointer; color:#000; text-shadow: 0 1px 0 #FFFFFF; opacity:.6; font-size:14px;}
-    a.more-info:hover {opacity:1; color:#000;}
-    .box-value {padding-left:5px;}
-    .box-label {width:100px; display:inline-block; text-align:right;}
-    .box-value textarea {width:425px; height:78px; margin-left:110px;}
-</style>
-
 <!-- Add padding to header area when in edit-mode -->
 <script type="text/javascript">
     $(document).ready(function(){
         if ($("body.edit-mode").length > 0){$("#edit-mode-buffer").css("height", "55px");}
     });
 </script>
-
-<!-- FIXING ACTIVE SUBNAV MENUS AND BREADCRUMBS -->
-<style>
-    #s-lib-bc-site,
-    #s-lib-bc-group {display: none;}
-</style>
 
 <!-- SCRIPT TO TURN SIDE NAVIGATION INTO DROPDOWNS ON MOBILE.  DO NOT REMOVE.  -->
 <script>
@@ -149,205 +124,7 @@ $(function() {
 });
 </script>
 
-<!-- MAKE SURE GUIDE DESCRIPTION IS PROPERLY LABELED -->
-<style>
-.edit-mode #s-lg-guide-description {display:block;}
-.edit-mode #s-lg-guide-desc-container {width:70%; padding-bottom:20px; margin-top:-10px;}
-.edit-mode #s-lg-guide-desc-container::before {content: "Guide Description: ";}
-span.pad-left-med.hitst {display: none;}
-</style>
-
-<!-- GRACEFULLY HANDLE SUBPAGE NAVIGATION -->
-<style>
-/*
-#E9E9E9 gray
-#990000 red
-#B29D6C green
-*/
-.dropdown-wrapper {position:relative;}
-#s-lg-guide-tabs .nav-tabs li a:focus {
-    background: #B29D6C;
-}
-#s-lg-guide-tabs ul.nav-tabs > li a {display:block; height:100%;}
-#s-lg-guide-tabs ul.nav-tabs > li > .dropdown-wrapper a.dropdown-toggle {vertical-align:middle;}
-#s-lg-guide-tabs ul.nav-tabs > li > .dropdown-wrapper a {height:100%; width: 100%; float:none!important; display:table-cell; color:#000;}
-#s-lg-guide-tabs ul.nav-tabs > li > ul.wrapper-subitems li a::before {content:"↳"; position:absolute; left:3px;}
-#s-lg-guide-tabs ul.nav-tabs > li > ul.wrapper-subitems li a .subitem {width:100%; height:100%; white-space:pre-line;}
-#s-lg-guide-tabs ul.nav-tabs > li > ul.wrapper-subitems li a {padding-left:20px!important;}
-#s-lg-guide-tabs ul.nav-tabs > li > ul.wrapper-subitems li a:focus,
-#s-lg-guide-tabs ul.nav-tabs > li > ul.wrapper-subitems li a:hover,
-#s-lg-guide-tabs ul.nav-tabs > li.active > ul.wrapper-subitems li.active a:hover,
-#s-lg-guide-tabs ul.nav-tabs > li.active > ul.wrapper-subitems li.active a:focus {
-    background: #B29D6C;
-}
-
-/* grey - inactive */
-#s-lg-guide-tabs ul.nav-tabs > li.active .dropdown-wrapper,
-#s-lg-guide-tabs ul.nav-tabs > li > ul.wrapper-subitems li a {background-color: #E9E9E9; color:#000;}
-
-/* maroon - active */
-#s-lg-guide-tabs ul.nav-tabs > li.active.no-active-child > .dropdown-wrapper,
-#s-lg-guide-tabs ul.nav-tabs > li.active > ul.wrapper-subitems li.active a {background:#990000; cursor:pointer; color:#fff; width:100%}
-
-/* gold - hoverover */
-#s-lg-guide-tabs ul.nav-tabs > li > ul.wrapper-subitems li a:hover,
-#s-lg-guide-tabs ul.nav-tabs > li.active > ul.wrapper-subitems li a:hover,
-#s-lg-guide-tabs ul.nav-tabs > li.active .dropdown-wrapper:hover {background: #B29D6C; color:#000;}
-
-/* force active to always have white font */
-#s-lg-guide-tabs ul.nav-tabs > li.active.no-active-child .dropdown-wrapper a,
-#s-lg-guide-tabs ul.nav-tabs > li.active > ul.wrapper-subitems li.active a:hover,
-#s-lg-guide-tabs ul.nav-tabs > li.active.no-active-child .dropdown-wrapper a:hover {color:#fff;}
-
-/* hide/show blocks */
-#s-lg-guide-tabs ul.nav-tabs > li > ul.wrapper-subitems {display:none;}
-#s-lg-guide-tabs ul.nav-tabs > li.active.has-active-child > ul.wrapper-subitems {display:block;}
-
-.caret-up,
-#s-lg-guide-tabs ul.nav-tabs > li.active.has-active-child .dropdown-wrapper a.dropdown-toggle .caret {border-top:none; border-bottom:4px dashed;}
-</style>
-
-
-<!-- updated style - 20170816 -->
-<style>
-body {font-size:14px;}
-a, a:visited, .ui-widget-content a, .ui-widget-content a:visited {color:#337ab7;}
-.homepagerefresh #bclib-header-form .input-group-btn{width:1%;}
-.homepagerefresh .megamenu-container {
-    background-color: rgba(16,14,15,.90);
-}
-h1, h2, h3,
-.s-lib-public-side-header h2 {color: #000; text-transform: none;}
-h4, h6 {font-weight: 400;}
-h3 {font-size:17px;}
-h4 {font-size:16px;}
-h5, h6 {font-size:15px;}
-h5 {font-weight:600;}
-
-.edit-mode .breadcrumb {display:none;}
-.edit-mode .s-lib-cmd-bar .navbar-collapse .navbar-nav {float: left!important;}
-.edit-mode #s-lg-guide-header-meta {display:none;}
-.edit-mode .s-lib-box-title {padding:3px 2px 3px 0; font-weight: normal;}
-
-#midlevelcontainer {margin: 80px auto 0 auto;}
-#midlevelcontainer-refresh {margin-top:60px;}
-.edit-mode #midlevelcontainer-refresh {margin-top:80px; margin-bottom:40px;}
-.homepagerefresh .bottom_row {background-color:#fff;}
-.more a {
-    background: inherit;
-    display: inline;
-    padding: 0;
-    width: auto;
-    border-bottom: none;
-}
-
-.homepagerefresh .col-md-12:first-of-type, 
-.homepagerefresh .col-md-3:first-of-type,
-.homepagerefresh .col-md-4:first-of-type,
-.homepagerefresh .col-md-6:first-of-type {padding-left: 15px;}
-
-.homepagerefresh .col-md-12:last-of-type,
-.homepagerefresh .col-md-3:last-of-type,
-.homepagerefresh .col-md-4:last-of-type,
-.homepagerefresh .col-md-6:last-of-type {padding-right:15px;}
-
-
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-.s-lib-box-content {margin-bottom:1.5em;}
-
-.view-mode #content-refresh {padding-left:0; padding-right:0;}
-.view-mode #content {
-    margin: 0;
-    padding: 0 15px;
-    /* width: 980px; */
-     float: right;
-}
-
-#content_container .row {padding-top:0; padding-bottom:0;}
-
-h3, h4, h5, h6,
-.view-mode .s-lib-box .s-lib-box-title,
-#guidetitle h1, #guidetitle h2,
-.colon {color:#151515;}
-
-.s-lib-box-content .ui-widget {font-family:inherit;}
-
-/* Custom block header styling */
-.view-mode .s-lib-box .s-lib-box-title,
-.edit-mode .s-lib-box .s-lib-box-title  {margin-top:0em; text-transform: none; font-size:18px; border-bottom: 1px solid #DADADA; padding-bottom: 4px; margin-bottom: 8px;}
-/* END Custom block header styling */
-
-footer {margin-top:1em;}
-footer .row {margin-left:-15px; margin-right:-15px;}
-footer h4 {margin:0 0 5px!important;}
-#lib-footer a,
-#lib-footer p {font-weight:300;}
-#lib-footer h4 a {font-weight:700;}
-#lib-footer h4.orgname {margin:0 0 10px 0!important;}
-#lib-footer .address-wrap {padding-left:15px;}
-#socialmedia {margin:0; padding: 0 15px;}
-#guidetitle h1,
-#guidetitle h2 {text-transform:none;}
-
-@media (width: 768px) {
-   #s-lg-guide-tabs .nav-tabs {display:block;}
-   nav select {display:none;}
-}
-@media (min-width: 768px) {
-   #s-lg-guide-tabs.col-sm-3 {
-       width: 25%;
-   }
-  .edit-mode .navbar-nav {
-      float: none;
-  }
-}
-@media (max-width: 991px) {
-   #bclib-header .header-right {
-      padding-left:0;
-   }
-}
-@media (min-width: 992px) {
-   #s-lg-guide-tabs.col-md-2 {
-       width: 16.66666667%;
-   }
-}
-@media print {
-    /* profile boxes */
-    .s-lib-profile-center, .s-lib-profile-widget {
-        text-align:left!important;
-    }
-    .s-lib-profile-div.s-lib-profile-image img {
-        width:20%!important;
-    }
-   .s-lib-profile-div.s-lib-profile-name {
-        margin-bottom:0px!important;
-    }
-    .s-lib-profile-div.s-lib-profile-email {
-       margin: 2em 0!important;
-    }
-    .s-lib-profile-div.s-lib-profile-email a {
-       border: none!important;
-       padding: 0!important;
-       margin: 0!important;
-    }
-}
-
-/* additional styling 2017-09-05 */
-.s-lib-profile-image img {
-    max-height:400px!important;
-}
-
-/* 2018-03-26 */
-.edit-mode ul.s-lg-link-list-10 li div.dropdown:before {
-    font-family: FontAwesome;
-    content: "\f1c0 ";
-    padding-right: 6px;
-}
-</style>
-
+<!-- MANAGE DROPDOWN FEATURE OF MEGAMENU -->
 <script>
 $(document).ready(function() {
     var delay=200, setTimeoutConst;
@@ -393,7 +170,7 @@ $(document).ready(function() {
 });
 </script>
 
-<!-- ACCESSIBILITY WIDGET CODE -->
+<!-- LOAD EDIT-MODE WIDGETS -->
 <style>
 #bc-custom-bar .bc-custom-bar-item {margin: 0 0 20px 0;}
 #bc-custom-bar .ui-accordion-header {background:#d9edf7; padding: .5rem 0 .5rem 3rem; border-radius: .5rem; margin-bottom:0;}
@@ -509,61 +286,3 @@ $(document).ready(function(){
     }
 });
 </script>
-
-<!-- add fixed position chat box on all pages -->
-<style type="text/css">
-.edit-mode .libraryh3lp {
-    display:none;
-}
-#askuswidget {
-    position: fixed;
-    right: -169px;
-    z-index: 99999999999;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-    font-size: 140%;
-    height: auto;
-    padding-bottom: .75rem;
-    -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-    -webkit-transform-origin: top left;
-    -ms-transform-origin: top left;
-    transform-origin: top left;
-    box-shadow: rgb(0,0,0) 0px 0px 5px;
-    background-image: none;
-    text-shadow: none;
-    background-color: #337ab7!important;
-}
-#askuswidget.btn {
-    border-color: #fff;
-    border-top: none;
-}
-#askuswidget.btn:focus,
-#askuswidget.btn:hover {
-    border-color: inherit;
-    border-top: none;
-    background-color: #286090!important;
-}
-#askuswidget.btn:visited {
-    color:#fff!important;
-}
-#s-lib-scroll-top {
-    z-index: 10;
-    right: 50px;
-}
-@media (max-width: 900px) {
-    #askuswidget {
-        bottom: 200px;
-    }
-}
-@media (min-width: 901px) {
-    #askuswidget {
-        top:25%;
-    }
-    /* reposition scroll-to-top button */
-    #s-lib-scroll-top {
-        bottom: 25%;
-    }
-}
-</style>
