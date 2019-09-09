@@ -1,0 +1,111 @@
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-3008279-16"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-3008279-16');
+</script>
+<!-- End Google Analytics -->
+
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+        var u="//matomo.lontracanadensis.net/matomo/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+</script>
+<!-- End Matomo Code --> 
+
+<!-- Event tracking -->   
+<script>
+    $(function () {
+        //
+        // mega menu
+        //
+        $('#megamenu-refresh ul.nav li.dropdown').mouseenter(function() {
+            var myText = $(this).find("a.menu-option").text();
+            //ga('send', 'event', 'megamenu',      'hover',       myText.trim());
+            //ga('send', 'event', [eventCategory], [eventAction], [eventLabel], [eventValue]);
+            gtag('event', 'hover', {'event_category': 'megamenu', 'event_label': myText.trim()});
+            _paq.push(['trackEvent', 'megamenu', 'hover', myText.trim()]);
+        });
+        $("ul.item-desktop li a").mouseenter(function(){
+            var myPane = $(this).html();
+            //gtag('send', 'event', 'librarypanes', 'hover', myPane);
+            gtag('event', 'hover', {'event_category': 'librarypanes', 'event_label': myPane});
+            _paq.push(['trackEvent', 'librarypanes', 'hover', myPane]);
+        });
+
+        //
+        // outbound links
+        //
+        var $all_anchors = $('a');
+        $all_anchors.not('#askuswidget, .search-link, .accessibility-text, #s-lg-public-skiplink').click(function(e) {
+            var url = $(this).attr("href");
+            //ga('send', 'event', 'outbound-lg', "click", url);
+            gtag('event', 'click', {'event_category': 'outbound-lg', 'event_label': url});
+            _paq.push(['trackEvent', 'outbound-lg', 'click', url]);
+        });
+        // tracking for homepage -- unneeded in LibGuides
+        //$all_anchors.not('#askuswidget, .search-link, .accessibility-text').click(function(e) {
+        //    var url = $(this).attr("href");
+        //    /* Bug fix to stop screen jump when clicking carousel controls */
+        //    if (url.indexOf('#') !== 0) {
+        //        //gtag("send", "event", "outbound", "click", url);
+        //        gtag('event', 'click', {'event_category': 'outbound', 'event_label': url});
+        //        _paq.push(['trackEvent', 'outbound', 'click', url]);
+        //    }
+        //});
+
+        //
+        // breadcrumbs
+        //
+        $(".breadcrumb #s-lib-bc-customer").click(function(){
+            var page_title = $("#guidetitle h1").text();
+            //ga('send', 'event', 'breadcrumb-home', 'click', page_title);
+            gtag('event', 'view', {'event_category': 'breadcrumb-home', 'event_label': page_title});
+            _paq.push(['trackEvent', 'breadcrumb-home', 'click', page_title]);
+        });
+        $(".breadcrumb #s-lib-bc-site").click(function(){
+            var page_title = $("#guidetitle h1").text();
+            //ga('send', 'event', 'breadcrumb-site', 'click', page_title);
+            gtag('event', 'view', {'event_category': 'breadcrumb-site', 'event_label': page_title});
+            _paq.push(['trackEvent', 'breadcrumb-site', 'click', page_title]);
+        });
+        $(".breadcrumb #s-lib-bc-guide").click(function(){
+            var page_title = $("#guidetitle h1").text();
+            //ga('send', 'event', 'breadcrumb-guide', 'click', page_title);
+            gtag('event', 'view', {'event_category': 'breadcrumb-guide', 'event_label': page_title});
+            _paq.push(['trackEvent', 'breadcrumb-guide', 'click', page_title]);
+        });
+
+        //
+        // catch Ask Us fixed button clicks
+        //
+        $("a#askuswidget").click(function(e){
+            var src = window.location.href;
+            //gtag('send', 'event', 'chat-widget', 'click', src);
+            gtag('event', 'click', {'event_category': 'chat-widget', 'event_label': src});
+            _paq.push(['trackEvent', 'chat-widget', 'click', src]);
+        });
+
+        //
+        // canvas
+        //
+        if ((window.location.pathname).indexOf('widget_')>-1){
+            var current_title = $(document).attr('title');
+            //ga('send', 'event', 'canvas', 'view', current_title);
+            gtag('event', 'view', {'event_category': 'canvas', 'event_label': current_title});
+            _paq.push(['trackEvent', 'canvas', 'view', current_title]);
+        }
+    });
+</script>
+<!-- End Event tracking -->  
