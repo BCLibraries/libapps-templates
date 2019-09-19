@@ -13,9 +13,9 @@
     .s-lg-az-result-description {
         font-size: 13px;
     }
-    #s-lg-db-label-text {
-        pa dding-left: 20px;
-    }
+    /*#s-lg-db-label-text {
+        padding-left: 20px;
+    }*/
     .s-lg-label-moreinfo {display:none;}
     #col-vendors {
         display: none;
@@ -41,54 +41,54 @@
     #s-lg-az-count {
         display:none;
     }
-    #s-lg-az-trials .s-lg-az-result-new {
-        dis play: none;
-    }
+    /*#s-lg-az-trials .s-lg-az-result-new {
+        display: none;
+    }*/
     #s-lg-az-filters {
-      padding:10px 0 10px 20px;
-      border:1px solid #e7e7e7;
-      background-color:aliceblue;
-      border-radius: 4px;
-      -moz-border-radius: 4px;
-      margin-bottom:10px;
+        padding:10px 0 10px 20px;
+        border:1px solid #e7e7e7;
+        background-color:aliceblue;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        margin-bottom:10px;
     }
-   #db-filter-label {
-      font-size:16px;
-   }
-   @media (min-width: 768px) {
-      #s-lg-az-search {
-         width:400px;
-      }
-   }
-   #s-lg-az-count {
-      vertical-align: text-top;
-      margin-left:0 !important;
-   }
-   #s-lg-db-label-text {
-      text-transform: lowercase;
-   }
-   #s-lg-az-search-bar nav.navbar {
-      margin-bottom:0;
-   }
-   h2#s-lg-az-result-count {
-      display:none;
-   }
-   #s-lg-az-content .s-lg-az-result-title,
-   #s-lg-az-content .s-lg-az-result-title .fa-external-link {
-      font-size:18px !important;
-   }
-   #s-lg-az-content .s-lg-az-result .s-lg-az-result-keywords .bold {
-      font-weight:600;
-   }
-   #s-lg-az-content .s-lg-az-result {
-      padding-bottom:15px;
-   }
-   #az-search-col-1 {
-      margin-right:5px;
-   }
-   #az-search-col-1 #s-lg-db-label {
-    display: block;
-   }
+    #db-filter-label {
+        font-size:16px;
+    }
+    @media (min-width: 768px) {
+        #s-lg-az-search {
+            width:400px;
+        }
+    }
+    #s-lg-az-count {
+        vertical-align: text-top;
+        margin-left:0 !important;
+    }
+    #s-lg-db-label-text {
+        text-transform: lowercase;
+    }
+    #s-lg-az-search-bar nav.navbar {
+        margin-bottom:0;
+    }
+    h2#s-lg-az-result-count {
+        display:none;
+    }
+    #s-lg-az-content .s-lg-az-result-title,
+    #s-lg-az-content .s-lg-az-result-title .fa-external-link {
+        font-size:18px !important;
+    }
+    #s-lg-az-content .s-lg-az-result .s-lg-az-result-keywords .bold {
+        font-weight:600;
+    }
+    #s-lg-az-content .s-lg-az-result {
+        padding-bottom:15px;
+    }
+    #az-search-col-1 {
+        margin-right:5px;
+    }
+    #az-search-col-1 #s-lg-db-label {
+        display: block;
+    }
 </style>
 
 <!-- CHANGE THE TEXT FOR THE DATABASE TRIALS COLUMN -->
@@ -98,10 +98,10 @@ $(document).ready(function(){
     $("#s-lg-az-trials").contents().filter(function(){
         return this.nodeType == Node.TEXT_NODE;
     })[0].nodeValue = "The following resources are being evaluated for addition to our collection.  Please send your feedback.";
-   $("#s-lg-az-filters").prepend("<p class='bold' id='db-filter-label'>Database Filters:</p>");
-   $("#az-search-col-1 nav .navbar-header #s-lg-db-label").prepend("<span id='db-search-label'>Search</span>");
-   $("#az-search-col-1 nav #s-lg-az-nav-1").removeClass("collapse");
-   $("#az-search-col-1 nav .navbar-header button.navbar-toggle").hide();
+    $("#s-lg-az-filters").prepend("<p class='bold' id='db-filter-label'>Database Filters:</p>");
+    $("#az-search-col-1 nav .navbar-header #s-lg-db-label").prepend("<span id='db-search-label'>Search</span>");
+    $("#az-search-col-1 nav #s-lg-az-nav-1").removeClass("collapse");
+    $("#az-search-col-1 nav .navbar-header button.navbar-toggle").hide();
 });
 </script>
 
@@ -144,7 +144,7 @@ $(document).ready(function(){
                                 </div>
                             </div>
                             <div class="row">
-                               <div id="col-types" class="col-md-12 center">
+                                <div id="col-types" class="col-md-12 center">
                                     {{search_reset}}
                                 </div>
                             </div>
@@ -165,7 +165,7 @@ $(document).ready(function(){
                                     </div>
                                 </div>
                                 <div class="row">
-                                   <div id="col-types" class="col-md-12 center">
+                                    <div id="col-types" class="col-md-12 center">
                                         {{search_reset}}
                                     </div>
                                 </div>
@@ -194,8 +194,8 @@ $(document).ready(function(){
         <!-- THIS MAKES A 'BACK TO TOP' ARROW APPEAR -->
         <div id="s-lib-scroll-top" title="Back to Top">
             <span class="fa-stack fa-lg">
-              <i class="fa fa-square-o fa-stack-2x"></i>
-              <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+                <i class="fa fa-square-o fa-stack-2x"></i>
+                <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
             </span>
         </div>
     </div>
