@@ -1,403 +1,98 @@
-<body class="s-lg-guide-body burns">
-{{skip_link}}
-<!-- TEMPORARY CODE TO MIMIC PROPOSED BC HEADER-->
-<div id="bcheader"></div>
-
-<!-- FULL PAGE WRAPPER -->
-<div id="fullpagewrapper">
-
-    <div id="bcheader_info">
-        <ul>
-            <li><a href="http://www.bc.edu/gn-bcinfo">BCInfo</a></li>
-            <li><a href="http://www.bc.edu/gn-directories">Directories</a></li>
-        </ul>
-
-        <div id="bcheader_search">
-            <form action="//bc.edu/googlesearch/results.html" id="cse-search-box" _lpchecked="1">
-                <div>
-                    <input type="hidden" name="cx" value="017979566303760088717:i5wjadpvu2w" />
-                    <input type="hidden" name="cof" value="FORID:11" />
-                    <input type="hidden" name="ie" value="UTF-8" />
-                    <label for="searchbox"><span class="screenreader offscreen">Search BC</span></label>
-                    <input type="text" value="Search BC" onblur="if(this.value=='') this.value='Search BC';" onclick="if(this.value=='Search BC') this.value='';" name="q" id="searchbox" size="27" autocomplete="off"   />
-                    <input type="image" src="http://library.bc.edu/theme/img/go_button.png" id="searchsubmit" name="sa" value="Search" style="float:right" alt="search">
-                </div>
-            </form>
-            <script type="text/javascript" src="//www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
-        </div>      
-        <!-- /Search -->
-    </div>
-
+<body class="s-lg-guide-body burns homepagerefresh">
+    {{skip_link}}
+    
     <!-- HEADER AND MEGA MENU -->
     {{public_header}} 
-
-    <!-- BEGIN HEADER -->
-    <div id="header">
-        <div id="librarytitle">
-        <a href="http://bc.edu" title="Go to Boston College" id="header-bc-link"><img src="http://library.bc.edu/theme/img/bcheader_title.png" id="fakebctitle" alt="Boston College Logo"></a>
-        <a href="http://library.bc.edu/" title="To the Libraries" id="header-lib-link"><h1>Boston College Libraries</h1></a>
-    </div>
-
-        <div id="motto">
-            <p>Value Beyond Discovery</p>
-        </div>
-
-        <div id="sb-search" class="sb-search sb-search-open">
-            <form method="get" action="http://bclib.bc.edu/libsearch/burns/keyword">
-                <label for="search" class="accessibility-text">Search Burns Library Collection</label>
-                <input class="sb-search-input" placeholder="Search Burns Library Collection" type="text" value="" name="term" id="search">
-                <input class="sb-search-submit" type="submit" value="Submit" name="submit">
-                <span class="sb-icon-search"></span>
-            </form>
-        </div>
-
-        <!-- BURNS MENU BEGINS HERE -->
-        <div id="megamenu">
-            <!-- BEGIN NAVBAR -->
-            <div class="navbar yamm">
-                <!-- BEGIN CONTAINER -->
-                <div class="container">
-                    <div class="hamburger">
-                    <button aria-label="Open navigation" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle">
-                    <span class="accessibility-text">Navigation for mobile devices</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                </div>
-                    <!-- BEGIN NAVBAR-COLLAPSE -->
-                    <div id="navbar-collapse-1" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-
-                            <!-- Collections list -->
-                            <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Collections</a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <!-- Content container to add padding -->
-                                        <div class="yamm-content">
-                                            <div class="row">
-                                                <!-- Overview -->
-                                                <ul class="col-sm-2 menu_list">
-                                                    <li><a href="#">General Overview</a></li>
-                                                    <li><a href="#">American</a></li>
-                                                    <li><a href="#">British &amp; British Catholic</a></li>
-                                                    <li><a href="#">Caribbean</a></li>
-                                                    <li><a href="#">Irish &amp; Irish American</a></li>
-                                                </ul>
-
-                                                <!-- Collecting areas -->
-                                                <ul class="col-sm-2 menu_list">
-                                                    <li><a href="#">Art &amp; Architecture</a></li>
-                                                    <li><a href="#">Jesuit &amp; Catholic</a></li>
-                                                    <li><a href="#">Nursing</a></li>
-                                                    <li><a href="#">University Archives</a></li>
-                                                    <li><a href="#">More collecting areas</a></li>
-                                                </ul>
-
-                                                <!-- Donations -->
-                                                <ul class="col-sm-8 menu_list">
-                                                    <div class="pane_info">
-                                                        <div class="h3style"><a href="#">Donations</a></div>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                                    </div>
-
-                                                    <div class="pane_pic">
-                                                        <a href="http://libguides.bc.edu/burns"><img alt="Burns Library home page Donations" src="//s3.amazonaws.com/libapps/accounts/3908/images/burnsbackgroundsample.jpg"></a>
-                                                    </div>
-                                                </ul>
-                                            </div>
-
-                                            <div class="row bottom_row">
-                                                <!--div class="more"><a href="#" title="Find More">Find More</a></div-->
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <!-- Find list -->
-                            <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Find</a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <!-- Content container to add padding -->
-                                        <div class="yamm-content">
-                                            <div class="row">
-                                                <!-- How To -->
-                                                <ul class="col-sm-2 menu_list">
-                                                    <li><div class="h4style"><a href="#">How to...</a></div></li>
-                                                    <li><a href="#">Search our catalog</a></li>
-                                                    <li><a href="#">Explore our digital collections</a></li>
-                                                    <li><a href="#">Ask a question</a></li>
-                                                </ul>
-
-                                                <!-- Social Media -->
-                                                <ul class="col-sm-2 menu_list">
-                                                    <li><div class="h4style"><a href="#">Social Media</a></div></li>
-                                                    <li><a href="#">Blog</a></li>
-                                                    <li><a href="#">Facebook</a></li>
-                                                    <li><a href="#">Flickr</a></li>
-                                                    <li><a href="#">Twitter</a></li>
-                                                    <li><a href="#">YouTube</a></li>
-                                                </ul>
-
-                                                <!-- TK -->
-                                                <ul class="col-sm-8 menu_list">
-                                                    <div class="pane_info">
-                                                        <div class="h3style"><a href="#">TK</a></div>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                                    </div>
-
-                                                    <div class="pane_pic">
-                                                        <a href="http://libguides.bc.edu/burns"><img alt="Burns Library home page TK" src="//s3.amazonaws.com/libapps/accounts/3908/images/burnsbackgroundsample.jpg"></a>
-                                                    </div>
-                                                </ul>
-                                            </div>
-
-                                            <div class="row bottom_row">
-                                                <!--div class="more"><a href="#">More Using Burns Library</a></div-->
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <!-- Visit -->
-                            <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Visit</a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <!-- Content container to add padding -->
-                                        <div class="yamm-content">
-                                            <div class="row">
-                                                <!-- Planning Your Visit -->
-                                                <ul class="col-sm-4 menu_list">
-                                                    <li><div class="h4style"><a href="#">Planning Your Visit</a></div></li>
-                                                    <li><a href="#">Hours</a></li>
-                                                    <li><a href="#">Reading room policies</a></li>
-                                                    <li><a href="#">Directions and parking</a></li>
-                                                    <li><a href="#">Exhibits</a></li>
-                                                    <li><a href="#">Events</a></li>
-                                                </ul>
-
-                                                <!-- Services -->
-                                                <ul class="col-sm-4 menu_list">
-                                                    <li><div class="h4style"><a href="#">Services</a></div></li>
-                                                    <li><a href="#">Reference</a></li>
-                                                    <li><a href="#">Request reproductions</a></li>
-                                                    <li><a href="#">Request permissions</a></li>
-                                                    <li><a href="#">Schedule a class visit</a></li>
-                                                    <li><a href="#">Building photography policy</a></li>
-                                                </ul>
-
-                                                <!-- Resources For -->
-                                                <ul class="col-sm-4 menu_list end">
-                                                    <li><div class="h4style"><a href="#">Resources For</a></div></li>
-                                                    <li><a href="#">BC Students</a></li>
-                                                    <li><a href="#">BC Faculty</a></li>
-                                                    <li><a href="#">Visiting Researchers</a></li>
-                                                    <li><a href="#">Alumni &amp; Guests</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="row bottom_row">
-                                                <!--div class="more"><a href="#">More about Your Visit</a></div-->
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <!-- About Us list -->
-                            <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">About Us</a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <!-- Content container to add padding -->
-                                        <div class="yamm-content">
-                                            <div class="row">
-                                                <!-- About Us -->
-                                                <ul class="col-sm-3 menu_list"  style="padding-top: 10px;">
-                                                    <li><div class="h4style">About Us</div></li>
-                                                    <li><a href="#">Our building</a></li>
-                                                    <li><a href="#">Our staff</a></li>
-                                                    <li><a href="#">Join our mailing list</a></li>
-                                                </ul>
-
-                                                <!-- BURNS LIBRARY INFO CAN GO HERE -->
-                                                <div class="col-sm-9">
-                                                    <!-- BURNS PANE BEGINS HERE -->
-                                                    <div  class="item_pane">
-                                                        <div class="pane_info">
-                                                            <div class="h3style"><a href="http://libguides.bc.edu/burns">Burns Library</a></div>
-                                                             <p class="address">140 Commonwealth Avenue<br>Chestnut Hill, MA 02467-3810</p>
-                                                             <p>Located in the original Bapst Library building on Boston College's Chestnut Hill campus, the John J. Burns Library offers students, scholars, and the general public opportunities to engage with rare books, special collections, and archives.</p>
-
-                                                            <ul class="col-sm-6">
-                                                                <li><div class="h4style">Contact Info</div></li>
-                                                                <li class="megamenuphone"><p>(617) 552-4861</p></li>
-                                                                <li class="megamenuemail"><p><a href="mailto:burnsref@bc.edu">burns@bc.edu</a></p></li>
-                                                            </ul>
-
-                                                            <ul class="col-sm-6">
-                                                                <li><div class="h4style">Today's Hours</div></li>
-                                                                <li><div class="mini_hours_container" id="BurnsLibrary"></div></li>
-                                                                <li class="megamenucalendar"><p><a href="http://libguides.bc.edu/hours">Burns Library Weekly Hours</a></p></li>
-                                                            </ul>
-                                                        </div>
-
-                                                        <div class="pane_pic">
-                                                            <a href="http://libguides.bc.edu/burns"><img alt="Burns Library home page" src="//library.bc.edu/theme/img/librarypane/librarythumbnails_burns.jpg"></a>
-                                                        </div>
-                                                    </div>
-                                                    <!-- END BURNS PANE. RIGHT UP THERE-->
-                                                </div>
-                                            </div>
-                                            <div class="row bottom_row">
-                                                <!--div class="more"><a href="" title="About Us">More About the Libraries</a></div-->
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <!-- Donating Materials list -->
-                            <li class="dropdown yamm-fw" style="display:none;"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Donations</a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <!-- Content container to add padding -->
-                                        <div class="yamm-content">
-                                            <div class="row">
-                                                <!-- Donating Materials -->
-                                                <ul class="col-sm-4 menu_list">
-                                                    <li><div class="h4style"><a href="#">Donating Materials</a></div></li>
-                                                    <li><a href="#">Gift acceptance policies</a></li>
-                                                    <li><a href="#">Donation procedures</a></li>
-                                                    <li><a href="#">Appraisal services</a></li>
-                                                    <li><a href="#">Tax resources</a></li>
-                                                </ul>
-
-                                                <!-- Financial Support -->
-                                                <ul class="col-sm-4 menu_list">
-                                                    <li><div class="h4style"><a href="#">Financial Support</a></div></li>
-                                                    <li><a href="#">For acquisitions</a></li>
-                                                    <li><a href="#">For collections care</a></li>
-                                                    <li><a href="#">For research &amp; scholarship</a></li>
-                                                    <li><a href="#">For technology &amp; new initiatives</a></li>
-                                                </ul>
-
-                                                <!-- Recent Acquisitions -->
-                                                <div class="col-sm-4 menu_list end">
-                                                    <div class="h4style"><a href="#">Recent Acquisitions</a></div>
-                                                    <p>...</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="row bottom_row">
-                                                <div class="more"><a href="#">More about Donations</a></div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <!-- FEEDBACK FORM EMAIL -->
-                            <li class="dropdown yamm-fw"><a href="#bcl-feedback" class="menu-option">
-                                <span class="feedback"></span>Feedback</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- END NAVBAR-COLLAPSE -->
-                </div>
-                <!-- END CONTAINER -->
+    
+    <!-- FULL PAGE WRAPPER -->
+    <div class="container" id="fullpagewrapper-refresh">
+    
+        <!-- BEGIN MIDLEVELCONTAINER -->
+        <div class="row" id="midlevelcontainer-refresh">
+            {{breadcrumbs}}
+    
+            <!-- THIS IS REALLY IMPORTANT. IT'S THE BAR WITH EVERY TOOL ON IT. DO NOT EXCLUDE -->
+            {{ADMIN_CMD_BAR}} 
+    
+            <!-- THIS DIV DISPLAYS THE VIEW/EDIT/PUBLISH BUTTONS WHEN EDITING. -->
+            <div class="pull-right">
+            {{ADMIN_MINI_CMD_BAR}}
             </div>
-            <!-- END NAVBAR -->
-        </div>
-        <!-- END BURNS MEGAMENU -->
-    </div>
-    <!-- END HEADER -->
-
-    <!-- BEGIN MIDLEVELCONTAINER -->
-    <div id="midlevelcontainer">
-        {{breadcrumbs}}
-
-        <!-- THIS IS REALLY IMPORTANT. IT'S THE BAR WITH EVERY TOOL ON IT. DO NOT EXCLUDE -->
-        {{ADMIN_CMD_BAR}} 
-
-        <!-- THIS DIV DISPLAYS THE VIEW/EDIT/PUBLISH BUTTONS WHEN EDITING. -->
-        <div class="pull-right">
-        {{ADMIN_MINI_CMD_BAR}}
-        </div>
-        <div id="guidetitle">
-            <h1>{{guide_title}}</h1><div class="colon">:</div> <h2>{{page_title}}</h2>
-            <div id="burns-logo">Rare Books, Special Collections &amp; University Archives</div>
-        </div>
-        
-        <div id="s-lg-guide-desc-container" class="pad-top-med">
-            <span id="s-lg-guide-description">{{guide_description}}</span>
-        </div>
-
-        <!--THIS DIV CLASS DISPLAYS THE PAGE URL, PAGE, AND COLUMN LAYOUT OPTIONS.
-        SHOULD HAVE NO EFFECT ON PUBLIC SIDE.
-        -->
-        <div id="s-lg-guide-tabs-title-bar" class="container s-lib-side-borders"></div>
-
-        <!-- EDIT-ONLY VIEW CONTAINER FOR BC WIDGETS -->
-        <div id="bc-custom-bar"></div>
-
-        <!-- THIS IS THE CONTENT AND COLUMNS. -->
-        <a name="s-lg-guide-main" tabindex="-1"></a>
-        <div id="s-lg-guide-main"></div>
-        <div id="content_container">
-            <!-- THIS DISPLAYS THE TABS, IF THERE ARE TABS
-            CURRENTLY A HACKED SIDE NAV. -->
-            <div id="s-lg-guide-tabs">
-                <nav>
-                    <ul class="nav nav-tabs split-button-nav">
-                        {{guide_nav}}
-                    </ul>
-                    <label for="guide-nav-mobile" class="accessibility-text">Guide navigation for mobile devices</label>
-                    <select class="nav-mobile" id="guide-nav-mobile"></select>
-                </nav>
+            <div class="" id="guidetitle">
+                <h1>{{guide_title}}</h1><div class="colon">:</div> <h2>{{page_title}}</h2>
             </div>
-
-            <!-- I WONDER WHAT THIS IS? IF ONLY THERE WAS SOME CLUE. -->
             
-               <div id="content">
+            <div id="s-lg-guide-desc-container" class="pad-top-med">
+                <span id="s-lg-guide-description">{{guide_description}}</span>
+            </div>
+    
+            <!--THIS DIV CLASS DISPLAYS THE PAGE URL, PAGE, AND COLUMN LAYOUT OPTIONS.
+            SHOULD HAVE NO EFFECT ON PUBLIC SIDE.
+            -->
+            <div id="s-lg-guide-tabs-title-bar" class="container s-lib-side-borders"></div>
+    
+            <!-- EDIT-ONLY VIEW CONTAINER FOR BC WIDGETS -->
+            <div id="bc-custom-bar"></div>
+    
+            <!-- THIS IS THE CONTENT AND COLUMNS. -->
+            <a name="s-lg-guide-main" tabindex="-1"></a>
+            <div id="s-lg-guide-main"></div>
+            <div class="col-md-12" id="content_container">
+                <!-- THIS DISPLAYS THE TABS, IF THERE ARE TABS
+                CURRENTLY A HACKED SIDE NAV. -->
+                <div class="col-md-2 col-sm-3" id="s-lg-guide-tabs">
+                    <nav id="side-nav" class="drop-down">
+                        <ul class="nav nav-tabs">
+                            {{guide_nav}}
+                        </ul>
+                        <label for="guide-nav-mobile" class="accessibility-text">Guide navigation for mobile devices</label>
+                        <select class="nav-mobile" id="guide-nav-mobile"></select>
+                    </nav>
+                </div>
+    
+                <!-- CONTENT -->
+                <div class="col-md-10 col-sm-9" id="content-refresh">
                    {{content}}
                    {{page_prev_next_links}}
-               </div>
-            
-        </div>  
-
-        <!-- THIS MAKES A 'BACK TO TOP' ARROW APPEAR -->
-        <div id="s-lib-scroll-top" title="Back to Top">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-square-o fa-stack-2x"></i>
-              <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
-            </span>
+                </div>
+                <!-- END CONTENT -->
+            </div>  
+    
+            <!-- THIS MAKES A 'BACK TO TOP' ARROW APPEAR -->
+            <div id="s-lib-scroll-top" title="Back to Top">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square-o fa-stack-2x"></i>
+                  <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+                </span>
+            </div>
+    
+            <!-- THIS LINE OF CODE IS RESPONSIBLE FOR THE POP UP BOXES DURING EDITING.
+            REMOVING THIS MEANS DOOM FOR ALL -->
+            <div id="s-lib-alert" title="">
+                <div id="s-lib-alert-content"></div>
+            </div>
         </div>
-
-        <!-- THIS LINE OF CODE IS RESPONSIBLE FOR THE POP UP BOXES DURING EDITING.
-        REMOVING THIS MEANS DOOM FOR ALL -->
-        <div id="s-lib-alert" title="">
-            <div id="s-lib-alert-content"></div>
+        <!-- END MIDLEVELCONTAINER -->
+    
+        <!-- GUIDE METADATA AND STAFF LOGIN BLOCK -->
+        <div id="s-lg-guide-header-meta">
+            <ul id="s-lg-guide-header-attributes">
+                <li id="s-lg-guide-header-updated">
+                    <span class="s-lg-guide-label">Last Updated:</span> <span class="s-lg-text-greyout">{{guide_updated}}</span>
+                </li>
+                <li id="s-lg-guide-header-subjects">
+                    <span class="s-lg-text-greyout">{{guide_subjects}}</span>
+                </li>
+                <li id="s-lg-guide-header-tags">
+                    <span class="s-lg-text-greyout">{{guide_tags}}</span>
+                </li>
+            </ul>
+            <div id="s-lib-footer-login-link">
+                <a href="{{login_url}}">Staff Login</a> <div id="user-id-link" data-link="{{guide_owner_profile_url}}"></div>
+            </div>
         </div>
     </div>
-    <!-- END MIDLEVELCONTAINER -->
-
-    <!-- GUIDE METADATA AND STAFF LOGIN BLOCK -->
-    <div id="s-lg-guide-header-meta">
-        <ul id="s-lg-guide-header-attributes">
-            <li id="s-lg-guide-header-updated">
-                <span class="s-lg-guide-label">Last Updated:</span> <span class="s-lg-text-greyout">{{guide_updated}}</span>
-            </li>
-            <li id="s-lg-guide-header-subjects">
-                <span class="s-lg-text-greyout">{{guide_subjects}}</span>
-            </li>
-            <li id="s-lg-guide-header-tags">
-                <span class="s-lg-text-greyout">{{guide_tags}}</span>
-            </li>
-        </ul>
-        <div id="s-lib-footer-login-link">
-            <a href="{{login_url}}">Staff Login</a>
-        </div>
-    </div>
+    <!-- END FULL PAGE WRAPPER -->
     <!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
     {{public_footer}}
-</div>
-<!-- END FULL PAGE WRAPPER -->
-</body>
+    </body>

@@ -1,116 +1,118 @@
 <body class="s-lg-guide-body library-pages homepagerefresh">
-{{skip_link}}
-
-<!-- BEGIN fixed position chat box -->
-<div class="libraryh3lp" jid="cs-bostoncoll@chat.libraryh3lp.com">
-    <a href="#" id="askuswidget" class="btn btn-primary" onclick="window.open('https://libraryh3lp.com/chat/cs-bostoncoll@chat.libraryh3lp.com?skin=29500&amp;title=Boston+College&amp;sounds=1', 'chat', 'resizable=1,width=320,height=300'); return false;"><span class="fa fa-commenting-o"></span> Chat With Us</a>
-</div>
-
-<div class="libraryh3lp" jid="ajcu-consortium@chat.libraryh3lp.com" style="display: none;">
-    <a href="#" id="askuswidget" class="btn btn-primary" onclick="window.open('https://libraryh3lp.com/chat/ajcu-consortium@chat.libraryh3lp.com?skin=29500&amp;title=Boston+College/AJCU+Librarians&amp;profile=cs-bostoncoll', 'chat', 'resizable=1,width=320,height=300'); return false;"><span class="fa fa-commenting-o"></span> Chat With Us</a>
-</div>
-
-<div class="libraryh3lp" jid="ajcu-chatstaff@chat.libraryh3lp.com" style="display: none;">
-    <a href="#" id="askuswidget" class="btn btn-primary" onclick="window.open('https://libraryh3lp.com/chat/ajcu-chatstaff@chat.libraryh3lp.com?skin=29500&amp;title=ChatStaff+Librarians&amp;profile=cs-bostoncoll', 'chat', 'resizable=1,width=320,height=300'); return false;"><span class="fa fa-commenting-o"></span> Chat With Us</a>
-</div>
-
-<div class="libraryh3lp" style="display: none;">
-    <a id="askuswidget" class="btn btn-primary" href="https://libguides.bc.edu/ask-a-librarian"><span class=" fa fa-commenting-o"></span> Chat With Us</a>
-</div>
-<!-- END fixed position chat box -->
-
-<!-- HEADER AND MEGA MENU -->
-{{public_header}} 
-
-<!-- FULL PAGE WRAPPER -->
-<div class="container" id="fullpagewrapper-refresh">
-
-    <!-- BEGIN MIDLEVELCONTAINER -->
-    <div class="row" id="midlevelcontainer-refresh">
-        {{breadcrumbs}}
-
-        <!-- THIS IS REALLY IMPORTANT. IT'S THE BAR WITH EVERY TOOL ON IT. DO NOT EXCLUDE -->
-        {{ADMIN_CMD_BAR}} 
-
-        <!-- THIS DIV DISPLAYS THE VIEW/EDIT/PUBLISH BUTTONS WHEN EDITING. -->
-        <div class="pull-right">
-        {{ADMIN_MINI_CMD_BAR}}
-        </div>
-        <div class="" id="guidetitle">
-            <h1>{{guide_title}}</h1><div class="colon">:</div> <h2>{{page_title}}</h2>
-        </div>
-        
-        <div id="s-lg-guide-desc-container" class="pad-top-med">
-            <span id="s-lg-guide-description">{{guide_description}}</span>
-        </div>
-
-        <!--THIS DIV CLASS DISPLAYS THE PAGE URL, PAGE, AND COLUMN LAYOUT OPTIONS.
-        SHOULD HAVE NO EFFECT ON PUBLIC SIDE.
-        -->
-        <div id="s-lg-guide-tabs-title-bar" class="container s-lib-side-borders"></div>
-
-        <!-- EDIT-ONLY VIEW CONTAINER FOR BC WIDGETS -->
-        <div id="bc-custom-bar"></div>
-
-        <!-- THIS IS THE CONTENT AND COLUMNS. -->
-        <a name="s-lg-guide-main" tabindex="-1"></a>
-        <div id="s-lg-guide-main"></div>
-        <div class="col-md-12" id="content_container">
-            <!-- THIS DISPLAYS THE TABS, IF THERE ARE TABS
-            CURRENTLY A HACKED SIDE NAV. -->
-            <div class="col-md-2 col-sm-3" id="s-lg-guide-tabs">
-                <nav id="side-nav" class="drop-down">
-                    <ul class="nav nav-tabs">
-                        {{guide_nav}}
-                    </ul>
-                    <label for="guide-nav-mobile" class="accessibility-text">Guide navigation for mobile devices</label>
-                    <select class="nav-mobile" id="guide-nav-mobile"></select>
-                </nav>
+    {{skip_link}}
+    
+    <!-- BEGIN fixed position chat box -->
+    <div class="libraryh3lp" jid="cs-bostoncoll@chat.libraryh3lp.com">
+        <a href="#" id="askuswidget" class="btn btn-primary" onclick="window.open('https://libraryh3lp.com/chat/cs-bostoncoll@chat.libraryh3lp.com?skin=29500&amp;title=Boston+College&amp;sounds=1', 'chat', 'resizable=1,width=320,height=300'); return false;"><span class="fa fa-commenting-o"></span> Chat With Us</a>
+    </div>
+    
+    <div class="libraryh3lp" jid="ajcu-consortium@chat.libraryh3lp.com" style="display: none;">
+        <a href="#" id="askuswidget" class="btn btn-primary" onclick="window.open('https://libraryh3lp.com/chat/ajcu-consortium@chat.libraryh3lp.com?skin=29500&amp;title=Boston+College/AJCU+Librarians&amp;profile=cs-bostoncoll', 'chat', 'resizable=1,width=320,height=300'); return false;"><span class="fa fa-commenting-o"></span> Chat With Us</a>
+    </div>
+    
+    <div class="libraryh3lp" jid="ajcu-chatstaff@chat.libraryh3lp.com" style="display: none;">
+        <a href="#" id="askuswidget" class="btn btn-primary" onclick="window.open('https://libraryh3lp.com/chat/ajcu-chatstaff@chat.libraryh3lp.com?skin=29500&amp;title=ChatStaff+Librarians&amp;profile=cs-bostoncoll', 'chat', 'resizable=1,width=320,height=300'); return false;"><span class="fa fa-commenting-o"></span> Chat With Us</a>
+    </div>
+    
+    <div class="libraryh3lp" style="display: none;">
+        <a id="askuswidget" class="btn btn-primary" href="https://libguides.bc.edu/ask-a-librarian"><span class=" fa fa-commenting-o"></span> Chat With Us</a>
+    </div>
+    <!-- END fixed position chat box -->
+    
+    <!-- HEADER AND MEGA MENU -->
+    {{public_header}} 
+    
+    <!-- FULL PAGE WRAPPER -->
+    <div class="container" id="fullpagewrapper-refresh">
+    
+        <!-- BEGIN MIDLEVELCONTAINER -->
+        <div class="row" id="midlevelcontainer-refresh">
+            {{breadcrumbs}}
+    
+            <!-- THIS IS REALLY IMPORTANT. IT'S THE BAR WITH EVERY TOOL ON IT. DO NOT EXCLUDE -->
+            {{ADMIN_CMD_BAR}} 
+    
+            <!-- THIS DIV DISPLAYS THE VIEW/EDIT/PUBLISH BUTTONS WHEN EDITING. -->
+            <div class="pull-right">
+            {{ADMIN_MINI_CMD_BAR}}
             </div>
-
-            <!-- CONTENT -->
-            <div class="col-md-10 col-sm-9" id="content-refresh">
-               {{content}}
-               {{page_prev_next_links}}
+            <div class="" id="guidetitle">
+                <h1>{{guide_title}}</h1><div class="colon">:</div> <h2>{{page_title}}</h2>
             </div>
-            <!-- END CONTENT -->
-        </div>  
-
-        <!-- THIS MAKES A 'BACK TO TOP' ARROW APPEAR -->
-        <div id="s-lib-scroll-top" title="Back to Top">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-square-o fa-stack-2x"></i>
-              <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
-            </span>
+            
+            <div id="s-lg-guide-desc-container" class="pad-top-med">
+                <span id="s-lg-guide-description">{{guide_description}}</span>
+            </div>
+    
+            <!--THIS DIV CLASS DISPLAYS THE PAGE URL, PAGE, AND COLUMN LAYOUT OPTIONS.
+            SHOULD HAVE NO EFFECT ON PUBLIC SIDE.
+            -->
+            <div id="s-lg-guide-tabs-title-bar" class="container s-lib-side-borders"></div>
+    
+            <!-- EDIT-ONLY VIEW CONTAINER FOR BC WIDGETS -->
+            <div id="bc-custom-bar">
+               
+            </div>
+    
+            <!-- THIS IS THE CONTENT AND COLUMNS. -->
+            <a name="s-lg-guide-main" tabindex="-1"></a>
+            <div id="s-lg-guide-main"></div>
+            <div class="col-md-12" id="content_container">
+                <!-- THIS DISPLAYS THE TABS, IF THERE ARE TABS
+                CURRENTLY A HACKED SIDE NAV. -->
+                <div class="col-md-2 col-sm-3" id="s-lg-guide-tabs">
+                    <nav id="side-nav" class="drop-down">
+                        <ul class="nav nav-tabs">
+                            {{guide_nav}}
+                        </ul>
+                        <label for="guide-nav-mobile" class="accessibility-text">Guide navigation for mobile devices</label>
+                        <select class="nav-mobile" id="guide-nav-mobile"></select>
+                    </nav>
+                </div>
+    
+                <!-- CONTENT -->
+                <div class="col-md-10 col-sm-9" id="content-refresh">
+                   {{content}}
+                   {{page_prev_next_links}}
+                </div>
+                <!-- END CONTENT -->
+            </div>  
+    
+            <!-- THIS MAKES A 'BACK TO TOP' ARROW APPEAR -->
+            <div id="s-lib-scroll-top" title="Back to Top">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square-o fa-stack-2x"></i>
+                  <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+                </span>
+            </div>
+    
+            <!-- THIS LINE OF CODE IS RESPONSIBLE FOR THE POP UP BOXES DURING EDITING.
+            REMOVING THIS MEANS DOOM FOR ALL -->
+            <div id="s-lib-alert" title="">
+                <div id="s-lib-alert-content"></div>
+            </div>
         </div>
-
-        <!-- THIS LINE OF CODE IS RESPONSIBLE FOR THE POP UP BOXES DURING EDITING.
-        REMOVING THIS MEANS DOOM FOR ALL -->
-        <div id="s-lib-alert" title="">
-            <div id="s-lib-alert-content"></div>
+        <!-- END MIDLEVELCONTAINER -->
+    
+        <!-- GUIDE METADATA AND STAFF LOGIN BLOCK -->
+        <div id="s-lg-guide-header-meta">
+            <ul id="s-lg-guide-header-attributes">
+                <li id="s-lg-guide-header-updated">
+                    <span class="s-lg-guide-label">Last Updated:</span> <span class="s-lg-text-greyout">{{guide_updated}}</span>
+                </li>
+                <li id="s-lg-guide-header-subjects">
+                    <span class="s-lg-text-greyout">{{guide_subjects}}</span>
+                </li>
+                <li id="s-lg-guide-header-tags">
+                    <span class="s-lg-text-greyout">{{guide_tags}}</span>
+                </li>
+            </ul>
+            <div id="s-lib-footer-login-link">
+                <a href="{{login_url}}">Staff Login</a> <!-- {{guide_owner_profile_url}} -->
+            </div>
         </div>
     </div>
-    <!-- END MIDLEVELCONTAINER -->
-
-    <!-- GUIDE METADATA AND STAFF LOGIN BLOCK -->
-    <div id="s-lg-guide-header-meta">
-        <ul id="s-lg-guide-header-attributes">
-            <li id="s-lg-guide-header-updated">
-                <span class="s-lg-guide-label">Last Updated:</span> <span class="s-lg-text-greyout">{{guide_updated}}</span>
-            </li>
-            <li id="s-lg-guide-header-subjects">
-                <span class="s-lg-text-greyout">{{guide_subjects}}</span>
-            </li>
-            <li id="s-lg-guide-header-tags">
-                <span class="s-lg-text-greyout">{{guide_tags}}</span>
-            </li>
-        </ul>
-        <div id="s-lib-footer-login-link">
-            <a href="{{login_url}}">Staff Login</a> <!-- {{guide_owner_profile_url}} -->
-        </div>
-    </div>
-</div>
-<!-- END FULL PAGE WRAPPER -->
-<!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
-{{public_footer}}
-</body>
+    <!-- END FULL PAGE WRAPPER -->
+    <!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
+    {{public_footer}}
+    </body>

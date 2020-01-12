@@ -1,71 +1,100 @@
-<!-- BEGIN FOOTER -->
-<div id="footer">
-    <hr>
-    <div class="f_column">
-        <!-- Address -->
-        <div id="f_address">
-            <h2>John J. Burns Library</h2>
-            <p>140 Commonwealth Avenue <br/>
-            Chestnut Hill, MA 02467 <br/>
-            <strong>Administration:</strong> 617-552-3282<br/>
-            <strong>Reference:</strong> 617-552-4861</p>
-        </div>
+<footer role="contentinfo">
+    <h2 class="sr-only sr-only-focusable">Footer</h2>
+    <!-- LIBRARY FOOTER START -->
+    <h3 class="sr-only sr-only-focusable">Libraries footer</h3>
+    <div id="lib-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 address-wrap">
+                    <div class="address">
+                        <h4 class="orgname">John J. Burns Library</h4>
+                        <a href="https://www.google.com/maps/place/140+Commonwealth+Avenue,+Chestnut+Hill,+MA+02467/@42.3364909,-71.1725963,17.37z/data=!4m5!3m4!1s0x89e37860e3b651e5:0x9d50126b40ea51e4!8m2!3d42.3367006!4d-71.1714299">
+                            <span>140 Commonwealth Ave<br></span>
+                            <span>Chestnut Hill, MA 02467<br></span>
+                        </a>
+                    </div>
+                    <div class="phone-numbers">
+                        <div class="phone-pair"><p class="phone-label">Burns Administration: </p> <p class="phone-number"><a href="tel:+16175523282">617-552-3282</a></p></div>
+                        <div class="phone-pair"><p class="phone-label">Burns Reference: </p> <p class="phone-number"><a href="tel:+16175524861">617-552-4861</a></p></div>
+                    </div>
+                    <div class="lib-footer-links">
+                        <span><a href="https://libguides.bc.edu/accessibility">Library Accessibility</a><a href="https://libguides.bc.edu/privacy">Privacy</a></span>
+                    </div>
+                    <div class="ihs-logo"><a href="https://www.bc.edu/bc-web/jesuit-catholic.html"><img alt="The Society of Jesus (Jesuits) logo" src="//library.bc.edu/theme/img/ihs-logo.svg" /></a></div>
+                </div>
 
-        <!-- SOCIAL MEDIA ICONS -->
-        <div id="socialmedia">
-            <ul>
-                <li><a href="https://johnjburnslibrary.wordpress.com/feed/" title="Burns Library News RSS" class="mediablock" id="media_news"><span class="accessibility-text">Burns Library News RSS feed</span></a></li>
-                <li><a href="https://www.facebook.com/johnjburnslibrary" title="Burns Library Facebook" class="mediablock" id="media_facebook"><span class="accessibility-text">Burns Library Facebook Link</span></a></li>
-                <li><a href="https://www.flickr.com/photos/bc-burnslibrary/" title="Burns Library Flickr" class="mediablock" id="media_flickr"><span class="accessibility-text">Burns Library Flickr Page</span></a></li>
-                <li><a href="https://twitter.com/burnslibrary" title="Burns Library Twitter" class="mediablock" id="media_twitter"><span class="accessibility-text">Burns Library on Twitter</span></a></li>
-                <li><a href="https://www.youtube.com/user/BostonCollegeLib" title="Boston College YouTube" class="mediablock" id="media_youtube"><span class="accessibility-text">Boston College on YouTube</span></a></li>
-            </ul>
-        </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 social-wrap">
+                    <div id="socialmedia" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4>Connect With Us</h4>
+                        <ul>
+                            <li><a href="https://johnjburnslibrary.wordpress.com" title="Burns Library Blogs" class="" id="media_blog"><span class="accessibility-text">Blogs</span></a></li>
+                            <li><a href="https://facebook.com/johnjburnslibrary/" title="Burns Library Facebook" class="" id="media_facebook"><span class="accessibility-text">Facebook</span></a></li>
+                            <li><a href="https://www.instagram.com/bcburnslibrary/?hl=en" title="Burns Library on Instagram" class="" id="media_instagram"><span class="accessibility-text">Instagram</span></a></li>
+                            <li><a href="https://twitter.com/burnslibrary" title="Follow the Burns Libraries on Twitter" class="" id="media_twitter"><span class="accessibility-text">Twitter</span></a></li>
+                        </ul>
+                    </div>
 
-        <!-- Copyright -->
-        <div id="copyright">
-            <p class="links"><a href="http://libguides.bc.edu/accessibility">Accessibility</a>|<a href="http://libguides.bc.edu/privacy">Privacy</a></p>
-            <p>&copy; 2017 The Trustees of Boston College. <a href="http://www.bc.edu/gn-legal" id="footer-legal">Legal</a></p>
-            <p><a href="http://bc.edu" target="_self" title="Boston College homepage">Boston College</a></p>
+                    <div class="quick-links col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="https://libguides.bc.edu/burns/contact">Contact us</a></li>
+                            <li><a href="https://libguides.bc.edu/burns/staff">Staff Directory</a></li>
+                            <li><a href="https://libguides.bc.edu/burns/visit">Directions & Parking</a></li>
+                            <li><a href="https://libguides.bc.edu/burns/donate">Give to Burns Library</a></li>
+                            <li><a href="https://libguides.bc.edu/student-employment">Student Employment</a></li>
+                        </ul>
+                    </div>    
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 hours-wrap">
+                    <!--h4 class="hours"><a href="https://libguides.bc.edu/hours">Hours</a></h4-->
+                    <div class="hours-todays-date"></div>
+                    <h4>This Week's Hours <span id="hours_seperator">|</span> <a href="https://libguides.bc.edu/hours">See All Hours</a></h4>
+                    <!-- LIBCAL HOURS API-->
+                    <div id="weekly_hours_container"></div>
+                </div>
+            </div>
         </div>
     </div>
+    <!-- LIBRARY FOOTER END -->
 
-    <!-- Quick Links -->
-    <div class="f_column no_right_border">
-        <h2>Quick Links</h2>
-        <nav id="quick_links" class="drop-down">
-            <ul class="nav">
-                <li><a href="#" target="_self">Ask a Question</a></li>
-                <li><a href="#" target="_self">Staff Directory</a></li>
-                <li><a href="#" target="_self">Mailing Address</a></li>
-                <li><a href="#" target="_self">Directions &amp; Parking</a></li>
-                <li><a href="#" target="_self">Gifts Policy</a></li>
-                <li><a href="#" target="_self">Photography Policy</a></li>
-                <li><a href="#" target="_self">Reproduction Requests</a></li>
-                <li><a href="#" target="_self">Student Employment</a></li>
-            </ul>
-            <label for="quick-links-mobile" class="accessibility-text">Quick links for mobile devices</label>
-            <select class="nav-mobile" id="quick-links-mobile"></select>
-        </nav>
+    <!-- BC FOOTER START -->
+    <h3 class="sr-only sr-only-focusable">Boston College footer</h3>
+    <div id="bc-footer">
+        <div class="container">
+            <div class="row">
+                <div class="bc-img col-md-3 col-sm-12 col-xs-12">
+                    <a href="https://www.bc.edu/content/bc-web.html"><img src="https://www.bc.edu/etc/designs/bc-web/images/logo-footer.png" class="footer-logo" alt="Boston College"></a>
+                </div>
+                <div class="col-md-9 col-sm-12 col-xs-12">
+                    <nav class="bc-links">
+                        <ul>
+                            <li><a href="https://www.bc.edu/sites/accessibility.html">Accessibility</a></li>
+                            <li><a href="https://www.bc.edu/bc-web/resources/emergency-r.html">Emergency</a></li>
+                            <li><a href="https://www.bc.edu/bc-web/about/maps-and-directions.html">Maps</a></li>
+                            <li><a href="https://www.bc.edu/bc-web/resources/directories-r.html">Directories</a></li>
+                            <li><a href="https://www.bc.edu/a-z/directories/contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <p class="copyright">Copyright © 2018 Trustees of Boston College</p>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <!-- Hours -->
-    <div class="f_column column_hours no_bottom_border no_right_border">
-        <h2><a href="#">This Week's Hours</a> <span id="hours_seperator">|</span> <a href="https://libguides.bc.edu/hours">All Hours</a></h2>
-        <!-- LIBCAL HOURS API-->
-        <div id="weekly_hours_container"></div>
-    </div>
-</div>
-<!-- END FOOTER -->
+    <!-- BC FOOTER END -->
+</footer>
 
-<!--script type="text/javascript" src="//library.bc.edu/theme/js/libraryinfo.js"></script-->
+<!--script src="//library.bc.edu/js/nospam.js"></script-->
+<!--script src="//library.bc.edu/js/libhoursv2.js"></script-->
 
-<!-- /#contentinfo -->
-<!-- MEGA MENU SCRIPT -->
-<script type="text/javascript" src="http://library.bc.edu/theme/js/megamenu.js"></script>
-
-<!-- Script to block spam-bots. Requires JQuery. -->
-<script src="http://library.bc.edu/theme/js/nospam.js"></script>
+<!-- MEGA MENU SCRIPTS -->
+<!-- This code will prevent unexpected menu close when using some components (like accordion, forms, etc) -->
+<script>$(document).on('click','.yamm .dropdown-menu',function(e){e.stopPropagation()});</script>
+<script type="text/javascript" src="//library.bc.edu/js/bootstrap-hover-dropdown.min.js"></script>
+<script type="text/javascript" src="//library.bc.edu/js/jquery.hoverIntent.minified.js"></script>
+<script type="text/javascript" src="//library.bc.edu/js/megamenu.js"></script>
+<!--script type="text/javascript" src="//library.bc.edu/js/libraryinfo.js"></!--script-->
+<!-- END MEGA MENU SCRIPTS -->
 
 <!-- Script for updating Burns Lib hours-->
 <script>
@@ -109,12 +138,3 @@ $(document).ready(function(){
     });
 });
 </script>
-
-<!-- FEEDBACK FORM -->
-<div id="bcl-feedback" class="bcl-modal">
-    <div id="feedback_wrapper">
-        <div id="feedback_close"></div>
-        <div id="s-la-widget-5468"></div>
-    </div>
-</div>
-<!-- END FEEDBACK FORM -->

@@ -1,16 +1,16 @@
 <!-- CUSTOM HEADER INFO. TO BE CUT AND PASTED INTO Custom <HEAD> TAB ON LIBGUIDES CMS -->
-<link rel="stylesheet" href="//library.bc.edu/theme/css/style_clean.css"/>
+<link rel="stylesheet" href="//library.bc.edu/css/style_clean.css"/>
 <!--link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/-->
 <!--link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"/-->
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"/>
-<link rel="stylesheet" href="//library.bc.edu/theme/css/refresh.css"/>
-<link rel="stylesheet" href="//library.bc.edu/theme/css/megamenu.css"/>
-<link rel="stylesheet" href="//library.bc.edu/theme/css/footer.css"/>
+<link rel="stylesheet" href="//library.bc.edu/css/refresh_clean.css"/>
+<link rel="stylesheet" href="//library.bc.edu/css/megamenu_clean.css"/>
+<link rel="stylesheet" href="//library.bc.edu/css/footer_clean.css"/>
 
-<script type="text/javascript" src="//library.bc.edu/theme/js/bootstrap-hover-dropdown.min.js"></script>
-<script type="text/javascript" src="//library.bc.edu/theme/js/jquery.hoverIntent.minified.js"></script>
-<script type="text/javascript" src="//library.bc.edu/theme/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="//library.bc.edu/js/bootstrap-hover-dropdown.min.js"></script>
+<script type="text/javascript" src="//library.bc.edu/js/jquery.hoverIntent.minified.js"></script>
+<script type="text/javascript" src="//library.bc.edu/js/modernizr.custom.js"></script>
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -135,14 +135,14 @@ $(document).ready(function(){
     /* LOAD EDIT-MODE WIDGETS */
     /*                        */
     if ($(location).attr('pathname') === "/libguides/admin_c.php") {
-        // load https://library.bc.edu/theme/css/libguides-widget.css
+        // load https://library.bc.edu/css/libguides-widget.css
         // see https://stackoverflow.com/a/14919928
         $("head").append("<link>");
         var css = $("head").children(":last");
         css.attr({
             rel:  "stylesheet",
             type: "text/css",
-            href: "https://library.bc.edu/theme/css/libguides-widget.css"
+            href: "https://library.bc.edu/css/libguides-widget.css"
         });
 
         // content tips script

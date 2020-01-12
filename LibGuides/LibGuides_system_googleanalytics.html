@@ -47,12 +47,13 @@
         //
         // outbound links
         //
-        var $all_anchors = $('a');
-        $all_anchors.not('#askuswidget, .search-link, .accessibility-text, #s-lg-public-skiplink').click(function(e) {
+        //var $all_anchors = $('a').not('#askuswidget, .search-link, .accessibility-text, #s-lg-public-skiplink');
+        $('a').not('#askuswidget, .search-link, .accessibility-text, #s-lg-public-skiplink').on('click', function(e) {
             var url = $(this).attr("href");
             //ga('send', 'event', 'outbound-lg', "click", url);
             gtag('event', 'click', {'event_category': 'outbound-lg', 'event_label': url});
             _paq.push(['trackEvent', 'outbound-lg', 'click', url]);
+            console.log("tracking click 'outbound-lg': " + url);
         });
         // tracking for homepage -- unneeded in LibGuides
         //$all_anchors.not('#askuswidget, .search-link, .accessibility-text').click(function(e) {
@@ -68,19 +69,19 @@
         //
         // breadcrumbs
         //
-        $(".breadcrumb #s-lib-bc-customer").click(function(){
+        $(".breadcrumb #s-lib-bc-customer").on('click', function(){
             var page_title = $("#guidetitle h1").text();
             //ga('send', 'event', 'breadcrumb-home', 'click', page_title);
             gtag('event', 'view', {'event_category': 'breadcrumb-home', 'event_label': page_title});
             _paq.push(['trackEvent', 'breadcrumb-home', 'click', page_title]);
         });
-        $(".breadcrumb #s-lib-bc-site").click(function(){
+        $(".breadcrumb #s-lib-bc-site").on('click', function(){
             var page_title = $("#guidetitle h1").text();
             //ga('send', 'event', 'breadcrumb-site', 'click', page_title);
             gtag('event', 'view', {'event_category': 'breadcrumb-site', 'event_label': page_title});
             _paq.push(['trackEvent', 'breadcrumb-site', 'click', page_title]);
         });
-        $(".breadcrumb #s-lib-bc-guide").click(function(){
+        $(".breadcrumb #s-lib-bc-guide").on('click', function(){
             var page_title = $("#guidetitle h1").text();
             //ga('send', 'event', 'breadcrumb-guide', 'click', page_title);
             gtag('event', 'view', {'event_category': 'breadcrumb-guide', 'event_label': page_title});
@@ -108,4 +109,4 @@
         }
     });
 </script>
-<!-- End Event tracking -->  
+<!-- End Event tracking -->

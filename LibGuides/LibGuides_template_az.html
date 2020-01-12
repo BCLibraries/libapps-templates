@@ -1,160 +1,188 @@
 <body class="s-lib-public-body homepagerefresh">
-<meta name="group" content="AtoZ">
-{{skip_link}}
-
-<style>
-    .chosen-container-single .chosen-single.chosen-default span {
-        color: #999;
-    }
-    #col1 {
-        padding-left:10px;
-    }
-    .s-lg-az-result-title,
-    .s-lg-az-result-description {
-        font-size: 13px;
-    }
-    /*#s-lg-db-label-text {
-        padding-left: 20px;
-    }*/
-    .s-lg-label-moreinfo {display:none;}
-    #col-vendors {
-        display: none;
-    }
-    #s-lg-az-search-reset {
-        padding-top: 10px;
-    }
-    #cloned-content-container {
-        margin-top: 20px;
-    }
-    .s-lg-az-result-badge-featured {
-        display:none;
-    }
-    #s-lg-az-index {
-        display:none;
-    }
-    #s-lg-db-name-featured .s-lg-db-panel-title {
-        display:none;
-    }
-    .s-lg-az-trials-div {
-        display: none;
-    }
-    #s-lg-az-count {
-        display:none;
-    }
-    /*#s-lg-az-trials .s-lg-az-result-new {
-        display: none;
-    }*/
-    #s-lg-az-filters {
-        padding:10px 0 10px 20px;
-        border:1px solid #e7e7e7;
-        background-color:aliceblue;
-        border-radius: 4px;
-        -moz-border-radius: 4px;
-        margin-bottom:10px;
-    }
-    #db-filter-label {
-        font-size:16px;
-    }
-    @media (min-width: 768px) {
-        #s-lg-az-search {
-            width:400px;
+    <meta name="group" content="AtoZ">
+    {{skip_link}}
+    
+    <style>
+        .chosen-container-single .chosen-single.chosen-default span {
+            color: #999;
         }
-    }
-    #s-lg-az-count {
-        vertical-align: text-top;
-        margin-left:0 !important;
-    }
-    #s-lg-db-label-text {
-        text-transform: lowercase;
-    }
-    #s-lg-az-search-bar nav.navbar {
-        margin-bottom:0;
-    }
-    h2#s-lg-az-result-count {
-        display:none;
-    }
-    #s-lg-az-content .s-lg-az-result-title,
-    #s-lg-az-content .s-lg-az-result-title .fa-external-link {
-        font-size:18px !important;
-    }
-    #s-lg-az-content .s-lg-az-result .s-lg-az-result-keywords .bold {
-        font-weight:600;
-    }
-    #s-lg-az-content .s-lg-az-result {
-        padding-bottom:15px;
-    }
-    #az-search-col-1 {
-        margin-right:5px;
-    }
-    #az-search-col-1 #s-lg-db-label {
-        display: block;
-    }
-</style>
-
-<!-- CHANGE THE TEXT FOR THE DATABASE TRIALS COLUMN -->
-<script>
-$(document).ready(function(){
-    $("#s-lg-az-trials-div .s-lib-public-side-header .pad-bottom-sm").html("Trial Databases");
-    $("#s-lg-az-trials").contents().filter(function(){
-        return this.nodeType == Node.TEXT_NODE;
-    })[0].nodeValue = "The following resources are being evaluated for addition to our collection.  Please send your feedback.";
-    $("#s-lg-az-filters").prepend("<p class='bold' id='db-filter-label'>Database Filters:</p>");
-    $("#az-search-col-1 nav .navbar-header #s-lg-db-label").prepend("<span id='db-search-label'>Search</span>");
-    $("#az-search-col-1 nav #s-lg-az-nav-1").removeClass("collapse");
-    $("#az-search-col-1 nav .navbar-header button.navbar-toggle").hide();
-});
-</script>
-
-<!-- HEADER AND MEGA MENU -->
-{{public_header}} 
-
-<!-- FULL PAGE WRAPPER -->
-<div class="container" id="fullpagewrapper-refresh">
-
-    <!-- BEGIN MIDLEVELCONTAINER -->
-    <div class="row" id="midlevelcontainer-refresh">
-        <!-- BEGIN: Content Header -->
-        <div id="s-lib-public-header" class="s-lib-header container s-lib-side-borders">
-            <h1 id="s-lib-public-header-title">{{page_title}}</h1>
-            <div id="s-lib-public-header-desc">{{page_description}}</div>
-        </div>
-        <!-- END: Content Header -->
-        <!-- BEGIN: Nav Bar -->
-        <div id="s-lib-public-nav" class="container s-lib-side-borders">
-            {{page_nav}}
-        </div>
-        <!-- END: Nav Bar -->
-        <!-- BEGIN: content -->
-        <a name="s-lg-guide-main"></a>
-        <div id="s-lib-public-main" class="s-lib-main container s-lib-side-borders">
-            <section>
-                <div id="s-lg-az-search-bar" class="row">
-                    <div id="az-search-col-1" class="col center">
-                        {{navbar}}
+        #col1 {
+            padding-left:10px;
+        }
+        .s-lg-az-result-title,
+        .s-lg-az-result-description {
+            font-size: 14px;
+        }
+        /*#s-lg-db-label-text {
+            padding-left: 20px;
+        }*/
+        .s-lg-label-moreinfo {display:none;}
+        #col-vendors {
+            display: none;
+        }
+        #s-lg-az-search-reset {
+            padding-top: 10px;
+        }
+        #cloned-content-container {
+            margin-top: 20px;
+        }
+        .s-lg-az-result-badge-featured {
+            display:none;
+        }
+        #s-lg-az-index {
+            display:none;
+        }
+        #s-lg-db-name-featured .s-lg-db-panel-title {
+            display:none;
+        }
+        .s-lg-az-trials-div {
+            display: none;
+        }
+        #s-lg-az-count {
+            display:none;
+        }
+        /*#s-lg-az-trials .s-lg-az-result-new {
+            display: none;
+        }*/
+        #s-lg-az-filters {
+            padding:10px 0 10px 20px;
+            border:1px solid #e7e7e7;
+            background-color:aliceblue;
+            border-radius: 4px;
+            -moz-border-radius: 4px;
+            margin-bottom:10px;
+        }
+        #db-filter-label {
+            font-size:16px;
+        }
+        @media (min-width: 768px) {
+            #s-lg-az-search {
+                width:400px;
+            }
+        }
+        #s-lg-az-count {
+            vertical-align: text-top;
+            margin-left:0 !important;
+        }
+        #s-lg-db-label-text {
+            text-transform: lowercase;
+        }
+        #s-lg-az-search-bar nav.navbar {
+            margin-bottom:0;
+        }
+        h2#s-lg-az-result-count {
+            display:none;
+        }
+        #s-lg-az-content .s-lg-az-result-title,
+        #s-lg-az-content .s-lg-az-result-title .fa-external-link,
+        #s-lg-az-trials-div .s-lg-az-result-title,
+        #s-lg-az-trials-div .s-lg-az-result-title .fa-external-link {
+            font-size:18px !important;
+        }
+        #s-lg-az-content .s-lg-az-result .s-lg-az-result-keywords .bold {
+            font-weight:600;
+        }
+        #s-lg-az-content .s-lg-az-result {
+            padding-bottom:15px;
+        }
+        #az-search-col-1 {
+            margin-right:5px;
+        }
+        #az-search-col-1 #s-lg-db-label {
+            display: block;
+        }
+        #bc-policy-link {
+            width: 100%;
+            text-align: right;
+        }
+    
+        /* alert box specific styling */
+        /* Boostrap3 panel colors: */
+        /*  success:
+                background-color: #dff0d8;
+                border-color: #d6e9c6;
+                color: #3c763d;
+            info:
+                background-color: #d9edf7;
+                border-color: #bce8f1;
+                color: #31708f;
+            warning:
+                background-color: #fcf8e3;
+                border-color: #faebcc;
+                color: #8a6d3b;
+         */
+        #s-lg-box-22622559 {
+            border: 1px solid transparent;
+            margin: 0 0 3rem 0;
+            padding: 0;
+            background-color: #fcf8e3;
+            border-color: #faebcc;
+        }
+    
+        #s-lg-box-22622559 .s-lib-box-title {
+            margin-top: 0em;
+            color: #8a6d3b; 
+            background-color: #fcf8e3;
+            border-color: #faebcc;
+            padding: 10px 15px;
+            margin-bottom: 0;
+            font-weight: 600;
+        }
+    
+        #s-lg-box-22622559 .s-lib-box-content {
+            padding: 15px;
+            margin: 0;
+            background-color: #fff;
+            border-radius: 0 0 4px 4px;
+        }
+    </style>
+    
+    <!-- CHANGE THE TEXT FOR THE DATABASE TRIALS COLUMN -->
+    <script>
+    $(document).ready(function(){
+        //$("#s-lg-az-trials-div .s-lib-public-side-header .pad-bottom-sm").html("Trial Databases");
+        $("#s-lg-az-trials").contents().filter(function(){
+            return this.nodeType == Node.TEXT_NODE;
+        })[0].nodeValue = "The following resources are being evaluated for addition to our collection.  Please send your feedback.";
+        $("#s-lg-az-filters").prepend("<p class='bold' id='db-filter-label'>Database Filters:</p>");
+        $("#az-search-col-1 nav .navbar-header #s-lg-db-label").prepend("<span id='db-search-label'>Search</span>");
+        $("#az-search-col-1 nav #s-lg-az-nav-1").removeClass("collapse");
+        $("#az-search-col-1 nav .navbar-header button.navbar-toggle").hide();
+    });
+    </script>
+    
+    <!-- HEADER AND MEGA MENU -->
+    {{public_header}} 
+    
+    <!-- FULL PAGE WRAPPER -->
+    <div class="container" id="fullpagewrapper-refresh">
+    
+        <!-- BEGIN MIDLEVELCONTAINER -->
+        <div class="row" id="midlevelcontainer-refresh">
+            <!-- BEGIN: Content Header -->
+            <div id="s-lib-public-header" class="s-lib-header container s-lib-side-borders">
+                <h1 id="s-lib-public-header-title">{{page_title}}</h1>
+                <div id="s-lib-public-header-desc">{{page_description}}</div>
+            </div>
+            <!-- END: Content Header -->
+            <!-- BEGIN: Nav Bar -->
+            <div id="s-lib-public-nav" class="container s-lib-side-borders">
+                {{page_nav}}
+            </div>
+            <!-- END: Nav Bar -->
+            <!-- BEGIN: content -->
+            <a name="s-lg-guide-main"></a>
+            <div id="s-lib-public-main" class="s-lib-main container s-lib-side-borders">
+                <section>
+                    <div id="bc-policy-link" class="container">
+                        <a href="https://libguides.bc.edu/licensing/guidelines" target="_blank"><i class="fa fa-info-circle"></i> Responsible Use of Electronic Resources</a>
                     </div>
-                </div>
-                <div id="s-lg-az-filters" class="pad-right-sm pad-bottom-med">
-                        <section>
-                            <div id="s-lg-az-filter-cols" class="row">
-                                <div  id="col-subjects" class="col-md-6 center">
-                                    {{subject_list}}
-                                </div>
-                                <div id="col-types" class="col-md-6 center">
-                                    {{type_list}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div id="col-types" class="col-md-12 center">
-                                    {{search_reset}}
-                                </div>
-                            </div>
-                        </section>
+                    <div id="s-lg-az-search-bar" class="row">
+                        <div id="az-search-col-1" class="col center">
+                            {{navbar}}
+                        </div>
                     </div>
-            </section>
-            <section>
-                <div id="s-lg-az-cols"  class="row">
-                    <div  id="col1"  class="col-md-8 center">
-                        <!--div id="s-lg-az-filters" class="pad-right-sm pad-bottom-med">
+                    <div id="s-lg-az-filters" class="pad-right-sm pad-bottom-med">
                             <section>
                                 <div id="s-lg-az-filter-cols" class="row">
                                     <div  id="col-subjects" class="col-md-6 center">
@@ -170,49 +198,86 @@ $(document).ready(function(){
                                     </div>
                                 </div>
                             </section>
-                        </div-->
-                        <div id="s-lg-az-index" class="pad-right-sm">
-                            {{alpha_list}}
                         </div>
-                        <!--div id="s-lg-az-search-reset" class="pad-top-med pad-bottom-med">
-                            {{search_reset}}
-                        </div-->
-                        <div id="s-lg-az-content" class="pad-right-sm pad-top-med">
-                            <div class="bold s-lib-color-lt-grey pad-top-med text-center">Loading...</div>
+                </section>
+                <section>
+                    <div id="s-lg-az-cols"  class="row">
+                        <div  id="col1"  class="col-md-8 center">
+                            <!--div id="s-lg-az-filters" class="pad-right-sm pad-bottom-med">
+                                <section>
+                                    <div id="s-lg-az-filter-cols" class="row">
+                                        <div  id="col-subjects" class="col-md-6 center">
+                                            {{subject_list}}
+                                        </div>
+                                        <div id="col-types" class="col-md-6 center">
+                                            {{type_list}}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div id="col-types" class="col-md-12 center">
+                                            {{search_reset}}
+                                        </div>
+                                    </div>
+                                </section>
+                            </div-->
+                            <div id="s-lg-az-index" class="pad-right-sm">
+                                {{alpha_list}}
+                            </div>
+                            <!--div id="s-lg-az-search-reset" class="pad-top-med pad-bottom-med">
+                                {{search_reset}}
+                            </div-->
+                            <div id="s-lg-az-content" class="pad-right-sm pad-top-med">
+                                <div class="bold s-lib-color-lt-grey pad-top-med text-center">Loading...</div>
+                            </div>
+                        </div>
+                        <div  id="col2"  class="col-md-4 center">
+                            
+                            <!-- START LibGuides Resource Problem widget -->
+                            <script async  src="//lgapi-us.libapps.com/web/js/sa.min.js?3116"></script>
+                            <script>
+                                springSpace.Common = springSpace.Common || { };
+                                springSpace.Common.constant = { PROCESSING: { ACTION_DISPLAY_POLL: 159 }};
+                                springSpace.Common.baseURL = "//lgapi-us.libapps.com'/";
+                                springSpace.Common.apiLoad = true;
+                            </script>
+                            <script>
+                                springshare_widget_config_1574195228788 = { path: 'boxes/22622559' };
+                            </script>
+                            <div id="s-lg-widget-1574195228788" class="resource-problem-container"></div>
+                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://lgapi-us.libapps.com/widgets.php?site_id=94&widget_type=8&output_format=1&widget_title=Alerts&widget_height=250&widget_width=100%25&widget_embed_type=1&guide_id=985557&box_id=22622559&map_id=26550796&content_only=0&config_id=1574195228788";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","s-lg-widget-script-1574195228788");</script>
+                            <!-- END  LibGuides Resource Problem widget -->
+    
+                            <div>{{trials_box}}</div>
+                            {{content_box_experts}}
+                            {{content_box_guides}}
                         </div>
                     </div>
-                    <div  id="col2"  class="col-md-4 center">
-                        <div>{{trials_box}}</div>
-                        {{content_box_experts}}
-                        {{content_box_guides}}
-                    </div>
-                </div>
-            </section>
+                </section>
+            </div>
+            <!-- END: content -->
+    
+            <!-- THIS MAKES A 'BACK TO TOP' ARROW APPEAR -->
+            <div id="s-lib-scroll-top" title="Back to Top">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+                </span>
+            </div>
         </div>
-        <!-- END: content -->
-
-        <!-- THIS MAKES A 'BACK TO TOP' ARROW APPEAR -->
-        <div id="s-lib-scroll-top" title="Back to Top">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-square-o fa-stack-2x"></i>
-                <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
-            </span>
+        <!-- END MIDLEVELCONTAINER -->
+    
+        <div id="s-lib-alert" title="">
+            <div id="s-lib-alert-content"></div>
+        </div>
+        <div id="s-lib-popover-title" class="hide">
+            <span class="text-info"><strong>title</strong></span> 
+            <button type="button" id="popclose" class="close" onclick="jQuery('.s-lib-popover').popover('hide')">&times;</button> 
+        </div>
+        <div id="s-lib-popover-content" class="hide"><i class="fa fa-refresh fa-spin"></i> Loading...
+            <button class="btn btn-default btn-sm popclose" type="button">Close</button>
         </div>
     </div>
-    <!-- END MIDLEVELCONTAINER -->
-
-    <div id="s-lib-alert" title="">
-        <div id="s-lib-alert-content"></div>
-    </div>
-    <div id="s-lib-popover-title" class="hide">
-        <span class="text-info"><strong>title</strong></span> 
-        <button type="button" id="popclose" class="close" onclick="jQuery('.s-lib-popover').popover('hide')">&times;</button> 
-    </div>
-    <div id="s-lib-popover-content" class="hide"><i class="fa fa-refresh fa-spin"></i> Loading...
-        <button class="btn btn-default btn-sm popclose" type="button">Close</button>
-    </div>
-</div>
-<!-- END FULL PAGE WRAPPER -->
-<!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
-    {{public_footer}}
-</body>
+    <!-- END FULL PAGE WRAPPER -->
+    <!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
+        {{public_footer}}
+    </body>
