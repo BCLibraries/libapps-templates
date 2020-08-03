@@ -7,10 +7,12 @@
 <link rel="stylesheet" href="//library.bc.edu/css/refresh_clean.css"/>
 <link rel="stylesheet" href="//library.bc.edu/css/megamenu_clean.css"/>
 <link rel="stylesheet" href="//library.bc.edu/css/footer_clean.css"/>
+<link rel="stylesheet" href="//library.bc.edu/css/notification.css"/>
 
 <script type="text/javascript" src="//library.bc.edu/js/bootstrap-hover-dropdown.min.js"></script>
 <script type="text/javascript" src="//library.bc.edu/js/jquery.hoverIntent.minified.js"></script>
 <script type="text/javascript" src="//library.bc.edu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="//library.bc.edu/js/covid-notice.js"></script>
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -191,8 +193,8 @@ $(document).ready(function(){
     $("nav#side-nav ul.nav li.dropdown").each(function(){
         $(this).children("a").wrapAll("<div class='dropdown-wrapper' />");
         $(this).find(".dropdown-menu")
-               .removeClass("dropdown-menu")
-               .addClass("wrapper-subitems");
+                .removeClass("dropdown-menu")
+                .addClass("wrapper-subitems");
     });
 
     $("nav#side-nav ul.nav > li.dropdown.active").each(function(){

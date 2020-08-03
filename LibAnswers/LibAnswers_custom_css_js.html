@@ -4,9 +4,11 @@
 <link rel="stylesheet" href="//library.bc.edu/css/refresh_clean.css"/>
 <link rel="stylesheet" href="//library.bc.edu/css/megamenu_clean.css"/>
 <link rel="stylesheet" href="//library.bc.edu/css/footer_clean.css"/>
+<link rel="stylesheet" href="//library.bc.edu/css/notification.css"/>
 
 <script type="text/javascript" src="//library.bc.edu/js/bootstrap-hover-dropdown.min.js"></script>
 <script type="text/javascript" src="//library.bc.edu//js/jquery.hoverIntent.minified.js"></script>
+<script type="text/javascript" src="//library.bc.edu/js/covid-notice.js"></script>
 
 <style>
 body {
@@ -22,7 +24,7 @@ a, a:visited, .ui-widget-content a, .ui-widget-content a:visited {
     color:#337ab7;
     font-weight: normal;
 }
-.homepagerefresh #lib-footer a {font-weight:300;}
+/*.homepagerefresh #lib-footer a {font-weight:300;}*/
 p {font-weight:inherit;}
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
@@ -109,24 +111,24 @@ footer {
 
 <script>
     $(document).ready(function(){
-        // tidy up breadcrumbs
+        /*                    */
+        /* UPDATE BREADCRUMBS */
+        /*                    */
         //if(window.location.pathname.indexOf('/booking/') == 0){
         //    $("ol.breadcrumb li:nth-child(2)").hide();
         //}
 
-        // rename login link
+        /*                   */
+        /* RENAME LOGIN LINK */
+        /*                   */
         var logintext = $("#s-la-footer-login-link a").text();
         if (logintext && logintext.length && logintext === "Login to LibApps") {
             $("#s-la-footer-login-link a").text("Staff login");
         }
-    });
-</script>
 
-
-<!-- SCRIPT TO TURN SIDE NAVIGATION INTO DROPDOWNS ON MOBILE.  DO NOT REMOVE.  -->
-<script>
-    /* DOM ready*/
-    $(function() {
+        /*                                          */
+        /* CONVERT SIDE NAV INTO DROPDOWN ON MOBILE */
+        /*                                          */
         var myNavID = "nav";
         /* For each nav menu, create a corresponding drop down menu */
         $("nav.drop-down").each(function(){
@@ -170,6 +172,5 @@ footer {
                 window.location = $(this).find("option:selected").val();
             });
         });
-
     });
 </script>
