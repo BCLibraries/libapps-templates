@@ -110,9 +110,6 @@ table#s-lc-rm-tg-rnames tr:first td {
 .lc_rm_u {
     cursor:not-allowed;
 }
-.lc_rm_t {
-    background-color:gold;
-}
 .lc_rm_t::after {
     content: "\f041";
     font-family: FontAwesome;
@@ -156,6 +153,23 @@ table#s-lc-rm-tg-rnames tr:first td {
 #cal-form h2 {
     margin: 15px 0 5px 0;
 }
+/* change default colors for room picker */
+
+/* previous block */
+.lc_rm_b {
+    background-color:#ccc;
+}
+/* unavailable block */
+.lc_rm_u {
+    background-color:#555;
+}
+
+/* selected block */
+.lc_rm_t {
+    background-color:yellow;
+}
+
+
 /* hide public banner */
 #s-lc-public-banner {display: none;}
 
