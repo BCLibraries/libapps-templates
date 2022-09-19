@@ -60,21 +60,63 @@
             <a name="s-lg-guide-main" tabindex="-1"></a>
             <div id="s-lg-guide-main"></div>
             <div class="col-md-12" id="content_container">
-                <!-- THIS DISPLAYS THE TABS, IF THERE ARE TABS
-                CURRENTLY A HACKED SIDE NAV. -->
-                <div class="col-md-2 col-sm-3" id="s-lg-guide-tabs">
-                    <nav id="side-nav" class="drop-down">
-                        <ul class="nav nav-tabs">
-                            {{guide_nav}}
-                        </ul>
-                        <label for="guide-nav-mobile" class="accessibility-text">Guide navigation for mobile devices</label>
-                        <select class="nav-mobile" id="guide-nav-mobile"></select>
-                    </nav>
-                </div>
-    
                 <!-- CONTENT -->
-                <div class="col-md-10 col-sm-9" id="content-refresh">
-                   {{content}}
+                <div class="col-md-12 col-sm-12" id="content-refresh">
+                    <div id="s-lg-col-1" class="s-lg-col-wrapper col-md-3">
+                        <div class="s-lg-col-boxes">
+                            {{content_box_profile}}
+                        </div>
+                    </div>
+
+                    <div class="col-md-9">
+                        <div class="col-md-12">
+                            <div id="s-lg-col-2" class="s-lg-col-wrapper">
+                                <div class="box-tip">Add Job Title and description here</div>
+                                <div class="s-lg-col-boxes">
+                                    {{content_col_2}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div id="s-lg-col-3" class="s-lg-col-wrapper">
+                                <div class="box-tip">Add Department link here</div>
+                                <div class="s-lg-col-boxes">
+                                    {{content_col_3}}
+                                </div>
+                            </div>
+
+                            <div id="s-lg-col-4" class="s-lg-col-wrapper">
+                                <div class="box-tip">Add Subject Areas here (optional)</div>
+                                <div class="s-lg-col-boxes">
+                                    {{content_col_4}}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div id="s-lg-col-5" class="s-lg-col-wrapper">
+                                <div class="box-tip">Add Featured guides here (optional)</div>
+                                <div class="s-lg-col-boxes">
+                                    {{content_col_5}}
+                                </div>
+                            </div>
+
+                            <div id="s-lg-col-6" class="s-lg-col-wrapper">
+                                <div class="box-tip">Add Supplemental links here (optional)</div>
+                                <div class="s-lg-col-boxes">
+                                    {{content_col_6}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="s-lg-col-7" class="s-lg-col-wrapper col-md-12">
+                            <div class="s-lg-col-boxes">
+                                {{content_col_7}}
+                            </div>
+                        </div>
+                    </div>
+                    
                    {{page_prev_next_links}}
                 </div>
                 <!-- END CONTENT -->
