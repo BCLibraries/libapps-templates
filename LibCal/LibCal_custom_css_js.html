@@ -194,7 +194,25 @@ table#s-lc-rm-tg-rnames tr:first td {
 .row {
     margin-right: -15px;
     margin-left: -15px;
-}    
+} 
+
+/* Spaces */
+.s-lc-eq-pending .fc-event-title.fc-sticky::after{
+    content: "\f041";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    color: #000;
+    font-size: 1.2em;
+}
+.s-lc-spaces-setup-info .form-inline .form-group {
+    display: none;
+}
+.s-lc-spaces-setup-info .form-inline .form-group.s-lc-eq-s-confirmedBtn {
+    display:inline-block;
+}
+.s-lc-spaces-time-grid {margin-top: 3rem;}
+#s-lc-eq-success-buttons a.btn {color:#fff;}
 </style>
 
 <script>
@@ -233,17 +251,17 @@ table#s-lc-rm-tg-rnames tr:first td {
             if ($(this).attr("id")) {
                 myNavID = "nav#" + $(this).attr("id");
             }
-
+            
             //console.log("navID " + myNavID);
 
             sel = $(this).find(".nav-mobile");
-
+        
             if (sel.length == 0){
                 /* Create the dropdown base */
                 $("<select class='nav-mobile' />").appendTo(myNavID);
                 sel = $(this).find(".nav-mobile");
             }
-
+            
             /* Create default option "Go to..." */
             $("<option />", {
                 "selected": "selected",
