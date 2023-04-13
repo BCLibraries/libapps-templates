@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="//library.bc.edu/css/style_clean.css"/>
+<!--link rel="stylesheet" href="//library.bc.edu/css/style_clean.css"/-->
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"/>
 <link rel="stylesheet" href="https://library.bc.edu/sass/libguides.css"/>
@@ -104,6 +104,11 @@ td {vertical-align: middle;}
 footer {
     margin-top: 1em;
 }
+
+/* overwrite LibAnswers default styles */
+a:not(.btn,.collapsible-toggle,.accordion-toggle) {text-decoration: none;}
+
+
 </style>
 
 <script>
@@ -111,7 +116,7 @@ footer {
         /*                    */
         /* UPDATE BREADCRUMBS */
         /*                    */
-        //if(window.location.pathname.indexOf('/booking/') == 0){
+        //if(window.location.pathname.indexOf('/reserve/') == 0){
         //    $("ol.breadcrumb li:nth-child(2)").hide();
         //}
 
@@ -132,17 +137,17 @@ footer {
             if ($(this).attr("id")) {
                 myNavID = "nav#" + $(this).attr("id");
             }
-
+            
             //console.log("navID " + myNavID);
 
             sel = $(this).find(".nav-mobile");
-
+        
             if (sel.length == 0){
                 /* Create the dropdown base */
                 $("<select class='nav-mobile' />").appendTo(myNavID);
                 sel = $(this).find(".nav-mobile");
             }
-
+            
             /* Create default option "Go to..." */
             $("<option />", {
                 "selected": "selected",
