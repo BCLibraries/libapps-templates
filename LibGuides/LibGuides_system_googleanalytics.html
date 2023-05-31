@@ -1,12 +1,10 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-3008279-16"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-3008279-16');
-</script>
-<!-- End Google Analytics -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TXSPVQ5');</script>
+<!-- End Google Tag Manager -->
 
 <!-- Matomo -->
 <script type="text/javascript">
@@ -27,86 +25,136 @@
 <!-- Event tracking -->   
 <script>
     $(function () {
+        // Get a clean version of the page title
+        var page_title_clean = $(document).find("title").text().replace(" - Libraries at Boston College", "");
+
+        // Determine if this is the homepage
+        var is_homepage_bool = false;
+
         //
-        // mega menu
+        // Megamenu hover events
         //
+
         $('#megamenu-refresh ul.nav li.dropdown').mouseenter(function() {
-            var myText = $(this).find("a.menu-option").text();
-            //ga('send', 'event', 'megamenu',      'hover',       myText.trim());
-            //ga('send', 'event', [eventCategory], [eventAction], [eventLabel], [eventValue]);
-            gtag('event', 'hover', {'event_category': 'megamenu', 'event_label': myText.trim()});
-            _paq.push(['trackEvent', 'megamenu', 'hover', myText.trim()]);
+            var menuItemLabel = $(this).find("a.menu-option").text().trim();
+            // send custom event to GTM
+            dataLayer.push({
+                'event': 'hover_menu_item',
+                'menu_item_label': menuItemLabel,
+                'page_title_clean': page_title_clean,
+                'is_homepage': is_homepage_bool
+            });
+            _paq.push(['trackEvent', 'megamenu', 'hover', menuItemLabel]);
         });
-        $("ul.item-desktop li a").mouseenter(function(){
-            var myPane = $(this).html();
-            //gtag('send', 'event', 'librarypanes', 'hover', myPane);
-            gtag('event', 'hover', {'event_category': 'librarypanes', 'event_label': myPane});
-            _paq.push(['trackEvent', 'librarypanes', 'hover', myPane]);
+
+        $("#megamenu-refresh ul.nav .library-box .lib-box .panel-body").mouseenter(function(){
+            var menuItemPaneLabel = $(this).find("a.lib-name").html();
+            // send custom event to GTM
+            dataLayer.push({
+                'event': 'hover_menu_libpane',
+                'menu_libpane_label': menuItemPaneLabel,
+                'page_title_clean': page_title_clean,
+                'is_homepage': is_homepage_bool
+            });
+            _paq.push(['trackEvent', 'librarypanes', 'hover', menuItemPaneLabel]);
         });
 
         //
-        // outbound links
+        // Ask Us click event
         //
-        //var $all_anchors = $('a').not('#askuswidget, .search-link, .accessibility-text, #s-lg-public-skiplink');
-        $('a').not('#askuswidget, .search-link, .accessibility-text, #s-lg-public-skiplink').on('click', function(e) {
-            var url = $(this).attr("href");
-            //ga('send', 'event', 'outbound-lg', "click", url);
-            gtag('event', 'click', {'event_category': 'outbound-lg', 'event_label': url});
-            _paq.push(['trackEvent', 'outbound-lg', 'click', url]);
-            console.log("tracking click 'outbound-lg': " + url);
-        });
-        // tracking for homepage -- unneeded in LibGuides
-        //$all_anchors.not('#askuswidget, .search-link, .accessibility-text').click(function(e) {
-        //    var url = $(this).attr("href");
-        //    /* Bug fix to stop screen jump when clicking carousel controls */
-        //    if (url.indexOf('#') !== 0) {
-        //        //gtag("send", "event", "outbound", "click", url);
-        //        gtag('event', 'click', {'event_category': 'outbound', 'event_label': url});
-        //        _paq.push(['trackEvent', 'outbound', 'click', url]);
-        //    }
-        //});
 
-        //
-        // breadcrumbs
-        //
-        $(".breadcrumb #s-lib-bc-customer").on('click', function(){
-            var page_title = $("#guidetitle h1").text();
-            //ga('send', 'event', 'breadcrumb-home', 'click', page_title);
-            gtag('event', 'view', {'event_category': 'breadcrumb-home', 'event_label': page_title});
-            _paq.push(['trackEvent', 'breadcrumb-home', 'click', page_title]);
-        });
-        $(".breadcrumb #s-lib-bc-site").on('click', function(){
-            var page_title = $("#guidetitle h1").text();
-            //ga('send', 'event', 'breadcrumb-site', 'click', page_title);
-            gtag('event', 'view', {'event_category': 'breadcrumb-site', 'event_label': page_title});
-            _paq.push(['trackEvent', 'breadcrumb-site', 'click', page_title]);
-        });
-        $(".breadcrumb #s-lib-bc-guide").on('click', function(){
-            var page_title = $("#guidetitle h1").text();
-            //ga('send', 'event', 'breadcrumb-guide', 'click', page_title);
-            gtag('event', 'view', {'event_category': 'breadcrumb-guide', 'event_label': page_title});
-            _paq.push(['trackEvent', 'breadcrumb-guide', 'click', page_title]);
-        });
-
-        //
-        // catch Ask Us fixed button clicks
-        //
-        $("a#askuswidget").click(function(e){
+        $("a.askuswidget").click(function(e){
             var src = window.location.href;
-            //gtag('send', 'event', 'chat-widget', 'click', src);
-            gtag('event', 'click', {'event_category': 'chat-widget', 'event_label': src});
             _paq.push(['trackEvent', 'chat-widget', 'click', src]);
         });
 
         //
-        // canvas
+        // Breadcrumb click events
         //
+
+        $(".breadcrumb #s-lib-bc-customer").on('click', function(){
+            // send custom event to GTM
+            dataLayer.push({
+                'event': 'click-breadcrumb',
+                'breadcrumb_section': 'breadcrumb-home',
+                'page_title_clean': page_title_clean,
+                'is_homepage': is_homepage_bool
+            });
+            _paq.push(['trackEvent', 'breadcrumb-home', 'click', page_title_clean]);
+        });
+        $(".breadcrumb #s-lib-bc-site").on('click', function(){
+            // send custom event to GTM
+            dataLayer.push({
+                'event': 'click-breadcrumb',
+                'breadcrumb_section': 'breadcrumb-site',
+                'page_title_clean': page_title_clean,
+                'is_homepage': is_homepage_bool
+            });
+            _paq.push(['trackEvent', 'breadcrumb-site', 'click', page_title_clean]);
+        });
+        $(".breadcrumb #s-lib-bc-guide").on('click', function(){
+            // send custom event to GTM
+            dataLayer.push({
+                'event': 'click-breadcrumb',
+                'breadcrumb-section': 'breadcrumb-guide',
+                'page_title_clean': page_title_clean,
+                'is_homepage': is_homepage_bool
+            });
+            _paq.push(['trackEvent', 'breadcrumb-guide', 'click', page_title_clean]);
+        });
+
+        //
+        // Canvas embedded views
+        //
+
         if ((window.location.pathname).indexOf('widget_')>-1){
-            var current_title = $(document).attr('title');
-            //ga('send', 'event', 'canvas', 'view', current_title);
-            gtag('event', 'view', {'event_category': 'canvas', 'event_label': current_title});
-            _paq.push(['trackEvent', 'canvas', 'view', current_title]);
+            // send custom event to GTM
+            dataLayer.push({
+                'event': 'view-canvas-embed',
+                'event_category': 'canvas',
+                'event_label': page_title_clean,
+                'page_title_clean': page_title_clean
+            });
+            _paq.push(['trackEvent', 'canvas', 'view', page_title_clean]);
         }
+
+        //
+        //  Other click events
+        //
+
+        function addClickEvents(jqObj, label){
+            jqObj.click(function(e){
+                var $this = $(this);
+                var url = $this.attr("href");
+                var dataID = "[none]";
+                var dataTag = $this.parents("[data-tag=ga-tag]");
+                if (dataTag && dataTag.length) {
+                    dataID = dataTag.attr("id");
+                    if (typeof dataID === 'undefined') {
+                        dataID = "[undefined]"
+                    }
+                }
+                // send custom event to GTM
+                dataLayer.push({
+                    'event': label,
+                    'page_section': dataID,
+                    'outbound_url': url,
+                    'page_title_clean': page_title_clean,
+                    'is_homepage': is_homepage_bool,
+                });
+                _paq.push(['trackEvent', label, dataID, url]);
+            });
+        }
+        
+        var lib_footer_anchors = $('#lib-footer a');
+        var bc_footer_anchors  = $('#bc-footer a');
+        var bc_header_anchors  = $('#bclib-header a');
+        var megamenu_anchors   = $('#megamenu a');
+
+        addClickEvents(lib_footer_anchors, "click_footer");
+        addClickEvents(bc_footer_anchors, "click_footer");
+        addClickEvents(bc_header_anchors, "click_header");
+        addClickEvents(megamenu_anchors, "click_header");
     });
 </script>
 <!-- End Event tracking -->

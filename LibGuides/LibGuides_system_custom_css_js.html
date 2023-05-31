@@ -1,3 +1,8 @@
+ <!-- Google Tag Manager (noscript) -->
+ <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXSPVQ5"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <!-- CUSTOM HEADER INFO. TO BE CUT AND PASTED INTO Custom <HEAD> TAB ON LIBGUIDES CMS -->
 <!--link rel="stylesheet" href="//library.bc.edu/css/style_clean.css"/-->
 <!--link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/-->
@@ -16,40 +21,40 @@
 
 <style>
 #iframe-message {
-    background-color:#fffdf6;
-    border:1px solid #ffeaae;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    padding:20px;
-    margin:-15px 0 20px 0;
+background-color:#fffdf6;
+border:1px solid #ffeaae;
+-moz-border-radius: 10px;
+border-radius: 10px;
+padding:20px;
+margin:-15px 0 20px 0;
 }
 html.js {
-    display:none;
+display:none;
 }
 @media (max-width: 992px) {
 .navbar-collapse.collapse.s-lg-admin-guide-page-nav {
-    display: block!important;
+display: block!important;
 }
 }
 #content_container {
-  margin-left:-15px;
-  margin-right: -15px;
-  width:100%;
+margin-left:-15px;
+margin-right: -15px;
+width:100%;
 }
 #s-lg-guide-tabs {
-  padding:0 15px;
-  width:auto;
+padding:0 15px;
+width:auto;
 }
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
-	color: #000;
-	background-color: #eef;
-	border: 1px solid #ccc;
-	border-bottom-color: transparent;
+color: #000;
+background-color: #eef;
+border: 1px solid #ccc;
+border-bottom-color: transparent;
 }
 .nav-tabs>li>a {
-	border: 1px solid #eee;
-	border-bottom-color: transparent;
+border: 1px solid #eee;
+border-bottom-color: transparent;
 }
 .s-lg-poll-title legend {font-size:inherit;}
 
@@ -62,205 +67,205 @@ html {background-color: #fff;}
 <!-- VARIOUS LIBGUIDES SCRIPTS -->
 <script>
 $(document).ready(function(){
-    /*                                   */
-    /* PREVENT FLASH OF UNSTYLED CONTENT */
-    /*                                   */
-    document.getElementsByTagName('html')[0].style.display = "block";
-    /*document.getElementsByTagName('html')[0].style. backgroundColor = "#501315";*/
+/*                                   */
+/* PREVENT FLASH OF UNSTYLED CONTENT */
+/*                                   */
+document.getElementsByTagName('html')[0].style.display = "block";
+/*document.getElementsByTagName('html')[0].style. backgroundColor = "#501315";*/
 
-    /*                    */
-    /* UPDATE BREADCRUMBS */
-    /*                    */
-    // remove last breadcrumb on single page guides
-    if ($('#s-lg-guide-tabs li').length == 0) {
-        $('.breadcrumb li:last').remove();
-        $('.breadcrumb li:last').addClass('active');
-        $('.breadcrumb li:last a').contents().unwrap();
+/*                    */
+/* UPDATE BREADCRUMBS */
+/*                    */
+// remove last breadcrumb on single page guides
+if ($('#s-lg-guide-tabs li').length == 0) {
+$('.breadcrumb li:last').remove();
+$('.breadcrumb li:last').addClass('active');
+$('.breadcrumb li:last a').contents().unwrap();
+}
+// replace site name
+$("#s-lib-bc-site a").text("Research Guides");
+
+
+/*                                          */
+/* CONVERT SIDE NAV INTO DROPDOWN ON MOBILE */
+/*                                          */
+var myNavID = "nav";
+/* For each nav menu, create a corresponding drop down menu */
+$("nav.drop-down").each(function(){
+if ($(this).attr("id")) {
+    myNavID = "nav#" + $(this).attr("id");
+}
+
+sel = $(this).find(".nav-mobile");
+
+if (sel.length == 0){
+    /* Create the dropdown base */
+    $("<select class='nav-mobile' />").appendTo(myNavID);
+    sel = $(this).find(".nav-mobile");
+}
+
+/* Create default option "Go to..." */
+$("<option />", {
+    "selected": "selected",
+    "value"   : "",
+    "text"    : "Go to..."
+}).appendTo(sel);
+
+/* Populate dropdown with menu items */
+$(myNavID + " a:not(.dropdown-toggle)").each(function() {
+    var el = $(this);
+    var myText = el.text();
+    if ($(el).parents(".s-lg-subtab-ul").length > 0) {
+        myText = "> " + el.text();
     }
-    // replace site name
-    $("#s-lib-bc-site a").text("Research Guides");
+    $("<option />", {
+        "value"   : el.attr("href"),
+        "text"      : myText
+    }).appendTo(sel);
+});
+
+/* To make dropdown actually work
+// To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/ */
+$(sel).change(function() {
+    window.location = $(this).find("option:selected").val();
+});
+});
 
 
-    /*                                          */
-    /* CONVERT SIDE NAV INTO DROPDOWN ON MOBILE */
-    /*                                          */
-    var myNavID = "nav";
-    /* For each nav menu, create a corresponding drop down menu */
-    $("nav.drop-down").each(function(){
-        if ($(this).attr("id")) {
-            myNavID = "nav#" + $(this).attr("id");
-        }
-
-        sel = $(this).find(".nav-mobile");
-
-        if (sel.length == 0){
-            /* Create the dropdown base */
-            $("<select class='nav-mobile' />").appendTo(myNavID);
-            sel = $(this).find(".nav-mobile");
-        }
-
-        /* Create default option "Go to..." */
-        $("<option />", {
-            "selected": "selected",
-            "value"   : "",
-            "text"    : "Go to..."
-        }).appendTo(sel);
-
-        /* Populate dropdown with menu items */
-        $(myNavID + " a:not(.dropdown-toggle)").each(function() {
-            var el = $(this);
-            var myText = el.text();
-            if ($(el).parents(".s-lg-subtab-ul").length > 0) {
-                myText = "> " + el.text();
-            }
-            $("<option />", {
-                "value"   : el.attr("href"),
-                "text"      : myText
-            }).appendTo(sel);
-        });
-
-        /* To make dropdown actually work
-        // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/ */
-        $(sel).change(function() {
-            window.location = $(this).find("option:selected").val();
-        });
-    });
+/*                                     */
+/* ADD CLASS TO BODY WHEN IN EDIT-MODE */
+/*                                     */
+((window.location.pathname).indexOf('admin_c.php')>-1)?$('body').addClass('edit-mode'):$('body').addClass('view-mode');
 
 
-    /*                                     */
-    /* ADD CLASS TO BODY WHEN IN EDIT-MODE */
-    /*                                     */
-    ((window.location.pathname).indexOf('admin_c.php')>-1)?$('body').addClass('edit-mode'):$('body').addClass('view-mode');
+/*                                         */
+/* ADD PADDING TO HEADER WHEN IN EDIT-MODE */
+/*                                         */
+if ($("body.edit-mode").length > 0){$("#edit-mode-buffer").css("height", "55px");}
 
 
-    /*                                         */
-    /* ADD PADDING TO HEADER WHEN IN EDIT-MODE */
-    /*                                         */
-    if ($("body.edit-mode").length > 0){$("#edit-mode-buffer").css("height", "55px");}
+/*                                                                   */
+/* HIDES HEADER AND FOOTER ELEMENTS FROM WITHIN CANVAS IFRAME WIDGET */
+/*                                                                   */
+if ((window.location.pathname).indexOf('widget_')>-1){
+// prep by hiding top nav and other header elements
+$('#bclib-header, .megamenu-container, #lib-footer, #bc-footer').hide();
+$('#midlevelcontainer-refresh').css('margin-top', '0px');
+//$('#header,#sb-search,#megamenu,#s-lg-guide-header-meta,#footer,#bcheader,#bcheader_info,#s-lib-bc-s-lg-bc-system-name').hide();
+// hide header+footer when guide loaded in Canvas script
+$.getScript( "//arc.bc.edu/libhours/lg/guides/canvasiframe.js" )
+.done(function( script, textStatus ) {
+    console.log( textStatus );
+})
+.fail(function( jqxhr, settings, exception ) {
+    console.log( "Triggered ajaxError handler." );
+});
+}
 
 
-    /*                                                                   */
-    /* HIDES HEADER AND FOOTER ELEMENTS FROM WITHIN CANVAS IFRAME WIDGET */
-    /*                                                                   */
-    if ((window.location.pathname).indexOf('widget_')>-1){
-        // prep by hiding top nav and other header elements
-        $('#bclib-header, .megamenu-container, #lib-footer, #bc-footer').hide();
-        $('#midlevelcontainer-refresh').css('margin-top', '0px');
-        //$('#header,#sb-search,#megamenu,#s-lg-guide-header-meta,#footer,#bcheader,#bcheader_info,#s-lib-bc-s-lg-bc-system-name').hide();
-        // hide header+footer when guide loaded in Canvas script
-        $.getScript( "//arc.bc.edu/libhours/lg/guides/canvasiframe.js" )
-        .done(function( script, textStatus ) {
-            console.log( textStatus );
-        })
-        .fail(function( jqxhr, settings, exception ) {
-            console.log( "Triggered ajaxError handler." );
-        });
-    }
+/*                        */
+/* LOAD EDIT-MODE WIDGETS */
+/*                        */
+if ($(location).attr('pathname') === "/libguides/admin_c.php") {
+// load https://library.bc.edu/css/libguides-widget.css
+// see https://stackoverflow.com/a/14919928
+$("head").append("<link>");
+var css = $("head").children(":last");
+css.attr({
+    rel:  "stylesheet",
+    type: "text/css",
+    href: "https://arc.bc.edu/libscripts/lg/libguides-widget.css"
+});
+
+// content tips script
+$.getScript( "//arc.bc.edu/libscripts/lg/libguidestips/libguidestips.js" )
+.done(function( script, textStatus ) {
+    console.log( textStatus );
+})
+.fail(function( jqxhr, settings, exception ) {
+    console.log( "Triggered ajaxError handler." );
+});
+
+// accessibility script
+$.getScript( "//arc.bc.edu/libscripts/lg/accessibilitychecker/lgaccessibility.js" )
+.done(function( script, textStatus ) {
+    console.log( textStatus );
+})
+.fail(function( jqxhr, settings, exception ) {
+    console.log( "Triggered ajaxError handler." );
+});
+
+// info button script
+$.getScript( "//arc.bc.edu/libscripts/lg/infobutton/infobutton.js" )
+.done(function( script, textStatus ) {
+    console.log( textStatus );
+})
+.fail(function( jqxhr, settings, exception ) {
+    console.log( "Triggered ajaxError handler." );
+});
+
+// link checker script
+/*$.getScript( "//arc.bc.edu/libscripts/lg/linkassetchecker/core.js" )
+.done(function( script, textStatus ) {
+    console.log( textStatus );
+})
+.fail(function( jqxhr, settings, exception ) {
+    console.log( "Triggered ajaxError handler." );
+});*/
+
+// EZproxy link checker
+$.getScript( "//arc.bc.edu/libscripts/lg/ezproxylinkchecker/core.js" )
+.done(function( script, textStatus ) {
+    console.log( textStatus );
+})
+.fail(function( jqxhr, settings, exception ) {
+    console.log( "Triggered ajaxError handler." );
+});
+}
 
 
-    /*                        */
-    /* LOAD EDIT-MODE WIDGETS */
-    /*                        */
-    if ($(location).attr('pathname') === "/libguides/admin_c.php") {
-        // load https://library.bc.edu/css/libguides-widget.css
-        // see https://stackoverflow.com/a/14919928
-        $("head").append("<link>");
-        var css = $("head").children(":last");
-        css.attr({
-            rel:  "stylesheet",
-            type: "text/css",
-            href: "https://arc.bc.edu/libscripts/lg/libguides-widget.css"
-        });
+/*                                     */
+/* MANAGE DROPDOWN FEATURE OF MEGAMENU */
+/*                                     */
+var delay=200, setTimeoutConst;
 
-        // content tips script
-        $.getScript( "//arc.bc.edu/libscripts/lg/libguidestips/libguidestips.js" )
-        .done(function( script, textStatus ) {
-            console.log( textStatus );
-        })
-        .fail(function( jqxhr, settings, exception ) {
-            console.log( "Triggered ajaxError handler." );
-        });
+$("nav#side-nav ul.nav li.dropdown").each(function(){
+$(this).children("a").wrapAll("<div class='dropdown-wrapper' />");
+$(this).find(".dropdown-menu")
+        .removeClass("dropdown-menu")
+        .addClass("wrapper-subitems");
+});
 
-        // accessibility script
-        $.getScript( "//arc.bc.edu/libscripts/lg/accessibilitychecker/lgaccessibility.js" )
-        .done(function( script, textStatus ) {
-            console.log( textStatus );
-        })
-        .fail(function( jqxhr, settings, exception ) {
-            console.log( "Triggered ajaxError handler." );
-        });
+$("nav#side-nav ul.nav > li.dropdown.active").each(function(){
+var activechildren = $(this).find("ul.wrapper-subitems > li.active");
+if (activechildren && activechildren.length > 0){
+    $(this).addClass("has-active-child");
+} else {
+    $(this).addClass("no-active-child");
+}
+});
 
-        // info button script
-        $.getScript( "//arc.bc.edu/libscripts/lg/infobutton/infobutton.js" )
-        .done(function( script, textStatus ) {
-            console.log( textStatus );
-        })
-        .fail(function( jqxhr, settings, exception ) {
-            console.log( "Triggered ajaxError handler." );
-        });
+$("nav#side-nav ul.nav > li.dropdown:not(.has-active-child)").hover(function(){
+console.log("dropdown menu hover")
+$this = $(this);
+/* only trigger once delay has been reached. */
+setTimeoutConst = setTimeout(function(){
+    $this.children("ul.wrapper-subitems").slideDown(250);
+    $this.find(".dropdown-wrapper .caret").addClass("caret-up");
+}, delay);
+}, function(){
+clearTimeout(setTimeoutConst);
+$this = $(this);
+$this.children("ul.wrapper-subitems").slideUp(250);
+$this.find(".dropdown-wrapper .caret").removeClass("caret-up");
+});
 
-        // link checker script
-       /*$.getScript( "//arc.bc.edu/libscripts/lg/linkassetchecker/core.js" )
-        .done(function( script, textStatus ) {
-            console.log( textStatus );
-        })
-        .fail(function( jqxhr, settings, exception ) {
-            console.log( "Triggered ajaxError handler." );
-        });*/
-
-        // EZproxy link checker
-        $.getScript( "//arc.bc.edu/libscripts/lg/ezproxylinkchecker/core.js" )
-        .done(function( script, textStatus ) {
-            console.log( textStatus );
-        })
-        .fail(function( jqxhr, settings, exception ) {
-            console.log( "Triggered ajaxError handler." );
-        });
-    }
-
-
-    /*                                     */
-    /* MANAGE DROPDOWN FEATURE OF MEGAMENU */
-    /*                                     */
-    var delay=200, setTimeoutConst;
-
-    $("nav#side-nav ul.nav li.dropdown").each(function(){
-        $(this).children("a").wrapAll("<div class='dropdown-wrapper' />");
-        $(this).find(".dropdown-menu")
-                .removeClass("dropdown-menu")
-                .addClass("wrapper-subitems");
-    });
-
-    $("nav#side-nav ul.nav > li.dropdown.active").each(function(){
-        var activechildren = $(this).find("ul.wrapper-subitems > li.active");
-        if (activechildren && activechildren.length > 0){
-            $(this).addClass("has-active-child");
-        } else {
-            $(this).addClass("no-active-child");
-        }
-    });
-
-    $("nav#side-nav ul.nav > li.dropdown:not(.has-active-child)").hover(function(){
-        console.log("dropdown menu hover")
-        $this = $(this);
-        /* only trigger once delay has been reached. */
-        setTimeoutConst = setTimeout(function(){
-            $this.children("ul.wrapper-subitems").slideDown(250);
-            $this.find(".dropdown-wrapper .caret").addClass("caret-up");
-        }, delay);
-    }, function(){
-        clearTimeout(setTimeoutConst);
-        $this = $(this);
-        $this.children("ul.wrapper-subitems").slideUp(250);
-        $this.find(".dropdown-wrapper .caret").removeClass("caret-up");
-    });
-
-    $("nav#side-nav ul.nav > li.dropdown:not(.has-active-child) a.s-lg-tab-drop").focus(function(){
-        $this = $(this).closest("li.dropdown");
-        // leave dropdown visible once focus event has been triggered
-        // a hover over event will clear this
-        $this.children("ul.wrapper-subitems").show();
-        $this.find(".dropdown-wrapper .caret").addClass("caret-up");
-    });
+$("nav#side-nav ul.nav > li.dropdown:not(.has-active-child) a.s-lg-tab-drop").focus(function(){
+$this = $(this).closest("li.dropdown");
+// leave dropdown visible once focus event has been triggered
+// a hover over event will clear this
+$this.children("ul.wrapper-subitems").show();
+$this.find(".dropdown-wrapper .caret").addClass("caret-up");
+});
 });
 </script>
