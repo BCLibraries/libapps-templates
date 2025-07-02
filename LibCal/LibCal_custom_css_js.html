@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 h4, h5, h6 {font-weight: 600;}
 .homepagerefresh #lib-footer h4 a {font-weight:700;}
 
-.homepagerefresh .col-md-12:first-of-type, 
+.homepagerefresh .col-md-12:first-of-type,
 .homepagerefresh .col-md-3:first-of-type,
 .homepagerefresh .col-md-4:first-of-type,
 .homepagerefresh .col-md-6:first-of-type {padding-left: 15px;}
@@ -190,9 +190,9 @@ table#s-lc-rm-tg-rnames tr:first td {
 }
 
 /* override */
-.col-md-12:first-of-type, 
-.col-md-3:first-of-type, 
-.col-md-4:first-of-type, 
+.col-md-12:first-of-type,
+.col-md-3:first-of-type,
+.col-md-4:first-of-type,
 .col-md-6:first-of-type {
     padding-right: 15px;
     padding-left: 15px;
@@ -200,7 +200,7 @@ table#s-lc-rm-tg-rnames tr:first td {
 .row {
     margin-right: -15px;
     margin-left: -15px;
-} 
+}
 
 /* Spaces */
 .s-lc-eq-pending .fc-event-title.fc-sticky::after{
@@ -219,81 +219,82 @@ table#s-lc-rm-tg-rnames tr:first td {
 }
 .s-lc-spaces-time-grid {margin-top: 3rem;}
 #s-lc-eq-success-buttons a.btn {color:#fff;}
+
 </style>
 
 <script>
-    $(document).ready(function(){
-        /*                    */
-        /* CONTROL SEARCH TAB */
-        /*                    */
-        $('#block_search *[role=presentation]').click(
-            function() {
-                var current_text = $('#block_search .tab-pane.active input[type=text]').val();
-                $('#block_search .tab-pane input[type=text]').val(current_text);
-            }
-        );
+   $(document).ready(function () {
+    /*                    */
+    /* CONTROL SEARCH TAB */
+    /*                    */
+    $('#block_search *[role=presentation]').click(
+        function () {
+            var current_text = $('#block_search .tab-pane.active input[type=text]').val();
+            $('#block_search .tab-pane input[type=text]').val(current_text);
+        }
+    );
 
-        /*                    */
-        /* UPDATE BREADCRUMBS */
-        /*                    */
-        if(window.location.pathname.indexOf('/reserve/') == 0){
-            $("ol.breadcrumb li:nth-child(2)").hide();
+    /*                    */
+    /* UPDATE BREADCRUMBS */
+    /*                    */
+    if (window.location.pathname.indexOf('/reserve/') == 0) {
+        $("ol.breadcrumb li:nth-child(2)").hide();
+    }
+
+    /*                   */
+    /* RENAME LOGIN LINK */
+    /*                   */
+    var logintext = $("#s-lc-sign-in").text();
+    if (logintext && logintext.length && logintext === "Login to LibApps") {
+        $("#s-lc-sign-in").text("Staff login");
+    }
+
+    /*                                          */
+    /* CONVERT SIDE NAV INTO DROPDOWN ON MOBILE */
+    /*                                          */
+    var myNavID = "nav";
+    /* For each nav menu, create a corresponding drop down menu */
+    $("nav.drop-down").each(function () {
+        if ($(this).attr("id")) {
+            myNavID = "nav#" + $(this).attr("id");
         }
 
-        /*                   */
-        /* RENAME LOGIN LINK */
-        /*                   */
-        var logintext = $("#s-lc-sign-in").text();
-        if (logintext && logintext.length && logintext === "Login to LibApps") {
-            $("#s-lc-sign-in").text("Staff login");
-        }
+        //console.log("navID " + myNavID);
 
-        /*                                          */
-        /* CONVERT SIDE NAV INTO DROPDOWN ON MOBILE */
-        /*                                          */
-        var myNavID = "nav";
-        /* For each nav menu, create a corresponding drop down menu */
-        $("nav.drop-down").each(function(){
-            if ($(this).attr("id")) {
-                myNavID = "nav#" + $(this).attr("id");
-            }
-            
-            //console.log("navID " + myNavID);
+        sel = $(this).find(".nav-mobile");
 
+        if (sel.length == 0) {
+            /* Create the dropdown base */
+            $("<select class='nav-mobile' />").appendTo(myNavID);
             sel = $(this).find(".nav-mobile");
-        
-            if (sel.length == 0){
-                /* Create the dropdown base */
-                $("<select class='nav-mobile' />").appendTo(myNavID);
-                sel = $(this).find(".nav-mobile");
+        }
+
+        /* Create default option "Go to..." */
+        $("<option />", {
+            "selected": "selected",
+            "value": "",
+            "text": "Go to..."
+        }).appendTo(sel);
+
+        /* Populate dropdown with menu items */
+        $(myNavID + " a").each(function () {
+            var el = $(this);
+            var myText = el.text();
+            if ($(el).parents(".s-lg-subtab-ul").length > 0) {
+                myText = "> " + el.text();
             }
-            
-            /* Create default option "Go to..." */
             $("<option />", {
-                "selected": "selected",
-                "value"   : "",
-                "text"    : "Go to..."
+                "value": el.attr("href"),
+                "text": myText
             }).appendTo(sel);
-
-            /* Populate dropdown with menu items */
-            $(myNavID + " a").each(function() {
-                var el = $(this);
-                var myText = el.text();
-                if ($(el).parents(".s-lg-subtab-ul").length > 0) {
-                    myText = "> " + el.text();
-                }
-                $("<option />", {
-                    "value"   : el.attr("href"),
-                    "text"      : myText
-                }).appendTo(sel);
-            });
-
-            /* To make dropdown actually work
-            // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/ */
-            $(sel).change(function() {
-                window.location = $(this).find("option:selected").val();
-            });
         });
 
+        /* To make dropdown actually work
+        // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/ */
+        $(sel).change(function () {
+            window.location = $(this).find("option:selected").val();
+        });
     });
+
+});
 </script>
