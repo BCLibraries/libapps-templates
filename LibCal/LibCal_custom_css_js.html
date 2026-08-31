@@ -306,7 +306,15 @@ table#s-lc-rm-tg-rnames tr:first td {
     bookSpaceLinks[0].text = "Book a study room in O'Neill Library"
 
 
+    // Change the text of the space search instructions on the all-maps page.
+    const spaceSearchInstructions = document.querySelectorAll(".tab-pane#spaces .s-lc-map-filters-intro");
+    spaceSearchInstructions[0].textContent = "Find spaces available for a specific date and time.";
 
+    // Change the text of the space search instructions on the all-maps page.
+    const mapPageSubtitle = document.querySelector("#s-lc-public-pd div");
+    mapPageSubtitle.textContent = "Find library materials or book a space using these interactive maps.";
 
+    console.log('custom-js');
+  
 });
 </script>
