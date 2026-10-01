@@ -246,14 +246,14 @@ $(document).ready(function(){
     /*                                     */
     var delay=200, setTimeoutConst;
 
-    $("nav#side-nav ul.nav li.dropdown").each(function(){
+    $("nav#side-nav ul.nav-tabs li.dropdown").each(function(){
         $(this).children("a").wrapAll("<div class='dropdown-wrapper' />");
         $(this).find(".dropdown-menu")
                 .removeClass("dropdown-menu")
                 .addClass("wrapper-subitems");
     });
 
-    $("nav#side-nav ul.nav > li.dropdown.active").each(function(){
+    $("nav#side-nav ul.nav-tabs li.dropdown.active").each(function(){
         var activechildren = $(this).find("ul.wrapper-subitems > li.active");
         if (activechildren && activechildren.length > 0){
             $(this).addClass("has-active-child");
@@ -262,27 +262,27 @@ $(document).ready(function(){
         }
     });
 
-    $("nav#side-nav ul.nav > li.dropdown:not(.has-active-child)").hover(function(){
-        console.log("dropdown menu hover")
+    $("nav#side-nav ul.nav-tabs li.dropdown:not(.has-active-child) .dropdown-wrapper").hover(function(){
+        console.log("side-nav dropdown menu hover")
         $this = $(this);
         /* only trigger once delay has been reached. */
+        $this.addClass("expanded");
         setTimeoutConst = setTimeout(function(){
             $this.children("ul.wrapper-subitems").slideDown(250);
-            $this.find(".dropdown-wrapper .caret").addClass("caret-up");
         }, delay);
     }, function(){
         clearTimeout(setTimeoutConst);
         $this = $(this);
         $this.children("ul.wrapper-subitems").slideUp(250);
-        $this.find(".dropdown-wrapper .caret").removeClass("caret-up");
+        $this.removeClass("expanded");
     });
 
-    $("nav#side-nav ul.nav > li.dropdown:not(.has-active-child) a.s-lg-tab-drop").focus(function(){
+    $("nav#side-nav ul.nav-tabs li.dropdown:not(.has-active-child) a.s-lg-tab-drop").focus(function(){
         $this = $(this).closest("li.dropdown");
         // leave dropdown visible once focus event has been triggered
         // a hover over event will clear this
         $this.children("ul.wrapper-subitems").show();
-        $this.find(".dropdown-wrapper .caret").addClass("caret-up");
+        $this.addClass("expanded");
     });
 });
 </script>
