@@ -8,7 +8,7 @@
     <div class="container" id="fullpagewrapper-refresh">
     
         <!-- BEGIN MIDLEVELCONTAINER -->
-        <div class="row" id="midlevelcontainer-refresh">
+        <div class="pt-3" id="midlevelcontainer-refresh">
             {{breadcrumbs}}
     
             <!-- THIS IS REALLY IMPORTANT. IT'S THE BAR WITH EVERY TOOL ON IT. DO NOT EXCLUDE -->
@@ -22,7 +22,7 @@
                 <h1>{{guide_title}}</h1><div class="colon">:</div> <h2>{{page_title}}</h2>
             </div>
             
-            <div id="s-lg-guide-desc-container" class="pad-top-med">
+            <div id="s-lg-guide-desc-container" class="p-0">
                 <span id="s-lg-guide-description">{{guide_description}}</span>
             </div>
     
@@ -41,21 +41,21 @@
             <!-- THIS IS THE CONTENT AND COLUMNS. -->
             <a name="s-lg-guide-main" tabindex="-1"></a>
             <div id="s-lg-guide-main"></div>
-            <div class="col-md-12" id="content_container">
+            <div class="row pt-4 pb-5" id="content_container">
                 <!-- THIS DISPLAYS THE TABS, IF THERE ARE TABS
                 CURRENTLY A HACKED SIDE NAV. -->
-                <div class="col-md-2 col-sm-3" id="s-lg-guide-tabs">
+                <div class="col-lg-2 col-md-3 col-12" id="s-lg-guide-tabs">
                     <nav id="side-nav" class="drop-down">
                         <ul class="nav nav-tabs">
                             {{guide_nav}}
                         </ul>
                         <label for="guide-nav-mobile" class="accessibility-text">Guide navigation for mobile devices</label>
-                        <select class="nav-mobile" id="guide-nav-mobile"></select>
+                        <select class="nav-mobile mb-4" id="guide-nav-mobile"></select>
                     </nav>
                 </div>
     
                 <!-- CONTENT -->
-                <div class="col-md-10 col-sm-9" id="content-refresh">
+                <div class="col-lg-10 col-md-9 col-12" id="content-refresh">
                    {{content}}
                    {{page_prev_next_links}}
                 </div>
@@ -92,7 +92,7 @@
                 </li>
             </ul>
             <div id="s-lib-footer-login-link">
-                <a href="{{login_url}}">Staff Login</a> <div id="user-id-link" data-link="{{guide_owner_profile_url}}"></div>
+                <a href="{{login_url}}">Editor login</a> / <a href="https://bc.libapps.com/libguides/">Staff login</a> <!-- {{guide_owner_profile_url}} -->
             </div>
         </div>
     </div>
