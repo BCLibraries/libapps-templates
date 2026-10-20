@@ -1,19 +1,20 @@
 <body class="s-lg-guide-body burns homepagerefresh">
-    {{skip_link}}
-    
-    <!-- HEADER AND MEGA MENU -->
-    {{public_header}} 
-    
+{{skip_link}}
+
+<!-- HEADER AND MEGA MENU -->
+{{public_header}} 
+
+<main>
     <!-- FULL PAGE WRAPPER -->
     <div class="container" id="fullpagewrapper-refresh">
-    
+
         <!-- BEGIN MIDLEVELCONTAINER -->
         <div class="pt-3" id="midlevelcontainer-refresh">
             {{breadcrumbs}}
-    
+
             <!-- THIS IS REALLY IMPORTANT. IT'S THE BAR WITH EVERY TOOL ON IT. DO NOT EXCLUDE -->
             {{ADMIN_CMD_BAR}} 
-    
+
             <!-- THIS DIV DISPLAYS THE VIEW/EDIT/PUBLISH BUTTONS WHEN EDITING. -->
             <div class="pull-right">
             {{ADMIN_MINI_CMD_BAR}}
@@ -25,19 +26,19 @@
             <div id="s-lg-guide-desc-container" class="p-0">
                 <span id="s-lg-guide-description">{{guide_description}}</span>
             </div>
-    
+
             <!--THIS DIV CLASS DISPLAYS THE PAGE URL, PAGE, AND COLUMN LAYOUT OPTIONS.
             SHOULD HAVE NO EFFECT ON PUBLIC SIDE.
             -->
             <div id="s-lg-guide-tabs-title-bar" class="container s-lib-side-borders"></div>
-    
+
             <!-- EDIT-ONLY VIEW CONTAINER FOR BC WIDGETS -->
             <div id="bc-custom-bar">
-               <div id="bc-custom-bar-tips-container"></div>
-               <div id="bc-custom-bar-accessibility-container"></div>
-               <div id="bc-custom-bar-ezproxy-container"></div>
+                <div id="bc-custom-bar-tips-container"></div>
+                <div id="bc-custom-bar-accessibility-container"></div>
+                <div id="bc-custom-bar-ezproxy-container"></div>
             </div>
-    
+
             <!-- THIS IS THE CONTENT AND COLUMNS. -->
             <a name="s-lg-guide-main" tabindex="-1"></a>
             <div id="s-lg-guide-main"></div>
@@ -53,23 +54,23 @@
                         <select class="nav-mobile mb-4" id="guide-nav-mobile"></select>
                     </nav>
                 </div>
-    
+
                 <!-- CONTENT -->
                 <div class="col-lg-10 col-md-9 col-12" id="content-refresh">
-                   {{content}}
-                   {{page_prev_next_links}}
+                    {{content}}
+                    {{page_prev_next_links}}
                 </div>
                 <!-- END CONTENT -->
             </div>  
-    
+
             <!-- THIS MAKES A 'BACK TO TOP' ARROW APPEAR -->
             <div id="s-lib-scroll-top" title="Back to Top">
                 <span class="fa-stack fa-lg">
-                  <i class="fa fa-square-o fa-stack-2x"></i>
-                  <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+                    <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
                 </span>
             </div>
-    
+
             <!-- THIS LINE OF CODE IS RESPONSIBLE FOR THE POP UP BOXES DURING EDITING.
             REMOVING THIS MEANS DOOM FOR ALL -->
             <div id="s-lib-alert" title="">
@@ -77,7 +78,7 @@
             </div>
         </div>
         <!-- END MIDLEVELCONTAINER -->
-    
+
         <!-- GUIDE METADATA AND STAFF LOGIN BLOCK -->
         <div id="s-lg-guide-header-meta">
             <ul id="s-lg-guide-header-attributes">
@@ -96,7 +97,8 @@
             </div>
         </div>
     </div>
-    <!-- END FULL PAGE WRAPPER -->
-    <!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
-    {{public_footer}}
-    </body>
+</main>
+<!-- END FULL PAGE WRAPPER -->
+<!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
+{{public_footer}}
+</body>

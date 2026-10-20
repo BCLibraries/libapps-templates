@@ -1,5 +1,3 @@
-<header>
-
 <!-- START BC HEADER -->
 <div id="bclib-header">
     <div class="container">
@@ -41,8 +39,8 @@
                         <ul class="navbar-nav mx-auto ms-lg-auto me-lg-0">
 
                             <!-- BEGIN Collections menu dropdown -->
-                            <li class="nav-item dropdown dropdown-hover">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">Collections</a>
+                            <li class="nav-item dropdown dropdown-hover" id="nav-item-menu-burns-collections">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Collections</a>
                                 <div class="dropdown-menu">
                                     <div class="container-fluid">
                                         <div class="row">
@@ -56,7 +54,7 @@
                                             </ul>
 
                                             <!-- Collecting areas -->
-                                            <ul class="col-12 col-md-3 col-lg-3 menu-list pb-3 pb-md-0">
+                                            <ul class="col-12 col-md-2 col-lg-2 menu-list pb-3 pb-md-0">
                                                 <li><a href="https://libguides.bc.edu/burns/collections/jesuit">Jesuit & Catholic</a></li>
                                                 <li><a href="https://libguides.bc.edu/burns/collections/irish">Irish & Irish American</a></li>
                                                 <li><a href="https://libguides.bc.edu/burns/collections/nursing">Nursing</a></li>
@@ -65,14 +63,23 @@
                                             </ul>
 
                                             <!-- Collection highlight -->
-                                            <ul class="col-12 col-md-7 col-lg-7 menu-list">
-                                                <div class="pane_info">
-                                                    <div class="h3style"><a href="https://libguides.bc.edu/burns/collections">Collections</a></div>
-                                                    <p>Burns Library is best known for the strengths of our Irish and Irish American collections and those which reflect Boston College's Jesuit, Catholic heritage, including British Catholic authors. We have also been developing collections around major curricular areas, such as nursing, and our local Boston community, as well as housing Boston College's university archives.</p>
-                                                </div>
-
-                                                <div class="pane_pic">
-                                                    <a href="https://libguides.bc.edu/burns/collections-overview "><img alt="Burns Library home page Donations" src="//s3.amazonaws.com/libapps/accounts/3908/images/burnsbackgroundsample.jpg"></a>
+                                            <ul class="col-12 col-md-8 col-lg-8 menu-list">
+                                                <div class="card border-0">
+                                                    <div class="row g-1">
+                                                        <div class="col-auto d-none d-md-block">
+                                                            <img src="//s3.amazonaws.com/libapps/accounts/3908/images/burnsbackgroundsample.jpg" class="img-fluid" alt="Burns Library home page Donations">
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="card-body ps-0 ps-lg-2">
+                                                                <a href="https://libguides.bc.edu/burns/collections-overview">
+                                                                    <h5 class="card-title">Collections</h5>
+                                                                </a>
+                                                                <p class="card-text">Burns Library is best known for the strengths of our Irish and Irish American collections and those which reflect Boston College's Jesuit, 
+                                                                    Catholic heritage, including British Catholic authors. We have also been developing collections around major curricular areas, such as nursing, and our local 
+                                                                    Boston community, as well as housing Boston College's university archives.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </ul>
                                         </div> <!-- row -->
@@ -80,13 +87,13 @@
                                         <div class="row find-more-link">
                                             <!--div class="more"><a href="#" title="Find More">Find More</a></div-->
                                         </div> <!-- row find-more-link -->
-                                    </div>
-                                </div>
+                                    </div> <!-- container-fluid -->
+                                </div> <!-- dropdown-menu -->
                             </li>
                             <!-- END Collections menu dropdown -->
 
                             <!-- BEGIN Find menu dropdown -->
-                            <li class="nav-item dropdown dropdown-hover">
+                            <li class="nav-item dropdown dropdown-hover" id="nav-item-menu-burns-find">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Find</a>
                                 <div class="dropdown-menu">
                                     <div class="container-fluid">
@@ -104,7 +111,7 @@
                                             </ul>
 
                                             <!-- Social Media -->
-                                            <ul class="col-12 col-md-2 col-lg-2 menu-list pb-3 pb-md-0">
+                                            <ul class="col-12 col-md-3 col-lg-2 menu-list pb-3 pb-md-0">
                                                 <li><div class="menu-header">Social Media</div></li>
                                                 <li><a href="https://johnjburnslibrary.wordpress.com">Blog</a></li>
                                                 <li><a href="https://facebook.com/johnjburnslibrary/">Facebook</a></li>
@@ -113,14 +120,21 @@
                                             </ul>
 
                                             <!-- Current exhibit -->
-                                            <ul class="col-12 col-md-7 col-lg-7 menu-list">
-                                                <div class="pane_info">
-                                                    <div class="h3style"><a href="https://library.bc.edu/burns-exhibits">Online Exhibits</a></div>
-                                                    <p>Explore Burns Library exhibits online.</p>
-                                                </div>
-
-                                                <div class="pane_pic">
-                                                    <img alt="Golden Thumb poster" src="https://library.bc.edu/theme/img/exhibits/burns/2019/10-golden-thumb.png">
+                                            <ul class="col-12 col-md-6 col-lg-7 menu-list">
+                                                <div class="card border-0">
+                                                    <div class="row g-1">
+                                                        <div class="col-auto d-none d-md-block">
+                                                            <img src="https://library.bc.edu/theme/img/exhibits/burns/2019/10-golden-thumb.png" class="img-fluid" alt="Golden Thumb poster">
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="card-body ps-0 ps-lg-2">
+                                                                <a href="https://library.bc.edu/burns-exhibits">
+                                                                    <h5 class="card-title">Online Exhibits</h5>
+                                                                </a>
+                                                                <p class="card-text">Explore Burns Library exhibits online.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </ul>
                                         </div> <!-- row -->
@@ -128,13 +142,13 @@
                                         <div class="row find-more-link">
                                             <!--div class="more"><a href="#">More Using Burns Library</a></div-->
                                         </div> <!-- row find-more-link -->
-                                    </div>
-                                </div>
+                                    </div> <!-- container-fluid -->
+                                </div> <!-- dropdown-menu -->
                             </li>
                             <!-- END Find menu dropdown -->
 
                             <!-- BEGIN Visit menu dropdown -->
-                            <li class="nav-item dropdown dropdown-hover">
+                            <li class="nav-item dropdown dropdown-hover" id="nav-item-menu-burns-visit">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Visit</a>
                                 <div class="dropdown-menu">
                                     <div class="container-fluid">
@@ -160,13 +174,22 @@
 
                                             <!-- image -->
                                             <ul class="col-12 col-md-7 col-lg-7 menu-list">
-                                                <div class="pane_info">
-                                                    <div class="h3style"><a href="https://libguides.bc.edu/burns/services">Research &amp; Teaching</a></div>
-                                                    <p>We are happy to encourage wider use of Burns Library's unique materials for teaching and research, and will work creatively with faculty and others to develop customized classes, activities, and assignments around syllabi topics and learning objectives.</p>
-                                                </div>
-
-                                                <div class="pane_pic">
-                                                    <img alt="Students viewing Burns materials" src="https://libapps.s3.amazonaws.com/customers/94/images/instruction.jpg">
+                                                <div class="card border-0">
+                                                    <div class="row g-1">
+                                                        <div class="col-auto d-none d-md-block">
+                                                            <img src="https://libapps.s3.amazonaws.com/customers/94/images/instruction.jpg" class="img-fluid" alt="Students viewing Burns materials">
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="card-body ps-0 ps-lg-2">
+                                                                <a href="https://libguides.bc.edu/burns/services">
+                                                                    <h5 class="card-title">Research &amp; Teaching</h5>
+                                                                </a>
+                                                                <p class="card-text">We are happy to encourage wider use of Burns Library's unique materials for teaching and research, 
+                                                                    and will work creatively with faculty and others to develop customized classes, activities, and assignments around 
+                                                                    syllabi topics and learning objectives.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </ul>
                                         </div> <!-- row -->
@@ -174,20 +197,20 @@
                                         <div class="row find-more-link">
                                             <!--div class="more"><a href="#">More about Your Visit</a></div-->
                                         </div> <!-- row find-more-link -->
-                                    </div>
-                                </div>
+                                    </div> <!-- container-fluid -->
+                                </div> <!-- dropdown-menu -->
                             </li>
                             <!-- END Visit menu dropdown -->
 
                             <!-- BEGIN About Us menu dropdown -->
-                            <li class="nav-item dropdown dropdown-hover">
+                            <li class="nav-item dropdown dropdown-hover" id="nav-item-menu-burns-about-us">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About Us</a>
                                 <div class="dropdown-menu">
                                     <div class="container-fluid">
                                         <div class="row">
 
                                             <!-- About Us -->
-                                            <ul class="col-12 col-md-3 col-lg-3 menu-list pb-3 pb-md-0"  style="padding-top: 10px;">
+                                            <ul class="col-12 col-md-3 col-lg-2 menu-list pb-3 pb-md-0">
                                                 <li><div class="menu-header">About Us</div></li>
                                                 <li><a href="https://libguides.bc.edu/burns/staff">Staff Directory</a></li>
                                                 <li><a href="https://bc.us10.list-manage.com/subscribe?u=7a6431091bc9d4cb794b1d7ae&id=73dd896610">Join our mailing list</a></li>
@@ -195,79 +218,84 @@
                                             </ul>
 
                                             <!-- BURNS LIBRARY INFO CAN GO HERE -->
-                                            <div class="col-12 col-md-9 col-lg-9 menu-list">
-                                                <!-- BURNS PANE BEGINS HERE -->
-                                                <div class="item_pane">
-                                                    <div class="pane_info">
-                                                        <div class="h3style"><a href="http://libguides.bc.edu/burns">Burns Library</a></div>
-                                                        <p class="address">140 Commonwealth Avenue<br>Chestnut Hill, MA 02467-3810</p>
-                                                        <p>Located in the original Bapst Library building on Boston College's Chestnut Hill campus, the John J. Burns Library offers students, scholars, and the general public opportunities to engage with rare books, special collections, and archives.</p>
+                                            <div class="col-12 col-md-9 col-lg-10 menu-list">
+                                                <div class="card border-0">
+                                                    <div class="row g-1">
+                                                        <div class="col-auto d-none d-md-block">
+                                                            <img src="//library.bc.edu/theme/img/librarypane/librarythumbnails_burns.jpg" class="img-fluid" alt="Burns Library home page">
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="card-body ps-0 ps-lg-2">
+                                                                <a href="http://libguides.bc.edu/burns">
+                                                                    <h5 class="card-title">Burns Library</h5>
+                                                                </a>
+                                                                <p class="card-text pb-2">140 Commonwealth Avenue<br>Chestnut Hill, MA 02467-3810</p>
+                                                                <p class="card-text pb-2">Located in the original Bapst Library building on Boston College's Chestnut Hill campus, the John J. Burns Library 
+                                                                    offers students, scholars, and the general public opportunities to engage with rare books, special collections, and archives.</p>
+                                                                <div class="row">
+                                                                    <ul class="col-12 col-lg-6 pb-0 pb-sm-3 list-unstyled">
+                                                                        <li><div class="menu-header">Contact Info</div></li>
+                                                                        <li><p class="card-text">(617) 552-4861</p></li>
+                                                                        <li><p class="card-text"><a href="mailto:burns@bc.libanswers.com">burns@bc.libanswers.com</a></p></li>
+                                                                    </ul>
 
-                                                        <ul class="col-sm-6">
-                                                            <li><div class="menu-header">Contact Info</div></li>
-                                                            <li class="megamenuphone"><p>(617) 552-4861</p></li>
-                                                            <li class="megamenuemail"><p><a href="mailto:burns@bc.libanswers.com">burns@bc.libanswers.com</a></p></li>
-                                                        </ul>
-
-                                                        <ul class="col-sm-6 end">
-                                                            <li><div class="menu-header">Today's Hours</div></li>
-                                                            <li><div class="" id="BurnsLibrary"></div></li>
-                                                            <li class="megamenucalendar"><p><a href="http://libguides.bc.edu/hours">Burns Library Weekly Hours</a></p></li>
-                                                        </ul>
-                                                    </div>
-
-                                                    <div class="pane_pic">
-                                                        <img alt="Burns Library home page" src="//library.bc.edu/theme/img/librarypane/librarythumbnails_burns.jpg">
+                                                                    <ul class="col list-unstyled">
+                                                                        <li><div class="menu-header">Today's Hours</div></li>
+                                                                        <li><div class="" id="BurnsLibrary"></div></li>
+                                                                        <li><p class="card-text"><a href="http://libguides.bc.edu/hours">Burns Library Weekly Hours</a></p></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <!-- END BURNS PANE. RIGHT UP THERE-->
                                             </div>
                                         </div> <!-- row -->
 
                                         <div class="row find-more-link">
                                             <!--div class="more"><a href="" title="About Us">More About the Libraries</a></div-->
                                         </div> <!-- row find-more-link -->
-                                    </div>
-                                </div>
+                                    </div> <!-- container-fluid --> 
+                                </div> <!-- dropdown-menu -->
                             </li>
                             <!-- END About Us menu dropdown -->
 
                             <!-- BEGIN My Accounts menu dropdown -->
-                            <li class="nav-item dropdown dropdown-hover">
+                            <li class="nav-item dropdown dropdown-hover" id="nav-item-menu-burns-myaccounts">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">My Accounts</a>
                                 <div class="dropdown-menu">
                                     <div class="container-fluid">
-                                        <div class="row">
+                                        <div class="row gy-4 pb-2">
 
                                             <!-- Catalog -->
-                                            <ul class="col-12 col-md-3 col-lg-3 menu-list pb-3 pb-md-0">
+                                            <ul class="col-12 col-md-3 menu-list">
                                                 <li>
-                                                    <div class="h3style"><a href="https://bc-primo.hosted.exlibrisgroup.com/primo-explore/account?vid=bclib_new">Library catalog account</a></div>
-                                                    <p>Renew books; check due dates; save records</p>
+                                                    <a class="menu-header" href="https://bc-primo.hosted.exlibrisgroup.com/primo-explore/account?vid=bclib_new">Library catalog account</a>
+                                                    <div class="menu-text">Renew books; check due dates; save records</div>
                                                 </li>
                                             </ul>
 
                                             <!-- ILL -->
-                                            <ul class="col-12 col-md-3 col-lg-3 menu-list pb-3 pb-md-0">
+                                            <ul class="col-12 col-md-3 menu-list">
                                                 <li>
-                                                    <div class="h3style"><a href="https://illiad.bc.edu/illiad/bxm/logon.html">Interlibrary Loan account</a></div>
-                                                    <p>Request books, articles, and more from other libraries; review due dates</p>
+                                                    <a class="menu-header" href="https://illiad.bc.edu/illiad/bxm/logon.html">Interlibrary Loan account</a>
+                                                    <div class="menu-text">Request books, articles, and more from other libraries; review due dates</div>
                                                 </li>
                                             </ul>
 
                                             <!-- Burns -->
-                                            <ul class="col-12 col-md-3 col-lg-3 menu-list pb-3 pb-md-0">
+                                            <ul class="col-12 col-md-3 menu-list">
                                                 <li>
-                                                    <div class="h3style"><a href="https://burnsaccount.bc.edu">Burns Library account</a></div>
-                                                    <p>Register to research, schedule visits, and order copies at Burns Library</p>
+                                                    <a class="menu-header" href="https://burnsaccount.bc.edu">Burns Library account</a>
+                                                    <div class="menu-text">Register to research, schedule visits, and order copies at Burns Library</div>
                                                 </li>
                                             </ul>
 
                                             <!-- OverDrive -->
-                                            <ul class="col-12 col-md-3 col-lg-3 menu-list">
+                                            <ul class="col-12 col-md-3 menu-list">
                                                 <li>
-                                                    <div class="h3style"><a href="https://bc.overdrive.com/account/loans">OverDrive account</a></div>
-                                                    <p>Borrow and renew popular ebooks and audiobooks</p>
+                                                    <a class="menu-header" href="https://bc.overdrive.com/account/loans">OverDrive account</a>
+                                                    <div class="menu-text">Borrow and renew popular ebooks and audiobooks</div>
                                                 </li>
                                             </ul>
                                         </div> <!-- row -->
@@ -279,8 +307,8 @@
                                                 </a>
                                             </div>
                                         </div> <!-- row find-more-link -->
-                                    </div>
-                                </div>
+                                    </div> <!-- container-fluid -->
+                                </div> <!-- dropdown-menu -->
                             </li>
                             <!-- END My Accounts menu dropdown -->
                         </ul>
@@ -292,5 +320,3 @@
     </div>
 </div>
 <!-- END Megamenu -->
-
-</header>
