@@ -23,11 +23,11 @@
 {{public_header}} 
 
 <!-- FULL PAGE WRAPPER -->
-<div class="container test" id="fullpagewrapper-refresh">
+<div class="container" id="fullpagewrapper-refresh">
 
     <!-- BEGIN MIDLEVELCONTAINER -->
     <div class="pt-3" id="midlevelcontainer-refresh">
-        {{breadcrumbs}}
+        <nav id="s-lib-bc" aria-label="breadcrumb">{{breadcrumbs}}</nav>
 
         <!-- THIS IS REALLY IMPORTANT. IT'S THE BAR WITH EVERY TOOL ON IT. DO NOT EXCLUDE -->
         {{ADMIN_CMD_BAR}} 
@@ -62,7 +62,7 @@
         <div class="row pt-4 pb-5" id="content_container">
             <!-- THIS DISPLAYS THE TABS, IF THERE ARE TABS
             CURRENTLY A HACKED SIDE NAV. -->
-            <div class="col-xl-2 col-lg-2 col-md-3 col-12" id="s-lg-guide-tabs">
+            <div class="col-xl-2 col-lg-2 col-md-3 col-12" id="s-lg-guide-tabs" role="navigation" aria-label="Guide Pages">
                 <nav id="side-nav" class="drop-down">
                     <ul class="nav nav-tabs">
                         {{guide_nav}}
@@ -83,11 +83,21 @@
         </div>  
 
         <!-- THIS MAKES A 'BACK TO TOP' ARROW APPEAR -->
-        <div id="s-lib-scroll-top" title="Back to Top">
+        <!--div id="s-lib-scroll-top-old" title="Back to Top">
             <span class="fa-stack fa-lg">
               <i class="fa fa-square-o fa-stack-2x"></i>
               <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
             </span>
+        </div-->
+
+        <div id="s-lib-scroll-top">
+            <a href="javascript:void(0);" onclick="jQuery('body').focus();" title="Back to Top"
+            aria-label="Back to Top">
+                <span class="fa-stack fa-lg" aria-hidden="true">
+                    <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+                </span>
+            </a>
         </div>
 
         <!-- THIS LINE OF CODE IS RESPONSIBLE FOR THE POP UP BOXES DURING EDITING.
@@ -102,13 +112,13 @@
     <div id="s-lg-guide-header-meta">
         <ul id="s-lg-guide-header-attributes" class="col-12 col-md-9">
             <li id="s-lg-guide-header-updated">
-                <span class="s-lg-guide-label">Last Updated:</span> <span class="s-lg-text-greyout">{{guide_updated}}</span>
+                {{last_updated_display}}
             </li>
             <li id="s-lg-guide-header-subjects">
-                <span class="s-lg-text-greyout">{{guide_subjects}}</span>
+                {{guide_subjects}}
             </li>
             <li id="s-lg-guide-header-tags">
-                <span class="s-lg-text-greyout">{{guide_tags}}</span>
+                {{guide_tags}}
             </li>
         </ul>
         <div id="s-lib-footer-login-link" class="col-12 col-md-3">
