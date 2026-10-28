@@ -68,12 +68,14 @@
                         {{guide_nav}}
                     </ul>
                     <label for="guide-nav-mobile" class="accessibility-text">Guide navigation for mobile devices</label>
-                    <select class="nav-mobile mb-4" id="guide-nav-mobile"></select>
+                    <div class="container">
+                        <select class="nav-mobile mb-4" id="guide-nav-mobile"></select>
+                    </div>
                 </nav>
             </div>
 
             <!-- CONTENT -->
-            <div class="col-lg-10 col-md-9 col-12" id="content-refresh">
+            <div class="col" id="content-refresh">
                {{content}}
                {{page_prev_next_links}}
             </div>

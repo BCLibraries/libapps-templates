@@ -28,16 +28,25 @@ $(document).ready(function(){
     /*                                          */
     var myNavID = "nav";
     /* For each nav menu, create a corresponding drop down menu */
-    $("nav.drop-down").each(function(){
+    $("#s-lg-guide-tabs nav.drop-down").each(function(){
         if ($(this).attr("id")) {
             myNavID = "nav#" + $(this).attr("id");
+        }
+
+        // Check if nested ul.nav-tabs has exists and has any children
+        if ($(this).find("ul.nav-tabs").length == 0 || $(this).find("ul.nav-tabs li").length == 0) {
+            // Remove the mobile dropdown if no nav-tabs exist
+            $(this).find(".nav-mobile").remove();
+            // Add d-none to parent container to hide the entire side nav
+            $(this).parent("#s-lg-guide-tabs").addClass('d-none');
+            return;
         }
 
         sel = $(this).find(".nav-mobile");
 
         if (sel.length == 0){
             /* Create the dropdown base */
-            $("<select class='nav-mobile' />").appendTo(myNavID);
+            $("<div class='container'><select class='nav-mobile' /></div>").appendTo(myNavID);
             sel = $(this).find(".nav-mobile");
         }
 
@@ -49,7 +58,7 @@ $(document).ready(function(){
         }).appendTo(sel);
 
         /* Populate dropdown with menu items */
-        $(myNavID + " a:not(.dropdown-toggle)").each(function() {
+        $("#s-lg-guide-tabs " + myNavID + " a:not(.dropdown-toggle)").each(function() {
             var el = $(this);
             var myText = el.text();
             if ($(el).parents(".s-lg-subtab-ul").length > 0) {
