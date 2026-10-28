@@ -1,99 +1,12 @@
 <meta name="group" content="burns">
 
-<!-- Burns styles -->
-<style>
-#s-lib-bc-group {display:inline-block;}
-#megamenu .navbar-nav > li > a {font-size:16px;}
-#guide-title h2 {text-transform: capitalize;}
-#burns-logo {text-transform: capitalize; font-style: italic; font-size:18px}
-#banner-all {background-color:#f2ede8;}
-/*#banner-right {padding:0 0px 0px 20px;}*/
-#banner-right {padding:0px;}
-#banner-right ul {margin-bottom:0;}
-#banner-right .banner-item {padding:0; margin:0 0 5px 0;}
-#banner-right .banner-item p {padding: 0 10px; margin: 0}
-#banner-right .banner-item h3 {color:#fff; background-color:#333; margin:0; padding:5px 10px; font-size:20px; font-weight:bold;}
-#banner-right .ask_resources {background-color:#dfddcf; height:197px;}
-#banner-right .resourcesfor {}
-#banner-right .askus {}
-#banner-right .askus p {padding-top: 5px}
-#banner-right .visitus {background-color:#dfddcf; height:197px; margin:0;}
-#banner-right .visitus img {border:1px solid transparent; display:block; max-width:767px; max-height:157px; width:auto; height:auto; margin-left:-194px;}
-#banner-right .visitus img:hover {border:1px solid black;}
-#banner-right .visitus-links {padding: 0 10px;}
-#banner-right .visitus-links .status-msg {text-align:right;}
-#banner-right a {color:#2B6597;}
-
-.menu_list li p.caption {padding:2px 0; margin:0; font-style: italic; line-height:1.25; color:#666;}
-.menu_list li .image_wrapper img {margin-left:0px;}
-
-.column {padding:0; margin:0; }
-.column .image {padding:0; margin:0; position: relative; wid th: 100%; /* for IE 6 */}
-.column .column-content {padding:10px; min-height:160px;}
-.column .column-content h3 {padding:0;}
-
-.column .image h3 {position: absolute; top:0px!important; right:0!important; left:0!important; width: 100%; margin:0;}
-.column .image h3 span {
-    color: white; font: bold 20px/28px Helvetica, Sans-Serif; le tter-spacing: -1px; 
-    background: rgb(0, 0, 0); /* fallback color */ background: rgba(0, 0, 0, 0.7); padding: 5px 10px;
-    display:inline-block; width:100%;}
-#explore {padding: 30px 0 0 15px; background-color:#f2ede8;}
-#explore li {font-size:15px;}
-#collections {padding-right:0px;}
-#services {padding: 0 0 0 8px;}
-#exhibits {padding-left:0px}
-
-#music {background-color:#32758f; padding:20px;}
-#music h3 {color:#151515;}
-#music p {width:853px; margin:0 auto;}
-#music .read-toggle {cursor:pointer;}
-
-#socialmedia-slider {padding:20px 30px; background-color:#f2ede8;}
-#social media-slider ul.bxslider li {margin:0 50px;}
-
-#weekly_hours_container {border: 1px solid #fff; border-bottom:none;}
-#weekly_hours_container ul.dailyhours {padding:2px 0; border-bottom:1px solid #fff;}
-/*#weekly_hours_container ul.dailyhours:nth-child(odd) {background-color:#EAEAEA;}*/
-#weekly_hours_container ul.today {font-weight:600; background-color:#DCB8A0; color:#000;}
-#weekly_hours_container ul.dailyhours li {display:inline-block; margin:0; vertical-align:top; padding: 1px 0 1px 4px;}
-#weekly_hours_container ul.dailyhours li.day {width:25%;}
-#weekly_hours_container ul.dailyhours li.date {width:25%;}
-#weekly_hours_container ul.dailyhours li.hours {width:50%;}
-
-.nav .h3style {
-  margin: .25rem 0;
-}
-
-@media (max-width: 1050px) {
-   .f_column {border-right:none; margin-left:0;}
-}
-@media (max-width: 1024px) {
-   #banner-right .visitus img {margin-left:-250px;}
- }
-@media (min-width: 426px) and (max-width:767px) {
-   #banner-right .visitus img {margin-left:0;}
- }
-@media (max-width: 350px) {
-    #banner-right .askus p {padding-top:0px!important;}
-   .askus-elem {display:inline-block; line-height:1;}
- }
-@media (max-width: 320px) {
-   #banner-right .visitus img {margin-left:-300px; margin-top:-40px;}
- }
-#media_blog:after {
-   font-family: 'FontAwesome';
-   content: "\f19a";
-}
-</style>
-
-
 <script type="text/javascript">
 $(document).ready(function(){
     $("#s-lib-bc-group a").attr("href", "http://libguides.bc.edu/burns");
 
     var m = $("meta[name='DC.Identifier']");
     if (m.attr("content") === "http://libguides.bc.edu/burns/home") {
-        console.log("front page!");
+        // console.log("front page!");
         $(".burns-logo-prefix").hide();
         $("#s-lib-bc-group").hide();
     }
