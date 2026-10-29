@@ -3,60 +3,62 @@
 {{skip_link}}
 
 <style>
-    .s-lib-public-side-header {
-        padding-top: 5px;
+    h2.muted {padding-bottom: 1.5rem;}
+    #s-lib-public-header {margin-top: 0;}
+    #s-lg-sb-content-databases h2.muted {padding-bottom: .5rem;}
+    .s-lg-gmeta {font-size: 1rem;}
+    .s-lg-gmeta .hitst {display: none;}
+    #s-lg-sb-content-databases .s-lib-box {
+        border-bottom: 1px dashed #e4e6ef;
+        padding-top: 1rem;
     }
-    #s-lib-public-header-desc,
-    ul.nav-tabs li a {
-        font-size: 14px
+    #s-lg-sb-content-databases .s-lib-box .s-lib-box-content {
+        margin-bottom: 1rem;
     }
-    .tab-content>.tab-pane {
-        padding-left:10px;
+    #s-lg-sb-content-databases > div > div > div:last-of-type .s-lib-box {
+        border-bottom: none;
     }
-    .s-lib-box-content {
-        margin-bottom:.5em;
+    #col1 .tab-content {margin-left: .5rem; margin-right: .5rem;}
+    #col2 form {display: flex;}
+    #col2 form input.form-control {
+        border-radius: .375rem 0 0 .375rem;
     }
-    .s-lib-box-content,
-    .s-lib-box-content .s-lg-small {
-        padding:6px 10px;
-        font-size: 14px!important;
+    #col2 form button {
+        margin: 0 !important; 
+        border-radius: 0 .375rem .375rem 0;
     }
-    .s-lib-box-content .s-lg-small {
-        padding:0;
-    }
-    .s-lib-box-content:hover {
-        background-color: #eaeaea;
-    }
-    .s-lib-box-content a:hover {
-        text-decoration: none;
-        color: #990000;
-    }
-    .input-append form input.form-control {
-        width:auto;
-        display: inline-block;
-    }
-    .input-append form button.btn-info {
-        display: inline-block;
-        vertical-align: baseline;
-    }
-    .s-lg-az-result-badge-featured {
-        display:none;
-    }
-    #s-lg-sb-content-databases .s-lg-db-panel-title {
-        display:none;
-    }
-    i.s-lib-popover {
-        display:none;
+    #s-lg-sb-experts-div #s-lg-box-profile-container {
+        margin: 1rem;
     }
 </style>
 
 <script type="text/javascript">
-    // rewrite breadcrumbs so that the "Subjects" link goes to the custom subjects page
-    // rather than the default one
     $(document).ready(function(){
+        // rewrite breadcrumbs so that the "Subjects" link goes to the custom subjects page
+        // rather than the default one
         $("li#s-lib-bc-index a").attr("href", "/subjects");
-
         $("#sel_guide_drop_chosen").width("300px");
+
+        // Script to force the Databases tab to be active when ?t=db parameter is present in the URL
+        function getUrlParameter(sParam)
+        {
+            var sPageURL = window.location.search.substring(1);
+            var sURLVariables = sPageURL.split('&');
+            for (var i = 0; i < sURLVariables.length; i++)
+            {
+                var sParameterName = sURLVariables[i].split('=');
+                if (sParameterName[0] == sParam)
+                {
+                    return sParameterName[1];
+                }
+            }
+        }
+
+        // if the URL has the parameter &t=db then manually
+        // set the click event for the 'Databases' tab.
+        if (getUrlParameter('t') == 'db') {
+            $('button#s-lg-sb-databases-tab').click();
+        }
     });
 </script>
 
@@ -67,7 +69,9 @@
 <div class="container" id="fullpagewrapper-refresh">
 
     <!-- BEGIN MIDLEVELCONTAINER -->
-    <div class="row" id="midlevelcontainer-refresh">
+    <div class="pt-3 row" id="midlevelcontainer-refresh">
+        <nav id="s-lib-bc" aria-label="breadcrumb">{{breadcrumbs}}</nav>
+
         <!-- BEGIN: Content Header -->
         <div id="s-lib-public-header" class="s-lib-header container s-lib-side-borders">
             <h1 id="s-lib-public-header-title">{{page_title}}</h1>
@@ -80,77 +84,107 @@
             {{page_nav}}
         </div>
         <!-- END: Nav Bar -->
-        
+
         <!-- BEGIN: content -->
         <a name="s-lg-guide-main"></a>
         <div id="s-lib-public-main" class="s-lib-main container s-lib-side-borders">
-            <section>
-                <div  id="s-lg-sb-search-bar"  class="row">
-                    <div  id="sb-search-col-1"  class="col-md-12 center">
+            <section aria-label="Subject Search Bar">
+                <div id="s-lg-sb-search-bar" class="row">
+                    <div id="sb-search-col-1" class="col-md-12 center">
                         {{navbar}}
                     </div>
                 </div>
             </section>
-            <section>
-                <div  id="s-lg-sb-cols" class="row">
-                    <div  id="col1" class="col-md-8 center">
-                        <ul class="nav nav-tabs margin-bottom-med">
-                            <!-- Guide tab -->
-                            <li class="active">
-                                <a href="#s-lg-sb-guides" data-toggle="tab">Guides</a>
+            <section aria-label="Content by Subject">
+                <div id="s-lg-sb-cols" class="row">
+                    <div id="col1" class="col-md-8 center">
+                        <ul class="nav nav-tabs mb-3" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="s-lg-sb-guides-tab" data-bs-toggle="tab"
+                                        data-bs-target="#s-lg-sb-guides" type="button" role="tab"
+                                        aria-controls="s-lg-sb-guides" aria-selected="true">
+                                    {{guides_tab_label}}
+                                </button>
                             </li>
-                            <!-- Databases tab -->
-                            <li class="">
-                                <a href="#s-lg-sb-databases" data-toggle="tab">Databases</a>
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="s-lg-sb-databases-tab" data-bs-toggle="tab"
+                                        data-bs-target="#s-lg-sb-databases" type="button" role="tab"
+                                        aria-controls="s-lg-sb-databases" aria-selected="false">
+                                    {{databases_tab_label}}
+                                </button>
                             </li>
+
+                            <!--li class="nav-item" role="presentation">
+                                <button class="nav-link" id="s-lg-sb-blog-posts-tab" data-bs-toggle="tab"
+                                        data-bs-target="#s-lg-sb-blog-posts" type="button" role="tab"
+                                        aria-controls="s-lg-sb-blog-posts" aria-selected="false">
+                                    {{blog_posts_tab_label}}
+                                </button>
+                            </li-->
                         </ul>
-                        
-                        <!-- Tab panes -->
-                        <div class="tab-content margin-bottom-med">
-                            <div class="tab-pane active" id="s-lg-sb-guides">
-                                <!-- Guides content -->
-                                <div id="s-lg-sb-content-guides" class="pad-right-sm"></div>
+
+                        <div class="tab-content mb-3">
+                            <div class="tab-pane fade show active" id="s-lg-sb-guides" role="tabpanel"
+                                aria-labelledby="s-lg-sb-guides-tab">
+                                <div id="s-lg-sb-content-guides" class="pe-2"></div>
                             </div>
-                            <div class="tab-pane " id="s-lg-sb-databases">
-                                <!-- Databases content -->
-                                <div id="s-lg-sb-content-databases" class="pad-right-sm"></div>
+
+                            <div class="tab-pane fade" id="s-lg-sb-databases" role="tabpanel"
+                                aria-labelledby="s-lg-sb-databases-tab">
+                                <div id="s-lg-sb-content-databases" class="pe-2"></div>
+                            </div>
+
+                            <div class="tab-pane fade" id="s-lg-sb-blog-posts" role="tabpanel"
+                                aria-labelledby="s-lg-sb-blog-posts-tab">
+                                <div id="s-lg-sb-content-blog-posts" class="pe-2"></div>
+                            </div>
+
+                            <div class="tab-pane fade" id="s-lg-sb-er-courses" role="tabpanel"
+                                aria-labelledby="s-lg-sb-er-courses-tab">
+                                <div id="s-lg-sb-content-er-courses" class="pe-2"></div>
                             </div>
                         </div>
                     </div>
-                    <div  id="col2"  class="col-md-4 center">
-                        <div style="padding-top: 9px;"></div>
+
+                    <div id="col2" class="col-md-4 center">
+                        <div style="padding-top: 1.125rem;"></div>
                         {{content_box_search}}
+
                         {{content_box_experts}}
+
                     </div>
                 </div>
             </section>
+
+            <div id="s-lib-scroll-top">
+                <a href="javascript:void(0);" onclick="jQuery('body').focus();" title="Back to Top"
+                aria-label="Back to Top">
+                    <span class="fa-stack fa-lg" aria-hidden="true">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+                    </span>
+                </a>
+            </div>
         </div>
         <!-- END: content -->
 
-        <!-- Script to force the Databases tab to be active when ?t=db parameter is present in the URL -->
-        <script type="text/javascript">
-            $(document).ready(function(){
-                function getUrlParameter(sParam)
-                {
-                    var sPageURL = window.location.search.substring(1);
-                    var sURLVariables = sPageURL.split('&');
-                    for (var i = 0; i < sURLVariables.length; i++)
-                    {
-                        var sParameterName = sURLVariables[i].split('=');
-                        if (sParameterName[0] == sParam)
-                        {
-                            return sParameterName[1];
-                        }
-                    }
-                }
+        <div id="s-lib-alert" title=""><div id="s-lib-alert-content"></div></div>
 
-                /* if the URL has the parameter &t=db then manually
-                // set the click event for the 'Databases' tab. */
-                if (getUrlParameter('t') == 'db') {
-                    $('a[href="#s-lg-sb-databases"]').click();
-                }  
-            });
-        </script>
+        <div id="s-lib-popover-title" class="hide">
+            <span class="text-info">
+                <strong>title</strong>
+            </span>
+
+            <button type="button" id="popclose" class="close" onclick="jQuery('.s-lib-popover').popover('hide')">
+                &times;
+            </button>
+        </div>
+
+        <div id="s-lib-popover-content" class="hide">
+            <i class="fa fa-refresh fa-spin"></i> Loading...
+            <button class="btn btn-default btn-sm popclose" type="button">Close</button>
+        </div>
     </div>
     <!-- END MIDLEVELCONTAINER -->
 </div>
