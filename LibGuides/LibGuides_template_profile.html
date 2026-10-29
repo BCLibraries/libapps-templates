@@ -3,48 +3,25 @@
 {{skip_link}}
 
 <style>
-    .s-lib-box-content {
-        margin-bottom:.5em;
-    }
-    .s-lib-box-content,
-    .s-lib-box-content .s-lg-small {
-        padding:6px 10px;
-        font-size: 14px!important;
-    }
-    .s-lib-box-content .s-lg-small {
-        padding:0;
-    }
-    .s-lib-box-content:hover {
-        background-color: #eaeaea;
-    }
-    .s-lib-box-content a:hover {
-        text-decoration: none;
-        color: #990000;
-    }
-    #col3 a {
-        font-size: 14px!important;
-        padding:6px 0 6px 10px;
-    }
-    #col3 a:hover {
-        background-color: #eaeaea;
-        text-decoration: none;
-        color: #990000;
-    }
-    #col0 > div {
-        padding:30px!important;
-        /*border:1px solid #ffeaae !important;*/
-        border-radius: 10px;
-    }
-    #user-department {
-        display:none;
+    #s-lib-public-header {margin-top: 0;}
+    .s-lib-box .s-lib-box-content {margin-bottom: .5rem;}
+    .s-lg-gmeta {font-size: 1rem;}
+    .s-lg-gmeta .hitst {display: none;}
+    a.prf-subject-specialities {
+        padding-top: .25rem;
+        padding-bottom: .75rem;
+        line-height: 1.25rem;
     }
 </style>
 
 <script type="text/javascript">
-    // rewrite breadcrumbs so that the "Profiles" link goes to the ask a librarian page
-    // rather than the default profiles listing
     $(document).ready(function(){
-        $("li#s-lib-bc-index a").attr("href", "/ask-a-librarian/contact");
+        // rewrite breadcrumbs so that the "Profiles" link goes to the ask a librarian page
+        // rather than the default profiles listing
+        $("li#s-lib-bc-index").removeClass("active").html('<a href="https://library.bc.edu/ask-a-librarian/contact">Profiles</a>');
+
+        // Add the current profile to the breadcrumb list
+        $("#s-lib-bc-list").append('<li id="s-lib-bc-profile" class="breadcrumb-item active">{{page_title}}</li>');
     });
 </script>
 
@@ -55,12 +32,13 @@
 <div class="container" id="fullpagewrapper-refresh">
 
     <!-- BEGIN MIDLEVELCONTAINER -->
-    <div class="row" id="midlevelcontainer-refresh">
+    <div class="pt-3 row" id="midlevelcontainer-refresh">
+        <nav id="s-lib-bc" aria-label="breadcrumb">{{breadcrumbs}}</nav>
+
         <!-- BEGIN: Content Header -->
         <div id="s-lib-public-header" class="s-lib-header container s-lib-side-borders">
             <h1 id="s-lib-public-header-title">{{page_title}}</h1>
             <div id="s-lib-public-header-desc">{{page_description}}</div>
-            <!--div id="user-department"><span>Department: </span><span>.</span></div-->
         </div>
         <!-- END: Content Header -->
 
@@ -72,25 +50,51 @@
 
         <!-- BEGIN: content -->
         <a name="s-lg-guide-main"></a>
-        <div id="s-lib-public-main" class="s-lib-main container s-lib-side-borders">
-            <section>
-                <div  id="s-lg-profile-cols"  class="row">
+        <div id="s-lib-public-main-xyz" class="s-lib-main container s-lib-side-borders">
+            <section aria-label="Profile Content">
+                <div id="s-lg-profile-cols" class="row">
                     <div id="col1" class="col-md-3 center">
                         {{profile_box}}
                     </div>
-                    <div id="col0" class="col-md-9 center">
+                    <div id="col2" class="col-md-6 center">
                         {{personal_statement}}
-                    </div>
-                    <div  id="col2"  class="col-md-6 center">
+
                         {{guide_list}}
                     </div>
-                    <div  id="col3"  class="col-md-3 center">
+                    <div id="col3" class="col-md-3 center">
                         {{content_box_specialties}}
                     </div>
                 </div>
             </section>
+
+            <div id="s-lib-scroll-top">
+                <a href="javascript:void(0);" onclick="jQuery('body').focus();" title="Back to Top"
+                aria-label="Back to Top">
+                    <span class="fa-stack fa-lg" aria-hidden="true">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+                    </span>
+                </a>
+            </div>
         </div>
         <!-- END: content -->
+
+        <div id="s-lib-alert" title=""><div id="s-lib-alert-content"></div></div>
+
+        <div id="s-lib-popover-title" class="hide">
+            <span class="text-info">
+                <strong>title</strong>
+            </span>
+
+            <button type="button" id="popclose" class="close" onclick="jQuery('.s-lib-popover').popover('hide')">
+                &times;
+            </button>
+        </div>
+
+        <div id="s-lib-popover-content" class="hide">
+            <i class="fa fa-refresh fa-spin"></i> Loading...
+            <button class="btn btn-default btn-sm popclose" type="button">Close</button>
+        </div>
     </div>
     <!-- END MIDLEVELCONTAINER -->
 </div>
