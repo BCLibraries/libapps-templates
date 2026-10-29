@@ -1,0 +1,67 @@
+<body class="s-lib-public-body test-bs5">
+    {{skip_link}}
+    <!-- BEGIN: Page Header -->
+        {{public_header}}
+    <!-- END: Page Header -->
+    <!-- BEGIN: Content Header -->
+    <div id="s-lib-public-header" class="s-lib-header container s-lib-side-borders">
+        <div id="s-lib-bc">
+            {{breadcrumbs}}
+        </div>
+        <h1 id="s-lib-public-header-title">{{page_title}}</h1>
+        <div id="s-lib-public-header-desc">{{page_description}}</div>
+    </div>
+    <!-- END: Content Header -->
+    <!-- BEGIN: Nav Bar -->
+    <div id="s-lib-public-nav" class="container s-lib-side-borders">
+        {{page_nav}}
+    </div>
+    <!-- END: Nav Bar -->
+    <!-- BEGIN: content -->
+    <div id="s-lib-public-main" class="s-lib-main container s-lib-side-borders">
+        <section aria-label="Subject Search Bar">
+            <div  id="s-lg-sb-search-bar"  class="row">
+                <div  id="sb-search-col-1"  class="col-md-12 center">
+                    {{navbar}}
+                </div>
+            </div>
+        </section>
+        <section aria-label="Content by Subject">
+            <div  id="s-lg-sb-cols"  class="row">
+                <div  id="col1"  class="col-md-8 center">
+
+                </div>
+                <div  id="col2"  class="col-md-4 center">
+                    <div style="padding-top: 9px;"></div>
+                    {{content_box_search}}
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- END: content -->
+    <!-- BEGIN: Page Footer -->
+    {{system_footer}}
+    <!-- END: Page Footer -->
+    <div id="s-lib-alert" title="">
+                        <div id="s-lib-alert-content"></div>
+                    </div>        
+            <div id="s-lib-popover-title" class="hide">
+                <span class="text-info"><strong>title</strong></span>
+                <button type="button" id="popclose" class="close" onclick="jQuery('.s-lib-popover').popover('hide')">&times;</button>
+            </div>
+            <div id="s-lib-popover-content" class="hide"><i class="fa fa-refresh fa-spin"></i> Loading...
+                <button class="btn btn-default btn-sm popclose" type="button">Close</button>
+            </div>        
+        <div id="s-lib-scroll-top">
+            <a href="javascript:void(0);" onclick="jQuery('html, body').animate({scrollTop: 0}, 750);" title="Back to Top" aria-label="Back to Top"
+            aria-hidden="true">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+                </span>
+            </a>
+        </div>
+    <!-- BEGIN: Custom Footer -->
+    {{public_footer}}
+    <!-- END: Custom Footer -->
+</body>
