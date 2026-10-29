@@ -1,5 +1,5 @@
 <body class="s-lib-public-body subjects homepagerefresh">
-<meta name="group" content="Profiles">
+<meta name="group" content="Subjects">
 {{skip_link}}
 
 <style>
@@ -36,8 +36,11 @@
     $(document).ready(function(){
         // rewrite breadcrumbs so that the "Subjects" link goes to the custom subjects page
         // rather than the default one
-        $("li#s-lib-bc-index a").attr("href", "/subjects");
-        $("#sel_guide_drop_chosen").width("300px");
+        $("li#s-lib-bc-index").removeClass("active").html('<a href="/subjects">Subjects</a>');
+        // $("#sel_guide_drop_chosen").width("300px");
+
+        // Add the current subject to the breadcrumb list
+        $("#s-lib-bc-list").append('<li id="s-lib-bc-subject" class="breadcrumb-item active">{{page_title}}</li>');
 
         // Script to force the Databases tab to be active when ?t=db parameter is present in the URL
         function getUrlParameter(sParam)
@@ -87,7 +90,7 @@
 
         <!-- BEGIN: content -->
         <a name="s-lg-guide-main"></a>
-        <div id="s-lib-public-main" class="s-lib-main container s-lib-side-borders">
+        <div id="s-lib-public-main-xyz" class="s-lib-main container s-lib-side-borders">
             <section aria-label="Subject Search Bar">
                 <div id="s-lg-sb-search-bar" class="row">
                     <div id="sb-search-col-1" class="col-md-12 center">
