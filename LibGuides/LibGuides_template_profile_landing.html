@@ -1,0 +1,81 @@
+<body class="s-lib-public-body profile-landingpages homepagerefresh">
+{{skip_link}}
+
+<!-- HEADER AND MEGA MENU -->
+{{public_header}}
+
+<!-- FULL PAGE WRAPPER -->
+<div class="container" id="fullpagewrapper-refresh">
+
+    <!-- BEGIN MIDLEVELCONTAINER -->
+    <div class="row" id="midlevelcontainer-refresh">
+        <!-- END: Page Header -->
+        <!-- BEGIN: Content Header -->
+        <div id="s-lib-public-header" class="s-lib-header container s-lib-side-borders">
+            <!--div id="s-lib-bc">
+                {{breadcrumbs}}
+            </div-->
+            <h1 id="s-lib-public-header-title">{{page_title}}</h1>
+            <div id="s-lib-public-header-desc">{{page_description}}</div>
+        </div>
+        <!-- END: Content Header -->
+        <!-- BEGIN: Nav Bar -->
+        <div id="s-lib-public-nav" class="container s-lib-side-borders">
+            {{page_nav}}
+        </div>
+        <!-- END: Nav Bar -->
+        <!-- BEGIN: content -->
+        <a name="s-lg-guide-main" tabindex="-1"></a>
+        <div id="s-lib-public-main content_container" class="s-lib-main container s-lib-side-borders">
+            {{navbar}}
+            <section aria-label="List of Profiles">
+                <div  id="s-lg-profile-cols"  class="row">
+                    <div  id="col1"  class="col-md-8 center">
+                        <div id="s-lg-profile-subjects" style="display:none; margin-bottom:20px;" class="pad-right-sm">
+                            {{subject_list}}
+                        </div>
+                        <div id="s-lg-profile-content">
+                            <div class="bold s-lib-color-lt-grey pad-top-med text-center">Loading...</div>
+                        </div>
+                    </div>
+                    <div  id="col2"  class="col-md-4 center">
+                        {{content_box_search}}
+                        {{content_box_az}}
+                        {{content_box_help}}
+                        {{content_box_guides}}
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- END: content -->
+        <!-- BEGIN: Page Footer -->
+        <div class="hidden">
+            {{system_footer}}
+        </div>
+        <!-- END: Page Footer -->
+        <div id="s-lib-alert" title="">
+            <div id="s-lib-alert-content"></div>
+        </div>        
+        <div id="s-lib-popover-title" class="hide">
+            <span class="text-info"><strong>title</strong></span>
+            <button type="button" id="popclose" class="close" onclick="jQuery('.s-lib-popover').popover('hide')">&times;</button>
+        </div>
+        <div id="s-lib-popover-content" class="hide"><i class="fa fa-refresh fa-spin"></i> Loading...
+            <button class="btn btn-default btn-sm popclose" type="button">Close</button>
+        </div>        
+        <div id="s-lib-scroll-top">
+            <a href="javascript:void(0);" onclick="jQuery('html, body').animate({scrollTop: 0}, 750);" title="Back to Top" aria-label="Back to Top"
+            aria-hidden="true">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square-o fa-stack-2x"></i>
+                  <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+    <!-- END MIDLEVELCONTAINER -->
+</div>
+<!-- END FULL PAGE WRAPPER -->
+<!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
+{{public_footer}}
+</body>
