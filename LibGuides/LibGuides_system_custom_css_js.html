@@ -84,6 +84,13 @@ $(document).ready(function(){
     ((window.location.pathname).indexOf('admin_c.php')>-1)?$('body').addClass('edit-mode'):$('body').addClass('view-mode');
 
 
+    // Remove empty divs within profile containers
+    document.querySelectorAll('.s-lib-profile-container > div').forEach(div => {
+        if (!div.textContent.trim() && div.children.length === 0) {
+            div.style.display = 'none';
+        }
+    });
+
     /*                                         */
     /* ADD PADDING TO HEADER WHEN IN EDIT-MODE */
     /*                                         */
