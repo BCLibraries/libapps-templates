@@ -34,6 +34,8 @@ $(document).ready(function(){
             $(this).find(".nav-mobile").remove();
             // Add d-none to parent container to hide the entire side nav
             $(this).parent("#s-lg-guide-tabs").addClass('d-none');
+            // Add w-100 to the uncle container to make it full width
+            $(this).parent("#s-lg-guide-tabs").siblings("#content-refresh").addClass('w-100');
             return;
         }
 
