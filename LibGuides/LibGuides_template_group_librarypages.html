@@ -28,111 +28,113 @@
 <!-- HEADER AND MEGA MENU -->
 {{public_header}} 
 
-<!-- FULL PAGE WRAPPER -->
-<div class="container" id="fullpagewrapper-refresh">
+<main>
+    <!-- FULL PAGE WRAPPER -->
+    <div class="container" id="fullpagewrapper-refresh">
 
-    <!-- BEGIN MIDLEVELCONTAINER -->
-    <div class="pt-3" id="midlevelcontainer-refresh">
-        <nav id="s-lib-bc" aria-label="breadcrumb">{{breadcrumbs}}</nav>
+        <!-- BEGIN MIDLEVELCONTAINER -->
+        <div class="pt-3" id="midlevelcontainer-refresh">
+            <nav id="s-lib-bc" aria-label="breadcrumb">{{breadcrumbs}}</nav>
 
-        <!-- THIS IS REALLY IMPORTANT. IT'S THE BAR WITH EVERY TOOL ON IT. DO NOT EXCLUDE -->
-        {{ADMIN_CMD_BAR}} 
+            <!-- THIS IS REALLY IMPORTANT. IT'S THE BAR WITH EVERY TOOL ON IT. DO NOT EXCLUDE -->
+            {{ADMIN_CMD_BAR}} 
 
-        <!-- THIS DIV DISPLAYS THE VIEW/EDIT/PUBLISH BUTTONS WHEN EDITING. -->
-        <div class="pull-right">
-        {{ADMIN_MINI_CMD_BAR}}
-        </div>
-        <div class="" id="guidetitle">
-            <h1>{{guide_title}}</h1><div class="colon">:</div> <h2>{{page_title}}</h2>
-        </div>
-        
-        <div id="s-lg-guide-desc-container" class="p-0 d-none">
-            <span id="s-lg-guide-description">{{guide_description}}</span>
-        </div>
-
-        <!--THIS DIV CLASS DISPLAYS THE PAGE URL, PAGE, AND COLUMN LAYOUT OPTIONS.
-        SHOULD HAVE NO EFFECT ON PUBLIC SIDE.
-        -->
-        <div id="s-lg-guide-tabs-title-bar" class="container s-lib-side-borders"></div>
-
-        <!-- EDIT-ONLY VIEW CONTAINER FOR BC WIDGETS -->
-        <div id="bc-custom-bar">
-           <div id="bc-custom-bar-tips-container"></div>
-           <div id="bc-custom-bar-accessibility-container"></div>
-           <div id="bc-custom-bar-ezproxy-container"></div>
-        </div>
-
-        <!-- THIS IS THE CONTENT AND COLUMNS. -->
-        <a name="s-lg-guide-main" tabindex="-1"></a>
-        <div id="s-lg-guide-main"></div>
-        <div class="row pt-4 pb-5" id="content_container">
-            <!-- THIS DISPLAYS THE TABS, IF THERE ARE TABS
-            CURRENTLY A HACKED SIDE NAV. -->
-            <div class="col-xl-2 col-lg-3 col-md-3 col-12" id="s-lg-guide-tabs" role="navigation" aria-label="Guide Pages">
-                <nav id="side-nav" class="drop-down">
-                    <ul class="nav nav-tabs">
-                        {{guide_nav}}
-                    </ul>
-                    <label for="guide-nav-mobile" class="accessibility-text">Guide navigation for mobile devices</label>
-                    <div class="container">
-                        <select class="nav-mobile mb-4" id="guide-nav-mobile"></select>
-                    </div>
-                </nav>
+            <!-- THIS DIV DISPLAYS THE VIEW/EDIT/PUBLISH BUTTONS WHEN EDITING. -->
+            <div class="pull-right">
+            {{ADMIN_MINI_CMD_BAR}}
+            </div>
+            <div class="" id="guidetitle">
+                <h1>{{guide_title}}</h1><div class="colon">:</div> <h2>{{page_title}}</h2>
+            </div>
+            
+            <div id="s-lg-guide-desc-container" class="p-0 d-none">
+                <span id="s-lg-guide-description">{{guide_description}}</span>
             </div>
 
-            <!-- CONTENT -->
-            <div class="col-xl-10 col-lg-9 col-md-9 col-12" id="content-refresh">
-               {{content}}
-               {{page_prev_next_links}}
+            <!--THIS DIV CLASS DISPLAYS THE PAGE URL, PAGE, AND COLUMN LAYOUT OPTIONS.
+            SHOULD HAVE NO EFFECT ON PUBLIC SIDE.
+            -->
+            <div id="s-lg-guide-tabs-title-bar" class="container s-lib-side-borders"></div>
+
+            <!-- EDIT-ONLY VIEW CONTAINER FOR BC WIDGETS -->
+            <div id="bc-custom-bar">
+            <div id="bc-custom-bar-tips-container"></div>
+            <div id="bc-custom-bar-accessibility-container"></div>
+            <div id="bc-custom-bar-ezproxy-container"></div>
             </div>
-            <!-- END CONTENT -->
-        </div>  
 
-        <!-- THIS MAKES A 'BACK TO TOP' ARROW APPEAR -->
-        <!--div id="s-lib-scroll-top-old" title="Back to Top">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-square-o fa-stack-2x"></i>
-              <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
-            </span>
-        </div-->
+            <!-- THIS IS THE CONTENT AND COLUMNS. -->
+            <a name="s-lg-guide-main" tabindex="-1"></a>
+            <div id="s-lg-guide-main"></div>
+            <div class="row pt-4 pb-5" id="content_container">
+                <!-- THIS DISPLAYS THE TABS, IF THERE ARE TABS
+                CURRENTLY A HACKED SIDE NAV. -->
+                <div class="col-xl-2 col-lg-3 col-md-3 col-12" id="s-lg-guide-tabs" role="navigation" aria-label="Guide Pages">
+                    <nav id="side-nav" class="drop-down">
+                        <ul class="nav nav-tabs">
+                            {{guide_nav}}
+                        </ul>
+                        <label for="guide-nav-mobile" class="accessibility-text">Guide navigation for mobile devices</label>
+                        <div class="container">
+                            <select class="nav-mobile mb-4" id="guide-nav-mobile"></select>
+                        </div>
+                    </nav>
+                </div>
 
-        <div id="s-lib-scroll-top">
-            <a href="javascript:void(0);" onclick="jQuery('body').focus();" title="Back to Top"
-            aria-label="Back to Top">
-                <span class="fa-stack fa-lg" aria-hidden="true">
-                    <i class="fa fa-square-o fa-stack-2x"></i>
-                    <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+                <!-- CONTENT -->
+                <div class="col-xl-10 col-lg-9 col-md-9 col-12" id="content-refresh">
+                    {{content}}
+                {{page_prev_next_links}}
+                </div>
+                <!-- END CONTENT -->
+            </div>  
+
+            <!-- THIS MAKES A 'BACK TO TOP' ARROW APPEAR -->
+            <!--div id="s-lib-scroll-top-old" title="Back to Top">
+                <span class="fa-stack fa-lg">
+                <i class="fa fa-square-o fa-stack-2x"></i>
+                <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
                 </span>
-            </a>
-        </div>
+            </div-->
 
-        <!-- THIS LINE OF CODE IS RESPONSIBLE FOR THE POP UP BOXES DURING EDITING.
-        REMOVING THIS MEANS DOOM FOR ALL -->
-        <div id="s-lib-alert" title="">
-            <div id="s-lib-alert-content"></div>
+            <div id="s-lib-scroll-top">
+                <a href="javascript:void(0);" onclick="jQuery('body').focus();" title="Back to Top"
+                aria-label="Back to Top">
+                    <span class="fa-stack fa-lg" aria-hidden="true">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+                    </span>
+                </a>
+            </div>
+
+            <!-- THIS LINE OF CODE IS RESPONSIBLE FOR THE POP UP BOXES DURING EDITING.
+            REMOVING THIS MEANS DOOM FOR ALL -->
+            <div id="s-lib-alert" title="">
+                <div id="s-lib-alert-content"></div>
+            </div>
+        </div>
+        <!-- END MIDLEVELCONTAINER -->
+
+        <!-- GUIDE METADATA AND STAFF LOGIN BLOCK -->
+        <div id="s-lg-guide-header-meta">
+            <ul id="s-lg-guide-header-attributes" class="col-12 col-md-9">
+                <li id="s-lg-guide-header-updated">
+                    {{last_updated_display}}
+                </li>
+                <li id="s-lg-guide-header-subjects">
+                    {{guide_subjects}}
+                </li>
+                <li id="s-lg-guide-header-tags">
+                    {{guide_tags}}
+                </li>
+            </ul>
+            <div id="s-lib-footer-login-link" class="col-12 col-md-3">
+                <a href="{{login_url}}">Editor login</a> / <a href="https://bc.libapps.com/libguides/">Staff login</a> <!-- {{guide_owner_profile_url}} -->
+            </div>
         </div>
     </div>
-    <!-- END MIDLEVELCONTAINER -->
-
-    <!-- GUIDE METADATA AND STAFF LOGIN BLOCK -->
-    <div id="s-lg-guide-header-meta">
-        <ul id="s-lg-guide-header-attributes" class="col-12 col-md-9">
-            <li id="s-lg-guide-header-updated">
-                {{last_updated_display}}
-            </li>
-            <li id="s-lg-guide-header-subjects">
-                {{guide_subjects}}
-            </li>
-            <li id="s-lg-guide-header-tags">
-                {{guide_tags}}
-            </li>
-        </ul>
-        <div id="s-lib-footer-login-link" class="col-12 col-md-3">
-            <a href="{{login_url}}">Editor login</a> / <a href="https://bc.libapps.com/libguides/">Staff login</a> <!-- {{guide_owner_profile_url}} -->
-        </div>
-    </div>
-</div>
-<!-- END FULL PAGE WRAPPER -->
+    <!-- END FULL PAGE WRAPPER -->
+</main>
 <!-- THIS INCLUDED EVERYTHING IN FOOTER CODE, SUCH AS #FOOTER -->
 {{public_footer}}
 </body>
