@@ -32,6 +32,8 @@ $(document).ready(function(){
         if ($(this).find("ul.nav-tabs").length == 0 || $(this).find("ul.nav-tabs li").length == 0) {
             // Remove the mobile dropdown if no nav-tabs exist
             $(this).find(".nav-mobile").remove();
+            // Remove the mobile dropdown label if no nav-tabs exist
+            $(this).find("label[for='guide-nav-mobile']").remove();
             // Add d-none to parent container to hide the entire side nav
             $(this).parent("#s-lg-guide-tabs").addClass('d-none');
             // Add w-100 to the uncle container to make it full width
