@@ -79,8 +79,10 @@ $(document).ready(function(){
     //
     // Add class to body based on edit mode
     //
-    ((window.location.pathname).indexOf('admin_c.php')>-1)?$('body').addClass('edit-mode'):$('body').addClass('view-mode');
-
+    // ((window.location.pathname).indexOf('admin_c.php')>-1)?$('body').addClass('edit-mode'):$('body').addClass('view-mode');
+    const oldEditPath = window.location.pathname.includes('admin_c.php');
+    const newEditPath = window.location.pathname.includes('/libguides/guides/edit');
+    (oldEditPath || newEditPath) ? $('body').addClass('edit-mode') : $('body').addClass('view-mode');
 
     //
     // Remove empty divs within profile containers
