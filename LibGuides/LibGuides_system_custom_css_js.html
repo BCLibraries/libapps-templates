@@ -96,7 +96,7 @@ $(document).ready(function(){
     //
     // Add padding to header when in edit-mode
     //
-    if ($("body.edit-mode").length > 0){$("#edit-mode-buffer").css("height", "55px");}
+    // if ($("body.edit-mode").length > 0){$("#edit-mode-buffer").css("height", "55px");}
 
     //
     // Hides header and footer elements when in Canvas iframe widget
@@ -119,7 +119,8 @@ $(document).ready(function(){
     //
     // Load edit-mode widgets for admin page
     //
-    if ($(location).attr('pathname') === "/libguides/admin_c.php") {
+    // if ($(location).attr('pathname') === "/libguides/admin_c.php") {
+    if (oldEditPath || newEditPath) {
         // load https://library.bc.edu/css/libguides-widget.css
         // see https://stackoverflow.com/a/14919928
         $("head").append("<link>");
@@ -140,7 +141,7 @@ $(document).ready(function(){
         });
 
         // accessibility script
-        $.getScript( "//arc.bc.edu/libscripts/lg/accessibilitychecker/lgaccessibility.js" )
+        $.getScript( "https://library.bc.edu/bs5/wip/static/js/lgaccessibilityv2.js" )
         .done(function( script, textStatus ) {
             console.log( textStatus );
         })
